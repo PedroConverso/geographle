@@ -1,4 +1,12 @@
 .menu{
     display: flex;
+    justify-content: space-between;
 }
 
+.juntitos{
+    display: flex;
+}
+
+.iconos{
+    display: flex;
+}
