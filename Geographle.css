@@ -1,10 +1,4 @@
 .menu{
-    justify-content: center;
-    
+    display: flex;
 }
 
-.Geograph{
-    justify-content: center;
-    align-items: center;
-
-}
