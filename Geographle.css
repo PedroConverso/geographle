@@ -14,10 +14,12 @@ header{
 
 
 .Geograph{
-font-size: 10vh;
-margin: 0%;
-color: #067E00;
-font-family: "Inter" , sans-serif;
+   font-size: 10vh;
+   margin: 0%;
+   color: #067E00;
+   font-family: "Inter" , sans-serif;
+   font-style: italic;
+
 }
 
 .le{
@@ -25,6 +27,7 @@ font-family: "Inter" , sans-serif;
     margin: 0%;
     color: #272DA3;
     font-family: "Inter" , sans-serif;
+    font-style: italic;
 }
 
 .juntitos{
@@ -40,18 +43,61 @@ font-family: "Inter" , sans-serif;
 }
 
 
+
+
+
 .box1{
     display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    height: 30vh;
+    width: 33vw;
+    background-color: #D9D9D9;
+    border-radius: 5%;
 }
+
+.RecAb1{
+    display: flex;
+    height: 10vh;
+    width: 100%;
+    background-color: #464646;
+    justify-content: end;
+}
+
+.camera1 {
+    display: flex;
+    height: 50%;
+    
+}
+
+.nombre1{
+    display: flex;
+    justify-content: baseline;
+    justify-content: center;
+    font-family: "Inter" , sans-serif;
+}
+
+
+
+
 
 .box2{
     display: flex;
+    height: 30vh;
+    width: 35vw;
+    
 }
 
 .box3{
     display: flex;
+    height: 30vh;
+    width: 35vw;
+    
 }
 
 .box4{
     display: flex;
+    height: 30vh;
+    width: 35vw;
+    
 }
