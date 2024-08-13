@@ -1,15 +1,42 @@
-.menu{
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh; 
+}
+
+header{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+
+.Geograph{
+font-size: 10vh;
+margin: 0%;
+color: #067E00;
+}
+
+.le{
+    font-size: 10vh;
+    margin: 0%;
+    color: #272DA3;
 }
 
 .juntitos{
     display: flex;
 }
 
+.line{
+    width: 100%;
+}
+
 .iconos{
     display: flex;
 }
+
 
 .box1{
     display: flex;
