@@ -13,10 +13,22 @@
     <title>Geographle</title>
 </head>
 <body>
+    <div 
+    class="menudropdown"
+    id="menudropdown"
+    >
+      <img src="../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
 
+      <div class="gamesMenuContainer">
+        <div class="gameMenu">JUEGO 1</div>
+        <div class="gameMenu">JUEGO 2</div>
+        <div class="gameMenu">JUEGO 3</div>
+        <div class="gameMenu">JUEGO 4</div>
+      </div>
+    </div>
     <header>
       <div class="Login">
-        <img class="Imgmenu" src="../Img/mingcute_menu-fill.png">
+        <img class="Imgmenu" src="../Img/mingcute_menu-fill.png" onclick="openmenudropdown()">
       </div>
 
       <div class="juntitos">
@@ -29,8 +41,6 @@
           <img class="options" src="../Img/mdi_settings.png">
         </div>
     </header>
-
-    <img class="line" src="../Img/Line 2.png">
 
   <div class="juegos">
      
@@ -68,6 +78,6 @@
    </div>    
    </div>
   </div>
-  <script src="Geographle.js"></script>
+  <script src="GeographleMenu.js"></script>
 </body>
 </html>
