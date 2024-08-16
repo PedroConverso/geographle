@@ -41,19 +41,17 @@ header{
     border-radius: 20px;
     font-family: "Inter" , sans-serif;
     display: flex;
-    
+    align-items: center;
     font-size: 35px;
     justify-content: space-around;
 }
 
 .Gamemc{
-    height: 90%;
+    height: 80%;
     width: 30%;
     background-color: #F3EDED;
     border-radius: 20px;
-    display: flex;
-    justify-content: right;
-    
+    display: flex;  
   }
 
 .open {
