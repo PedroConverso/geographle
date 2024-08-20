@@ -2,38 +2,68 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<<<<<<< Updated upstream:Top10.html
+    <title></title>
+</head>
+<body>
     
-    <link rel="stylesheet" href="Top10.css">
+=======
+    <title>Mapa Interactivo en Javascript</title>
+    
+    <!-- Leaflet.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
-    <title>Geographle</title>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
 
-    <header>
+    <div class="main">
 
-        <div class="Login">
-            <img class="Imgmenu" src="Img/mingcute_menu-fill.png">
-          </div>
-    
-          <div class="juntitos">
-            <h1 class="Geograph">GEOGRAPH</h1>
-            <h1 class="le">LE</h1>
-          </div>
-    
-            <div class="iconos">
-              <img class="stats" src="Img/gridicons_stats-up.png">
-              <img class="options" src="Img/mdi_settings.png">
+        <div class="container">
+
+            <div class="map-container">
+                <div class="map" id="map"></div>
             </div>
 
-    </header>
-    
-    <div class="rectangulo"></div>
+            <div class="marked-container">
+                <h1>Registra tu Área en el Mapa</h1>
+                <hr>
+                <button onclick="closeMarkerContainer()">&#10062;</button>
+                <div class="marker">
+                    <div class="input-group">
+                        <h3>Nombre del Área:</h3>
+                        <input id="markerName" type="text">
+                    </div>
+                    <div class="input-group">
+                        <h3>Latitud:</h3>
+                        <input id="latitude" type="text" readonly>
+                    </div>
+                    <div class="input-group">
+                        <h3>Longitud:</h3>
+                        <input id="longitude" type="text" readonly>
+                    </div>
 
+                    <button id="saveMarker" onclick="saveMarker()">Guardar Ubicación</button>
+                </div>
+                <hr>
+                <div class="marked">
+                    <h2>Registro de Ubicaciones</h2>
+                    <ul id="markedLocations"></ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Leaflet.js JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- Script JS -->
+    <script src="./script.js"></script>
+>>>>>>> Stashed changes:Geographle.html
 </body>
 </html>
