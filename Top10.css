@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh; 
+    background-color: #F3EFEF;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+
+.Geograph {
+   font-size: 13vh;
+   margin: 0%;
+   color: #067E00;
+   font-family: "Inter" , sans-serif;
+   font-style: italic;
+
+}
+
+.le {
+    font-size: 13vh;
+    margin: 0%;
+    color: #272DA3;
+    font-family: "Inter" , sans-serif;
+    font-style: italic;
+}
+
+.juntitos{
+    display: flex;
+}
+
+.line{
+    width: 100%;
+}
+
+.iconos{
+    display: flex;
+}
+
+.rectangulo {
+    width: 80vw;
+    height: 77vh;
+    background-color: #F1EAEA;
+    border-radius: 70px;
+    justify-content: center;
+    border: solid 7px #B8B4B4;
+    
+}

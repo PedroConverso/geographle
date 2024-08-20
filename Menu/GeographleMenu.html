@@ -20,10 +20,23 @@
       <img src="../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
 
       <div class="gamesMenuContainer">
-        <div class="gameMenu">JUEGO 1</div>
-        <div class="gameMenu">JUEGO 2</div>
-        <div class="gameMenu">JUEGO 3</div>
-        <div class="gameMenu">JUEGO 4</div>
+
+        <div class="gameMenu">JUEGO 1
+          <div class="Gamemc"></div>
+        </div>
+
+        <div class="gameMenu">JUEGO 2
+          <div class="Gamemc"></div>
+        </div>
+
+        <div class="gameMenu">JUEGO 3
+          <div class="Gamemc"></div>
+        </div>
+
+        <div class="gameMenu">JUEGO 4
+          <div class="Gamemc"></div>
+        </div>
+        
       </div>
     </div>
     <header>
@@ -37,46 +50,51 @@
       </div>
 
         <div class="iconos">
-          <img class="stats" src="../Img/gridicons_stats-up.png">
+          <div 
+            class="estadown"
+            id="estadown"
+            >
+            <img class="cruz" src="../Img/tabler_xbox-x-filled.png" onclick="openestadown()">
+          </div>
+          <img class="stats" src="../Img/gridicons_stats-up.png" onclick="openestadown()">
           <img class="options" src="../Img/mdi_settings.png">
         </div>
     </header>
 
-  <div class="juegos">
-     
-   <div class="caja1">
+  <div class="juegos">   
+  <div class="caja1">
 
       <div class="box1"> 
         <div class="RecAb1">
           <h3 class="nombre1">TOP 10</h3>
         </div>
         <img class="camera1" src="../Img/image 8.png">   
-    </div>
-     
-   <div class="box2"> 
-     <div class="RecAb2">
+      </div>
+    
+  <div class="box2"> 
+  <div class="RecAb2">
       <h3 class="nombre2">CONNECTIONS</h3>
-     </div>
-     <img class="camera2" src="../Img/image 6 (1).png">   
-   </div>
+    </div>
+    <img class="camera2" src="../Img/image 6 (1).png">   
+  </div>
     </div>
 
     <div class="caja2">
 
-   <div class="box3"> 
+  <div class="box3"> 
       <div class="RecAb3">
         <h3 class="nombre3">GUESS ABOUT</h3>
       </div>
       <img class="camera3" src="../Img/image 7.png">   
-   </div>
+  </div>
 
     <div class="box4"> 
       <div class="RecAb4">
         <h3 class="nombre4">HIGHER OR LOWER</h3>
       </div>
       <img class="camera4" src="../Img/image 9.png">   
-   </div>    
-   </div>
+  </div>    
+  </div>
   </div>
   <script src="GeographleMenu.js"></script>
 </body>
