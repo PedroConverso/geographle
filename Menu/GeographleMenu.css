@@ -39,6 +39,33 @@ header{
     height: 20%;
     background-color: #D9D9D9;
     border-radius: 20px;
+    font-family: "Inter" , sans-serif;
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+    justify-content: space-around;
+}
+
+.Gamemc{
+    height: 80%;
+    width: 30%;
+    background-color: #F3EDED;
+    border-radius: 20px;
+    display: flex;  
+}
+
+.estadown{
+    display: flex;
+    width: 100vh;
+    height: 30%;
+    background-color: #067E00;
+    overflow: hidden;
+}
+
+.cruz{
+    height: 77px;
+    width: 80px;
+    display: flex;
 }
 
 .open {
@@ -73,6 +100,7 @@ header{
 
 .iconos{
     display: flex;
+    align-items: center;
 }
 
 .juegos{
