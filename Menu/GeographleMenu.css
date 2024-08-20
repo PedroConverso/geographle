@@ -92,7 +92,7 @@ header{
 }
 
 .open {
-    width: 30%;
+    width: 50%;
 }
 
 .casa{
@@ -102,11 +102,11 @@ header{
 }
 
 .Geograph{
-font-size: 10vh;
-margin: 0%;
-color: #067E00;
-font-family: "Inter" , sans-serif;
-font-style: italic;
+    font-size: 10vh;
+    margin: 0%;
+    color: #067E00;
+    font-family: "Inter" , sans-serif;
+    font-style: italic;
 }
 
 .le{
