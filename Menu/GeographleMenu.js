@@ -7,8 +7,8 @@ function openmenudropdown() {
     }
 }
 
-function openmenudropdown() {
-    let menu = document.getElementById("menudropdown")
+function openestadown() {
+    let menu = document.getElementById("estadown")
     if (menu.classList.contains("open")) {
         menu.classList.remove("open")
     } else {

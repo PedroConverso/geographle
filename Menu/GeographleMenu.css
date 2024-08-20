@@ -52,7 +52,21 @@ header{
     background-color: #F3EDED;
     border-radius: 20px;
     display: flex;  
-  }
+}
+
+.estadown{
+    display: flex;
+    width: 100vh;
+    height: 30%;
+    background-color: #067E00;
+    overflow: hidden;
+}
+
+.cruz{
+    height: 77px;
+    width: 80px;
+    display: flex;
+}
 
 .open {
     width: 30%;
@@ -65,12 +79,11 @@ header{
 }
 
 .Geograph{
-   font-size: 10vh;
-   margin: 0%;
-   color: #067E00;
-   font-family: "Inter" , sans-serif;
-   font-style: italic;
-
+font-size: 10vh;
+margin: 0%;
+color: #067E00;
+font-family: "Inter" , sans-serif;
+font-style: italic;
 }
 
 .le{
@@ -87,6 +100,7 @@ header{
 
 .iconos{
     display: flex;
+    align-items: center;
 }
 
 .juegos{
