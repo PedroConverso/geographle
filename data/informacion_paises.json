@@ -1077,5 +1077,6 @@
         "poblacion": 30156000,
         "superficie_km2": 527968,
         "pib_usd_trillones": 0.01,
-        "paises_limitrofes": ["Arabia Saudita", "Omán"] 
-
+        "paises_limitrofes": ["Arabia Saudita", "Omán"]
+      },
+    ]
