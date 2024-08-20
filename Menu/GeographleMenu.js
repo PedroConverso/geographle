@@ -9,9 +9,9 @@ function openmenudropdown() {
 
 function openestadown() {
     let menu = document.getElementById("estadown")
-    if (menu.classList.contains("open")) {
-        menu.classList.remove("open")
+    if (menu.classList.contains("edOpen")) {
+        menu.classList.remove("edOpen")
     } else {
-        menu.classList.add("open")
+        menu.classList.add("edOpen")
     }
 }

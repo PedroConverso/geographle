@@ -3,7 +3,12 @@ body {
     width: 100vw;
     height: 100vh; 
     background-color: #F3EFEF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
+
 
 header{
     display: flex;
@@ -23,6 +28,7 @@ header{
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    align-self: flex-start;
 }
 
 .gamesMenuContainer{
@@ -56,10 +62,27 @@ header{
 
 .estadown{
     display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(55, 55, 55, 0.25);
+    backdrop-filter: blur(6px);
+    overflow: hidden;
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.estasdown {
+    display: flex;
     width: 100vh;
     height: 30%;
     background-color: #067E00;
     overflow: hidden;
+}
+
+.edOpen {
+    display: flex;
 }
 
 .cruz{
