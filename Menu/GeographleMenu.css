@@ -76,9 +76,61 @@ header{
 .estasdown {
     display: flex;
     width: 100vh;
-    height: 30%;
-    background-color: #067E00;
+    height: 70%;
+    background-color: #F3EFEF;
     overflow: hidden;
+    border-radius: 10%;
+    gap: 20%;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.pene {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 4px solid #000;
+}
+
+.sta{
+    font-size: 45px;
+    display: flex;
+    font-family: "Inter" , sans-serif;
+    font-style: italic;
+}
+
+.sub{
+    display: flex;
+    font-family: "Inter" , sans-serif;
+    font-style: italic;
+    font-size: 15px;
+    justify-content: center;
+}
+
+.intro {
+    margin-left: 30%;
+}
+
+.separar{
+display: flex;
+align-items: column;
+}
+
+.sepa{
+
+}
+
+.sep1{
+
+}
+
+.sep2{
+
+}
+
+.cuasta{
+
 }
 
 .edOpen {
@@ -102,19 +154,11 @@ header{
 }
 
 .Geograph{
-<<<<<<< HEAD
-   font-size: 10vh;
-   margin: 0%;
-   color: #067E00;
-   font-family: "Inter" , sans-serif;
-   font-style: italic;
-=======
-    font-size: 10vh;
-    margin: 0%;
-    color: #067E00;
-    font-family: "Inter" , sans-serif;
-    font-style: italic;
->>>>>>> 63905f623a9a516a9cdcf2a15d55f1fced14b250
+font-size: 10vh;
+margin: 0%;
+color: #067E00;
+font-family: "Inter" , sans-serif;
+font-style: italic;
 }
 
 .le{
