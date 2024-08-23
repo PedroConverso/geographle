@@ -24,3 +24,12 @@ function optisdown() {
         menu.classList.add("edSet")
     }
 }
+
+function thememode() {
+    let menu = document.getElementById("themeMode-check-container")
+    if (menu.classList.contains("themeMode-check-container-on")) {
+        menu.classList.remove("themeMode-check-container-on")
+    } else {
+        menu.classList.add("themeMode-check-container-on")
+    }
+}
