@@ -80,9 +80,9 @@ header{
     background-color: #F3EFEF;
     overflow: hidden;
     border-radius: 10%;
-    gap: 20%;
     flex-direction: column;
     padding: 20px;
+    justify-content: space-between;
 }
 
 .pene {
@@ -93,8 +93,17 @@ header{
     border-bottom: 4px solid #000;
 }
 
+.penedoble{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 4px solid #000;
+}
+
 .sta{
     font-size: 45px;
+    font-weight: 700;
     display: flex;
     font-family: "Inter" , sans-serif;
     font-style: italic;
@@ -112,31 +121,69 @@ header{
     margin-left: 30%;
 }
 
+.etbal {
+    margin-left: 35%;
+}
+
 .separar{
-display: flex;
-align-items: column;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    
 }
-
-.sepa{
-
-}
-
-//flex:warp//
 
 .sep1{
-
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
 }
 
 .sep2{
-
+    display: flex ;
+    justify-content: space-between;
+    width: 90%;
 }
 
 .cuasta{
+    display: flex;
+    background-color: #D9D9D9;
+    width: 175px;
+    height: 175px;
+    border-radius: 15%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
+.cuasta p {
+    font-size: 30px;
+    font-family: "Inter" , sans-serif;
+    font-style: italic;
+    height: auto;
+    width: auto;
+    margin: 0;
+    text-align: center;
+}
+
+.cuasta p:first-child {
+    font-family: "Inter" , sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.cuasta img {
+    width: 50%;
+    height: auto;
 }
 
 .edOpen {
-    display: flex;
+    display: flex !important;
+}
+
+.edSet{
+    display: flex !important;
 }
 
 .cruz{
@@ -144,6 +191,7 @@ align-items: column;
     width: 80px;
     display: flex;
 }
+
 
 .open {
     width: 50%;
@@ -153,6 +201,49 @@ align-items: column;
     display: flex;
     width: 80px;
     height: 77px;
+}
+
+.cruz2{
+    height: 77px;
+    width: 80px;
+    display: flex;
+}
+
+.optidown{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(55, 55, 55, 0.25);
+    backdrop-filter: blur(6px);
+    overflow: hidden;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+.opdown{
+    display: flex;
+    width: 100vh;
+    height: 70%;
+    background-color: #F3EFEF;
+    overflow: hidden;
+    border-radius: 10%;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.sett{
+    font-size: 45px;
+    font-family: "Inter" , sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.optibody{
+    display: flex;
+
+    align-items: flex-start;
 }
 
 .Geograph{

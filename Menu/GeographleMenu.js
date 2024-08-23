@@ -15,3 +15,12 @@ function openestadown() {
         menu.classList.add("edOpen")
     }
 }
+
+function optisdown() {
+    let menu = document.getElementById("optidown")
+    if (menu.classList.contains("edSet")) {
+        menu.classList.remove("edSet")
+    } else {
+        menu.classList.add("edSet")
+    }
+}
