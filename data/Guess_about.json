@@ -1,0 +1,1556 @@
+{
+  "countries": [
+    {
+      "country_id": 1,
+      "name": "Argentina",
+      "capital": "Buenos Aires",
+      "language": "Spanish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Argentina_location_map.svg"
+    },
+    {
+      "country_id": 2,
+      "name": "Bahamas",
+      "capital": "Nassau",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/93/Flag_of_the_Bahamas.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/3/35/Bahamas_location_map.svg"
+    },
+    {
+      "country_id": 3,
+      "name": "Barbados",
+      "capital": "Bridgetown",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Flag_of_Barbados.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Barbados_location_map.svg"
+    },
+    {
+      "country_id": 4,
+      "name": "Belize",
+      "capital": "Belmopan",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Flag_of_Belize.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Belize_location_map.svg"
+    },
+    {
+      "country_id": 5,
+      "name": "Bolivia",
+      "capital": "Sucre",
+      "language": "Spanish, Quechua, Aymara",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Bolivia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/64/Bolivia_location_map.svg"
+    },
+    {
+      "country_id": 6,
+      "name": "Brazil",
+      "capital": "Brasilia",
+      "language": "Portuguese",
+      "flag": "https://upload.wikimedia.org/wikipedia/en/0/05/Flag_of_Brazil.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/25/Brazil_location_map.svg"
+    },
+    {
+      "country_id": 7,
+      "name": "Canada",
+      "capital": "Ottawa",
+      "language": "English, French",
+      "flag": "https://upload.wikimedia.org/wikipedia/en/c/cf/Flag_of_Canada.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Canada_location_map.svg"
+    },
+    {
+      "country_id": 8,
+      "name": "Chile",
+      "capital": "Santiago",
+      "language": "Spanish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/7/78/Flag_of_Chile.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Chile_location_map.svg"
+    },
+    {
+      "country_id": 9,
+      "name": "Colombia",
+      "capital": "Bogotá",
+      "language": "Spanish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/7/76/Colombia_location_map.svg"
+    },
+    {
+      "country_id": 10,
+      "name": "Costa Rica",
+      "capital": "San José",
+      "language": "Spanish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Costa_Rica.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/0/05/Costa_Rica_location_map.svg"
+    },
+    {
+      "country_id": 11,
+      "name": "Cuba",
+      "capital": "Havana",
+      "language": "Spanish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Flag_of_Cuba.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Cuba_location_map.svg"
+    },
+    {
+      "country_id": 12,
+      "name": "Dominica",
+      "capital": "Roseau",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Flag_of_Dominica.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Dominica_location_map.svg"
+    },
+    {
+      "country_id": 13,
+      "name": "Dominican Republic",
+      "capital": "Santo Domingo",
+      "language": "Spanish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_the_Dominican_Republic.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Dominican_Republic_location_map.svg"
+    },
+    {
+      "country_id": 14,
+      "name": "Ecuador",
+      "capital": "Quito",
+      "language": "Spanish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Flag_of_Ecuador.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/19/Ecuador_location_map.svg"
+    },
+    {
+      "country_id": 15,
+      "name": "El Salvador",
+      "capital": "San Salvador",
+      "language": "Spanish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/3/34/Flag_of_El_Salvador.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/8/82/El_Salvador_location_map.svg"
+    },
+    {
+      "country_id": 16,
+      "name": "Grenada",
+      "capital": "Saint George's",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Grenada.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/3/34/Grenada_location_map.svg"
+    },
+    {
+      "country_id": 17,
+      "name": "Guatemala",
+      "capital": "Guatemala City",
+      "language": "Spanish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Flag_of_Guatemala.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Guatemala_location_map.svg"
+    },
+    {
+      "country_id": 18,
+      "name": "Guyana",
+      "capital": "Georgetown",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_Guyana.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Guyana_location_map.svg"
+    },
+    {
+      "country_id": 19,
+      "name": "Haiti",
+      "capital": "Port-au-Prince",
+      "language": "Haitian Creole, French",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/5/56/Flag_of_Haiti.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Haiti_location_map.svg"
+    },
+    {
+      "country_id": 20,
+      "name": "Honduras",
+      "capital": "Tegucigalpa",
+      "language": "Spanish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/8/82/Flag_of_Honduras.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Honduras_location_map.svg"
+    },
+    {
+      "country_id": 21,
+      "name": "Jamaica",
+      "capital": "Kingston",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_Jamaica.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Jamaica_location_map.svg"
+    },
+    {
+      "country_id": 22,
+      "name": "Mexico",
+      "capital": "Mexico City",
+      "language": "Spanish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Mexico_location_map.svg"
+    },
+    {
+      "country_id": 23,
+      "name": "Nicaragua",
+      "capital": "Managua",
+      "language": "Spanish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Nicaragua.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/7/79/Nicaragua_location_map.svg"
+    },
+    {
+      "country_id": 24,
+      "name": "Panama",
+      "capital": "Panama City",
+      "language": "Spanish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Flag_of_Panama.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Panama_location_map.svg"
+    },
+    {
+      "country_id": 25,
+      "name": "Paraguay",
+      "capital": "Asunción",
+      "language": "Spanish, Guarani",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Paraguay.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Paraguay_location_map.svg"
+    },
+    {
+      "country_id": 26,
+      "name": "Peru",
+      "capital": "Lima",
+      "language": "Spanish, Quechua, Aymara",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Peru.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/63/Peru_location_map.svg"
+    },
+    {
+      "country_id": 27,
+      "name": "Saint Kitts and Nevis",
+      "capital": "Basseterre",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Flag_of_Saint_Kitts_and_Nevis.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/3/36/Saint_Kitts_and_Nevis_location_map.svg"
+    },
+    {
+      "country_id": 28,
+      "name": "Saint Lucia",
+      "capital": "Castries",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Saint_Lucia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Saint_Lucia_location_map.svg"
+    },
+    {
+      "country_id": 29,
+      "name": "Saint Vincent and the Grenadines",
+      "capital": "Kingstown",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Flag_of_Saint_Vincent_and_the_Grenadines.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/7/73/Saint_Vincent_and_the_Grenadines_location_map.svg"
+    },
+    {
+      "country_id": 30,
+      "name": "Suriname",
+      "capital": "Paramaribo",
+      "language": "Dutch",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/6/60/Flag_of_Suriname.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Suriname_location_map.svg"
+    },
+    {
+      "country_id": 31,
+      "name": "Trinidad and Tobago",
+      "capital": "Port of Spain",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Trinidad_and_Tobago.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/5/52/Trinidad_and_Tobago_location_map.svg"
+    },
+    {
+      "country_id": 32,
+      "name": "United States",
+      "capital": "Washington, D.C.",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/d/dc/United_States_location_map.svg"
+    },
+    {
+      "country_id": 33,
+      "name": "Uruguay",
+      "capital": "Montevideo",
+      "language": "Spanish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Uruguay.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/8/80/Uruguay_location_map.svg"
+    },
+    {
+      "country_id": 34,
+      "name": "Venezuela",
+      "capital": "Caracas",
+      "language": "Spanish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Venezuela.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/0/01/Venezuela_location_map.svg"
+    },
+    {
+      "country_id": 35,
+      "name": "Albania",
+      "capital": "Tirana",
+      "language": "Albanian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/3/36/Flag_of_Albania.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Albania_location_map.svg"
+    },
+    {
+      "country_id": 36,
+      "name": "Andorra",
+      "capital": "Andorra la Vella",
+      "language": "Catalan",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Andorra.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Andorra_location_map.svg"
+    },
+    {
+      "country_id": 37,
+      "name": "Armenia",
+      "capital": "Yerevan",
+      "language": "Armenian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_Armenia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Armenia_location_map.svg"
+    },
+    {
+      "country_id": 38,
+      "name": "Austria",
+      "capital": "Vienna",
+      "language": "German",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/12/Austria_location_map.svg"
+    },
+    {
+      "country_id": 39,
+      "name": "Azerbaijan",
+      "capital": "Baku",
+      "language": "Azerbaijani",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/3/32/Azerbaijan_location_map.svg"
+    },
+    {
+      "country_id": 40,
+      "name": "Belarus",
+      "capital": "Minsk",
+      "language": "Belarusian, Russian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/8/85/Flag_of_Belarus.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/64/Belarus_location_map.svg"
+    },
+    {
+      "country_id": 41,
+      "name": "Belgium",
+      "capital": "Brussels",
+      "language": "Dutch, French, German",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Belgium.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/19/Belgium_location_map.svg"
+    },
+    {
+      "country_id": 42,
+      "name": "Bosnia and Herzegovina",
+      "capital": "Sarajevo",
+      "language": "Bosnian, Croatian, Serbian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Flag_of_Bosnia_and_Herzegovina.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/23/Bosnia_and_Herzegovina_location_map.svg"
+    },
+    {
+      "country_id": 43,
+      "name": "Bulgaria",
+      "capital": "Sofia",
+      "language": "Bulgarian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Bulgaria.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Bulgaria_location_map.svg"
+    },
+    {
+      "country_id": 44,
+      "name": "Croatia",
+      "capital": "Zagreb",
+      "language": "Croatian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Flag_of_Croatia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/7/75/Croatia_location_map.svg"
+    },
+    {
+      "country_id": 45,
+      "name": "Cyprus",
+      "capital": "Nicosia",
+      "language": "Greek, Turkish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Cyprus.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Cyprus_location_map.svg"
+    },
+    {
+      "country_id": 46,
+      "name": "Czech Republic",
+      "capital": "Prague",
+      "language": "Czech",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_Czech_Republic.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/5/57/Czech_Republic_location_map.svg"
+    },
+    {
+      "country_id": 47,
+      "name": "Denmark",
+      "capital": "Copenhagen",
+      "language": "Danish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Denmark.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/5/59/Denmark_location_map.svg"
+    },
+    {
+      "country_id": 48,
+      "name": "Estonia",
+      "capital": "Tallinn",
+      "language": "Estonian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Flag_of_Estonia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Estonia_location_map.svg"
+    },
+    {
+      "country_id": 49,
+      "name": "Finland",
+      "capital": "Helsinki",
+      "language": "Finnish, Swedish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Finland.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/12/Finland_location_map.svg"
+    },
+    {
+      "country_id": 50,
+      "name": "France",
+      "capital": "Paris",
+      "language": "French",
+      "flag": "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/8/8a/France_location_map.svg"
+    },
+    {
+      "country_id": 51,
+      "name": "Georgia",
+      "capital": "Tbilisi",
+      "language": "Georgian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Flag_of_Georgia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Georgia_location_map.svg"
+    },
+    {
+      "country_id": 52,
+      "name": "Germany",
+      "capital": "Berlin",
+      "language": "German",
+      "flag": "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Germany_location_map.svg"
+    },
+    {
+      "country_id": 53,
+      "name": "Greece",
+      "capital": "Athens",
+      "language": "Greek",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/0/00/Greece_location_map.svg"
+    },
+    {
+      "country_id": 54,
+      "name": "Hungary",
+      "capital": "Budapest",
+      "language": "Hungarian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Flag_of_Hungary.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Hungary_location_map.svg"
+    },
+    {
+      "country_id": 55,
+      "name": "Iceland",
+      "capital": "Reykjavik",
+      "language": "Icelandic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Iceland.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Iceland_location_map.svg"
+    },
+    {
+      "country_id": 56,
+      "name": "Ireland",
+      "capital": "Dublin",
+      "language": "Irish, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Ireland_location_map.svg"
+    },
+    {
+      "country_id": 57,
+      "name": "Italy",
+      "capital": "Rome",
+      "language": "Italian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Italy_location_map.svg"
+    },
+    {
+      "country_id": 58,
+      "name": "Kazakhstan",
+      "capital": "Astana",
+      "language": "Kazakh, Russian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Flag_of_Kazakhstan.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Kazakhstan_location_map.svg"
+    },
+    {
+      "country_id": 59,
+      "name": "Kosovo",
+      "capital": "Pristina",
+      "language": "Albanian, Serbian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Kosovo.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Kosovo_location_map.svg"
+    },
+    {
+      "country_id": 60,
+      "name": "Latvia",
+      "capital": "Riga",
+      "language": "Latvian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/8/84/Flag_of_Latvia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/7/71/Latvia_location_map.svg"
+    },
+    {
+      "country_id": 61,
+      "name": "Liechtenstein",
+      "capital": "Vaduz",
+      "language": "German",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Liechtenstein.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Liechtenstein_location_map.svg"
+    },
+    {
+      "country_id": 62,
+      "name": "Lithuania",
+      "capital": "Vilnius",
+      "language": "Lithuanian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Lithuania.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Lithuania_location_map.svg"
+    },
+    {
+      "country_id": 63,
+      "name": "Luxembourg",
+      "capital": "Luxembourg City",
+      "language": "Luxembourgish, French, German",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Flag_of_Luxembourg.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Luxembourg_location_map.svg"
+    },
+    {
+      "country_id": 64,
+      "name": "Malta",
+      "capital": "Valletta",
+      "language": "Maltese, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/7/73/Flag_of_Malta.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Malta_location_map.svg"
+    },
+    {
+      "country_id": 65,
+      "name": "Moldova",
+      "capital": "Chișinău",
+      "language": "Romanian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Moldova.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Moldova_location_map.svg"
+    },
+    {
+      "country_id": 66,
+      "name": "Monaco",
+      "capital": "Monaco",
+      "language": "French",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Flag_of_Monaco.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Monaco_location_map.svg"
+    },
+    {
+      "country_id": 67,
+      "name": "Montenegro",
+      "capital": "Podgorica",
+      "language": "Montenegrin",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/6/63/Flag_of_Montenegro.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/3/39/Montenegro_location_map.svg"
+    },
+    {
+      "country_id": 68,
+      "name": "Netherlands",
+      "capital": "Amsterdam",
+      "language": "Dutch",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Netherlands_location_map.svg"
+    },
+    {
+      "country_id": 69,
+      "name": "North Macedonia",
+      "capital": "Skopje",
+      "language": "Macedonian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Flag_of_North_Macedonia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/e/e5/North_Macedonia_location_map.svg"
+    },
+    {
+      "country_id": 70,
+      "name": "Norway",
+      "capital": "Oslo",
+      "language": "Norwegian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/27/Norway_location_map.svg"
+    },
+    {
+      "country_id": 71,
+      "name": "Poland",
+      "capital": "Warsaw",
+      "language": "Polish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/1/12/Flag_of_Poland.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Poland_location_map.svg"
+    },
+    {
+      "country_id": 72,
+      "name": "Portugal",
+      "capital": "Lisbon",
+      "language": "Portuguese",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Portugal_location_map.svg"
+    },
+    {
+      "country_id": 73,
+      "name": "Romania",
+      "capital": "Bucharest",
+      "language": "Romanian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/7/73/Flag_of_Romania.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Romania_location_map.svg"
+    },
+    {
+      "country_id": 74,
+      "name": "Russia",
+      "capital": "Moscow",
+      "language": "Russian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/3/31/Russia_location_map.svg"
+    },
+    {
+      "country_id": 75,
+      "name": "San Marino",
+      "capital": "San Marino",
+      "language": "Italian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/98/Flag_of_San_Marino.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/62/San_Marino_location_map.svg"
+    },
+    {
+      "country_id": 76,
+      "name": "Serbia",
+      "capital": "Belgrade",
+      "language": "Serbian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Flag_of_Serbia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Serbia_location_map.svg"
+    },
+    {
+      "country_id": 77,
+      "name": "Slovakia",
+      "capital": "Bratislava",
+      "language": "Slovak",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Flag_of_Slovakia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/42/Slovakia_location_map.svg"
+    },
+    {
+      "country_id": 78,
+      "name": "Slovenia",
+      "capital": "Ljubljana",
+      "language": "Slovene",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Flag_of_Slovenia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/3/35/Slovenia_location_map.svg"
+    },
+    {
+      "country_id": 79,
+      "name": "Spain",
+      "capital": "Madrid",
+      "language": "Spanish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Spain_location_map.svg"
+    },
+    {
+      "country_id": 80,
+      "name": "Sweden",
+      "capital": "Stockholm",
+      "language": "Swedish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Sweden.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/47/Sweden_location_map.svg"
+    },
+    {
+      "country_id": 81,
+      "name": "Switzerland",
+      "capital": "Bern",
+      "language": "German, French, Italian, Romansh",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/3/32/Switzerland_location_map.svg"
+    },
+    {
+      "country_id": 82,
+      "name": "Turkey",
+      "capital": "Ankara",
+      "language": "Turkish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Turkey_location_map.svg"
+    },
+    {
+      "country_id": 83,
+      "name": "Ukraine",
+      "capital": "Kyiv",
+      "language": "Ukrainian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/41/Ukraine_location_map.svg"
+    },
+    {
+      "country_id": 84,
+      "name": "United Kingdom",
+      "capital": "London",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_Kingdom.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/a/a4/United_Kingdom_location_map.svg"
+    },
+    {
+      "country_id": 85,
+      "name": "Vatican City",
+      "capital": "Vatican City",
+      "language": "Italian, Latin",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_Vatican_City.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Vatican_City_location_map.svg"
+    },
+    {
+      "country_id": 86,
+      "name": "Algeria",
+      "capital": "Algiers",
+      "language": "Arabic, Berber",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_Algeria.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/45/Algeria_location_map.svg"
+    },
+    {
+      "country_id": 87,
+      "name": "Angola",
+      "capital": "Luanda",
+      "language": "Portuguese",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Angola_location_map.svg"
+    },
+    {
+      "country_id": 88,
+      "name": "Benin",
+      "capital": "Porto-Novo",
+      "language": "French",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Benin.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Benin_location_map.svg"
+    },
+    {
+      "country_id": 89,
+      "name": "Botswana",
+      "capital": "Gaborone",
+      "language": "English, Setswana",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Flag_of_Botswana.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/24/Botswana_location_map.svg"
+    },
+    {
+      "country_id": 90,
+      "name": "Burkina Faso",
+      "capital": "Ouagadougou",
+      "language": "French",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/8/80/Flag_of_Burkina_Faso.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Burkina_Faso_location_map.svg"
+    },
+    {
+      "country_id": 91,
+      "name": "Burundi",
+      "capital": "Gitega",
+      "language": "Kirundi, French, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/5/50/Flag_of_Burundi.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/45/Burundi_location_map.svg"
+    },
+    {
+      "country_id": 92,
+      "name": "Cabo Verde",
+      "capital": "Praia",
+      "language": "Portuguese",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/3/38/Flag_of_Cape_Verde.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/0/04/Cape_Verde_location_map.svg"
+    },
+    {
+      "country_id": 93,
+      "name": "Cameroon",
+      "capital": "Yaoundé",
+      "language": "French, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Cameroon.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Cameroon_location_map.svg"
+    },
+    {
+      "country_id": 94,
+      "name": "Central African Republic",
+      "capital": "Bangui",
+      "language": "French, Sango",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_the_Central_African_Republic.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Central_African_Republic_location_map.svg"
+    },
+    {
+      "country_id": 95,
+      "name": "Chad",
+      "capital": "N'Djamena",
+      "language": "French, Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Flag_of_Chad.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Chad_location_map.svg"
+    },
+    {
+      "country_id": 96,
+      "name": "Comoros",
+      "capital": "Moroni",
+      "language": "Comorian, Arabic, French",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/94/Flag_of_the_Comoros.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Comoros_location_map.svg"
+    },
+    {
+      "country_id": 97,
+      "name": "Congo, Democratic Republic of the",
+      "capital": "Kinshasa",
+      "language": "French",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Flag_of_the_Democratic_Republic_of_the_Congo.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/3/38/DRC_location_map.svg"
+    },
+    {
+      "country_id": 98,
+      "name": "Congo, Republic of the",
+      "capital": "Brazzaville",
+      "language": "French",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_the_Republic_of_the_Congo.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Congo_location_map.svg"
+    },
+    {
+      "country_id": 99,
+      "name": "Djibouti",
+      "capital": "Djibouti",
+      "language": "French, Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Flag_of_Djibouti.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Djibouti_location_map.svg"
+    },
+    {
+      "country_id": 100,
+      "name": "Egypt",
+      "capital": "Cairo",
+      "language": "Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Flag_of_Egypt.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Egypt_location_map.svg"
+    },
+    {
+      "country_id": 101,
+      "name": "Equatorial Guinea",
+      "capital": "Malabo",
+      "language": "Spanish, French, Portuguese",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/3/32/Flag_of_Equatorial_Guinea.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/5/52/Equatorial_Guinea_location_map.svg"
+    },
+    {
+      "country_id": 102,
+      "name": "Eritrea",
+      "capital": "Asmara",
+      "language": "Tigrinya, Arabic, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/7/71/Flag_of_Eritrea.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Eritrea_location_map.svg"
+    },
+    {
+      "country_id": 103,
+      "name": "Eswatini",
+      "capital": "Mbabane",
+      "language": "Swazi, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Flag_of_Eswatini.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Eswatini_location_map.svg"
+    },
+    {
+      "country_id": 104,
+      "name": "Ethiopia",
+      "capital": "Addis Ababa",
+      "language": "Amharic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Flag_of_Ethiopia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Ethiopia_location_map.svg"
+    },
+    {
+      "country_id": 105,
+      "name": "Gabon",
+      "capital": "Libreville",
+      "language": "French",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Gabon.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Gabon_location_map.svg"
+    },
+    {
+      "country_id": 106,
+      "name": "Gambia",
+      "capital": "Banjul",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_the_Gambia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Gambia_location_map.svg"
+    },
+    {
+      "country_id": 107,
+      "name": "Ghana",
+      "capital": "Accra",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Ghana.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/7/77/Ghana_location_map.svg"
+    },
+    {
+      "country_id": 108,
+      "name": "Guinea",
+      "capital": "Conakry",
+      "language": "French",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Flag_of_Guinea.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Guinea_location_map.svg"
+    },
+    {
+      "country_id": 109,
+      "name": "Guinea-Bissau",
+      "capital": "Bissau",
+      "language": "Portuguese",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Guinea-Bissau.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Guinea-Bissau_location_map.svg"
+    },
+    {
+      "country_id": 110,
+      "name": "Ivory Coast",
+      "capital": "Yamoussoukro",
+      "language": "French",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Côte_d'Ivoire.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/5/54/Ivory_Coast_location_map.svg"
+    },
+    {
+      "country_id": 111,
+      "name": "Kenya",
+      "capital": "Nairobi",
+      "language": "Swahili, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Kenya.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Kenya_location_map.svg"
+    },
+    {
+      "country_id": 112,
+      "name": "Lesotho",
+      "capital": "Maseru",
+      "language": "Sesotho, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Flag_of_Lesotho.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Lesotho_location_map.svg"
+    },
+    {
+      "country_id": 113,
+      "name": "Liberia",
+      "capital": "Monrovia",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Flag_of_Liberia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Liberia_location_map.svg"
+    },
+    {
+      "country_id": 114,
+      "name": "Libya",
+      "capital": "Tripoli",
+      "language": "Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_Libya.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/47/Libya_location_map.svg"
+    },
+    {
+      "country_id": 115,
+      "name": "Madagascar",
+      "capital": "Antananarivo",
+      "language": "Malagasy, French",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Flag_of_Madagascar.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/19/Madagascar_location_map.svg"
+    },
+    {
+      "country_id": 116,
+      "name": "Malawi",
+      "capital": "Lilongwe",
+      "language": "Chichewa, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Malawi.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Malawi_location_map.svg"
+    },
+    {
+      "country_id": 117,
+      "name": "Mali",
+      "capital": "Bamako",
+      "language": "French",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/92/Flag_of_Mali.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Mali_location_map.svg"
+    },
+    {
+      "country_id": 118,
+      "name": "Mauritania",
+      "capital": "Nouakchott",
+      "language": "Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/43/Flag_of_Mauritania.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/15/Mauritania_location_map.svg"
+    },
+    {
+      "country_id": 119,
+      "name": "Mauritius",
+      "capital": "Port Louis",
+      "language": "English, French",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_Mauritius.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/0/01/Mauritius_location_map.svg"
+    },
+    {
+      "country_id": 120,
+      "name": "Morocco",
+      "capital": "Rabat",
+      "language": "Arabic, Berber",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Morocco.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/43/Morocco_location_map.svg"
+    },
+    {
+      "country_id": 121,
+      "name": "Mozambique",
+      "capital": "Maputo",
+      "language": "Portuguese",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Flag_of_Mozambique.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/8/85/Mozambique_location_map.svg"
+    },
+    {
+      "country_id": 122,
+      "name": "Namibia",
+      "capital": "Windhoek",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/0/02/Flag_of_Namibia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Namibia_location_map.svg"
+    },
+    {
+      "country_id": 123,
+      "name": "Niger",
+      "capital": "Niamey",
+      "language": "French",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Flag_of_Niger.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/7/72/Niger_location_map.svg"
+    },
+    {
+      "country_id": 124,
+      "name": "Nigeria",
+      "capital": "Abuja",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/43/Nigeria_location_map.svg"
+    },
+    {
+      "country_id": 125,
+      "name": "Rwanda",
+      "capital": "Kigali",
+      "language": "Kinyarwanda, French, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/7/70/Flag_of_Rwanda.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Rwanda_location_map.svg"
+    },
+    {
+      "country_id": 126,
+      "name": "Sao Tome and Principe",
+      "capital": "São Tomé",
+      "language": "Portuguese",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Sao_Tome_and_Principe.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Sao_Tome_and_Principe_location_map.svg"
+    },
+    {
+      "country_id": 127,
+      "name": "Senegal",
+      "capital": "Dakar",
+      "language": "French",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Senegal.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Senegal_location_map.svg"
+    },
+    {
+      "country_id": 128,
+      "name": "Seychelles",
+      "capital": "Victoria",
+      "language": "Seychellois Creole, French, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Seychelles.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/8/89/Seychelles_location_map.svg"
+    },
+    {
+      "country_id": 129,
+      "name": "Sierra Leone",
+      "capital": "Freetown",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Sierra_Leone.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Sierra_Leone_location_map.svg"
+    },
+    {
+      "country_id": 130,
+      "name": "Somalia",
+      "capital": "Mogadishu",
+      "language": "Somali, Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Flag_of_Somalia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/43/Somalia_location_map.svg"
+    },
+    {
+      "country_id": 131,
+      "name": "South Africa",
+      "capital": "Pretoria",
+      "language": "Afrikaans, English, Zulu, Xhosa",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Flag_of_South_Africa.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/e/ed/South_Africa_location_map.svg"
+    },
+    {
+      "country_id": 132,
+      "name": "South Sudan",
+      "capital": "Juba",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_South_Sudan.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/1a/South_Sudan_location_map.svg"
+    },
+    {
+      "country_id": 133,
+      "name": "Sudan",
+      "capital": "Khartoum",
+      "language": "Arabic, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Sudan.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/16/Sudan_location_map.svg"
+    },
+    {
+      "country_id": 134,
+      "name": "Togo",
+      "capital": "Lomé",
+      "language": "French",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/6/62/Flag_of_Togo.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/8/87/Togo_location_map.svg"
+    },
+    {
+      "country_id": 135,
+      "name": "Tunisia",
+      "capital": "Tunis",
+      "language": "Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Flag_of_Tunisia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Tunisia_location_map.svg"
+    },
+    {
+      "country_id": 136,
+      "name": "Uganda",
+      "capital": "Kampala",
+      "language": "English, Swahili",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Flag_of_Uganda.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Uganda_location_map.svg"
+    },
+    {
+      "country_id": 137,
+      "name": "United Republic of Tanzania",
+      "capital": "Dodoma",
+      "language": "Swahili, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/3/38/Flag_of_Tanzania.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Tanzania_location_map.svg"
+    },
+    {
+      "country_id": 138,
+      "name": "Zambia",
+      "capital": "Lusaka",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Zambia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Zambia_location_map.svg"
+    },
+    {
+      "country_id": 139,
+      "name": "Zimbabwe",
+      "capital": "Harare",
+      "language": "English, Shona, Sindebele",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Flag_of_Zimbabwe.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/22/Zimbabwe_location_map.svg"
+    },
+    {
+      "country_id": 140,
+      "name": "Australia",
+      "capital": "Canberra",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/en/b/b9/Flag_of_Australia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/42/Australia_location_map.svg"
+    },
+    {
+      "country_id": 141,
+      "name": "Fiji",
+      "capital": "Suva",
+      "language": "Fijian, Hindi, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Fiji.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/24/Fiji_location_map.svg"
+    },
+    {
+      "country_id": 142,
+      "name": "Kiribati",
+      "capital": "Tarawa",
+      "language": "English, Gilbertese",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/0/08/Flag_of_Kiribati.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Kiribati_location_map.svg"
+    },
+    {
+      "country_id": 143,
+      "name": "Marshall Islands",
+      "capital": "Majuro",
+      "language": "Marshallese, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Marshall_Islands.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/60/Marshall_Islands_location_map.svg"
+    },
+    {
+      "country_id": 144,
+      "name": "Micronesia",
+      "capital": "Palikir",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/94/Flag_of_the_Federated_States_of_Micronesia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Federated_States_of_Micronesia_location_map.svg"
+    },
+    {
+      "country_id": 145,
+      "name": "Nauru",
+      "capital": "Yaren",
+      "language": "Nauruan, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/3/30/Flag_of_Nauru.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/19/Nauru_location_map.svg"
+    },
+    {
+      "country_id": 146,
+      "name": "New Zealand",
+      "capital": "Wellington",
+      "language": "English, Māori",
+      "flag": "https://upload.wikimedia.org/wikipedia/en/3/30/Flag_of_New_Zealand.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/5/53/New_Zealand_location_map.svg"
+    },
+    {
+      "country_id": 147,
+      "name": "Palau",
+      "capital": "Ngerulmud",
+      "language": "Palauan, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Palau.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/24/Palau_location_map.svg"
+    },
+    {
+      "country_id": 148,
+      "name": "Papua New Guinea",
+      "capital": "Port Moresby",
+      "language": "English, Hiri Motu, Tok Pisin",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/3/38/Flag_of_Papua_New_Guinea.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Papua_New_Guinea_location_map.svg"
+    },
+    {
+      "country_id": 149,
+      "name": "Samoa",
+      "capital": "Apia",
+      "language": "Samoan, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/94/Flag_of_Samoa.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/19/Samoa_location_map.svg"
+    },
+    {
+      "country_id": 150,
+      "name": "Solomon Islands",
+      "capital": "Honiara",
+      "language": "English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Flag_of_the_Solomon_Islands.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Solomon_Islands_location_map.svg"
+    },
+    {
+      "country_id": 151,
+      "name": "Tonga",
+      "capital": "Nukuʻalofa",
+      "language": "Tongan, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_Tonga.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/23/Tonga_location_map.svg"
+    },
+    {
+      "country_id": 152,
+      "name": "Tuvalu",
+      "capital": "Funafuti",
+      "language": "Tuvaluan, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Flag_of_Tuvalu.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Tuvalu_location_map.svg"
+    },
+    {
+      "country_id": 153,
+      "name": "Vanuatu",
+      "capital": "Port Vila",
+      "language": "Bislama, English, French",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Flag_of_Vanuatu.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/67/Vanuatu_location_map.svg"
+    },
+    {
+      "country_id": 154,
+      "name": "American Samoa",
+      "capital": "Pago Pago",
+      "language": "Samoan, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/5/56/Flag_of_American_Samoa.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/12/American_Samoa_location_map.svg"
+    },
+    {
+      "country_id": 155,
+      "name": "Cook Islands",
+      "capital": "Avarua",
+      "language": "English, Cook Islands Māori",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_the_Cook_Islands.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Cook_Islands_location_map.svg"
+    },
+    {
+      "country_id": 156,
+      "name": "Niue",
+      "capital": "Alofi",
+      "language": "Niuean, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/42/Flag_of_Niue.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Niue_location_map.svg"
+    },
+    {
+      "country_id": 157,
+      "name": "Tokelau",
+      "capital": "Fakaofo",
+      "language": "Tokelauan, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Flag_of_Tokelau.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Tokelau_location_map.svg"
+    },
+    {
+      "country_id": 158,
+      "name": "Wallis and Futuna",
+      "capital": "Mata-Utu",
+      "language": "French",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Flag_of_Wallis_and_Futuna.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/22/Wallis_and_Futuna_location_map.svg"
+    },
+    {
+      "country_id": 159,
+      "name": "Afghanistan",
+      "capital": "Kabul",
+      "language": "Pashto, Dari",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_Afghanistan.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Afghanistan_location_map.svg"
+    },
+    {
+      "country_id": 160,
+      "name": "Bahrain",
+      "capital": "Manama",
+      "language": "Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/2/26/Flag_of_Bahrain.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Bahrain_location_map.svg"
+    },
+    {
+      "country_id": 161,
+      "name": "Bangladesh",
+      "capital": "Dhaka",
+      "language": "Bengali",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Bangladesh.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/29/Bangladesh_location_map.svg"
+    },
+    {
+      "country_id": 162,
+      "name": "Brunei",
+      "capital": "Bandar Seri Begawan",
+      "language": "Malay",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Brunei.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Brunei_location_map.svg"
+    },
+    {
+      "country_id": 163,
+      "name": "Cambodia",
+      "capital": "Phnom Penh",
+      "language": "Khmer",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_Cambodia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Cambodia_location_map.svg"
+    },
+    {
+      "country_id": 164,
+      "name": "China",
+      "capital": "Beijing",
+      "language": "Mandarin",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_China.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/6f/China_location_map.svg"
+    },
+    {
+      "country_id": 165,
+      "name": "India",
+      "capital": "New Delhi",
+      "language": "Hindi, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/41/India_location_map.svg"
+    },
+    {
+      "country_id": 166,
+      "name": "Indonesia",
+      "capital": "Jakarta",
+      "language": "Indonesian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Indonesia_location_map.svg"
+    },
+    {
+      "country_id": 167,
+      "name": "Iran",
+      "capital": "Tehran",
+      "language": "Persian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Iran.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/8/88/Iran_location_map.svg"
+    },
+    {
+      "country_id": 168,
+      "name": "Iraq",
+      "capital": "Baghdad",
+      "language": "Arabic, Kurdish",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Iraq.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/8/85/Iraq_location_map.svg"
+    },
+    {
+      "country_id": 169,
+      "name": "Israel",
+      "capital": "Jerusalem",
+      "language": "Hebrew, Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Israel_location_map.svg"
+    },
+    {
+      "country_id": 170,
+      "name": "Japan",
+      "capital": "Tokyo",
+      "language": "Japanese",
+      "flag": "https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/63/Japan_location_map.svg"
+    },
+    {
+      "country_id": 171,
+      "name": "Jordan",
+      "capital": "Amman",
+      "language": "Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Flag_of_Jordan.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/45/Jordan_location_map.svg"
+    },
+    {
+      "country_id": 172,
+      "name": "Kuwait",
+      "capital": "Kuwait City",
+      "language": "Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Flag_of_Kuwait.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/8/84/Kuwait_location_map.svg"
+    },
+    {
+      "country_id": 173,
+      "name": "Laos",
+      "capital": "Vientiane",
+      "language": "Lao",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/5/56/Flag_of_Laos.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/5/56/Laos_location_map.svg"
+    },
+    {
+      "country_id": 174,
+      "name": "Lebanon",
+      "capital": "Beirut",
+      "language": "Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/5/59/Flag_of_Lebanon.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Lebanon_location_map.svg"
+    },
+    {
+      "country_id": 175,
+      "name": "Malaysia",
+      "capital": "Kuala Lumpur",
+      "language": "Malay",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/6/68/Flag_of_Malaysia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/67/Malaysia_location_map.svg"
+    },
+    {
+      "country_id": 176,
+      "name": "Maldives",
+      "capital": "Malé",
+      "language": "Dhivehi",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/8/81/Flag_of_the_Maldives.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Maldives_location_map.svg"
+    },
+    {
+      "country_id": 177,
+      "name": "Mongolia",
+      "capital": "Ulaanbaatar",
+      "language": "Mongolian",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Mongolia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/3/37/Mongolia_location_map.svg"
+    },
+    {
+      "country_id": 178,
+      "name": "Myanmar",
+      "capital": "Naypyidaw",
+      "language": "Burmese",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Flag_of_Myanmar.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Myanmar_location_map.svg"
+    },
+    {
+      "country_id": 179,
+      "name": "Nepal",
+      "capital": "Kathmandu",
+      "language": "Nepali",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/23/Nepal_location_map.svg"
+    },
+    {
+      "country_id": 180,
+      "name": "North Korea",
+      "capital": "Pyongyang",
+      "language": "Korean",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/7/72/Flag_of_North_Korea.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/4/43/North_Korea_location_map.svg"
+    },
+    {
+      "country_id": 181,
+      "name": "Oman",
+      "capital": "Muscat",
+      "language": "Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Oman.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Oman_location_map.svg"
+    },
+    {
+      "country_id": 182,
+      "name": "Pakistan",
+      "capital": "Islamabad",
+      "language": "Urdu, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/3/32/Flag_of_Pakistan.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Pakistan_location_map.svg"
+    },
+    {
+      "country_id": 183,
+      "name": "Palestine",
+      "capital": "Ramallah",
+      "language": "Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Palestine.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Palestine_location_map.svg"
+    },
+    {
+      "country_id": 184,
+      "name": "Qatar",
+      "capital": "Doha",
+      "language": "Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Qatar.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/18/Qatar_location_map.svg"
+    },
+    {
+      "country_id": 185,
+      "name": "Saudi Arabia",
+      "capital": "Riyadh",
+      "language": "Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/63/Saudi_Arabia_location_map.svg"
+    },
+    {
+      "country_id": 186,
+      "name": "Singapore",
+      "capital": "Singapore",
+      "language": "Malay, Mandarin, Tamil, English",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Singapore.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/3/38/Singapore_location_map.svg"
+    },
+    {
+      "country_id": 187,
+      "name": "South Korea",
+      "capital": "Seoul",
+      "language": "Korean",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_South_Korea.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/e/eb/South_Korea_location_map.svg"
+    },
+    {
+      "country_id": 188,
+      "name": "Sri Lanka",
+      "capital": "Colombo",
+      "language": "Sinhala, Tamil",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Sri_Lanka.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/68/Sri_Lanka_location_map.svg"
+    },
+    {
+      "country_id": 189,
+      "name": "Syria",
+      "capital": "Damascus",
+      "language": "Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/5/53/Flag_of_Syria.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Syria_location_map.svg"
+    },
+    {
+      "country_id": 190,
+      "name": "Taiwan",
+      "capital": "Taipei",
+      "language": "Mandarin",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/42/Flag_of_Taiwan.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Taiwan_location_map.svg"
+    },
+    {
+      "country_id": 191,
+      "name": "Thailand",
+      "capital": "Bangkok",
+      "language": "Thai",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_Thailand.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/5/51/Thailand_location_map.svg"
+    },
+    {
+      "country_id": 192,
+      "name": "Timor-Leste",
+      "capital": "Dili",
+      "language": "Tetum, Portuguese",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/8/80/Flag_of_Timor-Leste.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/15/Timor-Leste_location_map.svg"
+    },
+    {
+      "country_id": 193,
+      "name": "United Arab Emirates",
+      "capital": "Abu Dhabi",
+      "language": "Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/2/23/Flag_of_the_United_Arab_Emirates.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/2/28/United_Arab_Emirates_location_map.svg"
+    },
+    {
+      "country_id": 194,
+      "name": "Yemen",
+      "capital": "Sana'a",
+      "language": "Arabic",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Yemen.svg",
+      "country_shape": "https://upload.wikimedia.org/wikipedia/commons/8/84/Yemen_location_map.svg"
+    }
+  ]
+}
