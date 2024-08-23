@@ -171,7 +171,7 @@
     {"country": "Switzerland", "id": "CHE", "gdp_millions": 881363.95, "population_millions": 8.94},
     {"country": "Syria", "id": "SYR", "gdp_millions": 33494.57, "population_millions": 20.86},
     {"country": "Taiwan", "id": "TWN", "gdp_millions": 426978.85, "population_millions": 23.49},
-    {"country": "Tajikistan", "id": "TJK", "gdp_millios": 9354.28, "population_millions": 9.90},
+    {"country": "Tajikistan", "id": "TJK", "gdp_millions": 9354.28, "population_millions": 9.90},
     {"country": "Tanzania", "id": "TZA", "gdp_millions": 136847.86, "population_millions": 66.81},
     {"country": "Thailand", "id": "THA", "gdp_millions": 652893.12, "population_millions": 72.35},
     {"country": "Timor-Leste", "id": "TLS", "gdp_millions": 2127.54, "population_millions": 2.70},
