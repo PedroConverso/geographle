@@ -67,7 +67,7 @@
     {
       "country_id": 9,
       "name": "Colombia",
-      "capital": "Bogotá",
+      "capital": "Bogota",
       "language": "Spanish",
       "flag": "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg",
       "country_shape": "https://upload.wikimedia.org/wikipedia/commons/7/76/Colombia_location_map.svg"
@@ -75,7 +75,7 @@
     {
       "country_id": 10,
       "name": "Costa Rica",
-      "capital": "San José",
+      "capital": "San Jose",
       "language": "Spanish",
       "flag": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Costa_Rica.svg",
       "country_shape": "https://upload.wikimedia.org/wikipedia/commons/0/05/Costa_Rica_location_map.svg"
@@ -195,7 +195,7 @@
     {
       "country_id": 25,
       "name": "Paraguay",
-      "capital": "Asunción",
+      "capital": "Asuncion",
       "language": "Spanish, Guarani",
       "flag": "https://upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Paraguay.svg",
       "country_shape": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Paraguay_location_map.svg"
@@ -739,7 +739,7 @@
     {
       "country_id": 93,
       "name": "Cameroon",
-      "capital": "Yaoundé",
+      "capital": "Yaounde",
       "language": "French, English",
       "flag": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Cameroon.svg",
       "country_shape": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Cameroon_location_map.svg"
@@ -1003,8 +1003,8 @@
     {
       "country_id": 126,
       "name": "Sao Tome and Principe",
-      "capital": "São Tomé",
-      "language": "Portuguese",
+      "capital": "São Tome",
+      "language": "Postuguese",
       "flag": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Sao_Tome_and_Principe.svg",
       "country_shape": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Sao_Tome_and_Principe_location_map.svg"
     },
@@ -1067,7 +1067,7 @@
     {
       "country_id": 134,
       "name": "Togo",
-      "capital": "Lomé",
+      "capital": "Lome",
       "language": "French",
       "flag": "https://upload.wikimedia.org/wikipedia/commons/6/62/Flag_of_Togo.svg",
       "country_shape": "https://upload.wikimedia.org/wikipedia/commons/8/87/Togo_location_map.svg"
@@ -1403,7 +1403,7 @@
     {
       "country_id": 176,
       "name": "Maldives",
-      "capital": "Malé",
+      "capital": "Male",
       "language": "Dhivehi",
       "flag": "https://upload.wikimedia.org/wikipedia/commons/8/81/Flag_of_the_Maldives.svg",
       "country_shape": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Maldives_location_map.svg"
