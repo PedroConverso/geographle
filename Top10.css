@@ -16,7 +16,6 @@ header{
     align-items: center;
 }
 
-<<<<<<< Updated upstream
 .menudropdown {
     background-color: #B5ACAC;
     width: 0%;
@@ -53,9 +52,6 @@ header{
     width: 80px;
     height: 77px;
 }
-
-=======
->>>>>>> Stashed changes
 
 .Geograph {
    font-size: 13vh;
@@ -94,7 +90,7 @@ header{
     justify-content: center;
     border: solid 7px #B8B4B4;
     
-<<<<<<< Updated upstream
+
 }
 
 .top10 {
@@ -124,7 +120,4 @@ h3 {
     font-family: "Inter" , sans-serif;
     font-weight: 10px;
     font-size: 5vh;
-
-=======
->>>>>>> Stashed changes
 }
