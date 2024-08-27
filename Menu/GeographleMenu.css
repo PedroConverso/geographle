@@ -240,35 +240,34 @@ header{
     font-style: italic;
 }
 
-.lineaetbalera1{
+.lineas{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 90px;
 }
 
-
-.a{
-    width: 100%;
-    height: 100%;
+.lineaetbalera1{
+    display: flex;
     font-size: 45px;
     font-family: "Inter" , sans-serif;
     font-weight: 500;
+    justify-content: space-between;
+}
+
+.lineaetbalera2{
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 30%;
-
-}  
-
-.b{
-    border-bottom: 4px solid #000;
-    color: #F3EFEF;
+    font-size: 45px;
+    font-family: "Inter" , sans-serif;
+    font-weight: 500;
+    gap: 50%;
 }
 
 .dia{
-    width: 100%;
-    height: 20%;
-    background-color: black;
-    justify-content: ;
+    display: flex;
+    flex-direction: column;
+    font-family: "Inter" , sans-serif;
+    font-style: italic;
+    border-top: 4px solid #000;;
 }
 
 .themeMode-check-container {
@@ -293,6 +292,30 @@ header{
     content: "";
     border-radius: 50%;
 }
+
+.themeMode-check-container2 {
+    width: 50px;
+    background-color: #000;
+    border-radius: 50px;
+    border: 4px solid #d9d9d9;
+    display: flex;
+    height: auto;
+    padding: 8px;
+    justify-content: flex-start;
+}
+
+.themeMode-check-container-on2 {
+    justify-content: flex-end !important;
+}
+
+.themeMode-check-container2::after {
+    width: 20px;
+    height: 20px;
+    background-color: #d9d9d9;
+    content: "";
+    border-radius: 50%;
+}
+
 
 .Geograph{
 font-size: 10vh;
