@@ -389,6 +389,71 @@
           "coastline": 15134.0
         }
       ]
+    },
+    {
+      "topic": "Countries with the Highest Levels of Air Pollution (2023)",
+      "items": [
+        {
+          "rank": 1,
+          "country_id": "BGD",
+          "name": "Bangladesh",
+          "air_pollution": 77.1
+        },
+        {
+          "rank": 2,
+          "country_id": "CHN",
+          "name": "China",
+          "air_pollution": 59.6
+        },
+        {
+          "rank": 3,
+          "country_id": "IND",
+          "name": "India",
+          "air_pollution": 51.9
+        },
+        {
+          "rank": 4,
+          "country_id": "PAK",
+          "name": "Pakistan",
+          "air_pollution": 48.2
+        },
+        {
+          "rank": 5,
+          "country_id": "NPL",
+          "name": "Nepal",
+          "air_pollution": 47.4
+        },
+        {
+          "rank": 6,
+          "country_id": "BHR",
+          "name": "Bahrain",
+          "air_pollution": 45.6
+        },
+        {
+          "rank": 7,
+          "country_id": "IDN",
+          "name": "Indonesia",
+          "air_pollution": 45.2
+        },
+        {
+          "rank": 8,
+          "country_id": "IRQ",
+          "name": "Iraq",
+          "air_pollution": 44.6
+        },
+        {
+          "rank": 9,
+          "country_id": "KWT",
+          "name": "Kuwait",
+          "air_pollution": 42.3
+        },
+        {
+          "rank": 10,
+          "country_id": "NGA",
+          "name": "Nigeria",
+          "air_pollution": 41.5
+        }
+      ]
     }
   ]
 }
