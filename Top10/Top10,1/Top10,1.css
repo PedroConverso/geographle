@@ -9,6 +9,8 @@ header{
 
 body{
     background-color: #F1EAEA;
+    margin: 0;
+    padding: 0;
 }
 
 .menudropdown {
@@ -312,21 +314,15 @@ body{
 .Geograph{
 font-size: 10vh;
 margin: 0%;
-color: #067E00;
+color: #4F4F4F;
 font-family: "Inter" , sans-serif;
 font-style: italic;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
-.le{
-    font-size: 10vh;
-    margin: 0%;
-    color: #272DA3;
-    font-family: "Inter" , sans-serif;
-    font-style: italic;
-}
-
-.juntitos{
-    display: flex;
+a{
     text-decoration: none;
 }
 
@@ -342,3 +338,69 @@ font-style: italic;
     align-items: center;
     height: 80%;
 }   
+
+.edinf{
+    display: flex !important;
+}
+
+.infodown{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(55, 55, 55, 0.25);
+    backdrop-filter: blur(6px);
+    overflow: hidden;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+.muchainfo{
+    display: flex;
+    width: 80vh;
+    height: 85%;
+    background-color: #F3EFEF;
+    overflow: hidden;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: space-between;
+    font-family: "Inter" , sans-serif;
+    border: 3px solid #000;
+}
+
+
+
+.todo{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.dos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-left: 30%;
+}
+
+.iminf{
+    height: 47px;
+    width: 50px;
+}
+
+.cruz3{
+    height: 97px;
+    width: 100px;
+}
+
+.inf{
+    font-size: 70px;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.desc{
+    font-weight: 700;
+
+}

@@ -9,6 +9,8 @@ header{
 
 body{
     background-color: #F1EAEA;
+    margin: 0;
+    padding: 0;
 }
 
 .menudropdown {
