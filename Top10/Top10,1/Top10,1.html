@@ -8,52 +8,121 @@
     <link rel="stylesheet" href="Top10,1.css">
 </head>
 <body>
-    <div class="optidown" id="optidown">
-        <div class="opdown">
-          <div class="penedoble">
-            <div class="etbal">
-              <div class="sett">SETTINGS</div>
-            </div>
-            <img class="cruz2" src="../Img/tabler_xbox-x-filled.png" onclick="optisdown()">
+    <div 
+    class="menudropdown"
+    id="menudropdown"
+    >
+    <img src="../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
+
+    <div class="gamesMenuContainer">
+
+        <div class="gameMenu">JUEGO 1
+         <div class="Gamemc"></div>
+        </div>
+
+        <div class="gameMenu">JUEGO 2
+          <div class="Gamemc"></div>
+        </div>
+
+        <div class="gameMenu">JUEGO 3
+          <div class="Gamemc"></div>
+        </div>
+
+        <div class="gameMenu">JUEGO 4
+          <div class="Gamemc"></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="estadown" id="estadown">
+      <div class="estasdown">
+        <div class="pene">
+          <div class="intro">
+            <div class="sta">STATISTICS</div>
+            <div class="sub">ALL GAMES</div>
           </div>
-          <div class="lineas">
-            <div class="lineaetbalera1">
-              <div class="dark">DARK THEME</div>
-              <label for="themeMode-check">
-                <div class="themeMode-check-container" id="themeMode-check-container"></div>
-              </label>
-              <input type="checkbox" name="themeMode-check" id="themeMode-check" style="display: none;" onchange="thememode()">
+          <img class="cruz" src="../Img/tabler_xbox-x-filled.png" onclick="openestadown()">
+        </div>
+        <div class="sepa">
+          <div class="separar">
+          <div class="sep1">
+            <div class="cuasta">
+              <p>99</p>
+              <p>PLAYED</p>
             </div>
-            <div class="lineaetbalera2">
-              <div class="win">WINNING ANIMATION</div>
-              <label for="themeMode-check2">
-                <div class="themeMode-check-container2" id="themeMode-check-container2"></div>
-              </label>
-              <input type="checkbox" name="themeMode-check2" id="themeMode-check2" style="display: none;" onchange="thememode2()">
+            <div class="cuasta">
+              <P>99</P>
+              <P>WINS</P>
+            </div>
+            <div class="cuasta">
+              <P>100%</P>
+              <P>%WINS</P>
             </div>
           </div>
-            <div class="dia">
-              <div class="numdia">GEOGRAPHLE #1</div>
-              <div class="version">V. 1.00</div>
+          <div class="sep2">
+            <div class="cuasta">
+              <P>99</P>
+              <P>STREAK</P>
             </div>
+            <div class="cuasta">
+              <P>99</P>
+              <P>BEST STREAK</P>
+            </div>
+            <div class="cuasta">
+              <Img src="../Img/material-symbols_share.png"></Img>
+              <P>SHARE</P>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
-  
-      <header>
-        <div class="Login">
-          <img class="Imgmenu" src="../Img/mingcute_menu-fill.png" onclick="openmenudropdown()">
-        </div>
-          <a href="../Menu/GeographleMenu.html" class="juntitos">
-            <h1 class="Geograph">GEOGRAPH</h1>
-            <h1 class="le">LE</h1>
-          </a>
-          <div class="iconos">
-            <img class="stats" src="../Img/gridicons_stats-up.png" onclick="openestadown()">
-            <img class="options" src="../Img/mdi_settings.png" onclick="optisdown()">
+    </div>
+    <div class="optidown" id="optidown">
+      <div class="opdown">
+        <div class="penedoble">
+          <div class="etbal">
+            <div class="sett">SETTINGS</div>
           </div>
-      </header>
-  
+          <img class="cruz2" src="../Img/tabler_xbox-x-filled.png" onclick="optisdown()">
+        </div>
+        <div class="lineas">
+          <div class="lineaetbalera1">
+            <div class="dark">DARK THEME</div>
+            <label for="themeMode-check">
+              <div class="themeMode-check-container" id="themeMode-check-container"></div>
+            </label>
+            <input type="checkbox" name="themeMode-check" id="themeMode-check" style="display: none;" onchange="thememode()">
+          </div>
+          <div class="lineaetbalera2">
+            <div class="win">WINNING ANIMATION</div>
+            <label for="themeMode-check2">
+              <div class="themeMode-check-container2" id="themeMode-check-container2"></div>
+            </label>
+            <input type="checkbox" name="themeMode-check2" id="themeMode-check2" style="display: none;" onchange="thememode2()">
+          </div>
+        </div>
+          <div class="dia">
+            <div class="numdia">GEOGRAPHLE #1</div>
+            <div class="version">V. 1.00</div>
+          </div>
+      </div>
+    </div>
 
+    <header>
+      <div class="Login">
+        <img class="Imgmenu" src="../Img/mingcute_menu-fill.png" onclick="openmenudropdown()">
+      </div>
+
+      <a href="../Menu/GeographleMenu.html" class="juntitos">
+        <h1 class="Geograph">GEOGRAPH</h1>
+        <h1 class="le">LE</h1>
+      </a>
+
+        <div class="iconos">
+          <img class="stats" src="../Img/gridicons_stats-up.png" onclick="openestadown()">
+          <img class="options" src="../Img/mdi_settings.png" onclick="optisdown()">
+        </div>
+    </header>
     <script src="Top10,1.js"></script>
 </body>
 </html>
