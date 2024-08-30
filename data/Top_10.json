@@ -324,6 +324,71 @@
           "tourists_in_millions": 11.48
         }
       ]
+    },
+    {
+      "topic": "Countries with the Longest Coastlines",
+      "items": [
+        {
+          "rank": 1,
+          "country_id": "CAN",
+          "name": "Canada",
+          "coastline": 202080.0
+        },
+        {
+          "rank": 2,
+          "country_id": "NOR",
+          "name": "Norway",
+          "coastline": 83281.0
+        },
+        {
+          "rank": 3,
+          "country_id": "IDN",
+          "name": "Indonesia",
+          "coastline": 54716.0
+        },
+        {
+          "rank": 4,
+          "country_id": "GRL",
+          "name": "Greenland",
+          "coastline": 44087.0
+        },
+        {
+          "rank": 5,
+          "country_id": "RUS",
+          "name": "Russia",
+          "coastline": 37653.0
+        },
+        {
+          "rank": 6,
+          "country_id": "PHL",
+          "name": "Philippines",
+          "coastline": 36289.0
+        },
+        {
+          "rank": 7,
+          "country_id": "JPN",
+          "name": "Japan",
+          "coastline": 29751.0
+        },
+        {
+          "rank": 8,
+          "country_id": "AUS",
+          "name": "Australia",
+          "coastline": 25957.0
+        },
+        {
+          "rank": 9,
+          "country_id": "USA",
+          "name": "United States of America",
+          "coastline": 19924.0
+        },
+        {
+          "rank": 10,
+          "country_id": "NZL",
+          "name": "New Zealand",
+          "coastline": 15134.0
+        }
+      ]
     }
   ]
 }
