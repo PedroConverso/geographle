@@ -327,6 +327,7 @@ font-style: italic;
 
 .juntitos{
     display: flex;
+    text-decoration: none;
 }
 
 .iconos{
