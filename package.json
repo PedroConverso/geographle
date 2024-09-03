@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/3-TIC-ORT/proyecto-3-geographle/issues"
   },
-  "homepage": "https://github.com/3-TIC-ORT/proyecto-3-geographle#readme"
+  "homepage": "https://github.com/3-TIC-ORT/proyecto-3-geographle#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }

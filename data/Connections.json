@@ -1,775 +1,775 @@
 [
-    {
+  {
       "country_id": "ARG",
       "nombre_pais": "Argentina",
       "words_related": [
-        "Tango",
-        "Mate",
-        "Patagonia",
-        "Gauchos",
-        "Pampas",
-        "Empanadas",
-        "Asado",
-        "Andes",
-        "Buenos Aires",
-        "Malbec",
-        "River Plate",
-        "Maradona"
+          "Tango",
+          "Mate",
+          "Patagonia",
+          "Gauchos",
+          "Pampas",
+          "Empanadas",
+          "Asado",
+          "Andes",
+          "Buenos Aires",
+          "Malbec",
+          "River Plate",
+          "Maradona"
       ]
-    },
-    {
+  },
+  {
       "country_id": "AUS",
       "nombre_pais": "Australia",
       "words_related": [
-        "Outback",
-        "Kangaroo",
-        "Koala",
-        "Great Barrier Reef",
-        "Sydney Opera House",
-        "Ayers Rock",
-        "Bushrangers",
-        "Bondi Beach",
-        "Platypus",
-        "Tasmania",
-        "Uluru",
-        "Dingo"
+          "Outback",
+          "Kangaroo",
+          "Koala",
+          "Great Barrier Reef",
+          "Sydney Opera House",
+          "Ayers Rock",
+          "Bushrangers",
+          "Bondi Beach",
+          "Platypus",
+          "Tasmania",
+          "Uluru",
+          "Dingo"
       ]
-    },
-    {
+  },
+  {
       "country_id": "AUT",
       "nombre_pais": "Austria",
       "words_related": [
-        "Vienna",
-        "Alps",
-        "Schnitzel",
-        "Mozart",
-        "Hofburg",
-        "Café Culture",
-        "Viennese Waltz",
-        "Sachertorte",
-        "St. Stephen's Cathedral",
-        "Salzburg",
-        "Tyrol",
-        "Danube"
+          "Vienna",
+          "Alps",
+          "Schnitzel",
+          "Mozart",
+          "Hofburg",
+          "Café Culture",
+          "Viennese Waltz",
+          "Sachertorte",
+          "St. Stephen's Cathedral",
+          "Salzburg",
+          "Tyrol",
+          "Danube"
       ]
-    },
-    {
+  },
+  {
       "country_id": "BEL",
       "nombre_pais": "Belgium",
       "words_related": [
-        "Brussels Sprouts",
-        "Manneken Pis",
-        "Fries",
-        "Waffles",
-        "Comic Strips",
-        "Canals",
-        "Atomium",
-        "Flemish",
-        "Liege",
-        "Bruges",
-        "Beer",
-        "Grand Place"
+          "Brussels Sprouts",
+          "Manneken Pis",
+          "Fries",
+          "Waffles",
+          "Comic Strips",
+          "Canals",
+          "Atomium",
+          "Flemish",
+          "Liege",
+          "Bruges",
+          "Beer",
+          "Grand Place"
       ]
-    },
-    {
+  },
+  {
       "country_id": "BRA",
       "nombre_pais": "Brazil",
       "words_related": [
-        "Carnival",
-        "Amazon Rainforest",
-        "Samba",
-        "Christ the Redeemer",
-        "Favela",
-        "Flamengo",
-        "Copacabana",
-        "Capoeira",
-        "Açaí",
-        "Iguazu Falls",
-        "Bossa Nova",
-        "Pelé"
+          "Carnival",
+          "Amazon Rainforest",
+          "Samba",
+          "Christ the Redeemer",
+          "Favela",
+          "Flamengo",
+          "Copacabana",
+          "Capoeira",
+          "Açaí",
+          "Iguazu Falls",
+          "Bossa Nova",
+          "Pelé"
       ]
-    },
-    {
+  },
+  {
       "country_id": "CAN",
       "nombre_pais": "Canada",
       "words_related": [
-        "Maple Syrup",
-        "Niagara Falls",
-        "Hockey",
-        "Mounties",
-        "Loonie",
-        "Poutine",
-        "Rockies",
-        "Tim Hortons",
-        "Vancouver",
-        "Quebec",
-        "Moose",
-        "Igloos"
+          "Maple Syrup",
+          "Niagara Falls",
+          "Hockey",
+          "Mounties",
+          "Loonie",
+          "Poutine",
+          "Rockies",
+          "Tim Hortons",
+          "Vancouver",
+          "Quebec",
+          "Moose",
+          "Igloos"
       ]
-    },
-    {
+  },
+  {
       "country_id": "CHL",
       "nombre_pais": "Chile",
       "words_related": [
-        "Atacama Desert",
-        "Easter Island",
-        "Santiago",
-        "Valparaíso",
-        "Pisco",
-        "Andes Mountains",
-        "Patagonia",
-        "Chilean Sea Bass",
-        "Vineyards",
-        "Alexis Sanchez",
-        "Mapuche",
-        "Papel Mache"
+          "Atacama Desert",
+          "Easter Island",
+          "Santiago",
+          "Valparaíso",
+          "Pisco",
+          "Andes Mountains",
+          "Patagonia",
+          "Chilean Sea Bass",
+          "Vineyards",
+          "Alexis Sanchez",
+          "Mapuche",
+          "Papel Mache"
       ]
-    },
-    {
+  },
+  {
       "country_id": "CHN",
       "nombre_pais": "China",
       "words_related": [
-        "Great Wall",
-        "Terracotta Warriors",
-        "Forbidden City",
-        "Yangtze River",
-        "Panda",
-        "Silk Road",
-        "Beijing Opera",
-        "Dim Sum",
-        "Hong Kong",
-        "Tea Ceremony",
-        "Temple of Heaven",
-        "Bamboo"
+          "Great Wall",
+          "Terracotta Warriors",
+          "Forbidden City",
+          "Yangtze River",
+          "Panda",
+          "Silk Road",
+          "Beijing Opera",
+          "Dim Sum",
+          "Hong Kong",
+          "Tea Ceremony",
+          "Temple of Heaven",
+          "Bamboo"
       ]
-    },
-    {
+  },
+  {
       "country_id": "COL",
       "nombre_pais": "Colombia",
       "words_related": [
-        "Coffee",
-        "Cartagena",
-        "Emeralds",
-        "Andes",
-        "Barranquilla",
-        "Falcao",
-        "Bogotá",
-        "Salsa",
-        "Gold Museum",
-        "Rosales",
-        "Gabriel García Márquez",
-        "El Dorado"
+          "Coffee",
+          "Cartagena",
+          "Emeralds",
+          "Andes",
+          "Barranquilla",
+          "Falcao",
+          "Bogotá",
+          "Salsa",
+          "Gold Museum",
+          "Rosales",
+          "Gabriel García Márquez",
+          "El Dorado"
       ]
-    },
-    {
+  },
+  {
       "country_id": "DNK",
       "nombre_pais": "Denmark",
       "words_related": [
-        "Tivoli Gardens",
-        "Legoland",
-        "Little Mermaid",
-        "Nyhavn",
-        "Rosenborg Castle",
-        "Hans Christian Andersen",
-        "Copenhagen",
-        "Smørrebrød",
-        "Viking Ships",
-        "Lego",
-        "Rye Bread"
+          "Tivoli Gardens",
+          "Legoland",
+          "Little Mermaid",
+          "Nyhavn",
+          "Rosenborg Castle",
+          "Hans Christian Andersen",
+          "Copenhagen",
+          "Smørrebrød",
+          "Viking Ships",
+          "Lego",
+          "Rye Bread"
       ]
-    },
-    {
+  },
+  {
       "country_id": "EGY",
       "nombre_pais": "Egypt",
       "words_related": [
-        "Pyramids of Giza",
-        "Sphinx",
-        "Nile River",
-        "Hieroglyphs",
-        "Luxor Temple",
-        "Valley of the Kings",
-        "Cairo",
-        "Papyrus",
-        "Mummies",
-        "Aswan High Dam",
-        "King Tutankhamun",
-        "Alexandria"
+          "Pyramids of Giza",
+          "Sphinx",
+          "Nile River",
+          "Hieroglyphs",
+          "Luxor Temple",
+          "Valley of the Kings",
+          "Cairo",
+          "Papyrus",
+          "Mummies",
+          "Aswan High Dam",
+          "King Tutankhamun",
+          "Alexandria"
       ]
-    },
-    {
+  },
+  {
       "country_id": "FRA",
       "nombre_pais": "France",
       "words_related": [
-        "Eiffel Tower",
-        "Louvre Museum",
-        "Château de Chambord",
-        "Champagne",
-        "Baguettes",
-        "Côte d'Azur",
-        "Versailles",
-        "Mont Saint-Michel",
-        "Croissants",
-        "Provence",
-        "Bordeaux",
-        "Normandy"
+          "Eiffel Tower",
+          "Louvre Museum",
+          "Château de Chambord",
+          "Champagne",
+          "Baguettes",
+          "Côte d'Azur",
+          "Versailles",
+          "Mont Saint-Michel",
+          "Croissants",
+          "Provence",
+          "Bordeaux",
+          "Normandy"
       ]
-    },
-    {
+  },
+  {
       "country_id": "DEU",
       "nombre_pais": "Germany",
       "words_related": [
-        "Brandenburg Gate",
-        "Oktoberfest",
-        "Bavarian Beer",
-        "Neuschwanstein Castle",
-        "Berlin Wall",
-        "Black Forest",
-        "Sausage",
-        "Munich",
-        "Cologne Cathedral",
-        "Sauerbraten",
-        "Hamburg Port",
-        "Reichstag"
+          "Brandenburg Gate",
+          "Oktoberfest",
+          "Bavarian Beer",
+          "Neuschwanstein Castle",
+          "Berlin Wall",
+          "Black Forest",
+          "Sausage",
+          "Munich",
+          "Cologne Cathedral",
+          "Sauerbraten",
+          "Hamburg Port",
+          "Reichstag"
       ]
-    },
-    {
+  },
+  {
       "country_id": "GRC",
       "nombre_pais": "Greece",
       "words_related": [
-        "Acropolis",
-        "Santorini",
-        "Parthenon",
-        "Olympic Games",
-        "Meteora",
-        "Mykonos",
-        "Souvlaki",
-        "Crete",
-        "Athens",
-        "Delphi",
-        "Aegean Sea",
-        "Retsina"
+          "Acropolis",
+          "Santorini",
+          "Parthenon",
+          "Olympic Games",
+          "Meteora",
+          "Mykonos",
+          "Souvlaki",
+          "Crete",
+          "Athens",
+          "Delphi",
+          "Aegean Sea",
+          "Retsina"
       ]
-    },
-    {
+  },
+  {
       "country_id": "HUN",
       "nombre_pais": "Hungary",
       "words_related": [
-        "Budapest",
-        "Thermal Baths",
-        "Goulash",
-        "Danube River",
-        "Buda Castle",
-        "Puszta",
-        "Tokaji Wine",
-        "Heroes' Square",
-        "Fishermen's Bastion",
-        "Hortobágy",
-        "Paprika",
-        "Hungarian Rhapsody"
+          "Budapest",
+          "Thermal Baths",
+          "Goulash",
+          "Danube River",
+          "Buda Castle",
+          "Puszta",
+          "Tokaji Wine",
+          "Heroes' Square",
+          "Fishermen's Bastion",
+          "Hortobágy",
+          "Paprika",
+          "Hungarian Rhapsody"
       ]
-    },
-    {
+  },
+  {
       "country_id": "IND",
       "nombre_pais": "India",
       "words_related": [
-        "Taj Mahal",
-        "Bollywood",
-        "Ganges River",
-        "Yoga",
-        "Spices",
-        "Rajasthan",
-        "Holi Festival",
-        "Diwali",
-        "Tikka Masala",
-        "Mysore Palace",
-        "Curry",
-        "Elephants"
+          "Taj Mahal",
+          "Bollywood",
+          "Ganges River",
+          "Yoga",
+          "Spices",
+          "Rajasthan",
+          "Holi Festival",
+          "Diwali",
+          "Tikka Masala",
+          "Mysore Palace",
+          "Curry",
+          "Elephants"
       ]
-    },
-    {
+  },
+  {
       "country_id": "IDN",
       "nombre_pais": "Indonesia",
       "words_related": [
-        "Bali",
-        "Borobudur Temple",
-        "Komodo Dragon",
-        "Java",
-        "Rice Paddies",
-        "Sumatra",
-        "Diverse Islands",
-        "Batik",
-        "Gamelan Music",
-        "Mount Rinjani",
-        "Uluwatu Temple",
-        "Yogyakarta"
+          "Bali",
+          "Borobudur Temple",
+          "Komodo Dragon",
+          "Java",
+          "Rice Paddies",
+          "Sumatra",
+          "Diverse Islands",
+          "Batik",
+          "Gamelan Music",
+          "Mount Rinjani",
+          "Uluwatu Temple",
+          "Yogyakarta"
       ]
-    },
-    {
+  },
+  {
       "country_id": "ISR",
       "nombre_pais": "Israel",
       "words_related": [
-        "Jerusalem",
-        "Dead Sea",
-        "Tel Aviv",
-        "Masada",
-        "Western Wall",
-        "Nazareth",
-        "Negev Desert",
-        "Galilee",
-        "Haifa",
-        "Mediterranean Coast",
-        "Dome of the Rock",
-        "Matza"
+          "Jerusalem",
+          "Dead Sea",
+          "Tel Aviv",
+          "Masada",
+          "Western Wall",
+          "Nazareth",
+          "Negev Desert",
+          "Galilee",
+          "Haifa",
+          "Mediterranean Coast",
+          "Dome of the Rock",
+          "Matza"
       ]
-    },
-    {
+  },
+  {
       "country_id": "ITA",
       "nombre_pais": "Italy",
       "words_related": [
-        "Rome",
-        "Venice",
-        "Florence",
-        "Colosseum",
-        "Pizza",
-        "Leaning Tower",
-        "Renaissance Art",
-        "Milan",
-        "Tuscan Countryside",
-        "Vatican City",
-        "Pompeii",
-        "Gelato"
+          "Rome",
+          "Venice",
+          "Florence",
+          "Colosseum",
+          "Pizza",
+          "Leaning Tower",
+          "Renaissance Art",
+          "Milan",
+          "Tuscan Countryside",
+          "Vatican City",
+          "Pompeii",
+          "Gelato"
       ]
-    },
-    {
+  },
+  {
       "country_id": "IRL",
       "nombre_pais": "Ireland",
       "words_related": [
-        "Dublin",
-        "Shamrocks",
-        "Cliffs of Moher",
-        "Gaelic",
-        "Green Hills",
-        "Leprechauns",
-        "Celtic Music",
-        "Trinity College",
-        "Guinness",
-        "Kilkenny",
-        "Roy Keane",
-        "Dingle Peninsula"
+          "Dublin",
+          "Shamrocks",
+          "Cliffs of Moher",
+          "Gaelic",
+          "Green Hills",
+          "Leprechauns",
+          "Celtic Music",
+          "Trinity College",
+          "Guinness",
+          "Kilkenny",
+          "Roy Keane",
+          "Dingle Peninsula"
       ]
-    },
-    {
+  },
+  {
       "country_id": "JPN",
       "nombre_pais": "Japan",
       "words_related": [
-        "Tokyo",
-        "Kyoto",
-        "Cherry Blossoms",
-        "Sushi",
-        "Sumo",
-        "Geisha",
-        "Mt. Fuji",
-        "Shinto Shrines",
-        "Kimonos",
-        "Samurai",
-        "Zen Gardens",
-        "Toyota"
+          "Tokyo",
+          "Kyoto",
+          "Cherry Blossoms",
+          "Sushi",
+          "Sumo",
+          "Mount Fuji",
+          "Geisha",
+          "Samurai",
+          "Shibuya Crossing",
+          "Onsen",
+          "Origami",
+          "Sakura"
       ]
-    },
-    {
-      "country_id": "MYS",
-      "nombre_pais": "Malaysia",
+  },
+  {
+      "country_id": "KEN",
+      "nombre_pais": "Kenya",
       "words_related": [
-        "Kuala Lumpur",
-        "Petronas Towers",
-        "Batu Caves",
-        "Rainforest",
-        "Penang",
-        "Langkawi",
-        "Roti Canai",
-        "Nasi Lemak",
-        "Tropical Islands",
-        "Cultural Diversity",
-        "Orangutans",
-        "Georgetown"
+          "Maasai Mara",
+          "Nairobi",
+          "Mount Kenya",
+          "Safari",
+          "Elephants",
+          "Rift Valley",
+          "Swahili",
+          "Giraffes",
+          "Lamu",
+          "Kenyan Coffee",
+          "Tsavo",
+          "Mombasa"
       ]
-    },
-    {
-      "country_id": "MEX",
-      "nombre_pais": "Mexico",
-      "words_related": [
-        "Chichen Itza",
-        "Tacos",
-        "Tequila",
-        "Mariachi",
-        "Cinco de Mayo",
-        "Frida Kahlo",
-        "Day of the Dead",
-        "Cancun",
-        "Maya Ruins",
-        "Cruz Azul",
-        "Sombrero",
-        "Aztec"
-      ]
-    },
-    {
-      "country_id": "NLD",
-      "nombre_pais": "Netherlands",
-      "words_related": [
-        "Tulips",
-        "Windmills",
-        "Canals",
-        "Amsterdam",
-        "Dikes",
-        "Clogs",
-        "Van Gogh",
-        "Cruyff",
-        "Gouda",
-        "Rembrandt",
-        "Bicycles",
-        "Keukenhof"
-      ]
-    },
-    {
-      "country_id": "NGA",
-      "nombre_pais": "Nigeria",
-      "words_related": [
-        "Lagos",
-        "Nollywood",
-        "Yam",
-        "Oshsimen",
-        "Bantu",
-        "Lagos Lagoon",
-        "Igbo",
-        "Sankofa",
-        "Fulani",
-        "Benin Bronzes",
-        "Aso Rock",
-        "Sahel"
-      ]
-    },
-    {
-      "country_id": "NOR",
-      "nombre_pais": "Norway",
-      "words_related": [
-        "Oslo",
-        "Midnight Sun",
-        "Erling Halland",
-        "Bergen",
-        "Sami Culture",
-        "Lofoten Islands",
-        "Geirangerfjord",
-        "Stave Churches",
-        "Røros",
-        "Vikings",
-        "Fjords",
-        "Northern Lights"
-      ]
-    },
-    {
-      "country_id": "PER",
-      "nombre_pais": "Peru",
-      "words_related": [
-        "Machu Picchu",
-        "Lima",
-        "Nazca Lines",
-        "Ceviche",
-        "Inca Trail",
-        "Cusco",
-        "Sacred Valley",
-        "Quechua",
-        "Potato Varieties",
-        "Amazon Basin",
-        "Pisco",
-        "Llamas"
-      ]
-    },
-    {
-      "country_id": "POL",
-      "nombre_pais": "Poland",
-      "words_related": [
-        "Kraków",
-        "Wawel Castle",
-        "Pierogi",
-        "Warsaw",
-        "Auschwitz",
-        "Gdansk",
-        "Białowieża Forest",
-        "Tatra Mountains",
-        "Lewandowski",
-        "Żurek",
-        "Vodka",
-        "Borscht"
-      ]
-    },
-    {
-      "country_id": "PRT",
-      "nombre_pais": "Portugal",
-      "words_related": [
-        "Lisbon",
-        "Port Wine",
-        "Cristiano Ronaldo",
-        "Azulejos",
-        "Algarve",
-        "Cork",
-        "Douro Valley",
-        "Pastéis de Nata",
-        "Portuguese Man o' War",
-        "Sintra",
-        "Madeira",
-        "Coimbra"
-      ]
-    },
-    {
-      "country_id": "ROU",
-      "nombre_pais": "Romania",
-      "words_related": [
-        "Transylvania",
-        "Carpathians",
-        "Dracula",
-        "Bucharest",
-        "Castles",
-        "Dacia",
-        "Folk Traditions",
-        "Sibiu",
-        "Bran Castle",
-        "Gheorghe Hagi",
-        "Peles Castle",
-        "Mănăstirea Horezu"
-      ]
-    },
-    {
-      "country_id": "RUS",
-      "nombre_pais": "Russia",
-      "words_related": [
-        "Moscow",
-        "St. Petersburg",
-        "URSS",
-        "Volga River",
-        "Ballet",
-        "Stalin",
-        "Caviar",
-        "Kremlin",
-        "Red Square",
-        "Siberia",
-        "Winter",
-        "Trans-Siberian"
-      ]
-    },
-    {
-      "country_id": "SAU",
-      "nombre_pais": "Saudi Arabia",
-      "words_related": [
-        "Desert",
-        "Camel",
-        "Riyadh",
-        "Oasis",
-        "Mecca",
-        "Oil",
-        "Bedouin",
-        "Sand Dunes",
-        "Islamic Architecture",
-        "Al-Nassr",
-        "Hijaz",
-        "Red Sea"
-      ]
-    },
-    {
-      "country_id": "ZAF",
-      "nombre_pais": "South Africa",
-      "words_related": [
-        "Safari",
-        "Cape Town",
-        "Apartheid",
-        "Wildlife",
-        "Table Mountain",
-        "Kruger Park",
-        "Robben Island",
-        "Wine",
-        "Zulu",
-        "Gold",
-        "Townships",
-        "Springbok"
-      ]
-    },
-    {
+  },
+  {
       "country_id": "KOR",
       "nombre_pais": "South Korea",
       "words_related": [
-        "Seoul",
-        "K-Pop",
-        "Kimchi",
-        "Hanbok",
-        "Son Heung-Min",
-        "Namsan Tower",
-        "Gyeongbokgung",
-        "BTS",
-        "Tteokbokki",
-        "Jjimjilbang",
-        "Taekwondo",
-        "Jeju Island"
+          "Seoul",
+          "K-Pop",
+          "Kimchi",
+          "Gyeongbokgung Palace",
+          "Hanbok",
+          "DMZ",
+          "Jjajangmyeon",
+          "Jeju Island",
+          "Hallyu",
+          "BTS",
+          "Taekwondo",
+          "Korean Wave"
       ]
-    },
-    {
+  },
+  {
+      "country_id": "LUX",
+      "nombre_pais": "Luxembourg",
+      "words_related": [
+          "Grand Duchy",
+          "Luxembourg City",
+          "Ardennes",
+          "Bock Casemates",
+          "Mullerthal",
+          "Luxembourg Castle",
+          "Cider",
+          "Gelle Fra",
+          "Pétrusse",
+          "European Union",
+          "Luxembourg Gardens",
+          "Notre-Dame Cathedral"
+      ]
+  },
+  {
+      "country_id": "MEX",
+      "nombre_pais": "Mexico",
+      "words_related": [
+          "Tacos",
+          "Chichen Itza",
+          "Mariachi",
+          "Tequila",
+          "Mexico City",
+          "Cancún",
+          "Aztec",
+          "Maya",
+          "Salsa",
+          "Guacamole",
+          "Day of the Dead",
+          "Sombrero"
+      ]
+  },
+  {
+      "country_id": "NGA",
+      "nombre_pais": "Nigeria",
+      "words_related": [
+          "Lagos",
+          "Nollywood",
+          "Savannah",
+          "Oil",
+          "Jollof Rice",
+          "Biafra",
+          "African Music",
+          "Benin City",
+          "Kano",
+          "Ibo",
+          "Yoruba",
+          "Hausa"
+      ]
+  },
+  {
+      "country_id": "NLD",
+      "nombre_pais": "Netherlands",
+      "words_related": [
+          "Amsterdam",
+          "Tulips",
+          "Windmills",
+          "Canals",
+          "Cycling",
+          "Van Gogh",
+          "Cheese",
+          "Anne Frank House",
+          "Dikes",
+          "Rotterdam",
+          "Rijksmuseum",
+          "King's Day"
+      ]
+  },
+  {
+      "country_id": "NZL",
+      "nombre_pais": "New Zealand",
+      "words_related": [
+          "Auckland",
+          "Kiwi",
+          "Lord of the Rings",
+          "Maori",
+          "Fiordland",
+          "Hobbits",
+          "Queenstown",
+          "Rotorua",
+          "Wellington",
+          "Tongariro",
+          "Bay of Islands",
+          "Glaciers"
+      ]
+  },
+  {
+      "country_id": "NOR",
+      "nombre_pais": "Norway",
+      "words_related": [
+          "Oslo",
+          "Fjords",
+          "Northern Lights",
+          "Vikings",
+          "Bergen",
+          "Trolltunga",
+          "Sami Culture",
+          "Lofoten Islands",
+          "Geirangerfjord",
+          "Midnight Sun",
+          "Stave Churches",
+          "Skiing"
+      ]
+  },
+  {
+      "country_id": "PER",
+      "nombre_pais": "Peru",
+      "words_related": [
+          "Machu Picchu",
+          "Lima",
+          "Inca Empire",
+          "Ceviche",
+          "Nazca Lines",
+          "Cusco",
+          "Andes Mountains",
+          "Lake Titicaca",
+          "Machu Picchu",
+          "Pisco Sour",
+          "Sacsayhuamán",
+          "Huacachina"
+      ]
+  },
+  {
+      "country_id": "POL",
+      "nombre_pais": "Poland",
+      "words_related": [
+          "Warsaw",
+          "Kraków",
+          "Pierogi",
+          "Auschwitz",
+          "Gdansk",
+          "Wawel Castle",
+          "Solidarity",
+          "Tatra Mountains",
+          "Chopin",
+          "Ghetto",
+          "Bialowieza Forest",
+          "Borscht"
+      ]
+  },
+  {
+      "country_id": "PRT",
+      "nombre_pais": "Portugal",
+      "words_related": [
+          "Lisbon",
+          "Port Wine",
+          "Fado",
+          "Azores",
+          "Madeira",
+          "Porto",
+          "Beaches",
+          "Cork",
+          "Pastéis de Nata",
+          "Douro Valley",
+          "Sintra",
+          "Padrão dos Descobrimentos"
+      ]
+  },
+  {
+      "country_id": "ROU",
+      "nombre_pais": "Romania",
+      "words_related": [
+          "Bucharest",
+          "Dracula",
+          "Transylvania",
+          "Carpathian Mountains",
+          "Peles Castle",
+          "Bran Castle",
+          "Sibiu",
+          "Dacians",
+          "Danube River",
+          "Maramureș",
+          "Cărturești Library",
+          "Oradea"
+      ]
+  },
+  {
+      "country_id": "RUS",
+      "nombre_pais": "Russia",
+      "words_related": [
+          "Moscow",
+          "Saint Petersburg",
+          "Trans-Siberian Railway",
+          "Red Square",
+          "Kremlin",
+          "Ballet",
+          "Tsar",
+          "Caviar",
+          "Volga River",
+          "Borscht",
+          "Siberia",
+          "Bolshoi Theatre"
+      ]
+  },
+  {
+      "country_id": "ZAF",
+      "nombre_pais": "South Africa",
+      "words_related": [
+          "Johannesburg",
+          "Cape Town",
+          "Apartheid",
+          "Table Mountain",
+          "Kruger National Park",
+          "Nelson Mandela",
+          "Gold Mine",
+          "Bantu",
+          "Zulu",
+          "Wine",
+          "Robben Island",
+          "Safari"
+      ]
+  },
+  {
       "country_id": "ESP",
       "nombre_pais": "Spain",
       "words_related": [
-        "Tapas",
-        "Flamenco",
-        "Bullfighting",
-        "Sagrada Familia",
-        "Paella",
-        "Sangria",
-        "Granada",
-        "Seville",
-        "Real Madrid",
-        "Barcelona",
-        "Iberian Ham",
-        "Picasso"
+          "Madrid",
+          "Barcelona",
+          "Flamenco",
+          "Paella",
+          "Sagrada Familia",
+          "Siesta",
+          "Tapas",
+          "Alhambra",
+          "Picasso",
+          "Gaudí",
+          "Costa Brava",
+          "Granada"
       ]
-    },
-    {
+  },
+  {
       "country_id": "SWE",
       "nombre_pais": "Sweden",
       "words_related": [
-        "Stockholm",
-        "IKEA",
-        "ABBA",
-        "Northern Lights",
-        "Kroppkakor",
-        "Ibrahimovic",
-        "Saunas",
-        "Midnight Sun",
-        "Lakes",
-        "Smorgasbord",
-        "Royalty",
-        "Midsummer"
+          "Stockholm",
+          "Nobel Prize",
+          "IKEA",
+          "Northern Lights",
+          "Abba",
+          "Vikings",
+          "Smorgasbord",
+          "Royal Palace",
+          "Lapland",
+          "Swedish Meatballs",
+          "Uppsala",
+          "Gotland"
       ]
-    },
-    {
+  },
+  {
       "country_id": "CHE",
       "nombre_pais": "Switzerland",
       "words_related": [
-        "Alps",
-        "Chocolate",
-        "Watches",
-        "Lugano",
-        "Banks",
-        "Geneva",
-        "Lakes",
-        "Skiing",
-        "Zurich",
-        "Swiss Cheese",
-        "Matterhorn",
-        "Fondue"
+          "Geneva",
+          "Zurich",
+          "Alps",
+          "Chocolate",
+          "Cheese",
+          "Neutrality",
+          "Matterhorn",
+          "Swiss Watches",
+          "Bern",
+          "Lake Geneva",
+          "Lucerne",
+          "Swiss Army Knife"
       ]
-    },
-    {
-      "country_id": "THA",
-      "nombre_pais": "Thailand",
-      "words_related": [
-        "Bangkok",
-        "Temples",
-        "Pad Thai",
-        "Elephants",
-        "Street Food",
-        "Tuk-Tuk",
-        "Muay Thai",
-        "Coconut Oil",
-        "Floating Markets",
-        "Buddhism",
-        "Spicy",
-        "Chiang Mai"
-      ]
-    },
-    {
+  },
+  {
       "country_id": "TUR",
       "nombre_pais": "Turkey",
       "words_related": [
-        "Istanbul",
-        "Bosporus",
-        "Baklava",
-        "Turkish Delight",
-        "Bazaars",
-        "Troy",
-        "Pamukkale",
-        "Ottoman",
-        "Ephesus",
-        "Ankara",
-        "Dervishes",
-        "Mediterranean"
+          "Istanbul",
+          "Cappadocia",
+          "Hagia Sophia",
+          "Bosphorus",
+          "Turkish Delight",
+          "Pamukkale",
+          "Ephesus",
+          "Grand Bazaar",
+          "Ankara",
+          "Blue Mosque",
+          "Mediterranean Coast",
+          "Topkapi Palace"
       ]
-    },
-    {
+  },
+  {
       "country_id": "UKR",
       "nombre_pais": "Ukraine",
       "words_related": [
-        "Kyiv",
-        "Cossacks",
-        "Borscht",
-        "Lviv",
-        "Chernobyl",
-        "Ukrainian Folk Music",
-        "Dnieper River",
-        "Crimea",
-        "Shaktar Donetsk",
-        "Dinamo Kyiv",
-        "Ukrainian Easter Eggs",
-        "Lopushanka"
+          "Kyiv",
+          "Chernobyl",
+          "Carpathians",
+          "Black Sea",
+          "Lviv",
+          "Borscht",
+          "Holodomor",
+          "Kiev Pechersk Lavra",
+          "Odessa",
+          "Dnipro",
+          "Ukrainian Folk Music",
+          "Cossacks"
       ]
-    },
-    {
-      "country_id": "ARE",
-      "nombre_pais": "United Arab Emirates",
-      "words_related": [
-        "Dubai",
-        "Burj Khalifa",
-        "Desert Safari",
-        "Abu Dhabi",
-        "Palm Jumeirah",
-        "Skyscrapers",
-        "Shopping",
-        "Fly Emirates",
-        "Grand Mosque",
-        "Luxury",
-        "Emirati Cuisine",
-        "Falcons"
-      ]
-    },
-    {
+  },
+  {
       "country_id": "GBR",
       "nombre_pais": "United Kingdom",
       "words_related": [
-        "London",
-        "Big Ben",
-        "Tea Time",
-        "Royal Family",
-        "Stonehenge",
-        "Scottish Highlands",
-        "Double-Decker Bus",
-        "Fish and Chips",
-        "Westminster",
-        "Shakespeare",
-        "Buckingham Palace",
-        "Red Telephone Boxes"
+          "London",
+          "Big Ben",
+          "Buckingham Palace",
+          "Scottish Highlands",
+          "Wales",
+          "Stonehenge",
+          "Tea",
+          "Sherlock Holmes",
+          "Manchester",
+          "Liverpool",
+          "Westminster",
+          "Queen Elizabeth"
       ]
-    },
-    {
+  },
+  {
       "country_id": "USA",
       "nombre_pais": "United States",
       "words_related": [
-        "Statue of Liberty",
-        "Grand Canyon",
-        "Hollywood",
-        "Route 66",
-        "White House",
-        "Yellowstone",
-        "Hollywood Walk of Fame",
-        "Baseball",
-        "Washington D.C.",
-        "National Parks",
-        "Tom Brady",
-        "Apple Pie"
+          "New York",
+          "Los Angeles",
+          "Statue of Liberty",
+          "Hollywood",
+          "Grand Canyon",
+          "Route 66",
+          "Washington, D.C.",
+          "Yellowstone",
+          "Silicon Valley",
+          "Liberty Bell",
+          "Hollywood Sign",
+          "National Parks"
       ]
-    }
+  },
+  {
+      "country_id": "VNM",
+      "nombre_pais": "Vietnam",
+      "words_related": [
+          "Hanoi",
+          "Ho Chi Minh City",
+          "Halong Bay",
+          "Pho",
+          "Saigon",
+          "Tet Festival",
+          "Cu Chi Tunnels",
+          "Mekong Delta",
+          "War Remnants Museum",
+          "Hạ Long Bay",
+          "Imperial City",
+          "Vietnamese Coffee"
+      ]
+  }
 ]
