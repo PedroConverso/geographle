@@ -2,19 +2,17 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Top10.css">
-    <title>Top10</title>
+    <title>Top 10</title>
+    <link rel="stylesheet" href="Top10,1 (timer).css">
 </head>
 <body>
     <div 
     class="menudropdown"
     id="menudropdown"
     >
-    <img src="../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
+    <img src="../../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
 
     <div class="gamesMenuContainer">
 
@@ -43,7 +41,7 @@
             <div class="sta">STATISTICS</div>
             <div class="sub">ALL GAMES</div>
           </div>
-          <img class="cruz" src="../Img/tabler_xbox-x-filled.png" onclick="openestadown()">
+          <img class="cruz" src="../../Img/tabler_xbox-x-filled.png" onclick="openestadown()">
         </div>
         <div class="sepa">
           <div class="separar">
@@ -71,7 +69,7 @@
               <P>BEST STREAK</P>
             </div>
             <div class="cuasta">
-              <Img src="../Img/material-symbols_share.png"></Img>
+              <Img src="../../Img/material-symbols_share.png"></Img>
               <P>SHARE</P>
             </div>
           </div>
@@ -85,7 +83,7 @@
           <div class="etbal">
             <div class="sett">SETTINGS</div>
           </div>
-          <img class="cruz2" src="../Img/tabler_xbox-x-filled.png" onclick="optisdown()">
+          <img class="cruz2" src="../../Img/tabler_xbox-x-filled.png" onclick="optisdown()">
         </div>
         <div class="lineas">
           <div class="lineaetbalera1">
@@ -109,58 +107,56 @@
           </div>
       </div>
     </div>
+    <div class="infodown" id="infodown">
+      <div class="muchainfo">
+        <div class="todo">
+            <div class="dos">
+              <div class="inf">INFO</div>
+              <img class="iminf" src="../../Img/octicon_info-16.png"></img>
+            </div>
+            <img class="cruz3" src="../../Img/tabler_xbox-x-filled.png" onclick="infodown()"></img>
+        </div>
+          <img class="mostrar" src="../../Img/image 1 (1).png" alt="">
+          <div class="desc">
+            In this geography game named “TOP 10” , players must guess the top 10 answers related to a specific geographical topic, such as "the 10 largest countries by area", the goal is to complete the list, this could be without a timer or with a timer.</div>
+
+      </div>
+    </div>
 
     <header>
       <div class="Login">
-        <img class="Imgmenu" src="../Img/mingcute_menu-fill.png" onclick="openmenudropdown()">
+        <img class="Imgmenu" src="../../Img/mingcute_menu-fill.png" onclick="openmenudropdown()">
       </div>
 
-      <a href="../Menu/GeographleMenu.html" class="juntitos">
-        <h1 class="Geograph">GEOGRAPH</h1>
-        <h1 class="le">LE</h1>
+      <a href="../../Menu/GeographleMenu.html" class="juntitos">
+        <h1 class="Geograph">TOP 10</h1>
       </a>
 
         <div class="iconos">
-          <img class="stats" src="../Img/gridicons_stats-up.png" onclick="openestadown()">
-          <img class="options" src="../Img/mdi_settings.png" onclick="optisdown()">
+          <img class="info" src="../../Img/octicon_info-16.png" onclick="infodown()">
+          <img class="stats" src="../../Img/gridicons_stats-up.png" alt="fag" onclick="openestadown()">
+          <img class="options" src="../../Img/mdi_settings.png" onclick="optisdown()">
         </div>
     </header>
-
-
-
-
     <section>
-<div class="box">
-    <div class="title">TOP 10</div>
-    <div class="sub">
-        <img class="pres" src="../ImgTop10/Pres.png" alt="ese q ta ya">
-        <div class="der">
-            <div class="desc">
-                <ul>
-                    <li>You will have to complete an empty list of 10 items</li>
-                    <li>You will have a different topic every day</li>
-                    <li>You will have a hint for each item every day</li>
-                </ul>
-            </div>
-            <div class="masor">
-                <div class="mode">Select your mode:</div>
-                <div class="orden">
-                  <a href="../Top10/Top10,1/Top10,1.html">
-                    <div class="nor">NORMAL</div>
-                  </a>
-                  <a href="../Top10/Top10,1 (timer)/Top10,1 (timer).html">
-                    <div class="time">
-                        <div class="timer">TIMER</div>
-                        <img src="../ImgTop10/gis_timer.png" alt="no el q ta ya">
-                    </div>
-                  </a>
-                </div>
-            </div>
+      <div class="boxes">
+        <div class="boxes1">
+          <div class="rectan">1.</div>
+          <div class="rectan">2.</div>
+          <div class="rectan">3.</div>
+          <div class="rectan">4.</div>
+          <div class="rectan">5.</div>
         </div>
-    </div>
-</div>
+        <div class="boxes2">
+          <div class="rectan">6.</div>
+          <div class="rectan">7.</div>
+          <div class="rectan">8.</div>
+          <div class="rectan">9.</div>
+          <div class="rectan">10.</div>
+        </div>
+      </div>
+      <div class="play">Play</div>
     </section>
-
-<script src="Top10.js"></script>
+    <script src="Top10,1 (timer).js"></script>
 </body>
 </html>
