@@ -1,3 +1,9 @@
+ HEAD
+import fs from 'fs'
+
+const data = fs.readFileSync('data/Top_10.json', 'utf-8');
+console.log(data);
+
 import fs from 'fs';
 import readline from 'readline';
 
@@ -69,3 +75,4 @@ function pedirAgrupacion(caracteristicas, agrupacion, vidasRestantes) {
 
 // Ejecuta el juego
 mostrarJuego();
+f11df3173146a7bf620c5e5be670973f94366d71
