@@ -2,7 +2,7 @@ import fs from 'fs';
 import readline from 'readline';
 
 // Lee el archivo JSON
-const datos = JSON.parse(fs.readFileSync('data/Connections.json', 'utf8'));
+const datos = JSON.parse(fs.readFileSync('C:/Users/49123768/Documents/GitHub/proyecto-3-geographle/data/Connections.json', 'utf8'));
 
 // Configura readline para entrada del usuario
 const rl = readline.createInterface({
