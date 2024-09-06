@@ -1,5 +1,5 @@
 import fs from 'fs';
-import readline from 'readline';
+import readline from 'readline'
 
 // Lee el archivo JSON
 const datos = JSON.parse(fs.readFileSync('data/Connections.json', 'utf8'));
