@@ -42,16 +42,3 @@ function thememode2() {
         menu.classList.add("themeMode-check-container-on2")
     }
 }
-
-function infodown() {
-    let menu = document.getElementById("infodown")
-    if (menu.classList.contains("edinf")) {
-        menu.classList.remove("edinf")
-    } else {
-        menu.classList.add("edinf")
-    }
-}
-
-document.getElementById("sel").addEventListener("click", function() {
-    
-})
