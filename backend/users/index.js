@@ -1,30 +1,40 @@
-import fs from 'fs';
+import fs from 'fs/promises';
 import readline from 'readline';
+import { fileURLToPath } from 'url';
+import path from 'path';
 
 // Ruta al archivo JSON
-const filePath = 'C:/Users/49123768/Documents/GitHub/proyecto-3-geographle/backend/users.json';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const filePath = path.join(__dirname, 'users.json');
 
 // Función para leer usuarios
-function leerUsuarios() {
-    if (!fs.existsSync(filePath)) {
-        return [];
-    }
+async function leerUsuarios() {
     try {
-        const data = fs.readFileSync(filePath, 'utf8');
+        const data = await fs.readFile(filePath, 'utf8');
         return JSON.parse(data);
     } catch (error) {
+        if (error.code === 'ENOENT') {
+            // El archivo no existe, devuelve una lista vacía
+            return [];
+        }
         console.error('Error al leer el archivo de usuarios:', error);
         return [];
     }
 }
 
 // Función para guardar usuarios
-function guardarUsuarios(usuarios) {
+async function guardarUsuarios(usuarios) {
     try {
-        fs.writeFileSync(filePath, JSON.stringify(usuarios, null, 2));
+        await fs.writeFile(filePath, JSON.stringify(usuarios, null, 2));
     } catch (error) {
         console.error('Error al guardar el archivo de usuarios:', error);
     }
+}
+
+// Generar un ID único simple
+function generarUserId() {
+    return Date.now().toString(); // Utiliza la marca de tiempo actual como ID
 }
 
 // Configurar readline para entrada del usuario
@@ -34,12 +44,17 @@ const rl = readline.createInterface({
 });
 
 // Registro de usuario
-function registrarUsuario() {
+async function registrarUsuario() {
     rl.question('Ingresa un nombre de usuario: ', (nombreUsuario) => {
-        rl.question('Ingresa una contraseña: ', (contrasena) => {
-            const usuarios = leerUsuarios();
-            usuarios.push({ nombreUsuario, contrasena });
-            guardarUsuarios(usuarios);
+        rl.question('Ingresa una contraseña: ', async (contrasena) => {
+            const usuarios = await leerUsuarios();
+            const nuevoUsuario = {
+                user_id: generarUserId(),
+                nombreUsuario,
+                contrasena
+            };
+            usuarios.push(nuevoUsuario);
+            await guardarUsuarios(usuarios);
             console.log('Usuario registrado exitosamente!');
             rl.close();
         });
@@ -47,10 +62,10 @@ function registrarUsuario() {
 }
 
 // Inicio de sesión
-function iniciarSesion() {
+async function iniciarSesion() {
     rl.question('Ingresa tu nombre de usuario: ', (nombreUsuario) => {
-        rl.question('Ingresa tu contraseña: ', (contrasena) => {
-            const usuarios = leerUsuarios();
+        rl.question('Ingresa tu contraseña: ', async (contrasena) => {
+            const usuarios = await leerUsuarios();
             const usuario = usuarios.find(user => user.nombreUsuario === nombreUsuario);
 
             if (usuario && usuario.contrasena === contrasena) {
