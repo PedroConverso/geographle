@@ -51,3 +51,7 @@ function infodown() {
         menu.classList.add("edinf")
     }
 }
+
+document.getElementById("sel").addEventListener("click", function() {
+    
+})
