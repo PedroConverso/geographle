@@ -9,4 +9,4 @@ const rl = readline.createInterface({
     output: process.stdout
 })
 let atempts = 0
-let maxatemps = 
+let maxatemps = 10
