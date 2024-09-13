@@ -434,8 +434,8 @@ a{
 
 .rectan{
     align-items: flex-start;
-    width: 620px;
-    height: auto;
+    width: 550px;
+    height: 50px;
     font-size: 50px;
     border: 3px solid #B8B4B4;
 }
@@ -495,4 +495,15 @@ a{
 
 .timere{
     font-size: 45px;
+}
+
+.title{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8vh;
+    position: relative;
+    top: 10px;
 }
