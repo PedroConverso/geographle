@@ -1,1 +1,44 @@
+body{
+    font-family: "Inter" , sans-serif;
+    font-style: italic;
+}
 
+.gala{
+    width: 60%;
+    height: 97vh;
+}
+
+.galaxia{
+    width: 40%;
+    height: 97vh;
+}
+
+.fotos{
+    display: flex;
+}
+
+.globo{
+    position: absolute;
+    top: 5vh;
+    left: 50vh;
+    width: 60%;
+    height: 90vh;
+}
+
+.GL{
+    display: flex;
+    font-size: 40vh;
+    font-weight: 800;
+    position: absolute;
+    top: 25vh;
+    left: 70vh;
+    -webkit-text-stroke: 3px #fff;
+}
+
+.G{
+    color: #067E00;
+}
+
+.L{
+    color: #272DA3;
+}
