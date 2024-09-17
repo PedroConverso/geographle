@@ -1,16 +1,3 @@
-body {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh; 
-    background-color: #F3EFEF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-
 header{
     display: flex;
     flex-direction: row;
@@ -18,6 +5,16 @@ header{
     width: 100%;
     align-items: center;
     border-bottom: 4px solid #000;
+}
+
+body{
+    background-color: #F1EAEA;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
 }
 
 .menudropdown {
@@ -342,4 +339,130 @@ font-style: italic;
 .iconos{
     display: flex;
     align-items: center;
+}
+
+.juegos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 80%;
+}
+
+.grande{
+    width: 1200px;
+    height: 450px;
+    border-radius: 70px;
+    border: 7px solid #B8B4B4;
+    background: #F1EAEA;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+.tit{
+    color: #4F4F4F;
+    font-family: Inter;
+    font-size: 70px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+}
+
+.sub{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+}
+
+.pres{
+    width: 450px;
+    height: 250px;
+}
+
+.desc{
+    color: #000;
+    font-family: "Inter" , sans-serif;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2vw;
+    font-style: normal;
+}
+
+.der{
+    display: flex;
+    width: auto;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.sii{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.press{
+    color: #000;
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.play{
+    border-radius: 20px;
+    border: 5px solid #000;
+    background: #F1EAEA;
+    color: #000;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    width: 150px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.triuno{
+    fill: #FFF;
+    stroke-width: 4px;
+    stroke: #000;
+    width: 47px;
+    margin: 20px;
+}
+
+.cuaazul{
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    border: 2px solid #000;
+    margin: 20px;
+    border-radius: 100%;
+}
+
+.cua{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 2px solid #000;
+    margin: 20px;
+    border-radius: 100%;
+}
+
+.cuadri{
+    display: flex;
+}
+
+.abajo{
+    display: flex;
 }
