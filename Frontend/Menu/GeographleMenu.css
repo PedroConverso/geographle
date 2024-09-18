@@ -56,8 +56,6 @@ header{
 .Gamemc{
     height: 80%;
     width: 30%;
-    background-color: #F3EDED;
-    border-radius: 20px;
     display: flex;  
 }
 
