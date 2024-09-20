@@ -17,3 +17,4 @@ const fetchData = (type, callback) => {
 const postData = (type, data, callback = () => {}) => {
   socket.emit("POSTEvent", type, data, callback);
 };
+

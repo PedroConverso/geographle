@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { onEvent, startServer } from "soquetic";
 
-let datos = JSON.parse(fs.readFileSync('../proyecto-3-geographle/data/Guess_about.json', 'utf8'));
+let datos = JSON.parse(fs.readFileSync('../proyecto-3-geographle/data/connections.json', 'utf8'));
 let vidas = 5;
 
 onEvent("caracteristicasAleatorias", obtenerCaracteristicasAleatorias);

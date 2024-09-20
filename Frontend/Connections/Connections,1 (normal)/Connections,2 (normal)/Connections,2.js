@@ -51,3 +51,11 @@ function infodown() {
         menu.classList.add("edinf")
     }
 }
+
+fetchData("caracteristicasAleatorias", callback => {
+    let data = callback
+    data.forEach((palabra, index) => {
+        let box = document.getElementById("sixt_" + index)
+        box.innerHTML = palabra.word
+    });
+})
