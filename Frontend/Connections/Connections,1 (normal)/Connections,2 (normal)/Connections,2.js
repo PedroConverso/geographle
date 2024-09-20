@@ -59,3 +59,45 @@ fetchData("caracteristicasAleatorias", callback => {
         box.innerHTML = palabra.word
     });
 })
+
+let objeto4Palabras = []
+
+let sixt = document.querySelectorAll(".sixt")
+sixt.forEach(six => {
+    six.addEventListener("click", function() {
+        objeto4Palabras.push(six.innerHTML);
+        console.log(objeto4Palabras);
+        
+        if (objeto4Palabras.length == 4) {
+            postData("verificarSeleccion", objeto4Palabras, (res) => {
+                console.log(res);
+                if (res.esCorrecta === true) {
+                    six.disabled = true
+                } else {
+                    updateVidas(res.vidas)
+                }
+            });
+            objeto4Palabras = []
+        }
+    });
+});
+
+let vidas = 5
+
+function updateVidas(vidasCounter) {
+    let redondos = document.querySelectorAll('.puntitos .redondo');
+    let vidas = vidasCounter
+    let counter = Array.from(redondos).slice(0, vidasCounter);
+
+    counter.forEach(div => {
+        div.style.backgroundColor = 'red';
+      });
+
+    redondos.forEach(div => {
+        if (!counter.includes(div)) {
+            div.style.backgroundColor = '#fff';
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", updateVidas())
