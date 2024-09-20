@@ -1,14 +1,32 @@
 import fs from 'fs';
-import readline from 'readline';
-import { onEvent, startServer } from "soquetic"
+import { onEvent, startServer } from "soquetic";
 
-// Lee el archivo JSON
-const datos = JSON.parse(fs.readFileSync('C:/GitHub/proyecto-3-geographle/data/Connections.json', 'utf8'));
+let datos = JSON.parse(fs.readFileSync('../proyecto-3-geographle/data/Guess_about.json', 'utf8'));
+let vidas = 5;
 
-// Función para obtener características aleatorias de 4 países
+onEvent("caracteristicasAleatorias", obtenerCaracteristicasAleatorias);
+
+onEvent("verificarSeleccion", (data) => {
+    const esCorrecta = verificarSeleccion(data.seleccion);
+    if (!esCorrecta) vidas--;
+    return { esCorrecta, vidas };
+});
+
 function obtenerCaracteristicasAleatorias() {
     const paisesAleatorios = datos.sort(() => 0.5 - Math.random()).slice(0, 4);
-    const caracteristicas = paisesAleatorios.flatMap(pais => pais.words_related);
+    const caracteristicas = paisesAleatorios.flatMap(pais => 
+        pais.words_related.map(word => ({
+            word,
+            country_id: pais.country_id
+        }))
+    );
     return caracteristicas.sort(() => 0.5 - Math.random()).slice(0, 16);
 }
-onEvent("caracteristicasAleatorias", obtenerCaracteristicasAleatorias)
+
+function verificarSeleccion(seleccion) {
+    const primerPaisId = seleccion[0].country_id;
+    return seleccion.every(item => item.country_id === primerPaisId);
+}
+
+startServer(3000);
+console.log(`Servidor Geographle Connections iniciado en el puerto 3000`);
