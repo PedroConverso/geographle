@@ -1,103 +1,122 @@
-function openmenudropdown() {
-    let menu = document.getElementById("menudropdown")
-    if (menu.classList.contains("open")) {
-        menu.classList.remove("open")
-    } else {
-        menu.classList.add("open")
-    }
-}
+// Variables globales
+let objeto4Palabras = [];
+let postDataVerificarData = [];
+let vidas = 5;
+let responseReceived = false; // Nuevo estado para controlar la respuesta
 
-function openestadown() {
-    let menu = document.getElementById("estadown")
-    if (menu.classList.contains("edOpen")) {
-        menu.classList.remove("edOpen")
-    } else {
-        menu.classList.add("edOpen")
-    }
-}
+// Array para almacenar las palabras correctas
+let palabrasCorrectas = [];
 
-function optisdown() {
-    let menu = document.getElementById("optidown")
-    if (menu.classList.contains("edSet")) {
-        menu.classList.remove("edSet")
-    } else {
-        menu.classList.add("edSet")
-    }
-}
+// Esperar a que el DOM se cargue completamente
+document.addEventListener("DOMContentLoaded", function() {
+    // Obtener las palabras aleatorias y mostrarlas en el DOM
+    fetchData("caracteristicasAleatorias", callback => {
+        let data = callback;
+        // Verificar si los datos se han recibido correctamente
+        console.log("Palabras recibidas:", data);
 
-function thememode() {
-    let menu = document.getElementById("themeMode-check-container")
-    if (menu.classList.contains("themeMode-check-container-on")) {
-        menu.classList.remove("themeMode-check-container-on")
-    } else {
-        menu.classList.add("themeMode-check-container-on")
-    }
-}
+        // Asignar palabras a los elementos con ID 'sixt_0', 'sixt_1', etc.
+        data.forEach((palabra, index) => {
+            let box = document.getElementById("sixt_" + index);
+            box.innerHTML = palabra.word; // Asegúrate que 'word' es la propiedad correcta
+            palabrasCorrectas.push(palabra.word); // Agregar palabra a la lista de palabras correctas
 
-function thememode2() {
-    let menu = document.getElementById("themeMode-check-container2")
-    if (menu.classList.contains("themeMode-check-container-on2")) {
-        menu.classList.remove("themeMode-check-container-on2")
-    } else {
-        menu.classList.add("themeMode-check-container-on2")
-    }
-}
+            // Añadir evento de clic a cada caja de palabras
+            box.addEventListener("click", function() {
+                if (objeto4Palabras.length < 4) {
+                    objeto4Palabras.push(box.innerHTML); // Añadir palabra seleccionada
+                    console.log("Palabras seleccionadas:", objeto4Palabras);
 
-function infodown() {
-    let menu = document.getElementById("infodown")
-    if (menu.classList.contains("edinf")) {
-        menu.classList.remove("edinf")
-    } else {
-        menu.classList.add("edinf")
-    }
-}
+                    // Si se seleccionaron 4 palabras, enviar al backend
+                    if (objeto4Palabras.length === 4 && !responseReceived) { // Verificar que no haya respuesta
+                        postDataVerificarData = [objeto4Palabras, vidas]; // Agrupar en un array
+                        console.log("Datos a enviar al servidor:", postDataVerificarData);
 
-fetchData("caracteristicasAleatorias", callback => {
-    let data = callback
-    data.forEach((palabra, index) => {
-        let box = document.getElementById("sixt_" + index)
-        box.innerHTML = palabra.word
-    });
-})
+                        // Verificar si las palabras seleccionadas son correctas
+                        postData("verificarSeleccion", postDataVerificarData, (res) => {
+                            console.log("Respuesta del servidor:", res);
+                            responseReceived = true; // Cambiar el estado a respuesta recibida
 
-let objeto4Palabras = []
+                            if (res.esCorrecta) {
+                                // Deshabilitar y cambiar a verde las palabras correctas
+                                objeto4Palabras.forEach(palabra => {
+                                    let box = Array.from(document.querySelectorAll(".sixt")).find(el => el.innerHTML === palabra);
+                                    if (box) {
+                                        box.style.backgroundColor = 'green'; // Cambiar el color a verde
+                                        box.style.pointerEvents = 'none'; // Deshabilitar el clic
+                                        box.style.opacity = '0.5'; // Cambiar la apariencia visual
+                                    }
+                                });
 
-let sixt = document.querySelectorAll(".sixt")
-sixt.forEach(six => {
-    six.addEventListener("click", function() {
-        objeto4Palabras.push(six.innerHTML);
-        console.log(objeto4Palabras);
-        
-        if (objeto4Palabras.length == 4) {
-            postData("verificarSeleccion", objeto4Palabras, (res) => {
-                console.log(res);
-                if (res.esCorrecta === true) {
-                    six.disabled = true
+                                // Comprobar si todas las palabras han sido deshabilitadas
+                                if (todasLasPalabrasDeshabilitadas(document.querySelectorAll(".sixt"))) {
+                                    console.log("¡Ganaste! Has seleccionado todas las palabras correctamente.");
+                                    alert("¡Ganaste! Has seleccionado todas las palabras correctamente.");
+                                    // Aquí puedes agregar una lógica para reiniciar el juego o redirigir a otra página
+                                }
+                            } else {
+                                updateVidas(res.vidas); // Actualizar vidas si es incorrecta
+                            }
+                        });
+                    }
                 } else {
-                    updateVidas(res.vidas)
+                    console.log("Ya se han seleccionado 4 palabras.");
                 }
             });
-            objeto4Palabras = []
-        }
+        });
+
+        // Actualizar el número de vidas inicialmente
+        updateVidas();
     });
 });
 
-let vidas = 5
+// Función para comprobar si todas las palabras están deshabilitadas
+function todasLasPalabrasDeshabilitadas(sixt) {
+    return Array.from(sixt).every(six => {
+        return six.style.pointerEvents === 'none'; // Verificar si el clic está deshabilitado
+    });
+}
 
-function updateVidas(vidasCounter) {
+// Función para actualizar la visualización de las vidas
+function updateVidas(vidasCounter = vidas) {
     let redondos = document.querySelectorAll('.puntitos .redondo');
-    let vidas = vidasCounter
-    let counter = Array.from(redondos).slice(0, vidasCounter);
 
+    if (vidasCounter !== null) {
+        vidas = vidasCounter;
+    }
+
+    let counter = Array.from(redondos).slice(0, vidas);
+
+    // Cambiar a rojo los puntos de vida restantes
     counter.forEach(div => {
         div.style.backgroundColor = 'red';
-      });
+    });
 
+    // Restaurar los puntos de vida que no se usan a blanco
     redondos.forEach(div => {
         if (!counter.includes(div)) {
             div.style.backgroundColor = '#fff';
         }
     });
+
+    // Perder el juego cuando las vidas lleguen a 0
+    if (vidas === 0) {
+        console.log("Has perdido. No puedes jugar hasta mañana.");
+        alert("Has perdido. No puedes jugar hasta mañana.");
+        vidas = 5; // Reinicia vidas para el siguiente día
+        updateVidas(vidas);
+        bloquearJuego();
+    }
 }
 
-document.addEventListener("DOMContentLoaded", updateVidas())
+// Función para simular el bloqueo del juego por 24 horas
+function bloquearJuego() {
+    let sixt = document.querySelectorAll(".sixt");
+    sixt.forEach(six => {
+        six.style.pointerEvents = 'none'; // Deshabilitar los clics
+        six.style.opacity = '0.5'; // Cambiar la apariencia visual
+    });
+    console.log("El juego está bloqueado por 24 horas.");
+}
+
+// Asegúrate de que las funciones fetchData y postData estén implementadas para interactuar con el backend

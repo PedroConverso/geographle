@@ -2,7 +2,7 @@ import fs from 'fs';
 import { onEvent, startServer } from "soquetic";
 
 let datos = JSON.parse(fs.readFileSync('C:/Github/proyecto-3-geographle/data/connections.json', 'utf8'));
-let vidas = 5;
+let vidas
 
 onEvent("caracteristicasAleatorias", obtenerCaracteristicasAleatorias);
 
@@ -27,11 +27,12 @@ function obtenerCaracteristicasAleatorias() {
 }
 
 function verificarSeleccion(seleccion) {
+    vidas = seleccion[1]
     return datos.some(dato => 
-        seleccion.every(palabra => dato.words_related.includes(palabra))
+        seleccion[0].every(palabra => dato.words_related.includes(palabra))
     );
 }
 
 
 startServer(3000);
-console.log(`Servidor Geographle Connections iniciado en el puerto 3000`);
+
