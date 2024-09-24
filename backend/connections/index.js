@@ -1,8 +1,8 @@
 import fs from 'fs';
 import { onEvent, startServer } from "soquetic";
 
-let datos = JSON.parse(fs.readFileSync('C:/Users/49004081/Documents/GitHub/proyecto-3-geographle/backend/connections', 'utf8'));
-let vidas = 5;
+let datos = JSON.parse(fs.readFileSync('./data/connections.json', 'utf8'));
+let vidas
 
 onEvent("caracteristicasAleatorias", obtenerCaracteristicasAleatorias);
 
@@ -27,11 +27,21 @@ function obtenerCaracteristicasAleatorias() {
 }
 
 function verificarSeleccion(seleccion) {
+    vidas = seleccion[1]
     return datos.some(dato => 
-        seleccion.every(palabra => dato.words_related.includes(palabra))
+        seleccion[0].every(palabra => dato.words_related.includes(palabra))
     );
 }
 
+// Añadir el evento para guardar estadísticas
+onEvent("guardarEstadisticas", (estadisticas) => {
+    // Aquí puedes almacenar las estadísticas en un archivo o base de datos
+    console.log("Estadísticas recibidas:", estadisticas);
+    // Por ejemplo, puedes guardar las estadísticas en un archivo JSON:
+    fs.appendFileSync('./data/estadisticas.json', JSON.stringify(estadisticas) + '\n', 'utf8');
+    return { success: true };
+});
+
 
 startServer(3000);
-console.log(`Servidor Geographle Connections iniciado en el puerto 3000`);
+
