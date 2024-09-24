@@ -5,17 +5,15 @@ header{
     width: 100%;
     align-items: center;
     border-bottom: 4px solid #000;
+    background-color: #F1EAEA;
 }
 
-body{
-    background-color: #F1EAEA;
-    margin: 0;
-    padding: 0;
+section{
     font-family: "Inter" , sans-serif;
 }
 
-a{
-    text-decoration: none;
+body{
+    background-color: #F1EAEA;;
 }
 
 .menudropdown {
@@ -54,8 +52,6 @@ a{
 .Gamemc{
     height: 80%;
     width: 30%;
-    background-color: #F3EDED;
-    border-radius: 20px;
     display: flex;  
 }
 
@@ -350,18 +346,11 @@ font-style: italic;
     height: 80%;
 }
 
-section{
-    height: 100%;
-    width: 100%;
-}
-
 .tit{
     color: #4F4F4F;
-    font-family: Inter;
     font-size: 50px;
     font-style: italic;
     font-weight: 600;
-    line-height: normal;
     display: flex;
     justify-content: center;
 }
@@ -375,86 +364,25 @@ section{
     margin: 10px;
 }
 
-.guesthe{
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.contrys{
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.dosi{
+.guess{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-}
-
-.cla{
-    display: flex;
-    align-items: center;
     justify-content: center;
+    font-size: 22px;
+    font-weight: 550;
 }
 
-.banderabd{
-    width: 300px;
-    height: 180px;
-    background-color: white;
-    border: 2px solid black;
-}
-
-.pais{
-    display: flex;
-    width: 300px;
-    height: 55px;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #000;
-    background: #ddd7d7;
-    font-size: 25px;
-    color: #000;
-    font-weight: 600;
-}
-
-.boton{
-    display: flex;
-    width: 80px;
-    height: 55px;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 10px;
-    border: 2px solid #000;
-    background: #E5EC1E;
-    font-size: 25px;
-    font-weight: 600;
-}
-
-.jun{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 15px;
-    gap: 10px;
-}
-
-.ba{
-    border-radius: 10px;
+.cual{
+    width: 100px;
+    height: 100px;
     border: 3px solid #000;
-    height: 65px;
-    width: 65px;
+}
+
+.dos{
     display: flex;
     justify-content: center;
-    align-items: center;
+    gap: 20px;
 }
 
-.attempt{
-    text-align: center;
-    font-size: 30px;
-    font-weight: 500;
+.cua{
+    margin: 20px;
 }
-
