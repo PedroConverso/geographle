@@ -20,6 +20,6 @@
   "homepage": "https://github.com/3-TIC-ORT/proyecto-3-geographle#readme",
   "dependencies": {
     "readline-sync": "^1.4.10",
-    "soquetic": "^1.1.0"
+    "soquetic": "^1.1.1"
   }
 }
