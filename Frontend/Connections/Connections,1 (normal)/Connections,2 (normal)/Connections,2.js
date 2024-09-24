@@ -57,6 +57,10 @@ document.addEventListener("DOMContentLoaded", function() {
                             } else {
                                 updateVidas(res.vidas); // Actualizar vidas si es incorrecta
                             }
+
+                            // Reiniciar objeto4Palabras independientemente de si la respuesta fue correcta o incorrecta
+                            objeto4Palabras = []; // Reiniciar el array para la próxima ronda
+                            responseReceived = false; // Resetear el estado para la siguiente ronda
                         });
                     }
                 } else {
