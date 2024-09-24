@@ -33,6 +33,15 @@ function verificarSeleccion(seleccion) {
     );
 }
 
+// Añadir el evento para guardar estadísticas
+onEvent("guardarEstadisticas", (estadisticas) => {
+    // Aquí puedes almacenar las estadísticas en un archivo o base de datos
+    console.log("Estadísticas recibidas:", estadisticas);
+    // Por ejemplo, puedes guardar las estadísticas en un archivo JSON:
+    fs.appendFileSync('./data/estadisticas.json', JSON.stringify(estadisticas) + '\n', 'utf8');
+    return { success: true };
+});
+
 
 startServer(3000);
 

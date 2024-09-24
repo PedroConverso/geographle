@@ -128,6 +128,7 @@ function updateVidas(vidasCounter = vidas) {
         vidas = 5; // Reinicia vidas para el siguiente día
         updateVidas(vidas);
         bloquearJuego();
+        enviarEstadisticas(true, 6 - vidas)
     }
 }
 
@@ -142,3 +143,23 @@ function bloquearJuego() {
 }
 
 // Asegúrate de que las funciones fetchData y postData estén implementadas para interactuar con el backend
+// Nueva función para enviar estadísticas al backend
+function enviarEstadisticas(gano, intentos) {
+    const estadisticas = {
+        gano: gano,
+        intentos: intentos,
+        vidasRestantes: vidas
+    };
+
+    postData("guardarEstadisticas", estadisticas, (response) => {
+        console.log("Estadísticas enviadas:", response);
+    });
+}
+
+// Modifica la parte donde se verifica si el usuario gana
+if (todasLasPalabrasDeshabilitadas(document.querySelectorAll(".sixt"))) {
+    alert("¡Ganaste! Has seleccionado todas las palabras correctamente.");
+    // Aquí puedes enviar las estadísticas de que el usuario ganó
+    enviarEstadisticas(true, 6 - vidas); // El número de intentos se puede calcular como 6 - vidas restantes
+    // Agrega lógica para reiniciar el juego o redirigir a otra página
+}
