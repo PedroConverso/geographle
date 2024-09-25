@@ -18,7 +18,7 @@ function generarOpciones(prop, pais) {
   
   switch (prop) {
     case 'language':
-      opciones = datos.map(p => p.language).filter((l, i, self) => self.indexOf(l) === i);
+      opciones = datos.map(p => p.language).filter((l, i, self) => self.indexOf(l) === i); // Eliminar duplicados
       break;
     case 'capital':
       opciones = datos.map(p => p.capital);
@@ -56,7 +56,8 @@ onEvent("nuevojuego", () => {
     flag: paisAleatorio.flag,
     language_options: opcLanguage,
     capital_options: opcCapital,
-    shape_options: opcShape
+    shape_options: opcShape,
+    pais: paisAleatorio // Enviar país completo al frontend para validar después
   };
 });
 
@@ -68,7 +69,16 @@ onEvent("verificarRespuesta", (data) => {
   if (!esCorrecta) {
     vidas--;
   }
-  
+
+  // Lógica de fin de juego cuando las vidas llegan a 0
+  if (vidas === 0) {
+    return {
+      esCorrecta,
+      vidas,
+      gameOver: true // Indicar al frontend que el juego ha terminado
+    };
+  }
+
   return {
     esCorrecta,
     vidas
