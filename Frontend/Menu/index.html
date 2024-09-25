@@ -1,33 +1,37 @@
+<!--MENU CON LOS JUEGOS-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Top10.css">
-    <title>Top10</title>
+    
+    <link rel="stylesheet" href="GeographleMenu.css">
+    <title>Geographle</title>
 </head>
 <body>
     <div 
     class="menudropdown"
     id="menudropdown"
     >
-    <img src="../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
+      <img src="../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
 
-    <div class="gamesMenuContainer">
+      <div class="gamesMenuContainer">
 
         <div class="gameMenu">JUEGO 1
-         <div class="Gamemc"></div>
+          <img src="../Img/Foto top 10.png" class="Gamemc"></img>
         </div>
 
         <div class="gameMenu">JUEGO 2
-          <div class="Gamemc"></div>
+          <img src="../Img/Foto connections.png" class="Gamemc"></img>
         </div>
 
         <div class="gameMenu">JUEGO 3
-          <div class="Gamemc"></div>
+          <img src="../Img/Foto guess about.png" class="Gamemc"></img>
         </div>
 
         <div class="gameMenu">JUEGO 4
@@ -114,12 +118,10 @@
       <div class="Login">
         <img class="Imgmenu" src="../Img/mingcute_menu-fill.png" onclick="openmenudropdown()">
       </div>
-
-      <a href="../Menu/GeographleMenu.html" class="juntitos">
-        <h1 class="Geograph">GEOGRAPH</h1>
-        <h1 class="le">LE</h1>
-      </a>
-
+        <a href="/Frontend/Menu/" class="juntitos">
+          <h1 class="Geograph">GEOGRAPH</h1>
+          <h1 class="le">LE</h1>
+        </a>
         <div class="iconos">
           <img class="stats" src="../Img/gridicons_stats-up.png" onclick="openestadown()">
           <img class="options" src="../Img/mdi_settings.png" onclick="optisdown()">
@@ -127,41 +129,41 @@
     </header>
 
 
+  <div class="juegos">
 
+  <div class="caja1">
 
-    <section>
-<div class="box">
-    <div class="title">TOP 10</div>
-    <div class="sub">
-        <img class="pres" src="../ImgTop10/Pres.png" alt="ese q ta ya">
-        <div class="der">
-            <div class="desc">
-                <ul>
-                    <li>You will have to complete an empty list of 10 items</li>
-                    <li>You will have a different topic every day</li>
-                    <li>You will have a hint for each item every day</li>
-                </ul>
-            </div>
-            <div class="masor">
-                <div class="mode">Select your mode:</div>
-                <div class="orden">
-                  <a href="../Top10/Top10,1/Top10,1.html">
-                    <div class="nor">NORMAL</div>
-                  </a>
-                  <a href="../Top10/Top10,1 (timer)/Top10,1 (timer).html">
-                    <div class="time">
-                        <div class="timer">TIMER</div>
-                        <img src="../ImgTop10/gis_timer.png" alt="no el q ta ya">
-                    </div>
-                  </a>
-                </div>
-            </div>
-        </div>
+  <a href="/Frontend/Top10/" class="box1">
+    <div class="RecAb1">
+      <h3 class="nombre1">TOP 10</h3>
     </div>
-</div>
-    </section>
+    <img class="camera1" src="../Img/image 8.png">   
+  </a>
+  <a href="/Frontend/Connections/" class="box2"> 
+  <div class="RecAb2">
+      <h3 class="nombre2">CONNECTIONS</h3>
+    </div>
+    <img class="camera2" src="../Img/image 6 (1).png">   
+  </a>
+    </div>
 
-<script src="Top10.js"></script>
-<script src="socket.js"></script>
+    <div class="caja2">
+
+  <a href="/Frontend/GuessAbout/" class="box3"> 
+      <div class="RecAb3">
+        <h3 class="nombre3">GUESS ABOUT</h3>
+      </div>
+      <img class="camera3" src="../Img/image 7.png">   
+  </a>
+
+    <div class="box4"> 
+      <div class="RecAb4">
+        <h3 class="nombre4">HIGHER OR LOWER</h3>
+      </div>
+      <img class="camera4" src="../Img/image 9.png">   
+  </div>    
+  </div>
+  </div>
+  <script src="GeographleMenu.js"></script>
 </body>
 </html>
