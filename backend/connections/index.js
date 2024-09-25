@@ -43,8 +43,10 @@ function obtenerCaracteristicasAleatorias() {
 function verificarSeleccion(seleccion) {
     vidas = seleccion[1];
     return datos.some(dato => 
-        seleccion[0].every(palabra => dato.words_related.includes(palabra))
+        seleccion.every(palabra => dato.words_related.includes(palabra))
     );
 }
 
+
 startServer(3000);
+console.log(`Servidor Geographle Connections iniciado en el puerto 3000`);
