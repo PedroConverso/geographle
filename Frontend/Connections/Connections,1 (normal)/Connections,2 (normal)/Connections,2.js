@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function() {
                                     alert("¡Ganaste! Has seleccionado todas las palabras correctamente.");
                                     // Enviar estadísticas de victoria
                                     enviarEstadisticas(true); // Enviar que ganó
-                                    // Aquí puedes agregar una lógica para reiniciar el juego o redirigir a otra página
                                 }
                             } else {
                                 // Si la respuesta es incorrecta, volver a habilitar las palabras
@@ -138,6 +137,7 @@ function updateVidas(vidasCounter = vidas) {
     // Perder el juego cuando las vidas lleguen a 0
     if (vidas === 0) {
         alert("Has perdido. No puedes jugar hasta mañana.");
+        enviarEstadisticas(false); // Enviar que perdió
         vidas = 5; // Reinicia vidas para el siguiente día
         updateVidas(vidas);
         bloquearJuego();
