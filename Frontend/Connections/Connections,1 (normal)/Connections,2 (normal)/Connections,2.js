@@ -2,12 +2,11 @@
 let objeto4Palabras = [];
 let postDataVerificarData = [];
 let vidas = 5;
-let responseReceived = false; // Nuevo estado para controlar la respuesta
+let responseReceived = false; // Estado para controlar la respuesta
 
 // Array para almacenar las palabras correctas
 let palabrasCorrectas = [];
 
-// Esperar a que el DOM se cargue completamente
 // Función para mezclar un array de forma aleatoria
 function mezclarArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -62,6 +61,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                 // Comprobar si todas las palabras han sido deshabilitadas
                                 if (todasLasPalabrasDeshabilitadas(document.querySelectorAll(".sixt"))) {
                                     alert("¡Ganaste! Has seleccionado todas las palabras correctamente.");
+                                    // Enviar estadísticas de victoria
+                                    enviarEstadisticas(true); // Enviar que ganó
                                     // Aquí puedes agregar una lógica para reiniciar el juego o redirigir a otra página
                                 }
                             } else {
@@ -92,6 +93,18 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// Función para enviar estadísticas al backend
+function enviarEstadisticas(gano) {
+    const estadisticas = {
+        juego: "Connections", // Nombre del juego
+        gano: gano,
+        vidasRestantes: vidas
+    };
+
+    postData("guardarEstadisticas", estadisticas, (response) => {
+        console.log("Estadísticas enviadas:", response);
+    });
+}
 
 // Función para comprobar si todas las palabras están deshabilitadas
 function todasLasPalabrasDeshabilitadas(sixt) {
@@ -128,7 +141,6 @@ function updateVidas(vidasCounter = vidas) {
         vidas = 5; // Reinicia vidas para el siguiente día
         updateVidas(vidas);
         bloquearJuego();
-        enviarEstadisticas(true, 6 - vidas)
     }
 }
 
@@ -140,26 +152,4 @@ function bloquearJuego() {
         six.style.opacity = '0.5'; // Cambiar la apariencia visual
     });
     alert("El juego está bloqueado por 24 horas.");
-}
-
-// Asegúrate de que las funciones fetchData y postData estén implementadas para interactuar con el backend
-// Nueva función para enviar estadísticas al backend
-function enviarEstadisticas(gano, intentos) {
-    const estadisticas = {
-        gano: gano,
-        intentos: intentos,
-        vidasRestantes: vidas
-    };
-
-    postData("guardarEstadisticas", estadisticas, (response) => {
-        console.log("Estadísticas enviadas:", response);
-    });
-}
-
-// Modifica la parte donde se verifica si el usuario gana
-if (todasLasPalabrasDeshabilitadas(document.querySelectorAll(".sixt"))) {
-    alert("¡Ganaste! Has seleccionado todas las palabras correctamente.");
-    // Aquí puedes enviar las estadísticas de que el usuario ganó
-    enviarEstadisticas(true, 6 - vidas); // El número de intentos se puede calcular como 6 - vidas restantes
-    // Agrega lógica para reiniciar el juego o redirigir a otra página
 }
