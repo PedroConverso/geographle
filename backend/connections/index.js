@@ -43,7 +43,7 @@ function obtenerCaracteristicasAleatorias() {
 function verificarSeleccion(seleccion) {
     vidas = seleccion[1];
     return datos.some(dato => 
-        seleccion.every(palabra => dato.words_related.includes(palabra))
+        seleccion[0].every(palabra => dato.words_related.includes(palabra))
     );
 }
 
