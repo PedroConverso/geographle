@@ -2,7 +2,7 @@ import fs from 'fs';
 import { onEvent, sendEvent, startServer } from "soquetic";
 
 // Cargar datos del JSON
-let datos = JSON.parse(fs.readFileSync('C:/Github/proyecto-3-geographle/data/countries.json', 'utf8'));
+let datos = JSON.parse(fs.readFileSync('/data/Guess_about.json', 'utf8'));
 
 // Inicializar variable de vidas
 let vidas = 5;
@@ -28,9 +28,6 @@ function generarOpciones(prop, pais) {
     }
   }
   
-  return opciones;
-}
-  
   // Asegurarse de que la respuesta correcta esté incluida
   if (!opciones.includes(pais[prop])) {
     opciones[Math.floor(Math.random() * opciones.length)] = pais[prop];
@@ -41,7 +38,7 @@ function generarOpciones(prop, pais) {
 }
 
 // Función para verificar la respuesta del usuario
-function verificarRespuesta(pais, prop, respuesta) {
+function verificarRespuesta(pais, prop, respuesta) { 
   return pais[prop] === respuesta;
 }
 
@@ -62,6 +59,10 @@ onEvent("nuevojuego", () => {
     shape_options: opcShape,
     pais: paisAleatorio // Enviar país completo al frontend para validar después
   };
+});
+
+onEvent("cargarPaises", (data) => {
+  return datos;
 });
 
 // Manejar evento de verificación de respuesta
@@ -87,5 +88,6 @@ onEvent("verificarRespuesta", (data) => {
     vidas
   };
 });
+
 // Iniciar el servidor
 startServer(3000);

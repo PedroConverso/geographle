@@ -1,3 +1,14 @@
+document.addEventListener("DOMContentLoaded", function(e) {
+    e.preventDefault(e);
+    fetchData("cargarPaises", (data) => {
+        console.log(data)
+    })
+})
+
+function cargarPaises(paises) {
+    
+}
+
 function openmenudropdown() {
     let menu = document.getElementById("menudropdown")
     if (menu.classList.contains("open")) {
