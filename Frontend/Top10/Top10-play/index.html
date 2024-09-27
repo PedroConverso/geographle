@@ -1,28 +1,24 @@
+<!--PANTALLA DE PLAY ANTES DE JUGAR-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="Connections.css">
-    <title>Connections</title>
+    <title>Top 10</title>
+    <link rel="stylesheet" href="Top10,1.css">
 </head>
 <body>
     <div 
     class="menudropdown"
     id="menudropdown"
     >
-      <img src="../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
+    <img src="../../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
 
-      <div class="gamesMenuContainer">
+    <div class="gamesMenuContainer">
 
         <div class="gameMenu">JUEGO 1
-          <div class="Gamemc"></div>
+         <div class="Gamemc"></div>
         </div>
 
         <div class="gameMenu">JUEGO 2
@@ -44,9 +40,9 @@
         <div class="pene">
           <div class="intro">
             <div class="sta">STATISTICS</div>
-            <div class="sub">ALL GAMES</div>
+            <div class="sub">TOP 10</div>
           </div>
-          <img class="cruz" src="../Img/tabler_xbox-x-filled.png" onclick="openestadown()">
+          <img class="cruz" src="../../Img/tabler_xbox-x-filled.png" onclick="openestadown()">
         </div>
         <div class="sepa">
           <div class="separar">
@@ -74,7 +70,7 @@
               <P>BEST STREAK</P>
             </div>
             <div class="cuasta">
-              <Img src="../Img/material-symbols_share.png"></Img>
+              <Img src="../../Img/material-symbols_share.png"></Img>
               <P>SHARE</P>
             </div>
           </div>
@@ -88,7 +84,7 @@
           <div class="etbal">
             <div class="sett">SETTINGS</div>
           </div>
-          <img class="cruz2" src="../Img/tabler_xbox-x-filled.png" onclick="optisdown()">
+          <img class="cruz2" src="../../Img/tabler_xbox-x-filled.png" onclick="optisdown()">
         </div>
         <div class="lineas">
           <div class="lineaetbalera1">
@@ -112,49 +108,58 @@
           </div>
       </div>
     </div>
+    <div class="infodown" id="infodown">
+      <div class="muchainfo">
+        <div class="todo">
+            <div class="dos">
+              <div class="inf">INFO</div>
+              <img class="iminf" src="../../Img/octicon_info-16.png"></img>
+            </div>
+            <img class="cruz3" src="../../Img/tabler_xbox-x-filled.png" onclick="infodown()"></img>
+        </div>
+          <img class="mostrar" src="../../Img/image 1 (1).png" alt="">
+          <div class="desc">
+            In this geography game named “TOP 10” , players must guess the top 10 answers related to a specific geographical topic, such as "the 10 largest countries by area", the goal is to complete the list, this could be without a timer or with a timer.</div>
+
+      </div>
+    </div>
 
     <header>
       <div class="Login">
-        <img class="Imgmenu" src="../Img/mingcute_menu-fill.png" onclick="openmenudropdown()">
+        <img class="Imgmenu" src="../../Img/mingcute_menu-fill.png" onclick="openmenudropdown()">
       </div>
-        <a href="../Menu/GeographleMenu.html" class="juntitos">
-          <h1 class="Geograph">GEOGRAPH</h1>
-          <h1 class="le">LE</h1>
-        </a>
+
+      <a href="/Frontend/Menu/" class="juntitos">
+        <h1 class="Geograph">TOP 10</h1>
+      </a>
+
         <div class="iconos">
-          <img class="stats" src="../Img/gridicons_stats-up.png" onclick="openestadown()">
-          <img class="options" src="../Img/mdi_settings.png" onclick="optisdown()">
+          <img class="info" src="../../Img/octicon_info-16.png" onclick="infodown()">
+          <img class="stats" src="../../Img/gridicons_stats-up.png" alt="fag" onclick="openestadown()">
+          <img class="options" src="../../Img/mdi_settings.png" onclick="optisdown()">
         </div>
     </header>
     <section>
-        <div class="box">
-            <div class="title">Connections</div>
-            <div class="sub">
-                <img class="pres" src="../ImgCon/image 13.png" alt="ese q ta ya">
-                <div class="der">
-                    <div class="desc">
-                        <ul>
-                            <li>You will have to agroup 16 items in 4 groups of 4 items each</li>
-                            <li>If you choose hard mode, you will have 5 lifes</li>
-                            <li>If you choose normal mode, you will have infinite lifes</li>
-                        </ul>
-                    </div>
-                    <div class="masor">
-                        <div class="mode">Select your mode:</div>
-                        <div class="orden">
-                          <a href="../Connections/Connections,1 (normal)/Connections,1.html">
-                            <div class="nor">NORMAL</div>
-                          </a>
-                          <a href="../Connections/Connections,1 (normal)/Connections,1 (hard)/Connections,1(hard).html">
-                            <div class="hard">HARD</div>
-                          </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="boxes">
+        <div class="boxes1">
+          <div class="rectan">1.</div>
+          <div class="rectan">2.</div>
+          <div class="rectan">3.</div>
+          <div class="rectan">4.</div>
+          <div class="rectan">5.</div>
         </div>
-            </section>
-
-    <script src="Connections.js"></script>
+        <div class="boxes2">
+          <div class="rectan">6.</div>
+          <div class="rectan">7.</div>
+          <div class="rectan">8.</div>
+          <div class="rectan">9.</div>
+          <div class="rectan">10.</div>
+        </div>
+      </div>
+      <a href="/Frontend/Top10/Top10-play/Top10-juego/"> 
+        <div class="play">Play</div>
+      </a>
+    </section>
+    <script src="Toop10,1.js"></script>
 </body>
 </html>

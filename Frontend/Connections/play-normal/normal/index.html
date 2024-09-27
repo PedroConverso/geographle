@@ -1,37 +1,32 @@
-<!--PAGINA DE ADVINIAR LA FIGURA DEL PAIS (ROUND 2)-->
+<!--JUEGO CONNECTIONS-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="GuessAbout,2.css">
-    <title>Guess About</title>
+    <title>Connections</title>
+    <link rel="stylesheet" href="Connections,2.css">
 </head>
 <body>
     <div 
     class="menudropdown"
     id="menudropdown"
     >
-      <img src="../../../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
+    <img src="../../../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
 
-      <div class="gamesMenuContainer">
+    <div class="gamesMenuContainer">
 
         <div class="gameMenu">JUEGO 1
-          <img src="../../../Img/Foto top 10.png" class="Gamemc"></img>
+         <div class="Gamemc"></div>
         </div>
 
         <div class="gameMenu">JUEGO 2
-          <img src="../../../Img/Foto connections.png" class="Gamemc"></img>
+          <div class="Gamemc"></div>
         </div>
 
         <div class="gameMenu">JUEGO 3
-          <img src="../../../Img/Foto guess about.png" class="Gamemc"></img>
+          <div class="Gamemc"></div>
         </div>
 
         <div class="gameMenu">JUEGO 4
@@ -45,7 +40,7 @@
         <div class="pene">
           <div class="intro">
             <div class="sta">STATISTICS</div>
-            <div class="sub">ALL GAMES</div>
+            <div class="sub">CONNECTIONS</div>
           </div>
           <img class="cruz" src="../../../Img/tabler_xbox-x-filled.png" onclick="openestadown()">
         </div>
@@ -113,34 +108,77 @@
           </div>
       </div>
     </div>
+    <div class="infodown" id="infodown">
+      <div class="muchainfo">
+        <div class="todo">
+            <div class="dos">
+              <div class="inf">INFO</div>
+              <img class="iminf" src="../../../Img/octicon_info-16.png"></img>
+            </div>
+            <img class="cruz3" src="../../../Img/tabler_xbox-x-filled.png" onclick="infodown()"></img>
+        </div>
+          <img class="mostrar" src="../../../Img/image 1 (1).png" alt="">
+          <div class="desc">
+            
+In this geography game named “CONNECTIONS , players must agroup 16 items in 4 groups of four items each. You can choose the amount of lifes you want to have through choosing the game mode: Normal, without lifes and Hard, with 5 lifes.</div>
+
+      </div>
+    </div>
+
     <header>
       <div class="Login">
         <img class="Imgmenu" src="../../../Img/mingcute_menu-fill.png" onclick="openmenudropdown()">
       </div>
-        <a href="../../../Menu/GeographleMenu.html" class="juntitos">
-          <h1 class="Geograph">GEOGRAPH</h1>
-          <h1 class="le">LE</h1>
-        </a>
+
+      <a href="/Frontend/Menu/" class="juntitos">
+        <h1 class="Geograph">CONNECTIONS</h1>
+      </a>
+
         <div class="iconos">
-          <img class="stats" src="../../../Img/gridicons_stats-up.png" onclick="openestadown()">
+          <img class="info" src="../../../Img/octicon_info-16.png" onclick="infodown()">
+          <img class="stats" src="../../../Img/gridicons_stats-up.png" alt="fag" onclick="openestadown()">
           <img class="options" src="../../../Img/mdi_settings.png" onclick="optisdown()">
         </div>
     </header>
     <section>
-        <div class="tit">GUESS ABOUT</div>
-        <div class="round1">Round 2/4</div>
-        <div class="guess">Guess ______ shape</div>
-        <div class="cuadis">
-                <div class="dos">
-                    <div class="cual"></div>
-                    <div class="cual"></div>
-                </div>
-                <div class="dos">
-                    <div class="cual"></div>
-                    <div class="cual"></div>
-                </div>
+      <div class="sixteen">
+        <div class="sixi">
+          <div class="six">
+            <div class="sixt" id="sixt_0"></div>
+            <div class="sixt" id="sixt_1"></div>
+            <div class="sixt" id="sixt_2"></div>
+            <div class="sixt" id="sixt_3"></div>
+          </div>
+          <div class="six">
+            <div class="sixt" id="sixt_4"></div>
+            <div class="sixt" id="sixt_5"></div>
+            <div class="sixt" id="sixt_6"></div>
+            <div class="sixt" id="sixt_7"></div>
+          </div>
+          <div class="six">
+            <div class="sixt" id="sixt_8"></div>
+            <div class="sixt" id="sixt_9"></div>
+            <div class="sixt" id="sixt_10"></div>
+            <div class="sixt" id="sixt_11"></div>
+          </div>
+          <div class="six">
+            <div class="sixt" id="sixt_12"></div>
+            <div class="sixt" id="sixt_13"></div>
+            <div class="sixt" id="sixt_14"></div>
+            <div class="sixt" id="sixt_15"></div>
+          </div>
         </div>
+      </div>
+    <div class="puntitos">
+        <div class="redondo"></div>
+        <div class="redondo"></div>
+        <div class="redondo"></div>
+        <div class="redondo"></div>
+        <div class="redondo"></div>
+    </div>
     </section>
-    <script src="GuessAbout,2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+    <script src="../../../socket.js"></script>
+    <script src="Connections,2.js"></script>
 </body>
 </html>

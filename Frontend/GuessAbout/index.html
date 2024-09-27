@@ -1,26 +1,29 @@
-<!--MENU TOP10 CON SU EXPLICACION-->
+<!--MENU GUESS ABOUT CON SUS REGLAS-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Top10.css">
-    <title>Top10</title>
+    
+    <link rel="stylesheet" href="GuessAbout.css">
+    <title>Guess About</title>
 </head>
 <body>
     <div 
     class="menudropdown"
     id="menudropdown"
     >
-    <img src="../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
+      <img src="../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
 
-    <div class="gamesMenuContainer">
+      <div class="gamesMenuContainer">
 
         <div class="gameMenu">JUEGO 1
-         <div class="Gamemc"></div>
+          <div class="Gamemc"></div>
         </div>
 
         <div class="gameMenu">JUEGO 2
@@ -115,50 +118,52 @@
       <div class="Login">
         <img class="Imgmenu" src="../Img/mingcute_menu-fill.png" onclick="openmenudropdown()">
       </div>
-
-      <a href="/Frontend/Menu/" class="juntitos">
-        <h1 class="Geograph">GEOGRAPH</h1>
-        <h1 class="le">LE</h1>
-      </a>
-
+        <a href="/Frontend/Menu/" class="juntitos">
+          <h1 class="Geograph">GEOGRAPH</h1>
+          <h1 class="le">LE</h1>
+        </a>
         <div class="iconos">
           <img class="stats" src="../Img/gridicons_stats-up.png" onclick="openestadown()">
           <img class="options" src="../Img/mdi_settings.png" onclick="optisdown()">
         </div>
     </header>
-    <section>
-<div class="box">
-    <div class="title">TOP 10</div>
-    <div class="sub">
-        <img class="pres" src="../ImgTop10/Pres.png" alt="ese q ta ya">
-        <div class="der">
-            <div class="desc">
-                <ul>
-                    <li>You will have to complete an empty list of 10 items</li>
-                    <li>You will have a different topic every day</li>
-                    <li>You will have a hint for each item every day</li>
-                </ul>
-            </div>
-            <div class="masor">
-                <div class="mode">Select your mode:</div>
-                <div class="orden">
-                  <a href="/Frontend/Top10/Top10-play/">
-                    <div class="nor">NORMAL</div>
-                  </a>
-                  <a href="/Frontend/Top10/Top10-play-timer/">
-                    <div class="time">
-                        <div class="timer">TIMER</div>
-                        <img src="../ImgTop10/gis_timer.png" alt="no el q ta ya">
+    <main>
+        <div class="grande">
+            <div class="tit">GUESS ABOUT</div>
+            <div class="sub">
+                <div class="izq">
+                    <img class="pres" src="../ImgGuess/image 15.png" alt="ese q ta ya">
+                    <div class="abajo">
+                        <svg class="triuno" xmlns="http://www.w3.org/2000/svg" width="48" height="55" viewBox="0 0 48 55" fill="none">
+                            <path d="M7 25.768L4 27.5L7 29.232L42.25 49.5836L45.25 51.3157V47.8516L45.25 7.1484V3.6843L42.25 5.41635L7 25.768Z" fill="white" stroke="black" stroke-width="4"/>
+                        </svg>
+                        <div class="cuadri">
+                            <div class="cuaazul"></div>
+                            <div class="cua"></div>
+                            <div class="cua"></div>
+                            <div class="cua"></div>
+                        </div>
+                        <svg class="tridos" xmlns="http://www.w3.org/2000/svg" width="48" height="55" viewBox="0 0 48 55" fill="none">
+                          <path d="M7 25.768L4 27.5L7 29.232L42.25 49.5836L45.25 51.3157V47.8516L45.25 7.1484V3.6843L42.25 5.41635L7 25.768Z" fill="white" stroke="black" stroke-width="4"/>
+                      </svg>
                     </div>
-                  </a>
+                </div>
+                <div class="der">
+                    <div class="desc">
+                        <ul>
+                            <li>There are 4 different rounds in this mini game</li>
+                            <li>You will have 5 attemps in the first round</li>
+                            <li>You will have 2 attemps in the rest of the rounds</li>
+                        </ul>
+                    </div>
+                    <div class="sii">
+                        <div class="press">Press Play to start:</div>
+                        <a href="/Frontend/GuessAbout/bandera/" class="play">Play</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-    </section>
-
-<script src="Top10.js"></script>
-<script src="socket.js"></script>
+    </main>
+    <script src="GuessAbout.js"></script>
 </body>
 </html>
