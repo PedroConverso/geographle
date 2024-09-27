@@ -410,11 +410,17 @@ a{
 }
 
 .sixt{
-    width: 75px;
+    min-width: 75px;
     height: 75px;
+    padding: 0 4px;
     background-color: #F1EAEA;
     border: 2px solid #000;
     border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .sixi{
@@ -424,41 +430,22 @@ a{
     gap: 8px;
 }
 
-.six1 {
+.six {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.six2 {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+.redondo{
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border: 3px solid #000;
+    border-radius: 100%;
 }
 
-.six3 {
+.puntitos{
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.six4 {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-
-.play{
-    margin-top: 2%;
-    font-size: 45px;
-    border: 3px solid #B8B4B4;
-    width: 175px;
-    height: auto;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    margin-left: 43%;
-    border-radius: 20px;
-    color: #4F4F4F;
+    gap: 20px;
 }
