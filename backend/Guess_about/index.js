@@ -16,17 +16,20 @@ function obtenerPaisAleatorio() {
 function generarOpciones(prop, pais) {
   let opciones = [];
   
-  switch (prop) {
-    case 'language':
-      opciones = datos.map(p => p.language).filter((l, i, self) => self.indexOf(l) === i); // Eliminar duplicados
-      break;
-    case 'capital':
-      opciones = datos.map(p => p.capital);
-      break;
-    case 'country_shape':
-      opciones = datos.map(p => p.country_shape);
-      break;
+  for (let i = 0; i < datos.length; i++) {
+    if (prop === 'language') {
+      if (!opciones.includes(datos[i].language)) {
+        opciones.push(datos[i].language);
+      }
+    } else if (prop === 'capital') {
+      opciones.push(datos[i].capital);
+    } else if (prop === 'country_shape') {
+      opciones.push(datos[i].country_shape);
+    }
   }
+  
+  return opciones;
+}
   
   // Asegurarse de que la respuesta correcta esté incluida
   if (!opciones.includes(pais[prop])) {
@@ -84,6 +87,5 @@ onEvent("verificarRespuesta", (data) => {
     vidas
   };
 });
-
 // Iniciar el servidor
 startServer(3000);
