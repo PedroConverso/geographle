@@ -2,7 +2,7 @@ import fs from 'fs';
 import { onEvent, sendEvent, startServer } from "soquetic";
 
 // Cargar datos del JSON
-let datos = JSON.parse(fs.readFileSync('/data/Guess_about.json', 'utf8'));
+let datos = JSON.parse(fs.readFileSync('./data/Guess_about.json', 'utf8'));
 
 // Inicializar variable de vidas
 let vidas = 5;
