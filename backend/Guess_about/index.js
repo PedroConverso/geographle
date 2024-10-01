@@ -1,93 +1,117 @@
 import fs from 'fs';
 import { onEvent, sendEvent, startServer } from "soquetic";
 
-// Cargar datos del JSON
-let datos = JSON.parse(fs.readFileSync('/data/Guess_about.json', 'utf8'));
+let datos = JSON.parse(fs.readFileSync('./data/Guess_about.json', 'utf8'));
+let vidasBandera = 3; // Vidas para la ronda de la bandera
+let vidasGenerales = 5; // Vidas totales para las otras rondas
+let paisActual = null;
 
-// Inicializar variable de vidas
-let vidas = 5;
-
-// Función para obtener un país aleatorio
 function obtenerPaisAleatorio() {
   return datos[Math.floor(Math.random() * datos.length)];
 }
 
-// Función para generar las opciones de respuesta
-function generarOpciones(prop, pais) {
-  let opciones = [];
-  
+function generarOpciones(prop) {
+  let opciones = new Set();
   for (let i = 0; i < datos.length; i++) {
-    if (prop === 'language') {
-      if (!opciones.includes(datos[i].language)) {
-        opciones.push(datos[i].language);
-      }
-    } else if (prop === 'capital') {
-      opciones.push(datos[i].capital);
-    } else if (prop === 'country_shape') {
-      opciones.push(datos[i].country_shape);
-    }
+    opciones.add(datos[i][prop]);
   }
-  
-  // Asegurarse de que la respuesta correcta esté incluida
-  if (!opciones.includes(pais[prop])) {
-    opciones[Math.floor(Math.random() * opciones.length)] = pais[prop];
+  opciones = Array.from(opciones);
+  if (!opciones.includes(paisActual[prop])) {
+    opciones[Math.floor(Math.random() * opciones.length)] = paisActual[prop];
   }
-  
-  // Mezclar las opciones
   return opciones.sort(() => 0.5 - Math.random());
 }
 
-// Función para verificar la respuesta del usuario
-function verificarRespuesta(pais, prop, respuesta) { 
-  return pais[prop] === respuesta;
+function verificarRespuesta(prop, respuesta) {
+  return paisActual[prop].toLowerCase() === respuesta.toLowerCase();
 }
 
-// Manejar evento de solicitud de nuevo juego
-onEvent("nuevojuego", () => {
-  const paisAleatorio = obtenerPaisAleatorio();
-  
-  // Generar opciones
-  const opcLanguage = generarOpciones('language', paisAleatorio);
-  const opcCapital = generarOpciones('capital', paisAleatorio);
-  const opcShape = generarOpciones('country_shape', paisAleatorio);
-  
-  // Enviar datos al frontend
+// Función para obtener la bandera sin opciones de respuesta
+function obtenerFlag() {
+  paisActual = obtenerPaisAleatorio();
   return {
-    flag: paisAleatorio.flag,
-    language_options: opcLanguage,
-    capital_options: opcCapital,
-    shape_options: opcShape,
-    pais: paisAleatorio // Enviar país completo al frontend para validar después
+    flag: paisActual.flag
   };
-});
+}
 
-onEvent("cargarPaises", (data) => {
-  return datos;
-});
+function obtenerOpcionesIdioma() {
+  return {
+    language_options: generarOpciones('language')
+  };
+}
 
-// Manejar evento de verificación de respuesta
-onEvent("verificarRespuesta", (data) => {
-  const { prop, respuesta, pais } = data;
-  const esCorrecta = verificarRespuesta(pais, prop, respuesta);
-  
+function obtenerOpcionesCapital() {
+  return {
+    capital_options: generarOpciones('capital')
+  };
+}
+
+function obtenerOpcionesForma() {
+  return {
+    shape_options: generarOpciones('country_shape')
+  };
+}
+
+// Verificación de respuestas
+function verificarRespuestaFlag(respuesta) {
+  return verificarRespuestaGeneral('name', respuesta, 'bandera'); // Ronda de bandera
+}
+
+function verificarRespuestaIdioma(respuesta) {
+  return verificarRespuestaGeneral('language', respuesta, 'general'); // Rondas generales
+}
+
+function verificarRespuestaCapital(respuesta) {
+  return verificarRespuestaGeneral('capital', respuesta, 'general'); // Rondas generales
+}
+
+function verificarRespuestaForma(respuesta) {
+  return verificarRespuestaGeneral('country_shape', respuesta, 'general'); // Rondas generales
+}
+
+function verificarRespuestaGeneral(prop, respuesta, tipoRonda) {
+  const esCorrecta = verificarRespuesta(prop, respuesta);
+
   if (!esCorrecta) {
-    vidas--;
+    if (tipoRonda === 'bandera') {
+      vidasBandera--; // Restar vida si la respuesta de la bandera es incorrecta
+    } else {
+      vidasGenerales--; // Restar vida si la respuesta de las rondas generales es incorrecta
+    }
   }
 
-  // Lógica de fin de juego cuando las vidas llegan a 0
-  if (vidas === 0) {
+  // Verificar vidas
+  if (tipoRonda === 'bandera' && vidasBandera === 0) {
     return {
       esCorrecta,
-      vidas,
-      gameOver: true // Indicar al frontend que el juego ha terminado
+      vidas: vidasBandera,
+      gameOver: true,
+      mensaje: "Te has quedado sin vidas en la ronda de la bandera."
+    };
+  } else if (tipoRonda === 'general' && vidasGenerales === 0) {
+    return {
+      esCorrecta,
+      vidas: vidasGenerales,
+      gameOver: true,
+      mensaje: "Te has quedado sin vidas en las rondas generales."
     };
   }
 
   return {
     esCorrecta,
-    vidas
+    vidas: tipoRonda === 'bandera' ? vidasBandera : vidasGenerales,
   };
-});
+}
 
-// Iniciar el servidor
+// Eventos
+onEvent("obtenerFlag", obtenerFlag);
+onEvent("obtenerOpcionesIdioma", obtenerOpcionesIdioma);
+onEvent("obtenerOpcionesCapital", obtenerOpcionesCapital);
+onEvent("obtenerOpcionesForma", obtenerOpcionesForma);
+onEvent("verificarRespuestaFlag", verificarRespuestaFlag);
+onEvent("verificarRespuestaIdioma", verificarRespuestaIdioma);
+onEvent("verificarRespuestaCapital", verificarRespuestaCapital);
+onEvent("verificarRespuestaForma", verificarRespuestaForma);
+
+// Iniciar servidor
 startServer(3000);
