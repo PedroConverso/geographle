@@ -1,10 +1,13 @@
 import fs from 'fs';
 import { onEvent, startServer } from "soquetic";
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Importaciones desde guess_about/index.js
 import { 
-    obtenerCaracteristicasAleatorias, 
-    verificarSeleccion, 
-    guardarEstadisticas, 
-    handleVerificarSeleccion, 
     obtenerFlag,
     obtenerOpcionesIdioma,
     obtenerOpcionesCapital,
@@ -13,7 +16,16 @@ import {
     verificarRespuestaIdioma,
     verificarRespuestaCapital,
     verificarRespuestaForma
-} from './index.js';
+} from './backend/guess_about/index.js';  
+
+
+// Importaciones desde connections/index.js
+import { 
+    obtenerCaracteristicasAleatorias, 
+    verificarSeleccion, 
+    guardarEstadisticas, 
+    handleVerificarSeleccion 
+} from './backend/connections/index.js';  // Adjusted path
 
 // Eventos Connections
 onEvent("caracteristicasAleatorias", obtenerCaracteristicasAleatorias);
