@@ -418,17 +418,23 @@ section{
 }
 
 .high{
-    width: 150px;
+    height: 60px;
+    width: 200px;
     border-radius: 100px;
-    border: 2px solid #fff;
+    border: 3px solid #fff;
     display: flex;
     justify-content: center;
+    color: #E5EC1E;
+    align-items: center;
 }
 
 .low{
-    width: 150px;
+    height: 60px;
+    width: 200px;
     border-radius: 100px;
-    border: 2px solid #fff;
+    border: 3px solid #fff;
     display: flex;
     justify-content: center;
+    color: #E5EC1E;
+    align-items: center;
 }
