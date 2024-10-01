@@ -1,4 +1,4 @@
-<!--MENU CON LOS JUEGOS-->
+<!--JUEGO DE H&L-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,28 +10,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="GeographleMenu.css">
-    <title>Geographle</title>
+    <link rel="stylesheet" href="juego.css">
+    <title>Higher or Lower</title>
 </head>
 <body>
     <div 
     class="menudropdown"
     id="menudropdown"
     >
-      <img src="../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
+      <img src="../../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
 
       <div class="gamesMenuContainer">
 
         <div class="gameMenu">JUEGO 1
-          <img src="../Img/Foto top 10.png" class="Gamemc"></img>
+          <div class="Gamemc"></div>
         </div>
 
         <div class="gameMenu">JUEGO 2
-          <img src="../Img/Foto connections.png" class="Gamemc"></img>
+          <div class="Gamemc"></div>
         </div>
 
         <div class="gameMenu">JUEGO 3
-          <img src="../Img/Foto guess about.png" class="Gamemc"></img>
+          <div class="Gamemc"></div>
         </div>
 
         <div class="gameMenu">JUEGO 4
@@ -47,7 +47,7 @@
             <div class="sta">STATISTICS</div>
             <div class="sub">ALL GAMES</div>
           </div>
-          <img class="cruz" src="../Img/tabler_xbox-x-filled.png" onclick="openestadown()">
+          <img class="cruz" src="../../Img/tabler_xbox-x-filled.png" onclick="openestadown()">
         </div>
         <div class="sepa">
           <div class="separar">
@@ -75,7 +75,7 @@
               <P>BEST STREAK</P>
             </div>
             <div class="cuasta">
-              <Img src="../Img/material-symbols_share.png"></Img>
+              <Img src="../../Img/material-symbols_share.png"></Img>
               <P>SHARE</P>
             </div>
           </div>
@@ -89,7 +89,7 @@
           <div class="etbal">
             <div class="sett">SETTINGS</div>
           </div>
-          <img class="cruz2" src="../Img/tabler_xbox-x-filled.png" onclick="optisdown()">
+          <img class="cruz2" src="../../Img/tabler_xbox-x-filled.png" onclick="optisdown()">
         </div>
         <div class="lineas">
           <div class="lineaetbalera1">
@@ -113,57 +113,40 @@
           </div>
       </div>
     </div>
-
     <header>
       <div class="Login">
-        <img class="Imgmenu" src="../Img/mingcute_menu-fill.png" onclick="openmenudropdown()">
+        <img class="Imgmenu" src="../../Img/mingcute_menu-fill.png" onclick="openmenudropdown()">
       </div>
         <a href="/Frontend/Menu/" class="juntitos">
           <h1 class="Geograph">GEOGRAPH</h1>
           <h1 class="le">LE</h1>
         </a>
         <div class="iconos">
-          <img class="stats" src="../Img/gridicons_stats-up.png" onclick="openestadown()">
-          <img class="options" src="../Img/mdi_settings.png" onclick="optisdown()">
+          <img class="stats" src="../../Img/gridicons_stats-up.png" onclick="openestadown()">
+          <img class="options" src="../../Img/mdi_settings.png" onclick="optisdown()">
         </div>
     </header>
+    <section>
+        <div class="todo">
+            <div class="izq">
+                <div class="opt">
+                    <div class="high">Higher</div>
+                    <div class="low">Lower</div>
+                </div>
+            </div>
+            <div class="ca">
+                <div class="or">OR</div>
+            </div>
+            <div class="der">
 
+            </div>
+        </div>
+        <div class="aba">
+            <div class="score">Score:</div>
+            <div class="hig">High score:</div>
+        </div>
+    </section>
 
-  <div class="juegos">
-
-  <div class="caja1">
-
-  <a href="/Frontend/Top10/" class="box1">
-    <div class="RecAb1">
-      <h3 class="nombre1">TOP 10</h3>
-    </div>
-    <img class="camera1" src="../Img/image 8.png">   
-  </a>
-  <a href="/Frontend/Connections/" class="box2"> 
-  <div class="RecAb2">
-      <h3 class="nombre2">CONNECTIONS</h3>
-    </div>
-    <img class="camera2" src="../Img/image 6 (1).png">   
-  </a>
-    </div>
-
-    <div class="caja2">
-
-  <a href="/Frontend/GuessAbout/" class="box3"> 
-      <div class="RecAb3">
-        <h3 class="nombre3">GUESS ABOUT</h3>
-      </div>
-      <img class="camera3" src="../Img/image 7.png">   
-  </a>
-
-    <a href="/Frontend/Higher or Lower/" class="box4"> 
-      <div class="RecAb4">
-        <h3 class="nombre4">HIGHER OR LOWER</h3>
-      </div>
-      <img class="camera4" src="../Higher or Lower/H&Limg/image 1 (2).png">   
-  </a>    
-  </div>
-  </div>
-  <script src="GeographleMenu.js"></script>
+    <script src="juego.js"></script>
 </body>
 </html>
