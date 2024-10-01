@@ -413,6 +413,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .press{
@@ -436,48 +437,5 @@ main{
     height: 60px;
     display: flex;
     justify-content: center;
-}
-
-.triuno{
-    fill: #FFF;
-    stroke-width: 4px;
-    stroke: #000;
-    width: 47px;
-    margin: 20px;
-}
-
-.cuaazul{
-    width: 50px;
-    height: 50px;
-    background-color: blue;
-    border: 2px solid #000;
-    border-radius: 100%;
-}
-
-.cua{
-    width: 50px;
-    height: 50px;
-    background-color: white;
-    border: 2px solid #000;
-    border-radius: 100%;
-}
-
-.cuadri{
-    display: flex;
-    gap: 15px;
-    margin: 18px;
-}
-
-.abajo{
-    display: flex;
-    margin: 20px;
-}
-
-.tridos{
-    transform: rotate(180deg);
-    fill: #FFF;
-    stroke-width: 4px;
-    stroke: #000;
-    width: 47px;
-    margin: 20px;
+    font-family: "Inter" , sans-serif;
 }
