@@ -1,6 +1,8 @@
 import fs from 'fs';
+import path from 'path';
 
-let datos = JSON.parse(fs.readFileSync('./data/Guess_about.json', 'utf8'));
+// Ajusta la ruta para leer desde 'data' fuera de 'backend'
+let datos = JSON.parse(fs.readFileSync(path.resolve('data/Guess_about.json'), 'utf8'));
 let vidasBandera = 3; 
 let vidasGenerales = 5;
 let paisActual = null;
@@ -102,4 +104,3 @@ export function verificarRespuestaGeneral(prop, respuesta, tipoRonda) {
   };
 }
 
-startServer(3000);
