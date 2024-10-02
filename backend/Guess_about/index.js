@@ -1,8 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 
-// Ajusta la ruta para leer desde 'data' fuera de 'backend'
-let datos = JSON.parse(fs.readFileSync(path.resolve('data/Guess_about.json'), 'utf8'));
+let datos = JSON.parse(fs.readFileSync(path.resolve('proyecto-3-geographle/backend/data/Guess_about.json'), 'utf8'));
+
+
 let vidasBandera = 3; 
 let vidasGenerales = 5;
 let paisActual = null;
@@ -34,13 +35,12 @@ export function obtenerFlag() {
     flag: paisActual.flag
   };
 }
-
 export function obtenerOpcionesIdioma() {
   return {
     language_options: generarOpciones('language')
   };
 }
-
+console.log(generarOpciones);
 export function obtenerOpcionesCapital() {
   return {
     capital_options: generarOpciones('capital')
