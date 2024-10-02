@@ -3,44 +3,50 @@ import path from 'path';
 
 let datos = JSON.parse(fs.readFileSync('../data/Guess_about.json', 'utf8'));
 
-
 let vidasBandera = 3; 
 let vidasGenerales = 5;
 let paisActual = null;
 
 export function obtenerPaisAleatorio() {
-  return datos[Math.floor(Math.random() * datos.length)];
+  const pais = datos.countries[Math.floor(Math.random() * datos.countries.length)];
+  console.log("País seleccionado:", pais);
+  return pais;
 }
 
 export function generarOpciones(prop) {
   let opciones = new Set();
-  for (let i = 0; i < datos.length; i++) {
-    opciones.add(datos[i][prop]);
+  opciones.add(paisActual[prop]);  // Aseguramos que la opción correcta esté incluida
+
+  while (opciones.size < 4) {
+    const paisAleatorio = datos.countries[Math.floor(Math.random() * datos.countries.length)];
+    opciones.add(paisAleatorio[prop]);
   }
-  opciones = Array.from(opciones);
-  if (!opciones.includes(paisActual[prop])) {
-    opciones[Math.floor(Math.random() * opciones.length)] = paisActual[prop];
-  }
-  return opciones.sort(() => 0.5 - Math.random());
+
+  console.log(`Opciones generadas para ${prop}:`, Array.from(opciones));
+  return Array.from(opciones).sort(() => 0.5 - Math.random());
 }
 
 export function verificarRespuesta(prop, respuesta) {
-  return paisActual[prop].toLowerCase() === respuesta.toLowerCase();
+  const esCorrecta = paisActual[prop].toLowerCase() === respuesta.toLowerCase();
+  console.log(`Respuesta recibida para ${prop}:`, respuesta);
+  console.log(`¿Es correcta?`, esCorrecta);
+  return esCorrecta;
 }
-
 
 export function obtenerFlag() {
   paisActual = obtenerPaisAleatorio();
+  console.log("País actual:", paisActual);
   return {
     flag: paisActual.flag
   };
 }
+
 export function obtenerOpcionesIdioma() {
   return {
     language_options: generarOpciones('language')
   };
 }
-console.log(generarOpciones);
+
 export function obtenerOpcionesCapital() {
   return {
     capital_options: generarOpciones('capital')
@@ -53,7 +59,6 @@ export function obtenerOpcionesForma() {
   };
 }
 
-// Verificación de respuestas
 export function verificarRespuestaFlag(respuesta) {
   return verificarRespuestaGeneral('name', respuesta, 'bandera');
 }
@@ -76,13 +81,15 @@ export function verificarRespuestaGeneral(prop, respuesta, tipoRonda) {
   if (!esCorrecta) {
     if (tipoRonda === 'bandera') {
       vidasBandera--; 
+      console.log("Vidas restantes en la ronda de bandera:", vidasBandera);
     } else {
       vidasGenerales--; 
+      console.log("Vidas restantes en las rondas generales:", vidasGenerales);
     }
   }
 
-  // Verificar vidas
   if (tipoRonda === 'bandera' && vidasBandera === 0) {
+    console.log("Game Over en la ronda de la bandera.");
     return {
       esCorrecta,
       vidas: vidasBandera,
@@ -90,6 +97,7 @@ export function verificarRespuestaGeneral(prop, respuesta, tipoRonda) {
       mensaje: "Te has quedado sin vidas en la ronda de la bandera."
     };
   } else if (tipoRonda === 'general' && vidasGenerales === 0) {
+    console.log("Game Over en las rondas generales.");
     return {
       esCorrecta,
       vidas: vidasGenerales,
@@ -104,3 +112,8 @@ export function verificarRespuestaGeneral(prop, respuesta, tipoRonda) {
   };
 }
 
+// Pruebas
+console.log(obtenerFlag());
+console.log(obtenerOpcionesIdioma());
+console.log(obtenerOpcionesCapital());
+console.log(obtenerOpcionesForma());
