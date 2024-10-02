@@ -1,8 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-// Ajusta la ruta para leer desde 'data' fuera de 'backend'
-let datos = JSON.parse(fs.readFileSync(path.resolve('data/connections.json'), 'utf8'));
+let datos = JSON.parse(fs.readFileSync(path.resolve('../data/connections.json'), 'utf8'));
 let vidas;
 
 export function obtenerCaracteristicasAleatorias() {

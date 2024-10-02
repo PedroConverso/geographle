@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-let datos = JSON.parse(fs.readFileSync(path.resolve('proyecto-3-geographle/backend/data/Guess_about.json'), 'utf8'));
+let datos = JSON.parse(fs.readFileSync('../data/Guess_about.json', 'utf8'));
 
 
 let vidasBandera = 3; 
