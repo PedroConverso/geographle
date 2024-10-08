@@ -591,3 +591,8 @@ font-style: italic;
 a{
     text-decoration: none;
 }
+
+.im{
+    width: 500px;
+    height: 300px;
+}
