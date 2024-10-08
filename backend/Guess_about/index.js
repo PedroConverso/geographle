@@ -1,7 +1,12 @@
-import fs from 'fs';
+import { fileURLToPath } from 'url';
 import path from 'path';
+import fs from 'fs';
 
-let datos = JSON.parse(fs.readFileSync('../data/Guess_about.json', 'utf8'));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const filePath = path.join(__dirname, '../data/Guess_about.json');
+let datos = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
 let vidasBandera = 3; 
 let vidasGenerales = 5;
@@ -112,8 +117,3 @@ export function verificarRespuestaGeneral(prop, respuesta, tipoRonda) {
   };
 }
 
-// Pruebas
-console.log(obtenerFlag());
-console.log(obtenerOpcionesIdioma());
-console.log(obtenerOpcionesCapital());
-console.log(obtenerOpcionesForma());
