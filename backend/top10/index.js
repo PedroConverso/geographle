@@ -3,7 +3,7 @@ import readline from 'readline';
 
 let top10Data;
 try {
-  const data = fs.readFileSync('C:/github/proyecto-3-geographle/data/Top_10.json', 'utf8');
+  const data = fs.readFileSync('../data/Top_10.json', 'utf8');
   top10Data = JSON.parse(data);
 } catch (err) {
   console.error('Error reading top10.json:', err.message);
@@ -19,7 +19,7 @@ function selectRandomTopic() {
   const randomIndex = Math.floor(Math.random() * top10Data.top10.length);
   return top10Data.top10[randomIndex];
 }
-
+console.log(selectRandomTopic);
 function findTopicForCountry(countryName) {
   for (const topic of top10Data.top10) {
     for (const item of topic.items) {
