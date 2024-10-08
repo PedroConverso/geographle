@@ -42,7 +42,7 @@ header{
 }
 
 .gameMenu {
-    width: 90%;
+    width: 75%;
     height: 20%;
     background-color: #D9D9D9;
     border-radius: 20px;
@@ -590,4 +590,9 @@ font-style: italic;
 
 a{
     text-decoration: none;
+}
+
+.im{
+    width: 500px;
+    height: 300px;
 }

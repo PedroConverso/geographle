@@ -24,7 +24,7 @@ import {
     verificarSeleccion, 
     guardarEstadisticas, 
     handleVerificarSeleccion 
-} from './backend/connections/index.js';  // Adjusted path
+} from './backend/connections/index.js'; 
 
 // Eventos Connections
 onEvent("caracteristicasAleatorias", obtenerCaracteristicasAleatorias);
