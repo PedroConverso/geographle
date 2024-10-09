@@ -449,3 +449,8 @@ a{
     justify-content: center;
     gap: 20px;
 }
+
+.ou{
+    display: flex;
+    flex-direction: column-reverse;
+}

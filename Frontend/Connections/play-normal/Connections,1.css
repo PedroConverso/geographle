@@ -444,3 +444,8 @@ a{
     border-radius: 20px;
     color: #4F4F4F;
 }
+
+.ou{
+    display: flex;
+    flex-direction: column-reverse;
+}
