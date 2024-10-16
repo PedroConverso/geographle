@@ -25,14 +25,18 @@ function optisdown() {
     }
 }
 
-function thememode() {
-    let menu = document.getElementById("themeMode-check-container")
-    if (menu.classList.contains("themeMode-check-container-on")) {
-        menu.classList.remove("themeMode-check-container-on")
+// Función para cambiar el tema oscuro/claro
+function toggleTheme() {
+    let body = document.getElementById("body");
+    let checkbox = document.getElementById("themeMode-check");
+
+    if (checkbox.checked) {
+        body.classList.add("dark-mode");
     } else {
-        menu.classList.add("themeMode-check-container-on")
+        body.classList.remove("dark-mode");
     }
 }
+
 
 function thememode2() {
     let menu = document.getElementById("themeMode-check-container2")

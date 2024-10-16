@@ -277,19 +277,21 @@ a{
     height: auto;
     padding: 8px;
     justify-content: flex-start;
+    transition: justify-content 0.3s ease;
 }
 
 .themeMode-check-container-on {
-    justify-content: flex-end !important;
+    justify-content: flex-end;
 }
 
 .themeMode-check-container::after {
     width: 20px;
     height: 20px;
-    background-color: #d9d9d9;
+    background-color: white;
     content: "";
     border-radius: 50%;
 }
+
 
 .themeMode-check-container2 {
     width: 50px;
@@ -389,9 +391,9 @@ main{
 }
 
 .pres{
-    width: 450px;
-    height: 150px;
-    margin: 30px;
+    width: 400px;
+    height: 300px;
+    margin: 15px;
 }
 
 .desc{
@@ -407,13 +409,6 @@ main{
     display: flex;
     width: auto;
     flex-direction: column;
-}
-
-.sii{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .press{
@@ -438,4 +433,74 @@ main{
     display: flex;
     justify-content: center;
     font-family: "Inter" , sans-serif;
+}
+
+.claro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+:root {
+    --background-color: white;
+    --text-color: black;
+}
+
+/* Modo oscuro: estas variables cambiarán cuando se aplique la clase dark-mode */
+body.dark-mode {
+    --background-color: black;
+    --text-color: white;
+}
+
+/* Aplicando las variables a los elementos */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos del interruptor */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
 }
