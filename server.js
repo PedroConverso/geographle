@@ -36,7 +36,9 @@ onEvent("obtenerFlag", obtenerFlag);
 onEvent("obtenerOpcionesIdioma", obtenerOpcionesIdioma);
 onEvent("obtenerOpcionesCapital", obtenerOpcionesCapital);
 onEvent("obtenerOpcionesForma", obtenerOpcionesForma);
-onEvent("verificarRespuestaFlag", verificarRespuestaFlag);
+onEvent("verificarPais", (data) => {
+    return verificarRespuestaFlag(data);
+});
 onEvent("verificarRespuestaIdioma", verificarRespuestaIdioma);
 onEvent("verificarRespuestaCapital", verificarRespuestaCapital);
 onEvent("verificarRespuestaForma", verificarRespuestaForma);

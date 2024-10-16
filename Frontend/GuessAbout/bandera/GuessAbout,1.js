@@ -1,56 +1,32 @@
-document.addEventListener("DOMContentLoaded", function() {
-    fetchData("obtenerFlag", (data) => {
-        if (data && data.flag) {
-            const flagImg = document.createElement('img');
-            flagImg.src = data.flag;
-            flagImg.alt = "Bandera del país";
-            flagImg.style.width = "99%";
-            flagImg.style.height = "99%";
-            flagImg.style.objectFit = "contain";
+// Definir las funciones de manera global
+function verifySelection() {
+    const selectedCountry = document.querySelector('select').value;
+    
+    // Enviar solo el string del país seleccionado, no un objeto
+    postData("verificarPais", selectedCountry, (response) => {
+        // Crear o obtener un elemento para mostrar mensajes
+        let messageElement = document.getElementById('game-message');
+        if (!messageElement) {
+            messageElement = document.createElement('div');
+            messageElement.id = 'game-message';
+            document.querySelector('section').appendChild(messageElement);
+        }
 
-            const flagContainer = document.querySelector('.banderabd');
-            if (flagContainer) {
-                flagContainer.innerHTML = '';
-                flagContainer.appendChild(flagImg);
-                flagContainer.style.display = "flex";
-                flagContainer.style.justifyContent = "center";
-                flagContainer.style.alignItems = "center";
-            } else {
-                console.error("Elemento con clase 'banderabd' no encontrado en el HTML");
-            }
+        if (response.esCorrecta) {
+            messageElement.textContent = "¡Correcto! Has acertado el país.";
+            messageElement.style.color = 'green';
+            window.location.href = "/Frontend/GuessAbout/bandera/silueta/index.html";
         } else {
-            console.error("No se recibió una URL de bandera válida del servidor");
+            messageElement.textContent = `Incorrecto. Te quedan ${response.vidas} vidas.`;
+            messageElement.style.color = 'red';
+            
+            if (response.gameOver) {
+                messageElement.textContent = response.mensaje;
+                document.getElementById('verify-button').disabled = true;
+            }
         }
     });
-
-    const selectButton = document.querySelector('.boton');
-    const paisSelect = document.getElementById('paisSelect');
-
-    if (selectButton && paisSelect) {
-        selectButton.addEventListener('click', () => {
-            const respuestaUsuario = paisSelect.value;
-            if (respuestaUsuario) {
-                fetchData("verificarRespuestaFlag", { respuesta: respuestaUsuario }, (resultado) => {
-                    if (resultado.esCorrecta) {
-                        console.log("¡Correcto! La respuesta es acertada.");
-                    } else {
-                        console.log("Incorrecto. La respuesta no es acertada.");
-                    }
-                    console.log(`Vidas restantes: ${resultado.vidas}`);
-                    if (resultado.gameOver) {
-                        console.log(resultado.mensaje);
-                    }
-                });
-            } else {
-                console.log("Por favor, selecciona un país antes de verificar.");
-            }
-        });
-    } else {
-        console.error("No se encontró el botón de selección o el select de país");
-    }
-});
-
-
+}
 function openmenudropdown() {
     let menu = document.getElementById("menudropdown");
     if (menu.classList.contains("open")) {
@@ -95,3 +71,30 @@ function thememode2() {
         menu.classList.add("themeMode-check-container-on2");
     }
 }
+
+// Cargar la bandera cuando el documento esté listo
+document.addEventListener("DOMContentLoaded", function() {
+    fetchData("obtenerFlag", (data) => {
+        if (data && data.flag) {
+            const flagImg = document.createElement('img');
+            flagImg.src = data.flag;
+            flagImg.alt = "Bandera del país";
+            flagImg.style.width = "99%";
+            flagImg.style.height = "99%";
+            flagImg.style.objectFit = "contain";
+
+            const flagContainer = document.querySelector('.banderabd');
+            if (flagContainer) {
+                flagContainer.innerHTML = '';
+                flagContainer.appendChild(flagImg);
+                flagContainer.style.display = "flex";
+                flagContainer.style.justifyContent = "center";
+                flagContainer.style.alignItems = "center";
+            } else {
+                console.error("Elemento con clase 'banderabd' no encontrado en el HTML");
+            }
+        } else {
+            console.error("No se recibió una URL de bandera válida del servidor");
+        }
+    });
+});
