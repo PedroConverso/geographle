@@ -19,12 +19,20 @@ export function obtenerPaisAleatorio() {
 }
 
 export function generarOpciones(prop) {
+  if (paisActual === null) {
+    console.error("Error: paisActual es null. Asegúrate de llamar a obtenerFlag() primero.");
+    return [];
+  }
+
   let opciones = new Set();
   opciones.add(paisActual[prop]);  // Aseguramos que la opción correcta esté incluida
 
+  // Generar opciones de otros países
   while (opciones.size < 4) {
     const paisAleatorio = datos.countries[Math.floor(Math.random() * datos.countries.length)];
-    opciones.add(paisAleatorio[prop]);
+    if (paisAleatorio[prop] !== paisActual[prop]) {
+      opciones.add(paisAleatorio[prop]);
+    }
   }
 
   console.log(`Opciones generadas para ${prop}:`, Array.from(opciones));
@@ -116,4 +124,5 @@ export function verificarRespuestaGeneral(prop, respuesta, tipoRonda) {
     vidas: tipoRonda === 'bandera' ? vidasBandera : vidasGenerales,
   };
 }
+
 
