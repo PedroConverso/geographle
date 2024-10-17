@@ -672,7 +672,7 @@
     "capital": "Amman",
     "language": "Arabic",
     "flag": "https://flagcdn.com/w320/jo.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/JOR/JOR.png"
   },
   {
     "country_id": "KAZ",
@@ -680,7 +680,7 @@
     "capital": "Nur-Sultan",
     "language": "Kazakh",
     "flag": "https://flagcdn.com/w320/kz.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/KAZ/KAZ.png"
   },
   {
     "country_id": "KEN",
@@ -688,7 +688,7 @@
     "capital": "Nairobi",
     "language": "Swahili",
     "flag": "https://flagcdn.com/w320/ke.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/KEN/KEN.png"
   },
   {
     "country_id": "KIR",
@@ -696,7 +696,7 @@
     "capital": "Tarawa",
     "language": "English",
     "flag": "https://flagcdn.com/w320/ki.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/KIR/KIR.png"
   },
   {
     "country_id": "KWT",
@@ -704,7 +704,7 @@
     "capital": "Kuwait City",
     "language": "Arabic",
     "flag": "https://flagcdn.com/w320/kw.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/KWT/KWT.png"
   },
   {
     "country_id": "KGZ",
@@ -712,7 +712,7 @@
     "capital": "Bishkek",
     "language": "Kyrgyz",
     "flag": "https://flagcdn.com/w320/kg.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/KGZ/KGZ.png"
   },
   {
     "country_id": "LAO",
@@ -720,7 +720,7 @@
     "capital": "Vientiane",
     "language": "Lao",
     "flag": "https://flagcdn.com/w320/la.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/LAO/LAO.png"
   },
   {
     "country_id": "LVA",
@@ -728,7 +728,7 @@
     "capital": "Riga",
     "language": "Latvian",
     "flag": "https://flagcdn.com/w320/lv.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/LVA/LVA.png"
   },
   {
     "country_id": "LBN",
@@ -736,7 +736,7 @@
     "capital": "Beirut",
     "language": "Arabic",
     "flag": "https://flagcdn.com/w320/lb.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/LBN/LBN.png"
   },
   {
     "country_id": "LSO",
@@ -744,7 +744,7 @@
     "capital": "Maseru",
     "language": "Sesotho",
     "flag": "https://flagcdn.com/w320/ls.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/LSO/LSO.png"
   },
 
   {
@@ -753,7 +753,7 @@
     "capital": "Monrovia",
     "language": "English",
     "flag": "https://flagcdn.com/w320/lr.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/LBR/LBR.png"
   },
   {
     "country_id": "LBY",
@@ -761,7 +761,7 @@
     "capital": "Tripoli",
     "language": "Arabic",
     "flag": "https://flagcdn.com/w320/ly.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/LBY/LBY.png"
   },
   {
     "country_id": "LIE",
@@ -769,7 +769,7 @@
     "capital": "Vaduz",
     "language": "German",
     "flag": "https://flagcdn.com/w320/li.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/LIE/LIE.png"
   },
   {
     "country_id": "LTU",
@@ -777,7 +777,7 @@
     "capital": "Vilnius",
     "language": "Lithuanian",
     "flag": "https://flagcdn.com/w320/lt.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/LTU/LTU.png"
   },
   {
     "country_id": "LUX",
@@ -785,7 +785,7 @@
     "capital": "Luxembourg City",
     "language": "Luxembourgish",
     "flag": "https://flagcdn.com/w320/lu.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/LUX/LUX.png"
   },
   {
     "country_id": "MDG",
@@ -793,7 +793,7 @@
     "capital": "Antananarivo",
     "language": "Malagasy",
     "flag": "https://flagcdn.com/w320/mg.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/MDG/MDG.png"
   },
   {
     "country_id": "MWI",
@@ -801,7 +801,7 @@
     "capital": "Lilongwe",
     "language": "Chichewa",
     "flag": "https://flagcdn.com/w320/mw.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/MWI/MWI.png"
   },
   {
     "country_id": "MYS",
@@ -809,7 +809,7 @@
     "capital": "Kuala Lumpur",
     "language": "Malay",
     "flag": "https://flagcdn.com/w320/my.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/MYS/MYS.png"
   },
   {
     "country_id": "MLT",
@@ -817,7 +817,7 @@
     "capital": "Valletta",
     "language": "Maltese",
     "flag": "https://flagcdn.com/w320/mt.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/MLT/MLT.png"
   },
   {
     "country_id": "MRT",
@@ -825,7 +825,7 @@
     "capital": "Nouakchott",
     "language": "Arabic",
     "flag": "https://flagcdn.com/w320/mr.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/MRT/MRT.png"
   },
   {
     "country_id": "MUS",
@@ -833,7 +833,7 @@
     "capital": "Port Louis",
     "language": "English",
     "flag": "https://flagcdn.com/w320/mu.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/MUS/MUS.png"
   },
   {
     "country_id": "MEX",
@@ -841,7 +841,7 @@
     "capital": "Mexico City",
     "language": "Spanish",
     "flag": "https://flagcdn.com/w320/mx.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/MEX/MEX.png"
   },
   {
     "country_id": "FSM",
@@ -849,7 +849,7 @@
     "capital": "Palikir",
     "language": "English",
     "flag": "https://flagcdn.com/w320/fm.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/FSM/FSM.png"
   },
   {
     "country_id": "MDA",
@@ -857,7 +857,7 @@
     "capital": "Chisinau",
     "language": "Romanian",
     "flag": "https://flagcdn.com/w320/md.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/MDA/MDA.png"
   },
   {
     "country_id": "MCO",
@@ -865,7 +865,7 @@
     "capital": "Monaco",
     "language": "French",
     "flag": "https://flagcdn.com/w320/mc.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/MCO/MCO.png"
   },
   {
     "country_id": "MNG",
@@ -873,7 +873,7 @@
     "capital": "Ulaanbaatar",
     "language": "Mongolian",
     "flag": "https://flagcdn.com/w320/mn.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/MNG/MNG.png"
   },
   {
     "country_id": "MNE",
@@ -881,7 +881,7 @@
     "capital": "Podgorica",
     "language": "Montenegrin",
     "flag": "https://flagcdn.com/w320/me.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/MNE/MNE.png"
   },
   {
     "country_id": "MAR",
@@ -889,7 +889,7 @@
     "capital": "Rabat",
     "language": "Arabic",
     "flag": "https://flagcdn.com/w320/ma.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/MAR/MAR.png"
   },
   {
     "country_id": "MOZ",
@@ -897,7 +897,7 @@
     "capital": "Maputo",
     "language": "Portuguese",
     "flag": "https://flagcdn.com/w320/mz.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/MOZ/MOZ.png"
   },
   {
     "country_id": "MMR",
@@ -905,7 +905,7 @@
     "capital": "Naypyidaw",
     "language": "Burmese",
     "flag": "https://flagcdn.com/w320/mm.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/MMR/MMR.png"
   },
   {
     "country_id": "NAM",
@@ -913,7 +913,7 @@
     "capital": "Windhoek",
     "language": "English",
     "flag": "https://flagcdn.com/w320/na.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/NAM/NAM.png"
   },
   {
     "country_id": "NRU",
@@ -921,7 +921,7 @@
     "capital": "Yaren",
     "language": "Nauruan",
     "flag": "https://flagcdn.com/w320/nr.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/NRU/NRU.png"
   },
   {
     "country_id": "NPL",
@@ -929,7 +929,7 @@
     "capital": "Kathmandu",
     "language": "Nepali",
     "flag": "https://flagcdn.com/w320/np.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/NPL/NPL.png"
   },
   {
     "country_id": "NLD",
@@ -937,7 +937,7 @@
     "capital": "Amsterdam",
     "language": "Dutch",
     "flag": "https://flagcdn.com/w320/nl.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/NLD/NLD.png"
   },
   {
     "country_id": "NZL",
@@ -945,7 +945,7 @@
     "capital": "Wellington",
     "language": "English",
     "flag": "https://flagcdn.com/w320/nz.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/NZL/NZL.png"
   },
   {
     "country_id": "NIC",
@@ -953,7 +953,7 @@
     "capital": "Managua",
     "language": "Spanish",
     "flag": "https://flagcdn.com/w320/ni.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/NIC/NIC.png"
   },
   {
     "country_id": "NER",
@@ -961,7 +961,7 @@
     "capital": "Niamey",
     "language": "French",
     "flag": "https://flagcdn.com/w320/ne.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/NER/NER.png"
   },
   {
     "country_id": "NGA",
@@ -969,7 +969,7 @@
     "capital": "Abuja",
     "language": "English",
     "flag": "https://flagcdn.com/w320/ng.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/NGA/NGA.png"
   },
   {
     "country_id": "MKD",
@@ -977,7 +977,7 @@
     "capital": "Skopje",
     "language": "Macedonian",
     "flag": "https://flagcdn.com/w320/mk.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/MKD/MKD.png"
   },
   {
     "country_id": "NOR",
@@ -985,7 +985,7 @@
     "capital": "Oslo",
     "language": "Norwegian",
     "flag": "https://flagcdn.com/w320/no.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/NOR/NOR.png"
   },
   {
     "country_id": "OMN",
@@ -993,7 +993,7 @@
     "capital": "Muscat",
     "language": "Arabic",
     "flag": "https://flagcdn.com/w320/om.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/OMN/OMN.png"
   },
   {
     "country_id": "PAK",
@@ -1001,7 +1001,7 @@
     "capital": "Islamabad",
     "language": "Urdu",
     "flag": "https://flagcdn.com/w320/pk.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/PAK/PAK.png"
   },
   {
     "country_id": "PLW",
@@ -1009,7 +1009,7 @@
     "capital": "Ngerulmud",
     "language": "Palauan",
     "flag": "https://flagcdn.com/w320/pw.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/PLW/PLW.png"
   },
   {
     "country_id": "PAN",
@@ -1017,391 +1017,407 @@
     "capital": "Panama City",
     "language": "Spanish",
     "flag": "https://flagcdn.com/w320/pa.png",
-    "country_shape": ""
+    "country_shape": "https://gadm.org/img/480/gadm/PAN/PAN.png"
   },
-    {
-      "country_id": "PNG",
-      "name": "Papua New Guinea",
-      "capital": "Port Moresby",
-      "language": "English",
-      "flag": "https://flagcdn.com/w320/pg.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "PRY",
-      "name": "Paraguay",
-      "capital": "Asunción",
-      "language": "Spanish",
-      "flag": "https://flagcdn.com/w320/py.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "PER",
-      "name": "Peru",
-      "capital": "Lima",
-      "language": "Spanish",
-      "flag": "https://flagcdn.com/w320/pe.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "PHL",
-      "name": "Philippines",
-      "capital": "Manila",
-      "language": "Filipino",
-      "flag": "https://flagcdn.com/w320/ph.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "POL",
-      "name": "Poland",
-      "capital": "Warsaw",
-      "language": "Polish",
-      "flag": "https://flagcdn.com/w320/pl.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "PRT",
-      "name": "Portugal",
-      "capital": "Lisbon",
-      "language": "Portuguese",
-      "flag": "https://flagcdn.com/w320/pt.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "QAT",
-      "name": "Qatar",
-      "capital": "Doha",
-      "language": "Arabic",
-      "flag": "https://flagcdn.com/w320/qa.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "ROU",
-      "name": "Romania",
-      "capital": "Bucharest",
-      "language": "Romanian",
-      "flag": "https://flagcdn.com/w320/ro.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "RUS",
-      "name": "Russia",
-      "capital": "Moscow",
-      "language": "Russian",
-      "flag": "https://flagcdn.com/w320/ru.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "RWA",
-      "name": "Rwanda",
-      "capital": "Kigali",
-      "language": "Kinyarwanda",
-      "flag": "https://flagcdn.com/w320/rw.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "SAU",
-      "name": "Saudi Arabia",
-      "capital": "Riyadh",
-      "language": "Arabic",
-      "flag": "https://flagcdn.com/w320/sa.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "SEN",
-      "name": "Senegal",
-      "capital": "Dakar",
-      "language": "French",
-      "flag": "https://flagcdn.com/w320/sn.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "SYC",
-      "name": "Seychelles",
-      "capital": "Victoria",
-      "language": "English",
-      "flag": "https://flagcdn.com/w320/sc.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "SLE",
-      "name": "Sierra Leone",
-      "capital": "Freetown",
-      "language": "English",
-      "flag": "https://flagcdn.com/w320/sl.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "SGP",
-      "name": "Singapore",
-      "capital": "Singapore",
-      "language": "Malay",
-      "flag": "https://flagcdn.com/w320/sg.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "SOM",
-      "name": "Somalia",
-      "capital": "Mogadishu",
-      "language": "Somali",
-      "flag": "https://flagcdn.com/w320/so.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "ZAF",
-      "name": "South Africa",
-      "capital": "Pretoria",
-      "language": "Afrikaans, English, IsiZulu, IsiXhosa",
-      "flag": "https://flagcdn.com/w320/za.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "SSD",
-      "name": "South Sudan",
-      "capital": "Juba",
-      "language": "English",
-      "flag": "https://flagcdn.com/w320/ss.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "ESP",
-      "name": "Spain",
-      "capital": "Madrid",
-      "language": "Spanish",
-      "flag": "https://flagcdn.com/w320/es.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "LKA",
-      "name": "Sri Lanka",
-      "capital": "Sri Jayawardenepura Kotte",
-      "language": "Sinhalese",
-      "flag": "https://flagcdn.com/w320/lk.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "SDN",
-      "name": "Sudan",
-      "capital": "Khartoum",
-      "language": "Arabic",
-      "flag": "https://flagcdn.com/w320/sd.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "SUR",
-      "name": "Suriname",
-      "capital": "Paramaribo",
-      "language": "Dutch",
-      "flag": "https://flagcdn.com/w320/sr.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "SWE",
-      "name": "Sweden",
-      "capital": "Stockholm",
-      "language": "Swedish",
-      "flag": "https://flagcdn.com/w320/se.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "CHE",
-      "name": "Switzerland",
-      "capital": "Bern",
-      "language": "German, French, Italian",
-      "flag": "https://flagcdn.com/w320/ch.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "SYR",
-      "name": "Syria",
-      "capital": "Damascus",
-      "language": "Arabic",
-      "flag": "https://flagcdn.com/w320/sy.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "TWN",
-      "name": "Taiwan",
-      "capital": "Taipei",
-      "language": "Chinese",
-      "flag": "https://flagcdn.com/w320/tw.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "TJK",
-      "name": "Tajikistan",
-      "capital": "Dushanbe",
-      "language": "Tajik",
-      "flag": "https://flagcdn.com/w320/tj.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "TZA",
-      "name": "Tanzania",
-      "capital": "Dodoma",
-      "language": "Swahili, English",
-      "flag": "https://flagcdn.com/w320/tz.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "THA",
-      "name": "Thailand",
-      "capital": "Bangkok",
-      "language": "Thai",
-      "flag": "https://flagcdn.com/w320/th.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "TLS",
-      "name": "Timor-Leste",
-      "capital": "Dili",
-      "language": "Tetum, Portuguese",
-      "flag": "https://flagcdn.com/w320/tl.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "TGO",
-      "name": "Togo",
-      "capital": "Lomé",
-      "language": "French",
-      "flag": "https://flagcdn.com/w320/tg.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "TTO",
-      "name": "Trinidad and Tobago",
-      "capital": "Port of Spain",
-      "language": "English",
-      "flag": "https://flagcdn.com/w320/tt.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "TUN",
-      "name": "Tunisia",
-      "capital": "Tunis",
-      "language": "Arabic",
-      "flag": "https://flagcdn.com/w320/tn.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "TUR",
-      "name": "Turkey",
-      "capital": "Ankara",
-      "language": "Turkish",
-      "flag": "https://flagcdn.com/w320/tr.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "TKM",
-      "name": "Turkmenistan",
-      "capital": "Ashgabat",
-      "language": "Turkmen",
-      "flag": "https://flagcdn.com/w320/tm.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "UGA",
-      "name": "Uganda",
-      "capital": "Kampala",
-      "language": "English, Swahili",
-      "flag": "https://flagcdn.com/w320/ug.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "UKR",
-      "name": "Ukraine",
-      "capital": "Kyiv",
-      "language": "Ukrainian",
-      "flag": "https://flagcdn.com/w320/ua.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "ARE",
-      "name": "United Arab Emirates",
-      "capital": "Abu Dhabi",
-      "language": "Arabic",
-      "flag": "https://flagcdn.com/w320/ae.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "GBR",
-      "name": "United Kingdom",
-      "capital": "London",
-      "language": "English",
-      "flag": "https://flagcdn.com/w320/gb.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "USA",
-      "name": "United States",
-      "capital": "Washington, D.C.",
-      "language": "English",
-      "flag": "https://flagcdn.com/w320/us.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "URY",
-      "name": "Uruguay",
-      "capital": "Montevideo",
-      "language": "Spanish",
-      "flag": "https://flagcdn.com/w320/uy.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "UZB",
-      "name": "Uzbekistan",
-      "capital": "Tashkent",
-      "language": "Uzbek",
-      "flag": "https://flagcdn.com/w320/uz.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "VUT",
-      "name": "Vanuatu",
-      "capital": "Port Vila",
-      "language": "Bislama",
-      "flag": "https://flagcdn.com/w320/vu.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "VEN",
-      "name": "Venezuela",
-      "capital": "Caracas",
-      "language": "Spanish",
-      "flag": "https://flagcdn.com/w320/ve.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "VNM",
-      "name": "Vietnam",
-      "capital": "Hanoi",
-      "language": "Vietnamese",
-      "flag": "https://flagcdn.com/w320/vn.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "YEM",
-      "name": "Yemen",
-      "capital": "Sana'a",
-      "language": "Arabic",
-      "flag": "https://flagcdn.com/w320/ye.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "ZMB",
-      "name": "Zambia",
-      "capital": "Lusaka",
-      "language": "English",
-      "flag": "https://flagcdn.com/w320/zm.png",
-      "country_shape": ""
-    },
-    {
-      "country_id": "ZWE",
-      "name": "Zimbabwe",
-      "capital": "Harare",
-      "language": "English",
-      "flag": "https://flagcdn.com/w320/zw.png",
-      "country_shape": ""
+  {
+    "country_id": "PNG",
+    "name": "Papua New Guinea",
+    "capital": "Port Moresby",
+    "language": "English",
+    "flag": "https://flagcdn.com/w320/pg.png",
+    "country_shape": "https://gadm.org/img/480/gadm/PNG/PNG.png"
+  },
+  {
+    "country_id": "PRY",
+    "name": "Paraguay",
+    "capital": "Asunción",
+    "language": "Spanish",
+    "flag": "https://flagcdn.com/w320/py.png",
+    "country_shape": "https://gadm.org/img/480/gadm/PRY/PRY.png"
+  },
+  {
+    "country_id": "PER",
+    "name": "Peru",
+    "capital": "Lima",
+    "language": "Spanish",
+    "flag": "https://flagcdn.com/w320/pe.png",
+    "country_shape": "https://gadm.org/img/480/gadm/PER/PER.png"
+  },
+  {
+    "country_id": "PHL",
+    "name": "Philippines",
+    "capital": "Manila",
+    "language": "Filipino",
+    "flag": "https://flagcdn.com/w320/ph.png",
+    "country_shape": "https://gadm.org/img/480/gadm/PHL/PHL.png"
+  },
+  {
+    "country_id": "POL",
+    "name": "Poland",
+    "capital": "Warsaw",
+    "language": "Polish",
+    "flag": "https://flagcdn.com/w320/pl.png",
+    "country_shape": "https://gadm.org/img/480/gadm/POL/POL.png"
+  },
+  {
+    "country_id": "PRT",
+    "name": "Portugal",
+    "capital": "Lisbon",
+    "language": "Portuguese",
+    "flag": "https://flagcdn.com/w320/pt.png",
+    "country_shape": "https://gadm.org/img/480/gadm/PRT/PRT.png"
+  },
+  {
+    "country_id": "QAT",
+    "name": "Qatar",
+    "capital": "Doha",
+    "language": "Arabic",
+    "flag": "https://flagcdn.com/w320/qa.png",
+    "country_shape": "https://gadm.org/img/480/gadm/QAT/QAT.png"
+  },
+  {
+    "country_id": "ROU",
+    "name": "Romania",
+    "capital": "Bucharest",
+    "language": "Romanian",
+    "flag": "https://flagcdn.com/w320/ro.png",
+    "country_shape": "https://gadm.org/img/480/gadm/ROU/ROU.png"
+  },
+  {
+    "country_id": "RUS",
+    "name": "Russia",
+    "capital": "Moscow",
+    "language": "Russian",
+    "flag": "https://flagcdn.com/w320/ru.png",
+    "country_shape": "https://gadm.org/img/480/gadm/RUS/RUS.png"
+  },
+  {
+    "country_id": "RWA",
+    "name": "Rwanda",
+    "capital": "Kigali",
+    "language": "Kinyarwanda",
+    "flag": "https://flagcdn.com/w320/rw.png",
+    "country_shape": "https://gadm.org/img/480/gadm/RWA/RWA.png"
+  },
+  {
+    "country_id": "SAU",
+    "name": "Saudi Arabia",
+    "capital": "Riyadh",
+    "language": "Arabic",
+    "flag": "https://flagcdn.com/w320/sa.png",
+    "country_shape": "https://gadm.org/img/480/gadm/SAU/SAU.png"
+  },
+  {
+    "country_id": "SEN",
+    "name": "Senegal",
+    "capital": "Dakar",
+    "language": "French",
+    "flag": "https://flagcdn.com/w320/sn.png",
+    "country_shape": "https://gadm.org/img/480/gadm/SEN/SEN.png"
+  },
+  {
+    "country_id": "SYC",
+    "name": "Seychelles",
+    "capital": "Victoria",
+    "language": "English",
+    "flag": "https://flagcdn.com/w320/sc.png",
+    "country_shape": "https://gadm.org/img/480/gadm/SYC/SYC.png"
+  },
+  {
+    "country_id": "SLE",
+    "name": "Sierra Leone",
+    "capital": "Freetown",
+    "language": "English",
+    "flag": "https://flagcdn.com/w320/sl.png",
+    "country_shape": "https://gadm.org/img/480/gadm/SLE/SLE.png"
+  },
+  {
+    "country_id": "SGP",
+    "name": "Singapore",
+    "capital": "Singapore",
+    "language": "Malay",
+    "flag": "https://flagcdn.com/w320/sg.png",
+    "country_shape": "https://gadm.org/img/480/gadm/SGP/SGP.png"
+  },
+  {
+    "country_id": "SOM",
+    "name": "Somalia",
+    "capital": "Mogadishu",
+    "language": "Somali",
+    "flag": "https://flagcdn.com/w320/so.png",
+    "country_shape": "https://gadm.org/img/480/gadm/SOM/SOM.png"
+  },
+  {
+    "country_id": "ZAF",
+    "name": "South Africa",
+    "capital": "Pretoria",
+    "language": "Afrikaans, English, IsiZulu, IsiXhosa",
+    "flag": "https://flagcdn.com/w320/za.png",
+    "country_shape": "https://gadm.org/img/480/gadm/ZAF/ZAF.png"
+  },
+  {
+    "country_id": "SSD",
+    "name": "South Sudan",
+    "capital": "Juba",
+    "language": "English",
+    "flag": "https://flagcdn.com/w320/ss.png",
+    "country_shape": "https://gadm.org/img/480/gadm/SSD/SSD.png"
+  },
+  {
+    "country_id": "ESP",
+    "name": "Spain",
+    "capital": "Madrid",
+    "language": "Spanish",
+    "flag": "https://flagcdn.com/w320/es.png",
+    "country_shape": "https://gadm.org/img/480/gadm/ESP/ESP.png"
+  },
+  {
+    "country_id": "LKA",
+    "name": "Sri Lanka",
+    "capital": "Sri Jayawardenepura Kotte",
+    "language": "Sinhalese",
+    "flag": "https://flagcdn.com/w320/lk.png",
+    "country_shape": "https://gadm.org/img/480/gadm/LKA/LKA.png"
+  },
+  {
+    "country_id": "SDN",
+    "name": "Sudan",
+    "capital": "Khartoum",
+    "language": "Arabic",
+    "flag": "https://flagcdn.com/w320/sd.png",
+    "country_shape": "https://gadm.org/img/480/gadm/SDN/SDN.png"
+  },
+  {
+    "country_id": "SUR",
+    "name": "Suriname",
+    "capital": "Paramaribo",
+    "language": "Dutch",
+    "flag": "https://flagcdn.com/w320/sr.png",
+    "country_shape": "https://gadm.org/img/480/gadm/SUR/SUR.png"
+  },
+  {
+    "country_id": "SWE",
+    "name": "Sweden",
+    "capital": "Stockholm",
+    "language": "Swedish",
+    "flag": "https://flagcdn.com/w320/se.png",
+    "country_shape": "https://gadm.org/img/480/gadm/SWE/SWE.png"
+  },
+  {
+    "country_id": "CHE",
+    "name": "Switzerland",
+    "capital": "Bern",
+    "language": "German, French, Italian",
+    "flag": "https://flagcdn.com/w320/ch.png",
+    "country_shape": "https://gadm.org/img/480/gadm/CHE/CHE.png"
+  },
+  {
+    "country_id": "SYR",
+    "name": "Syria",
+    "capital": "Damascus",
+    "language": "Arabic",
+    "flag": "https://flagcdn.com/w320/sy.png",
+    "country_shape": "https://gadm.org/img/480/gadm/SYR/SYR.png"
+  },
+  {
+    "country_id": "TWN",
+    "name": "Taiwan",
+    "capital": "Taipei",
+    "language": "Mandarin",
+    "flag": "https://flagcdn.com/w320/tw.png",
+    "country_shape": "https://gadm.org/img/480/gadm/TWN/TWN.png"
+  },
+  {
+    "country_id": "TJK",
+    "name": "Tajikistan",
+    "capital": "Dushanbe",
+    "language": "Tajik",
+    "flag": "https://flagcdn.com/w320/tj.png",
+    "country_shape": "https://gadm.org/img/480/gadm/TJK/TJK.png"
+  },
+  {
+    "country_id": "TZA",
+    "name": "Tanzania",
+    "capital": "Dodoma",
+    "language": "Swahili, English",
+    "flag": "https://flagcdn.com/w320/tz.png",
+    "country_shape": "https://gadm.org/img/480/gadm/TZA/TZA.png"
+  },
+  {
+    "country_id": "THA",
+    "name": "Thailand",
+    "capital": "Bangkok",
+    "language": "Thai",
+    "flag": "https://flagcdn.com/w320/th.png",
+    "country_shape": "https://gadm.org/img/480/gadm/THA/THA.png"
+  },
+  {
+    "country_id": "TLS",
+    "name": "Timor-Leste",
+    "capital": "Dili",
+    "language": "Tetum",
+    "flag": "https://flagcdn.com/w320/tl.png",
+    "country_shape": "https://gadm.org/img/480/gadm/TLS/TLS.png"
+  },
+  {
+    "country_id": "TGO",
+    "name": "Togo",
+    "capital": "Lomé",
+    "language": "French",
+    "flag": "https://flagcdn.com/w320/tg.png",
+    "country_shape": "https://gadm.org/img/480/gadm/TGO/TGO.png"
+  },
+  {
+    "country_id": "TON",
+    "name": "Tonga",
+    "capital": "Nukuʻalofa",
+    "language": "Tongan",
+    "flag": "https://flagcdn.com/w320/to.png",
+    "country_shape": "https://gadm.org/img/480/gadm/TON/TON.png"
+  },
+  {
+    "country_id": "TTO",
+    "name": "Trinidad and Tobago",
+    "capital": "Port of Spain",
+    "language": "English",
+    "flag": "https://flagcdn.com/w320/tt.png",
+    "country_shape": "https://gadm.org/img/480/gadm/TTO/TTO.png"
+  },
+  {
+    "country_id": "TUN",
+    "name": "Tunisia",
+    "capital": "Tunis",
+    "language": "Arabic",
+    "flag": "https://flagcdn.com/w320/tn.png",
+    "country_shape": "https://gadm.org/img/480/gadm/TUN/TUN.png"
+  },
+  {
+    "country_id": "TUR",
+    "name": "Turkey",
+    "capital": "Ankara",
+    "language": "Turkish",
+    "flag": "https://flagcdn.com/w320/tr.png",
+    "country_shape": "https://gadm.org/img/480/gadm/TUR/TUR.png"
+  },
+  {
+    "country_id": "TKM",
+    "name": "Turkmenistan",
+    "capital": "Ashgabat",
+    "language": "Turkmen",
+    "flag": "https://flagcdn.com/w320/tm.png",
+    "country_shape": "https://gadm.org/img/480/gadm/TKM/TKM.png"
+  },
+  {
+    "country_id": "TZA",
+    "name": "Tanzania",
+    "capital": "Dodoma",
+    "language": "Swahili, English",
+    "flag": "https://flagcdn.com/w320/tz.png",
+    "country_shape": "https://gadm.org/img/480/gadm/TZA/TZA.png"
+  },
+  {
+    "country_id": "UGA",
+    "name": "Uganda",
+    "capital": "Kampala",
+    "language": "English",
+    "flag": "https://flagcdn.com/w320/ug.png",
+    "country_shape": "https://gadm.org/img/480/gadm/UGA/UGA.png"
+  },
+  {
+    "country_id": "UKR",
+    "name": "Ukraine",
+    "capital": "Kyiv",
+    "language": "Ukrainian",
+    "flag": "https://flagcdn.com/w320/ua.png",
+    "country_shape": "https://gadm.org/img/480/gadm/UKR/UKR.png"
+  },
+  {
+    "country_id": "ARE",
+    "name": "United Arab Emirates",
+    "capital": "Abu Dhabi",
+    "language": "Arabic",
+    "flag": "https://flagcdn.com/w320/ae.png",
+    "country_shape": "https://gadm.org/img/480/gadm/ARE/ARE.png"
+  },
+  {
+    "country_id": "GBR",
+    "name": "United Kingdom",
+    "capital": "London",
+    "language": "English",
+    "flag": "https://flagcdn.com/w320/gb.png",
+    "country_shape": "https://gadm.org/img/480/gadm/GBR/GBR.png"
+  },
+  {
+    "country_id": "USA",
+    "name": "United States",
+    "capital": "Washington, D.C.",
+    "language": "English",
+    "flag": "https://flagcdn.com/w320/us.png",
+    "country_shape": "https://gadm.org/img/480/gadm/USA/USA.png"
+  },
+  {
+    "country_id": "URY",
+    "name": "Uruguay",
+    "capital": "Montevideo",
+    "language": "Spanish",
+    "flag": "https://flagcdn.com/w320/uy.png",
+    "country_shape": "https://gadm.org/img/480/gadm/URY/URY.png"
+  },
+  {
+    "country_id": "UZB",
+    "name": "Uzbekistan",
+    "capital": "Tashkent",
+    "language": "Uzbek",
+    "flag": "https://flagcdn.com/w320/uz.png",
+    "country_shape": "https://gadm.org/img/480/gadm/UZB/UZB.png"
+  },
+  {
+    "country_id": "VUT",
+    "name": "Vanuatu",
+    "capital": "Port Vila",
+    "language": "Bislama",
+    "flag": "https://flagcdn.com/w320/vu.png",
+    "country_shape": "https://gadm.org/img/480/gadm/VUT/VUT.png"
+  },
+  {
+    "country_id": "VEN",
+    "name": "Venezuela",
+    "capital": "Caracas",
+    "language": "Spanish",
+    "flag": "https://flagcdn.com/w320/ve.png",
+    "country_shape": "https://gadm.org/img/480/gadm/VEN/VEN.png"
+  },
+  {
+    "country_id": "VNM",
+    "name": "Vietnam",
+    "capital": "Hanoi",
+    "language": "Vietnamese",
+    "flag": "https://flagcdn.com/w320/vn.png",
+    "country_shape": "https://gadm.org/img/480/gadm/VNM/VNM.png"
+  },
+  {
+    "country_id": "YEM",
+    "name": "Yemen",
+    "capital": "Sana'a",
+    "language": "Arabic",
+    "flag": "https://flagcdn.com/w320/ye.png",
+    "country_shape": "https://gadm.org/img/480/gadm/YEM/YEM.png"
+  },
+  {
+    "country_id": "ZMB",
+    "name": "Zambia",
+    "capital": "Lusaka",
+    "language": "English",
+    "flag": "https://flagcdn.com/w320/zm.png",
+    "country_shape": "https://gadm.org/img/480/gadm/ZMB/ZMB.png"
+  },
+  {
+    "country_id": "ZWE",
+    "name": "Zimbabwe",
+    "capital": "Harare",
+    "language": "English",
+    "flag": "https://flagcdn.com/w320/zw.png",
+    "country_shape": "https://gadm.org/img/480/gadm/ZWE/ZWE.png"
     }
   ]
 }

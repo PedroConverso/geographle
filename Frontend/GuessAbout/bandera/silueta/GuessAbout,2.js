@@ -1,3 +1,37 @@
+function mostrarImagenes() {
+    fetchData("obtenerOpcionesForma", function(respuesta) {
+        console.log(respuesta); // Agrega esto para depurar
+        
+        // Asegúrate de que la respuesta es un array de URLs
+        if (!Array.isArray(respuesta)) {
+            console.error("La respuesta no es un array:", respuesta);
+            return;
+        }
+
+        // Suponemos que respuesta es un array de URLs de imágenes
+        const imagenes = respuesta;
+
+        // Mezclar las imágenes aleatoriamente
+        const imagenesAleatorias = imagenes.sort(() => Math.random() - 0.5);
+
+        // Obtener los divs donde se mostrarán las imágenes
+        const divsCual = document.querySelectorAll('.cual');
+
+        // Verificar que haya suficientes imágenes
+        divsCual.forEach((div, index) => {
+            if (index < imagenesAleatorias.length) {
+                const img = document.createElement('img');
+                img.src = imagenesAleatorias[index];
+                img.style.width = '100%'; // Ocupa el 100% del espacio
+                img.style.height = '100%'; // Ocupa el 100% del espacio
+                img.alt = 'Silueta de país';
+                div.appendChild(img);
+            }
+        });
+    });
+}
+
+
 function openmenudropdown() {
     let menu = document.getElementById("menudropdown")
     if (menu.classList.contains("open")) {
