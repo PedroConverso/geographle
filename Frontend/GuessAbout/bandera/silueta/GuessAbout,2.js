@@ -1,79 +1,129 @@
-function mostrarImagenes() {
-    fetchData("obtenerOpcionesForma", function(respuesta) {
-        console.log(respuesta); // Add this for debugging
-        
-        // Ensure the response is an object with an array
-        if (!respuesta || !Array.isArray(respuesta.shape_options)) {
-            console.error("La respuesta no es un array:", respuesta);
-            return;
-        }
+// Inicialización del juego
+let currentCountry = null;
 
-        // Assuming respuesta.shape_options is an array of URLs
-        const imagenes = respuesta.shape_options;
-
-        // Shuffle images randomly
-        const imagenesAleatorias = imagenes.sort(() => Math.random() - 0.5);
-
-        // Get the divs where the images will be displayed
-        const divsCual = document.querySelectorAll('.cual');
-
-        // Check that there are enough images
-        divsCual.forEach((div, index) => {
-            if (index < imagenesAleatorias.length) {
-                const img = document.createElement('img');
-                img.src = imagenesAleatorias[index];
-                img.style.width = '100%'; // Occupies 100% of the space
-                img.style.height = '100%'; // Occupies 100% of the space
-                img.alt = 'Silueta de país';
-                div.appendChild(img);
+// Función para inicializar el juego y mostrar las imágenes
+async function initializeGame() {
+    try {
+        // Primero obtenemos la bandera/país actual
+        fetchData("obtenerFlag", function(flagResponse) {
+            if (!flagResponse) {
+                console.error("Error obteniendo el país inicial");
+                return;
             }
+            
+            // Una vez que tenemos el país, obtenemos las opciones de forma
+            fetchData("obtenerOpcionesForma", function(shapeResponse) {
+                if (!shapeResponse || !shapeResponse.shape_options) {
+                    console.error("Error: respuesta inválida", shapeResponse);
+                    return;
+                }
+                
+                const imagenes = shapeResponse.shape_options;
+                console.log("Imágenes a mostrar:", imagenes);
+                
+                // Mostrar las imágenes en los divs
+                const divsCual = document.querySelectorAll('.cual');
+                divsCual.forEach((div, index) => {
+                    if (index < imagenes.length) {
+                        // Limpiar el div antes de agregar la nueva imagen
+                        div.innerHTML = '';
+                        
+                        const img = document.createElement('img');
+                        img.src = imagenes[index];
+                        img.style.width = '100%';
+                        img.style.height = '100%';
+                        img.alt = 'Silueta de país';
+                        
+                        // Manejar errores de carga de imagen
+                        img.onerror = function() {
+                            console.error(`Error cargando imagen: ${img.src}`);
+                            img.src = 'path/to/fallback/image.png'; // Imagen de respaldo
+                        };
+                        
+                        // Agregar evento click para selección
+                        div.addEventListener('click', function() {
+                            handleShapeSelection(imagenes[index]);
+                        });
+                        
+                        div.appendChild(img);
+                    }
+                });
+            });
         });
+    } catch (error) {
+        console.error("Error inicializando el juego:", error);
+    }
+}
+
+// Función para manejar la selección de una forma
+function handleShapeSelection(selectedShape) {
+    postData("verificarRespuestaForma", selectedShape, function(response) {
+        if (response.esCorrecta) {
+            // Manejar respuesta correcta
+            showSuccessMessage();
+            updateAttempts(response.vidas);
+            if (response.gameOver) {
+                handleGameOver(response.mensaje);
+            }
+        } else {
+            // Manejar respuesta incorrecta
+            showErrorMessage();
+            updateAttempts(response.vidas);
+            if (response.gameOver) {
+                handleGameOver(response.mensaje);
+            }
+        }
     });
 }
 
+// Funciones de utilidad para la UI
+function showSuccessMessage() {
+    // Implementar lógica para mostrar mensaje de éxito
+    console.log("¡Correcto!");
+}
 
+function showErrorMessage() {
+    // Implementar lógica para mostrar mensaje de error
+    console.log("Incorrecto. Intenta de nuevo.");
+}
 
-function openmenudropdown() {
-    let menu = document.getElementById("menudropdown")
-    if (menu.classList.contains("open")) {
-        menu.classList.remove("open")
-    } else {
-        menu.classList.add("open")
+function updateAttempts(vidas) {
+    const attempsElement = document.querySelector('.atte');
+    if (attempsElement) {
+        attempsElement.textContent = `Attemps: ${vidas}/2`;
     }
+}
+
+function handleGameOver(mensaje) {
+    alert(mensaje);
+    // Redirigir a la siguiente ronda o a la pantalla de fin de juego
+}
+
+// Event Listeners
+document.addEventListener('DOMContentLoaded', initializeGame);
+
+// Mantener las funciones del menú existentes
+function openmenudropdown() {
+    let menu = document.getElementById("menudropdown");
+    menu.classList.toggle("open");
 }
 
 function openestadown() {
-    let menu = document.getElementById("estadown")
-    if (menu.classList.contains("edOpen")) {
-        menu.classList.remove("edOpen")
-    } else {
-        menu.classList.add("edOpen")
-    }
+    let menu = document.getElementById("estadown");
+    menu.classList.toggle("edOpen");
 }
 
 function optisdown() {
-    let menu = document.getElementById("optidown")
-    if (menu.classList.contains("edSet")) {
-        menu.classList.remove("edSet")
-    } else {
-        menu.classList.add("edSet")
-    }
+    let menu = document.getElementById("optidown");
+    menu.classList.toggle("edSet");
 }
 
 function thememode() {
-    let menu = document.getElementById("themeMode-check-container")
-    if (menu.classList.contains("themeMode-check-container-on")) {
-        menu.classList.remove("themeMode-check-container-on")
-    } else {
-        menu.classList.add("themeMode-check-container-on")
-    }
+    let menu = document.getElementById("themeMode-check-container");
+    menu.classList.toggle("themeMode-check-container-on");
 }
 
 function thememode2() {
-    let menu = document.getElementById("themeMode-check-container2")
-    if (menu.classList.contains("themeMode-check-container-on2")) {
-        menu.classList.remove("themeMode-check-container-on2")
-    } else {
-        menu.classList.add("themeMode-check-container-on2")
-    }
+    let menu = document.getElementById("themeMode-check-container2");
+    menu.classList.toggle("themeMode-check-container-on2");
 }
