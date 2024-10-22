@@ -1,3 +1,29 @@
+document.addEventListener("DOMContentLoaded", function() {
+    fetchData("obtenerFlag", (data) => {
+        if (data && data.flag) {
+            const flagImg = document.createElement('img');
+            flagImg.src = data.flag;
+            flagImg.alt = "Bandera del país";
+            flagImg.style.width = "99%";
+            flagImg.style.height = "99%";
+            flagImg.style.objectFit = "contain";
+
+            const flagContainer = document.querySelector('.banderabd');
+            if (flagContainer) {
+                flagContainer.innerHTML = '';
+                flagContainer.appendChild(flagImg);
+                flagContainer.style.display = "flex";
+                flagContainer.style.justifyContent = "center";
+                flagContainer.style.alignItems = "center";
+            } else {
+                console.error("Elemento con clase 'banderabd' no encontrado en el HTML");
+            }
+        } else {
+            console.error("No se recibió una URL de bandera válida del servidor");
+        }
+    });
+});
+
 // Definir las funciones de manera global
 function verifySelection() {
     const selectedCountry = document.querySelector('select').value;
@@ -71,30 +97,3 @@ function thememode2() {
         menu.classList.add("themeMode-check-container-on2");
     }
 }
-
-// Cargar la bandera cuando el documento esté listo
-document.addEventListener("DOMContentLoaded", function() {
-    fetchData("obtenerFlag", (data) => {
-        if (data && data.flag) {
-            const flagImg = document.createElement('img');
-            flagImg.src = data.flag;
-            flagImg.alt = "Bandera del país";
-            flagImg.style.width = "99%";
-            flagImg.style.height = "99%";
-            flagImg.style.objectFit = "contain";
-
-            const flagContainer = document.querySelector('.banderabd');
-            if (flagContainer) {
-                flagContainer.innerHTML = '';
-                flagContainer.appendChild(flagImg);
-                flagContainer.style.display = "flex";
-                flagContainer.style.justifyContent = "center";
-                flagContainer.style.alignItems = "center";
-            } else {
-                console.error("Elemento con clase 'banderabd' no encontrado en el HTML");
-            }
-        } else {
-            console.error("No se recibió una URL de bandera válida del servidor");
-        }
-    });
-});

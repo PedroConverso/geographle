@@ -15,8 +15,7 @@ import {
     verificarRespuestaIdioma,
     verificarRespuestaCapital,
     verificarRespuestaForma
-} from './backend/guess_about/index.js';  
-
+} from './backend/Guess_about/index.js';  
 
 // Importaciones desde connections/index.js
 import { 
