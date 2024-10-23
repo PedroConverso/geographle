@@ -55,3 +55,39 @@ function infodown() {
 document.getElementById("sel").addEventListener("click", function() {
     
 })
+
+// Datos simulados para el ejemplo
+const top10Data = {
+    "topic": "Países más poblados",
+    "items": [
+      {"rank": 1, "name": "China"},
+      {"rank": 2, "name": "India"},
+      {"rank": 3, "name": "Estados Unidos"},
+      {"rank": 4, "name": "Indonesia"},
+      {"rank": 5, "name": "Pakistán"},
+      {"rank": 6, "name": "Brasil"},
+      {"rank": 7, "name": "Nigeria"},
+      {"rank": 8, "name": "Bangladés"},
+      {"rank": 9, "name": "Rusia"},
+      {"rank": 10, "name": "México"}
+    ]
+  };
+  
+  // Función para manejar la validación y actualización de la UI
+  function validarPais() {
+    const input = document.getElementById("etbal").value.trim().toLowerCase();
+    const selected = top10Data.items.find(item => item.name.toLowerCase() === input);
+  
+    if (selected) {
+      // Actualizar la UI con el país correcto
+      const index = selected.rank - 1;
+      const boxes = document.getElementsByClassName("rectan");
+      boxes[index].innerText = `${selected.rank}. ${selected.name}`;
+      boxes[index].style.backgroundColor = '#D4EDDA'; // Cambia el color de fondo para indicar acierto
+    } else {
+      alert("País incorrecto, intenta de nuevo!");
+    }
+  }
+  
+  document.getElementById("sel").addEventListener("click", validarPais);
+  
