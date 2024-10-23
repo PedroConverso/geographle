@@ -531,7 +531,6 @@ const jsonData = {
     document.querySelector('.title').innerText = top10Data.topic;
   }
   
-  // Función para manejar la validación y actualización de la UI
   function validarPais() {
     const input = document.getElementById("etbal").value.trim().toLowerCase();
     const selected = top10Data.items.find(item => item.name.toLowerCase() === input);
@@ -560,6 +559,12 @@ const jsonData = {
       }
       
       boxes[index].style.backgroundColor = '#D4EDDA'; // Cambia el color de fondo para indicar acierto
+  
+      // Verificar si se han adivinado todos los países
+      const allGuessed = Array.from(boxes).every(box => box.innerText.trim() !== '');
+      if (allGuessed) {
+        alert("¡Felicidades! Has adivinado todos los países correctamente.");
+      }
     } else {
       alert("País incorrecto, intenta de nuevo!");
     }
