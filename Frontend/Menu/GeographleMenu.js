@@ -28,6 +28,7 @@ function optisdown() {
 function toggleTheme() {
     let body = document.getElementById("body");
     let checkbox = document.getElementById("themeMode-check");
+
     if (checkbox.checked) {
         body.classList.remove("light-mode");
         body.classList.add("dark-mode");
