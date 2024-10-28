@@ -1,36 +1,57 @@
-document.addEventListener("DOMContentLoaded", function() {
-    fetchData("obtenerFlag", (data) => {
-        if (data && data.flag) {
-            const flagImg = document.createElement('img');
-            flagImg.src = data.flag;
-            flagImg.alt = "Bandera del país";
-            flagImg.style.width = "99%";
-            flagImg.style.height = "99%";
-            flagImg.style.objectFit = "contain";
+// Variable global para almacenar el país actual
+let currentGame = {
+    country: null,
+    flag: null
+};
 
-            const flagContainer = document.querySelector('.banderabd');
-            if (flagContainer) {
-                flagContainer.innerHTML = '';
-                flagContainer.appendChild(flagImg);
-                flagContainer.style.display = "flex";
-                flagContainer.style.justifyContent = "center";
-                flagContainer.style.alignItems = "center";
+// Función para inicializar el juego - primera ronda (banderas)
+document.addEventListener("DOMContentLoaded", function() {
+    // Si no hay un juego en curso, obtener nuevo país
+    if (!localStorage.getItem('currentGame')) {
+        fetchData("obtenerFlag", (data) => {
+            if (data && data.flag) {
+                // Guardar los datos del juego
+                currentGame.flag = data.flag;
+                currentGame.country = data.country; // Asumiendo que el servidor también envía el país
+                localStorage.setItem('currentGame', JSON.stringify(currentGame));
+                
+                // Mostrar la bandera
+                displayFlag(data.flag);
             } else {
-                console.error("Elemento con clase 'banderabd' no encontrado en el HTML");
+                console.error("No se recibió una URL de bandera válida del servidor");
             }
-        } else {
-            console.error("No se recibió una URL de bandera válida del servidor");
-        }
-    });
+        });
+    } else {
+        // Recuperar juego existente
+        currentGame = JSON.parse(localStorage.getItem('currentGame'));
+        displayFlag(currentGame.flag);
+    }
 });
 
-// Definir las funciones de manera global
+// Función para mostrar la bandera
+function displayFlag(flagUrl) {
+    const flagImg = document.createElement('img');
+    flagImg.src = flagUrl;
+    flagImg.alt = "Bandera del país";
+    flagImg.style.width = "99%";
+    flagImg.style.height = "99%";
+    flagImg.style.objectFit = "contain";
+
+    const flagContainer = document.querySelector('.banderabd');
+    if (flagContainer) {
+        flagContainer.innerHTML = '';
+        flagContainer.appendChild(flagImg);
+        flagContainer.style.display = "flex";
+        flagContainer.style.justifyContent = "center";
+        flagContainer.style.alignItems = "center";
+    }
+}
+
+// Función para verificar la selección en la primera ronda
 function verifySelection() {
     const selectedCountry = document.querySelector('select').value;
     
-    // Enviar solo el string del país seleccionado, no un objeto
     postData("verificarPais", selectedCountry, (response) => {
-        // Crear o obtener un elemento para mostrar mensajes
         let messageElement = document.getElementById('game-message');
         if (!messageElement) {
             messageElement = document.createElement('div');
@@ -41,6 +62,7 @@ function verifySelection() {
         if (response.esCorrecta) {
             messageElement.textContent = "¡Correcto! Has acertado el país.";
             messageElement.style.color = 'green';
+            // Mantener el juego actual y pasar a la siguiente ronda
             window.location.href = "/Frontend/GuessAbout/bandera/silueta/index.html";
         } else {
             messageElement.textContent = `Incorrecto. Te quedan ${response.vidas} vidas.`;
@@ -49,10 +71,14 @@ function verifySelection() {
             if (response.gameOver) {
                 messageElement.textContent = response.mensaje;
                 document.getElementById('verify-button').disabled = true;
+                // Limpiar el juego actual si se acaban las vidas
+                localStorage.removeItem('currentGame');
             }
         }
     });
 }
+
+// Funciones del menú
 function openmenudropdown() {
     let menu = document.getElementById("menudropdown");
     if (menu.classList.contains("open")) {

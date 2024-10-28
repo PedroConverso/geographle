@@ -1,53 +1,51 @@
-// Inicialización del juego
-let currentCountry = null;
+// Variable global para almacenar el país actual
+let currentGame = null;
 
-// Función para inicializar el juego y mostrar las imágenes
+// Función para inicializar la segunda ronda (siluetas)
 async function initializeGame() {
     try {
-        // Primero obtenemos la bandera/país actual
-        fetchData("obtenerFlag", function(flagResponse) {
-            if (!flagResponse) {
-                console.error("Error obteniendo el país inicial");
+        // Recuperar el juego actual del localStorage
+        const savedGame = localStorage.getItem('currentGame');
+        if (!savedGame) {
+            console.error("No se encontró un juego en curso");
+            return;
+        }
+
+        currentGame = JSON.parse(savedGame);
+        
+        // Obtener las opciones de forma para el país actual
+        fetchData("obtenerOpcionesForma", function(shapeResponse) {
+            if (!shapeResponse || !shapeResponse.shape_options) {
+                console.error("Error: respuesta inválida", shapeResponse);
                 return;
             }
             
-            // Una vez que tenemos el país, obtenemos las opciones de forma
-            fetchData("obtenerOpcionesForma", function(shapeResponse) {
-                if (!shapeResponse || !shapeResponse.shape_options) {
-                    console.error("Error: respuesta inválida", shapeResponse);
-                    return;
+            const imagenes = shapeResponse.shape_options;
+            console.log("Imágenes a mostrar:", imagenes);
+            
+            // Mostrar las imágenes en los divs
+            const divsCual = document.querySelectorAll('.cual');
+            divsCual.forEach((div, index) => {
+                if (index < imagenes.length) {
+                    div.innerHTML = '';
+                    
+                    const img = document.createElement('img');
+                    img.src = imagenes[index];
+                    img.style.width = '100%';
+                    img.style.height = '100%';
+                    img.alt = 'Silueta de país';
+                    
+                    img.onerror = function() {
+                        console.error(`Error cargando imagen: ${img.src}`);
+                        img.src = 'path/to/fallback/image.png';
+                    };
+                    
+                    div.addEventListener('click', function() {
+                        handleShapeSelection(imagenes[index]);
+                    });
+                    
+                    div.appendChild(img);
                 }
-                
-                const imagenes = shapeResponse.shape_options;
-                console.log("Imágenes a mostrar:", imagenes);
-                
-                // Mostrar las imágenes en los divs
-                const divsCual = document.querySelectorAll('.cual');
-                divsCual.forEach((div, index) => {
-                    if (index < imagenes.length) {
-                        // Limpiar el div antes de agregar la nueva imagen
-                        div.innerHTML = '';
-                        
-                        const img = document.createElement('img');
-                        img.src = imagenes[index];
-                        img.style.width = '100%';
-                        img.style.height = '100%';
-                        img.alt = 'Silueta de país';
-                        
-                        // Manejar errores de carga de imagen
-                        img.onerror = function() {
-                            console.error(`Error cargando imagen: ${img.src}`);
-                            img.src = 'path/to/fallback/image.png'; // Imagen de respaldo
-                        };
-                        
-                        // Agregar evento click para selección
-                        div.addEventListener('click', function() {
-                            handleShapeSelection(imagenes[index]);
-                        });
-                        
-                        div.appendChild(img);
-                    }
-                });
             });
         });
     } catch (error) {
@@ -55,21 +53,23 @@ async function initializeGame() {
     }
 }
 
-// Función para manejar la selección de una forma
+// Función para manejar la selección de forma
 function handleShapeSelection(selectedShape) {
     postData("verificarRespuestaForma", selectedShape, function(response) {
         if (response.esCorrecta) {
-            // Manejar respuesta correcta
             showSuccessMessage();
             updateAttempts(response.vidas);
             if (response.gameOver) {
+                // Limpiar el juego actual al completar ambas rondas
+                localStorage.removeItem('currentGame');
                 handleGameOver(response.mensaje);
             }
         } else {
-            // Manejar respuesta incorrecta
             showErrorMessage();
             updateAttempts(response.vidas);
             if (response.gameOver) {
+                // Limpiar el juego actual si se acaban las vidas
+                localStorage.removeItem('currentGame');
                 handleGameOver(response.mensaje);
             }
         }
@@ -78,13 +78,13 @@ function handleShapeSelection(selectedShape) {
 
 // Funciones de utilidad para la UI
 function showSuccessMessage() {
-    // Implementar lógica para mostrar mensaje de éxito
     console.log("¡Correcto!");
+    // Implementa aquí la lógica para mostrar el mensaje de éxito en la UI
 }
 
 function showErrorMessage() {
-    // Implementar lógica para mostrar mensaje de error
     console.log("Incorrecto. Intenta de nuevo.");
+    // Implementa aquí la lógica para mostrar el mensaje de error en la UI
 }
 
 function updateAttempts(vidas) {
@@ -96,13 +96,13 @@ function updateAttempts(vidas) {
 
 function handleGameOver(mensaje) {
     alert(mensaje);
-    // Redirigir a la siguiente ronda o a la pantalla de fin de juego
+    // Implementa aquí la lógica para manejar el fin del juego
 }
 
-// Event Listeners
+// Inicializar el juego cuando se carga la página
 document.addEventListener('DOMContentLoaded', initializeGame);
 
-// Mantener las funciones del menú existentes
+// Funciones del menú
 function openmenudropdown() {
     let menu = document.getElementById("menudropdown");
     menu.classList.toggle("open");
