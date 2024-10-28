@@ -1,106 +1,103 @@
-// Variable global para almacenar el país actual
-let currentGame = null;
+// Keep existing functions (openmenudropdown, openestadown, etc.)
 
-// Función para inicializar la segunda ronda (siluetas)
-async function initializeGame() {
-    try {
-        // Recuperar el juego actual del localStorage
-        const savedGame = localStorage.getItem('currentGame');
-        if (!savedGame) {
-            console.error("No se encontró un juego en curso");
+function mostrarImagenes() {
+    fetchData("obtenerOpcionesForma", function(respuesta) {
+        console.log(respuesta);
+        
+        if (!respuesta || !Array.isArray(respuesta.shape_options)) {
+            console.error("La respuesta no es un array:", respuesta);
             return;
         }
 
-        currentGame = JSON.parse(savedGame);
-        
-        // Obtener las opciones de forma para el país actual
-        fetchData("obtenerOpcionesForma", function(shapeResponse) {
-            if (!shapeResponse || !shapeResponse.shape_options) {
-                console.error("Error: respuesta inválida", shapeResponse);
-                return;
+        const imagenes = respuesta.shape_options;
+        const imagenesAleatorias = imagenes.sort(() => Math.random() - 0.5);
+        const divsCual = document.querySelectorAll('.cual');
+
+        divsCual.forEach((div, index) => {
+            if (index < imagenesAleatorias.length) {
+                const img = document.createElement('img');
+                img.src = imagenesAleatorias[index];
+                img.style.width = '100%';
+                img.style.height = '100%';
+                img.alt = 'Silueta de país';
+                
+                // Add click event handler
+                img.addEventListener('click', function() {
+                    handleShapeSelection(imagenesAleatorias[index]);
+                });
+                
+                div.appendChild(img);
             }
-            
-            const imagenes = shapeResponse.shape_options;
-            console.log("Imágenes a mostrar:", imagenes);
-            
-            // Mostrar las imágenes en los divs
-            const divsCual = document.querySelectorAll('.cual');
-            divsCual.forEach((div, index) => {
-                if (index < imagenes.length) {
-                    div.innerHTML = '';
-                    
-                    const img = document.createElement('img');
-                    img.src = imagenes[index];
-                    img.style.width = '100%';
-                    img.style.height = '100%';
-                    img.alt = 'Silueta de país';
-                    
-                    img.onerror = function() {
-                        console.error(`Error cargando imagen: ${img.src}`);
-                        img.src = 'path/to/fallback/image.png';
-                    };
-                    
-                    div.addEventListener('click', function() {
-                        handleShapeSelection(imagenes[index]);
-                    });
-                    
-                    div.appendChild(img);
-                }
-            });
         });
-    } catch (error) {
-        console.error("Error inicializando el juego:", error);
-    }
+    });
 }
 
-// Función para manejar la selección de forma
 function handleShapeSelection(selectedShape) {
+    // Remove previous selection styling
+    document.querySelectorAll('.cual img').forEach(img => {
+        img.parentElement.classList.remove('selected');
+    });
+    
+    // Add selection styling to clicked image
+    const selectedImg = Array.from(document.querySelectorAll('.cual img'))
+        .find(img => img.src === selectedShape);
+    if (selectedImg) {
+        selectedImg.parentElement.classList.add('selected');
+    }
+
+    // Verify the answer
     postData("verificarRespuestaForma", selectedShape, function(response) {
+        console.log("Respuesta recibida:", response);
+        
+        // Update attempts counter
+        const attemptDiv = document.querySelector('.atte');
+        const currentAttempts = 2 - (response.vidas || 0);
+        attemptDiv.textContent = `Attemps: ${currentAttempts}/2`;
+
         if (response.esCorrecta) {
-            showSuccessMessage();
-            updateAttempts(response.vidas);
-            if (response.gameOver) {
-                // Limpiar el juego actual al completar ambas rondas
-                localStorage.removeItem('currentGame');
-                handleGameOver(response.mensaje);
-            }
-        } else {
-            showErrorMessage();
-            updateAttempts(response.vidas);
-            if (response.gameOver) {
-                // Limpiar el juego actual si se acaban las vidas
-                localStorage.removeItem('currentGame');
-                handleGameOver(response.mensaje);
-            }
+            // Handle correct answer
+            showResult(true);
+            setTimeout(() => {
+                window.location.href = '/Frontend/GuessAbout/bandera/silueta/lengua/';
+            }, 1500);
+        } else if (response.gameOver || currentAttempts >= 2) {
+            // Handle game over
+            showResult(false);
+            setTimeout(() => {
+                // Redirect to game over page or restart
+                window.location.href = '/Frontend/Menu/';
+            }, 1500);
         }
     });
 }
 
-// Funciones de utilidad para la UI
-function showSuccessMessage() {
-    console.log("¡Correcto!");
-    // Implementa aquí la lógica para mostrar el mensaje de éxito en la UI
+function showResult(isCorrect) {
+    // Create result overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'result-overlay';
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = isCorrect ? 'rgba(0, 255, 0, 0.3)' : 'rgba(255, 0, 0, 0.3)';
+    overlay.style.display = 'flex';
+    overlay.style.justifyContent = 'center';
+    overlay.style.alignItems = 'center';
+    overlay.style.zIndex = '1000';
+
+    const message = document.createElement('h2');
+    message.textContent = isCorrect ? '¡Correcto!' : '¡Incorrecto!';
+    message.style.color = 'white';
+    message.style.fontSize = '2em';
+    message.style.textShadow = '2px 2px 4px rgba(0,0,0,0.5)';
+
+    overlay.appendChild(message);
+    document.body.appendChild(overlay);
 }
 
-function showErrorMessage() {
-    console.log("Incorrecto. Intenta de nuevo.");
-    // Implementa aquí la lógica para mostrar el mensaje de error en la UI
-}
-
-function updateAttempts(vidas) {
-    const attempsElement = document.querySelector('.atte');
-    if (attempsElement) {
-        attempsElement.textContent = `Attemps: ${vidas}/2`;
-    }
-}
-
-function handleGameOver(mensaje) {
-    alert(mensaje);
-    // Implementa aquí la lógica para manejar el fin del juego
-}
-
-// Inicializar el juego cuando se carga la página
-document.addEventListener('DOMContentLoaded', initializeGame);
+// Call mostrarImagenes when the page loads
+document.addEventListener('DOMContentLoaded', mostrarImagenes);
 
 // Funciones del menú
 function openmenudropdown() {
