@@ -40,11 +40,17 @@ export function generarOpciones(prop) {
 }
 
 export function verificarRespuesta(prop, respuesta) {
+  if (typeof respuesta !== 'string') {
+    console.error(`Error: respuesta no es una cadena. Recibido:`, respuesta);
+    return false; // O maneja el error de otra manera según lo que necesites
+  }
+
   const esCorrecta = paisActual[prop].toLowerCase() === respuesta.toLowerCase();
   console.log(`Respuesta recibida para ${prop}:`, respuesta);
   console.log(`¿Es correcta?`, esCorrecta);
   return esCorrecta;
 }
+
 
 export function obtenerFlag() {
   paisActual = obtenerPaisAleatorio();
