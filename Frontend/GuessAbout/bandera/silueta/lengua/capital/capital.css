@@ -384,6 +384,7 @@ font-style: italic;
     border: 3px solid #000;
     margin: 14px;
     border-radius: 12px;
+    cursor: pointer;
 }
 
 .dos{

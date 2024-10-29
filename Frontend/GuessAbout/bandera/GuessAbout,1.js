@@ -269,9 +269,9 @@ function mostrarOpcionesCapital() {
 
         const opciones = respuesta.capital_options;
         const opcionesAleatorias = opciones.sort(() => Math.random() - 0.5);
-        const divsOpcion = document.querySelectorAll('.opcion-capital'); 
+        const divsCual = document.querySelectorAll('.cuales'); 
 
-        divsOpcion.forEach((div, index) => {
+        divsCual.forEach((div, index) => {
             if (index < opcionesAleatorias.length) {
                 div.textContent = opcionesAleatorias[index]; // Mostrar el texto de la opción
                 
@@ -291,12 +291,12 @@ function mostrarOpcionesCapital() {
 
 function handleCapitalSelection(selectedCapital) {
     // Remove previous selection styling
-    document.querySelectorAll('.opcion-capital').forEach(div => {
+    document.querySelectorAll('.cuales').forEach(div => {
         div.classList.remove('selected');
     });
 
     // Add selection styling to clicked option
-    const selectedDiv = Array.from(document.querySelectorAll('.opcion-capital'))
+    const selectedDiv = Array.from(document.querySelectorAll('.cuales'))
         .find(div => div.textContent === selectedCapital);
     if (selectedDiv) {
         selectedDiv.classList.add('selected');

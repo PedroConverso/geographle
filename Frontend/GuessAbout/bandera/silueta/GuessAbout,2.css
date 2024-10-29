@@ -380,6 +380,7 @@ font-style: italic;
     margin: 4px;
     background-color: #fff;
     padding: 4px;
+    cursor: pointer;
 
     img {
         object-fit: contain;
