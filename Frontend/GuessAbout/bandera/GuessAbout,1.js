@@ -213,33 +213,6 @@ function mostrarOpcionesIdioma() {
         });
     });
 }
-function mostrarOpcionesIdioma() {
-    fetchData("obtenerOpcionesIdioma", function(respuesta) {
-        console.log(respuesta);
-        
-        if (!respuesta || !Array.isArray(respuesta.language_options)) {
-            console.error("La respuesta no es un array:", respuesta);
-            return;
-        }
-
-        const opciones = respuesta.language_options;
-        const opcionesAleatorias = opciones.sort(() => Math.random() - 0.5);
-        const Cual = document.querySelectorAll('#cualid'); 
-
-        Cual.forEach((div, index) => {
-            if (index < opcionesAleatorias.length) {
-                div.textContent = opcionesAleatorias[index]; // Mostrar el texto de la opción
-                
-                // Agregar un evento clic para manejar la selección
-                div.addEventListener('click', function() {
-                    handleLanguageSelection(opcionesAleatorias[index]);
-                });
-            } else {
-                div.textContent = ''; // Limpiar el contenido si hay más divs que opciones
-            }
-        });
-    });
-}
 function handleLanguageSelection(selectedLanguage) {
     // Remove previous selection styling
     document.querySelectorAll('#cualid').forEach(div => {
@@ -284,3 +257,65 @@ function handleLanguageSelection(selectedLanguage) {
 }
 // Llamada a mostrarOpcionesIdioma() cuando se cargue el DOM
 document.addEventListener('DOMContentLoaded', mostrarOpcionesIdioma);
+
+function mostrarOpcionesCapital() {
+    fetchData("obtenerOpcionesCapital", function(respuesta) {
+        console.log(respuesta);
+        
+        if (!respuesta || !Array.isArray(respuesta.capital_options)) {
+            console.error("La respuesta no es un array:", respuesta);
+            return;
+        }
+
+        const opciones = respuesta.capital_options;
+        const opcionesAleatorias = opciones.sort(() => Math.random() - 0.5);
+        const divsOpcion = document.querySelectorAll('.opcion-capital'); 
+
+        divsOpcion.forEach((div, index) => {
+            if (index < opcionesAleatorias.length) {
+                div.textContent = opcionesAleatorias[index]; // Mostrar el texto de la opción
+                
+                // Limpiar cualquier evento previo para evitar duplicaciones
+                div.replaceWith(div.cloneNode(true));
+
+                // Agregar un evento clic para manejar la selección
+                div.addEventListener('click', function() {
+                    handleCapitalSelection(opcionesAleatorias[index]);
+                });
+            } else {
+                div.textContent = ''; // Limpiar el contenido si hay más divs que opciones
+            }
+        });
+    });
+}
+
+function handleCapitalSelection(selectedCapital) {
+    // Remove previous selection styling
+    document.querySelectorAll('.opcion-capital').forEach(div => {
+        div.classList.remove('selected');
+    });
+
+    // Add selection styling to clicked option
+    const selectedDiv = Array.from(document.querySelectorAll('.opcion-capital'))
+        .find(div => div.textContent === selectedCapital);
+    if (selectedDiv) {
+        selectedDiv.classList.add('selected');
+    }
+
+    // Verify the answer
+    postData("verificarRespuestaCapital", selectedCapital, function(response) {
+        console.log("Respuesta recibida:", response);
+
+        if (response.esCorrecta) {
+            showResult(true);
+            setTimeout(() => {
+                window.location.href = '/Frontend/GuessAbout/bandera/silueta/lengua/capital/index.html';
+            }, 1500);
+        } else if (response.gameOver) {
+            showResult(false);
+            setTimeout(() => {
+                window.location.href = '/Frontend/Menu/';
+            }, 1500);
+        }
+    });
+}
