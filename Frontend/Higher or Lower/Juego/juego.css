@@ -1,4 +1,5 @@
 header{
+    background-color: #D4D3D3;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -403,6 +404,7 @@ section{
     gap: 800px;
     font-weight: 600;
     font-size: 45px;
+    background-color: #EF233C;
 }
 
 .opt{

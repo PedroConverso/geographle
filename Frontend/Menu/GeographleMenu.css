@@ -12,6 +12,7 @@ body {
 
 
 header{
+    background-color: #D4D3D3;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -396,151 +397,170 @@ font-style: italic;
     justify-content: space-between;
     flex-direction: column-reverse;
     height: 30vh;
-    width: 33vw;
+    width: 28vw;
     background-color: #D9D9D9;
     border-radius: 15px;
-    border: 2px solid #6B6B6B;
+    border: 2px solid #324376;
     overflow: hidden;
 }
 
 .RecAb1{
     display: flex;
-    height: 10vh;
+    height: 50%;
     width: 100%;
-    background-color: #464646;
+    background-color: #222D4E;
     justify-content: center;
+    align-items: center;
+    font-family: "Inter" , sans-serif;
+    color: #D9D9D9;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    font-size: 28px;
+    font-weight: 700;
 }
 
-.camera1 {
-    display: flex;
+.camera1{
     height: 70%;
-    
 }
 
-.nombre1{
-    display: flex;
-    font-family: "Inter" , sans-serif;
-    color: #D9D9D9;   
-}
-
-
-
-.box2{
-    
-    overflow: hidden;
+.arriba1{
     display: flex;
     justify-content: center;
-    flex-direction: column-reverse;
+    align-items: center;
+    font-family: "Inter" , sans-serif;
+    background-color: #222D4E;
+    color: #D9D9D9;
+    width: 100%;
+    height: 35%;
+}
+
+.arriba2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter" , sans-serif;
+    background-color: #002F14;
+    color: #D9D9D9;
+    width: 100%;
+    height: 35%;
+}
+
+.arriba3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter" , sans-serif;
+    background-color: #BB7A00;
+    color: #D9D9D9;
+    width: 100%;
+    height: 35%;
+}
+
+.arriba4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter" , sans-serif;
+    background-color: #AD1528;
+    color: #D9D9D9;
+    width: 100%;
+    height: 35%;
+}
+
+.box2{
+    display: flex;
     justify-content: space-between;
+    flex-direction: column-reverse;
     height: 30vh;
-    width: 33vw;
+    width: 28vw;
     background-color: #D9D9D9;
     border-radius: 15px;
-    border: 2px solid #6B6B6B;
+    border: 2px solid #002F14;
+    overflow: hidden;
 }
 
 .RecAb2{
     display: flex;
-    height: 10vh;
+    height: 50%;
     width: 100%;
-    background-color: #464646;
+    background-color: #002F14;
     justify-content: center;
+    align-items: center;
+    font-family: "Inter" , sans-serif;
+    color: #D9D9D9;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    font-size: 28px;
+    font-weight: 700;
 }
 
 .camera2 {
-    display: flex;
     height: 70%;
-    
 }
 
-.nombre2{
-    display: flex;
-    justify-content: baseline;
-    justify-content: center;
-    font-family: "Inter" , sans-serif;
-    color: #D9D9D9;
-}
 
 .box3{
-    
-    overflow: hidden;
     display: flex;
-    justify-content: center;
-    flex-direction: column-reverse;
     justify-content: space-between;
+    flex-direction: column-reverse;
     height: 30vh;
-    width: 33vw;
+    width: 28vw;
     background-color: #D9D9D9;
     border-radius: 15px;
-    border: 2px solid #6B6B6B;
+    border: 2px solid #EE9B00;
+    overflow: hidden;
 }
 
 .RecAb3{
     display: flex;
-    height: 10vh;
+    height: 50%;
     width: 100%;
-    background-color: #464646;
+    background-color: #BB7A00;
     justify-content: center;
+    align-items: center;
+    font-family: "Inter" , sans-serif;
+    color: #D9D9D9;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    font-size: 28px;
+    font-weight: 700;
 }
 
 .camera3 {
-    display: flex;
     height: 70%;
-    border-radius: 15px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-}
-
-.nombre3{
-    display: flex;
-    justify-content: baseline;
-    justify-content: center;
-    font-family: "Inter" , sans-serif;
-    color: #D9D9D9;
 }
 
 .box4{
-    
     overflow: hidden;
     display: flex;
     justify-content: center;
     flex-direction: column-reverse;
     justify-content: space-between;
     height: 30vh;
-    width: 33vw;
+    width: 28vw;
     background-color: #D9D9D9;
     border-radius: 15px;
-    border: 2px solid #6B6B6B;
+    border: 2px solid #EF233C;
 }
 
 .RecAb4{
     display: flex;
-    height: 10vh;
+    height: 50%;
     width: 100%;
-    background-color: #464646;
+    background-color: #AD1528;
     justify-content: center;
+    align-items: center;
+    font-family: "Inter" , sans-serif;
+    color: #D9D9D9;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-
+    font-size: 28px;
+    font-weight: 700;
 }
 
 .camera4 {
     display: flex;
     height: 70%;
-}
-
-.nombre4{
-    display: flex;
-    justify-content: baseline;
-    justify-content: center;
-    font-family: "Inter" , sans-serif;
-    color: #D9D9D9;
 }
 
 a{

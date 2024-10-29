@@ -1,4 +1,5 @@
 header{
+    background-color: #D4D3D3;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -448,7 +449,7 @@ a{
 }
 
 .input{
-    padding: 8px;
+    padding: 16px;
     width: 200px;
     height: auto;
     background-color: #D3CECE;
