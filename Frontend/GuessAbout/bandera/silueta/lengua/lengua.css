@@ -392,6 +392,7 @@ font-style: italic;
     font-weight: 600;
     overflow: hidden;
     text-overflow: ellipsis;    
+    cursor: pointer;
 }
 
 .dos{
