@@ -1,6 +1,7 @@
 import { fileURLToPath } from 'url';
 import path from 'path';
 import fs from 'fs';
+import { log } from 'console';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -130,5 +131,3 @@ export function verificarRespuestaGeneral(prop, respuesta, tipoRonda) {
     vidas: tipoRonda === 'bandera' ? vidasBandera : vidasGenerales,
   };
 }
-
-
