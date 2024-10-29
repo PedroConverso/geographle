@@ -41,16 +41,6 @@ function showResult(isCorrect) {
     overlay.style.justifyContent = 'center';
     overlay.style.alignItems = 'center';
     overlay.style.zIndex = '1000';
-
-    const message = document.createElement('h2');
-    message.textContent = isCorrect ? '¡Correcto!' : '¡Incorrecto!';
-    message.style.color = 'white';
-    message.style.fontSize = '2em';
-    message.style.fontFamily = "sans";
-    message.style.textShadow = '2px 2px 4px rgba(0,0,0,0.5)';
-
-    overlay.appendChild(message);
-    document.body.appendChild(overlay);
 }
 
 // Shape selection game functions
@@ -258,64 +248,63 @@ function handleLanguageSelection(selectedLanguage) {
 // Llamada a mostrarOpcionesIdioma() cuando se cargue el DOM
 document.addEventListener('DOMContentLoaded', mostrarOpcionesIdioma);
 
-function mostrarOpcionesCapital() {
-    fetchData("obtenerOpcionesCapital", function(respuesta) {
-        console.log(respuesta);
-        
-        if (!respuesta || !Array.isArray(respuesta.capital_options)) {
-            console.error("La respuesta no es un array:", respuesta);
-            return;
+// Obtener referencias a los elementos del DOM
+const cuales = document.querySelectorAll('.cuale');
+
+// Función para cargar las opciones de capital
+function loadCapitalOptions() {
+    fetchData("obtenerOpcionesCapital", (data) => {
+        // Asegurarse de que tenemos las opciones de capital
+        if (data && data.capital_options) {
+            // Limpiar selecciones previas
+            cuales.forEach(cuale => {
+                cuale.textContent = '';
+                cuale.classList.remove('selected', 'correct', 'incorrect');
+                cuale.style.pointerEvents = 'auto'; // Reactivar interacción
+            });
+
+            // Mostrar las opciones en los divs
+            data.capital_options.forEach((capital, index) => {
+                if (cuales[index]) {
+                    cuales[index].textContent = capital;
+                }
+            });
         }
-
-        const opciones = respuesta.capital_options;
-        const opcionesAleatorias = opciones.sort(() => Math.random() - 0.5);
-        const divsCual = document.querySelectorAll('.cuales'); 
-
-        divsCual.forEach((div, index) => {
-            if (index < opcionesAleatorias.length) {
-                div.textContent = opcionesAleatorias[index]; // Mostrar el texto de la opción
-                
-                // Limpiar cualquier evento previo para evitar duplicaciones
-                div.replaceWith(div.cloneNode(true));
-
-                // Agregar un evento clic para manejar la selección
-                div.addEventListener('click', function() {
-                    handleCapitalSelection(opcionesAleatorias[index]);
-                });
-            } else {
-                div.textContent = ''; // Limpiar el contenido si hay más divs que opciones
-            }
-        });
     });
 }
 
-function handleCapitalSelection(selectedCapital) {
-    // Remove previous selection styling
-    document.querySelectorAll('.cuales').forEach(div => {
-        div.classList.remove('selected');
-    });
-
-    // Add selection styling to clicked option
-    const selectedDiv = Array.from(document.querySelectorAll('.cuales'))
-        .find(div => div.textContent === selectedCapital);
-    if (selectedDiv) {
-        selectedDiv.classList.add('selected');
-    }
-
-    // Verify the answer
-    postData("verificarRespuestaCapital", selectedCapital, function(response) {
-        console.log("Respuesta recibida:", response);
-
+// Función para manejar la selección de una opción
+function handleSelection(selectedElement) {
+    // Quitar selección previa si existe
+    cuales.forEach(cuale => cuale.classList.remove('selected'));
+    
+    // Marcar la nueva selección
+    selectedElement.classList.add('selected');
+    
+    // Verificar la respuesta
+    postData("verificarRespuestaCapital", selectedElement.textContent, (response) => {
         if (response.esCorrecta) {
-            showResult(true);
-            setTimeout(() => {
-                window.location.href = '/Frontend/GuessAbout/bandera/silueta/lengua/capital/index.html';
-            }, 1500);
-        } else if (response.gameOver) {
-            showResult(false);
-            setTimeout(() => {
-                window.location.href = '/Frontend/Menu/';
-            }, 1500);
+            // Respuesta correcta
+            selectedElement.classList.add('correct');
+            selectedElement.classList.remove('incorrect');
+            // Deshabilitar más selecciones después de una respuesta correcta
+            cuales.forEach(cuale => cuale.style.pointerEvents = 'none');
+        } else {
+            // Respuesta incorrecta
+            selectedElement.classList.add('incorrect');
+            selectedElement.classList.remove('correct');
         }
     });
 }
+
+// Agregar event listeners a los divs de opciones
+cuales.forEach(cuale => {
+    cuale.addEventListener('click', function() {
+        if (!this.classList.contains('selected')) {
+            handleSelection(this);
+        }
+    });
+});
+
+// Cargar las opciones iniciales
+loadCapitalOptions();
