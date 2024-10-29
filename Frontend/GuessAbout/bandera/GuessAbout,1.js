@@ -226,7 +226,7 @@ function mostrarOpcionesIdioma() {
         const opcionesAleatorias = opciones.sort(() => Math.random() - 0.5);
         const Cual = document.querySelectorAll('#cualid'); 
 
-        divsCual.forEach((div, index) => {
+        Cual.forEach((div, index) => {
             if (index < opcionesAleatorias.length) {
                 div.textContent = opcionesAleatorias[index]; // Mostrar el texto de la opción
                 
@@ -240,6 +240,47 @@ function mostrarOpcionesIdioma() {
         });
     });
 }
+function handleLanguageSelection(selectedLanguage) {
+    // Remove previous selection styling
+    document.querySelectorAll('#cualid').forEach(div => {
+        div.classList.remove('selected');
+    });
 
+    // Add selection styling to clicked option
+    const selectedDiv = Array.from(document.querySelectorAll('#cualid'))
+        .find(div => div.textContent === selectedLanguage);
+    if (selectedDiv) {
+        selectedDiv.classList.add('selected');
+    }
+
+    // Send the selected language to the backend
+    postData("verificarRespuestaIdioma", { selectedLanguage }, (response) => {
+        let messageElement = document.getElementById('game-message');
+        if (!messageElement) {
+            messageElement = document.createElement('div');
+            messageElement.id = 'game-message';
+            document.querySelector('section').appendChild(messageElement);
+        }
+
+        if (response.esCorrecta) {
+            messageElement.textContent = "¡Correcto! Has acertado el idioma.";
+            messageElement.style.color = 'green';
+            // Redirect to the new page after a short delay
+            setTimeout(() => {
+                window.location.href = '/Frontend/GuessAbout/bandera/silueta/lengua/capital/index.html';
+            }, 1500); // Adjust the delay as needed
+        } else {
+            messageElement.textContent = `Incorrecto. Te quedan ${response.vidas} vidas.`;
+            messageElement.style.color = 'red';
+            
+            if (response.gameOver) {
+                messageElement.textContent = response.mensaje;
+                document.querySelectorAll('#cualid').forEach(div => {
+                    div.disabled = true;
+                });
+            }
+        }
+    });
+}
 // Llamada a mostrarOpcionesIdioma() cuando se cargue el DOM
 document.addEventListener('DOMContentLoaded', mostrarOpcionesIdioma);

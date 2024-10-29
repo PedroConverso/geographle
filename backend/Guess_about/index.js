@@ -84,8 +84,10 @@ export function verificarRespuestaFlag(respuesta) {
 }
 
 export function verificarRespuestaIdioma(respuesta) {
-  return verificarRespuestaGeneral('language', respuesta, 'general');
+  const language = typeof respuesta === 'object' && respuesta.selectedLanguage ? respuesta.selectedLanguage : respuesta;
+  return verificarRespuestaGeneral('language', language, 'general');
 }
+
 
 export function verificarRespuestaCapital(respuesta) {
   return verificarRespuestaGeneral('capital', respuesta, 'general');

@@ -384,6 +384,13 @@ font-style: italic;
     border: 3px solid #000;
     margin: 14px;
     border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;    
 }
 
 .dos{
