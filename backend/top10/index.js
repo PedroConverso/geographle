@@ -15,33 +15,20 @@ export function consignaAleatoria() {
   return selectedTopic;
 }
 
-export function obtenerPaisesPorTema(tema) {
-    // Buscar el tema en el array de top10
-    const topicData = top10Data.top10.find(t => t.topic === tema);
-    
-    if (!topicData) {
-        throw new Error('Tema no encontrado');
+export function verifyAnswerTop10(userAnswer) {
+  const selectedTopic = consignaAleatoria();
+  const topicData = top10Data.top10.find(item => item.topic === selectedTopic);
+
+  if (topicData) {
+    const correctAnswer = topicData.items.find(item => item.name === userAnswer);
+    if (correctAnswer) {
+      return true; // User's answer is correct
+    } else {
+      return false; // User's answer is incorrect
     }
-
-    // Extraer solo los países con su información relevante
-    return topicData.items.map(item => ({
-        rank: item.rank,
-        country_id: item.country_id,
-        name: item.name,
-        value: item[Object.keys(item).find(key => !['rank', 'country_id', 'name'].includes(key))] // Obtiene el valor específico (islands, gold, etc.)
-    }));
+  } else {
+    return false; // No matching topic found
+  }
 }
 
-// Ejemplo de uso combinado con tu función existente:
-export function obtenerRondaAleatoria() {
-    const tema = consignaAleatoria(); // Usa tu función existente
-    const paises = obtenerPaisesPorTema(tema);
-    return {
-        tema: tema,
-        paises: paises
-    };
-}
-
-console.log(obtenerRondaAleatoria());
-
-
+export { verifyAnswer };
