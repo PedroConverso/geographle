@@ -1,5 +1,3 @@
-
-
 // Menu handling functions
 function toggleMenuClass(elementId, className) {
     const menu = document.getElementById(elementId);
@@ -43,11 +41,21 @@ function showResult(isCorrect) {
     overlay.style.zIndex = '1000';
 }
 
+// Create a message display function
+function displayMessage(message, color) {
+    let messageElement = document.getElementById('game-message');
+    if (!messageElement) {
+        messageElement = document.createElement('div');
+        messageElement.id = 'game-message';
+        document.querySelector('section').appendChild(messageElement);
+    }
+    messageElement.textContent = message;
+    messageElement.style.color = color;
+}
+
 // Shape selection game functions
 function mostrarImagenes() {
     fetchData("obtenerOpcionesForma", function(respuesta) {
-        console.log(respuesta);
-        
         if (!respuesta || !Array.isArray(respuesta.shape_options)) {
             console.error("La respuesta no es un array:", respuesta);
             return;
@@ -64,11 +72,11 @@ function mostrarImagenes() {
                 img.style.width = '100%';
                 img.style.height = '100%';
                 img.alt = 'Silueta de país';
-                
+
                 img.addEventListener('click', function() {
                     handleShapeSelection(imagenesAleatorias[index]);
                 });
-                
+
                 div.appendChild(img);
             }
         });
@@ -76,32 +84,24 @@ function mostrarImagenes() {
 }
 
 function handleShapeSelection(selectedShape) {
-    // Remove previous selection styling
     document.querySelectorAll('.cual img').forEach(img => {
         img.parentElement.classList.remove('selected');
     });
-    
-    // Add selection styling to clicked image
-    const selectedImg = Array.from(document.querySelectorAll('.cual img'))
-        .find(img => img.src === selectedShape);
+
+    const selectedImg = Array.from(document.querySelectorAll('.cual img')).find(img => img.src === selectedShape);
     if (selectedImg) {
         selectedImg.parentElement.classList.add('selected');
     }
 
-    // Verify the answer
     postData("verificarRespuestaForma", selectedShape, function(response) {
-        console.log("Respuesta recibida:", response);
-
         if (response.esCorrecta) {
+            displayMessage("¡Correcto! Has acertado la forma.", 'green');
             showResult(true);
             setTimeout(() => {
                 window.location.href = '/Frontend/GuessAbout/bandera/silueta/lengua/index.html';
             }, 1500);
-        } else if (response.gameOver || currentAttempts >= 2) {
-            showResult(false);
-            setTimeout(() => {
-                window.location.href = '/Frontend/Menu/';
-            }, 1500);
+        } else {
+            handleLives(response);
         }
     });
 }
@@ -111,28 +111,14 @@ function verifySelection() {
     const selectedCountry = document.querySelector('select').value;
 
     postData("verificarPais", { selectedCountry: selectedCountry }, (response) => {
-        let messageElement = document.getElementById('game-message');
-        if (!messageElement) {
-            messageElement = document.createElement('div');
-            messageElement.id = 'game-message';
-            document.querySelector('section').appendChild(messageElement);
-        }
-
+        displayMessage('', '');
         if (response.esCorrecta) {
-            messageElement.textContent = "¡Correcto! Has acertado el país.";
-            messageElement.style.color = 'green';
-            // Redirect to the new page after a short delay
+            displayMessage("¡Correcto! Has acertado el país.", 'green');
             setTimeout(() => {
                 window.location.href = '/Frontend/GuessAbout/bandera/silueta/index.html';
-            }, 1500); // Adjust the delay as needed
+            }, 1500);
         } else {
-            messageElement.textContent = `Incorrecto. Te quedan ${response.vidas} vidas.`;
-            messageElement.style.color = 'red';
-            
-            if (response.gameOver) {
-                messageElement.textContent = response.mensaje;
-                document.getElementById('verify-button').disabled = true;
-            }
+            handleLives(response);
         }
     });
 }
@@ -164,22 +150,32 @@ function loadFlag() {
     });
 }
 
+// Handle lives based on game state
+function handleLives(response) {
+    displayMessage(`Incorrecto. Te quedan ${response.vidas} vidas.`, 'red');
+    if (response.vidas > 0) {
+        // Continue the game
+    } else {
+        displayMessage(`Game Over. ${response.mensaje}`, 'red');
+        setTimeout(() => {
+            window.location.href = '/Frontend/Menu/';
+        }, 1500);
+    }
+}
+
 // Event listeners
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize shape selection game if elements exist
     if (document.querySelector('.cual')) {
         mostrarImagenes();
     }
-    
-    // Initialize flag loading if element exists
     if (document.querySelector('.banderabd')) {
         loadFlag();
     }
 });
+
+// Language selection functions
 function mostrarOpcionesIdioma() {
     fetchData("obtenerOpcionesIdioma", function(respuesta) {
-        console.log(respuesta);
-        
         if (!respuesta || !Array.isArray(respuesta.language_options)) {
             console.error("La respuesta no es un array:", respuesta);
             return;
@@ -187,124 +183,93 @@ function mostrarOpcionesIdioma() {
 
         const opciones = respuesta.language_options;
         const opcionesAleatorias = opciones.sort(() => Math.random() - 0.5);
-        const divsCual = document.querySelectorAll('#cualid'); 
+        const divsCual = document.querySelectorAll('#cualid');
 
         divsCual.forEach((div, index) => {
             if (index < opcionesAleatorias.length) {
-                div.textContent = opcionesAleatorias[index]; // Mostrar el texto de la opción
-                
-                // Agregar un evento clic para manejar la selección
+                div.textContent = opcionesAleatorias[index];
+
                 div.addEventListener('click', function() {
                     handleLanguageSelection(opcionesAleatorias[index]);
                 });
             } else {
-                div.textContent = ''; // Limpiar el contenido si hay más divs que opciones
+                div.textContent = '';
             }
         });
     });
 }
+
 function handleLanguageSelection(selectedLanguage) {
-    // Remove previous selection styling
     document.querySelectorAll('#cualid').forEach(div => {
         div.classList.remove('selected');
     });
 
-    // Add selection styling to clicked option
-    const selectedDiv = Array.from(document.querySelectorAll('#cualid'))
-        .find(div => div.textContent === selectedLanguage);
+    const selectedDiv = Array.from(document.querySelectorAll('#cualid')).find(div => div.textContent === selectedLanguage);
     if (selectedDiv) {
         selectedDiv.classList.add('selected');
     }
 
-    // Send the selected language to the backend
     postData("verificarRespuestaIdioma", { selectedLanguage }, (response) => {
-        let messageElement = document.getElementById('game-message');
-        if (!messageElement) {
-            messageElement = document.createElement('div');
-            messageElement.id = 'game-message';
-            document.querySelector('section').appendChild(messageElement);
-        }
-
+        displayMessage('', '');
         if (response.esCorrecta) {
-            messageElement.textContent = "¡Correcto! Has acertado el idioma.";
-            messageElement.style.color = 'green';
-            // Redirect to the new page after a short delay
+            displayMessage("¡Correcto! Has acertado el idioma.", 'green');
             setTimeout(() => {
                 window.location.href = '/Frontend/GuessAbout/bandera/silueta/lengua/capital/index.html';
-            }, 1500); // Adjust the delay as needed
+            }, 1500);
         } else {
-            messageElement.textContent = `Incorrecto. Te quedan ${response.vidas} vidas.`;
-            messageElement.style.color = 'red';
-            
-            if (response.gameOver) {
-                messageElement.textContent = response.mensaje;
-                document.querySelectorAll('#cualid').forEach(div => {
-                    div.disabled = true;
-                });
-            }
+            handleLives(response);
         }
     });
 }
-// Llamada a mostrarOpcionesIdioma() cuando se cargue el DOM
-document.addEventListener('DOMContentLoaded', mostrarOpcionesIdioma);
 
-// Obtener referencias a los elementos del DOM
+// Load capital options function
 const cuales = document.querySelectorAll('.cuale');
-
-// Función para cargar las opciones de capital
 function loadCapitalOptions() {
     fetchData("obtenerOpcionesCapital", (data) => {
-        // Asegurarse de que tenemos las opciones de capital
         if (data && data.capital_options) {
-            // Limpiar selecciones previas
             cuales.forEach(cuale => {
-                cuale.textContent = '';
-                cuale.classList.remove('selected', 'correct', 'incorrect');
-                cuale.style.pointerEvents = 'auto'; // Reactivar interacción
+                cuale.innerHTML = '';
             });
 
-            // Mostrar las opciones en los divs
-            data.capital_options.forEach((capital, index) => {
-                if (cuales[index]) {
-                    cuales[index].textContent = capital;
+            data.capital_options.forEach((opcion, index) => {
+                const div = cuales[index];
+                if (div) {
+                    div.textContent = opcion;
+                    div.addEventListener('click', function() {
+                        handleCapitalSelection(opcion);
+                    });
                 }
             });
         }
     });
 }
 
-// Función para manejar la selección de una opción
-function handleSelection(selectedElement) {
-    // Quitar selección previa si existe
-    cuales.forEach(cuale => cuale.classList.remove('selected'));
-    
-    // Marcar la nueva selección
-    selectedElement.classList.add('selected');
-    
-    // Verificar la respuesta
-    postData("verificarRespuestaCapital", selectedElement.textContent, (response) => {
+// Implement the function for capital selection
+function handleCapitalSelection(selectedCapital) {
+    cuales.forEach(cuale => {
+        cuale.classList.remove('selected');
+    });
+
+    const selectedDiv = Array.from(cuales).find(div => div.textContent === selectedCapital);
+    if (selectedDiv) {
+        selectedDiv.classList.add('selected');
+    }
+
+    postData("verificarRespuestaCapital", { selectedCapital: selectedCapital }, (response) => {
+        displayMessage('', '');
         if (response.esCorrecta) {
-            // Respuesta correcta
-            selectedElement.classList.add('correct');
-            selectedElement.classList.remove('incorrect');
-            // Deshabilitar más selecciones después de una respuesta correcta
-            cuales.forEach(cuale => cuale.style.pointerEvents = 'none');
+            displayMessage("¡Correcto! Has acertado la capital.", 'green');
+            setTimeout(() => {
+                window.location.href = '/Frontend/Menu/';
+            }, 1500);
         } else {
-            // Respuesta incorrecta
-            selectedElement.classList.add('incorrect');
-            selectedElement.classList.remove('correct');
+            handleLives(response);
         }
     });
 }
 
-// Agregar event listeners a los divs de opciones
-cuales.forEach(cuale => {
-    cuale.addEventListener('click', function() {
-        if (!this.classList.contains('selected')) {
-            handleSelection(this);
-        }
-    });
+// Event listeners for loading options on DOM content loaded
+document.addEventListener('DOMContentLoaded', () => {
+    mostrarOpcionesIdioma();
+    loadCapitalOptions();
 });
-
-// Cargar las opciones iniciales
-loadCapitalOptions();

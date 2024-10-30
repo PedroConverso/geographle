@@ -90,7 +90,8 @@ export function verificarRespuestaIdioma(respuesta) {
 
 
 export function verificarRespuestaCapital(respuesta) {
-  return verificarRespuestaGeneral('capital', respuesta, 'general');
+  const selectedCapital = typeof respuesta === 'object' && respuesta.selectedCapital ? respuesta.selectedCapital : respuesta;
+  return verificarRespuestaGeneral('capital', selectedCapital, 'general');
 }
 
 export function verificarRespuestaForma(respuesta) {

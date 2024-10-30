@@ -36,7 +36,7 @@ onEvent("obtenerOpcionesIdioma", obtenerOpcionesIdioma);
 onEvent("obtenerOpcionesCapital", obtenerOpcionesCapital);
 onEvent("obtenerOpcionesForma", obtenerOpcionesForma);
 onEvent("verificarPais", (data) => {
-    return verificarRespuestaFlag(data.selectedCountry); // Asegúrate de que estás enviando solo el país seleccionado
+    return verificarRespuestaFlag(data.selectedCountry); 
 });
 onEvent("verificarRespuestaIdioma", verificarRespuestaIdioma);
 onEvent("verificarRespuestaCapital", verificarRespuestaCapital);
