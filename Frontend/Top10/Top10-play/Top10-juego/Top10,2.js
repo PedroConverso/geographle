@@ -1,88 +1,140 @@
-// Funciones para fetchData y postData
-function fetchData(type, callback) {
-    fetch(`http://localhost:3000/${type}`)
-        .then(response => response.json())
-        .then(data => callback(data))
-        .catch(error => console.error('Error:', error));
-}
-
-function postData(type, data, callback) {
-    fetch(`http://localhost:3000/${type}`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-        .then(response => response.json())
-        .then(data => callback(data))
-        .catch(error => console.error('Error:', error));
-}
-
-let top10Data; // Variable para almacenar el tópico seleccionado
-
-// Función para obtener un tema aleatorio del servidor
-function obtenerTemaAleatorio() {
-    fetchData('tema-aleatorio', function(tema) {
-        top10Data = tema;
-        mostrarTopic();
-    });
-}
-
-function mostrarTopic() {
-    const titleElement = document.querySelector('.title');
-    if (titleElement) {
-        titleElement.innerText = top10Data.topic;
+function openmenudropdown() {
+    let menu = document.getElementById("menudropdown")
+    if (menu.classList.contains("open")) {
+        menu.classList.remove("open")
     } else {
-        console.error("No se encontró un elemento con la clase 'title'.");
+        menu.classList.add("open")
     }
 }
 
-// Función para manejar la validación y actualización de la UI
-function validarPais() {
-    const input = document.getElementById("etbal").value.trim().toLowerCase();
-    
-    postData('validar', { input, topic: top10Data.topic }, function(response) {
-        if (response.isCorrect) {
-            const correctAnswer = response.correctAnswer;
-            const index = correctAnswer.rank - 1;
-            const boxes = document.getElementsByClassName("rectan");
+function openestadown() {
+    let menu = document.getElementById("estadown")
+    if (menu.classList.contains("edOpen")) {
+        menu.classList.remove("edOpen")
+    } else {
+        menu.classList.add("edOpen")
+    }
+}
 
-            if (!boxes[index].classList.contains('guessed')) {
-                boxes[index].innerText = `${correctAnswer.rank}. ${correctAnswer.name}`;
+function optisdown() {
+    let menu = document.getElementById("optidown")
+    if (menu.classList.contains("edSet")) {
+        menu.classList.remove("edSet")
+    } else {
+        menu.classList.add("edSet")
+    }
+}
 
-                if (correctAnswer.hasOwnProperty('population')) {
-                    boxes[index].innerText += ` (${correctAnswer.population} habitantes)`;
-                } else if (correctAnswer.hasOwnProperty('coastline')) {
-                    boxes[index].innerText += ` (${correctAnswer.coastline} km²)`;
-                } else if (correctAnswer.hasOwnProperty('gold')) {
-                    boxes[index].innerText += ` (${correctAnswer.gold} medallas de oro)`;
-                } else if (correctAnswer.hasOwnProperty('islands')) {
-                    boxes[index].innerText += ` (${correctAnswer.islands} islas)`;
-                } else if (correctAnswer.hasOwnProperty('average_life_expectancy')) {
-                    boxes[index].innerText += ` (${correctAnswer.average_life_expectancy})`;
-                } else if (correctAnswer.hasOwnProperty('gpi')) {
-                    boxes[index].innerText += ` (GPI: ${correctAnswer.gpi})`;
-                } else if (correctAnswer.hasOwnProperty('tourists_in_millions')) {
-                    boxes[index].innerText += ` (${correctAnswer.tourists_in_millions} millones de turistas)`;
-                }
+function thememode() {
+    let menu = document.getElementById("themeMode-check-container")
+    if (menu.classList.contains("themeMode-check-container-on")) {
+        menu.classList.remove("themeMode-check-container-on")
+    } else {
+        menu.classList.add("themeMode-check-container-on")
+    }
+}
 
-                boxes[index].style.backgroundColor = '#D4EDDA'; // Cambia el color de fondo para indicar acierto
-                boxes[index].classList.add('guessed'); // Añadir clase para marcar que ya fue adivinado
+function thememode2() {
+    let menu = document.getElementById("themeMode-check-container2")
+    if (menu.classList.contains("themeMode-check-container-on2")) {
+        menu.classList.remove("themeMode-check-container-on2")
+    } else {
+        menu.classList.add("themeMode-check-container-on2")
+    }
+}
 
-                // Verificar si se han adivinado todos los países
-                const allGuessed = Array.from(boxes).every(box => box.classList.contains('guessed'));
-                if (allGuessed) {
-                    alert("¡Felicidades! Has adivinado todos los países correctamente.");
-                }
-            }
-        } else {
-            alert("País incorrecto, intenta de nuevo!");
-        }
+function infodown() {
+    let menu = document.getElementById("infodown")
+    if (menu.classList.contains("edinf")) {
+        menu.classList.remove("edinf")
+    } else {
+        menu.classList.add("edinf")
+    }
+}
+
+let currentTopic = null;
+let currentRankingData = null;
+
+// Inicialización del juego
+function initializeApp() {
+    // Obtener tema aleatorio al iniciar
+    fetchData('getRandomTopic', (topic) => {
+        currentTopic = topic;
+        updateTopicDisplay(topic);
+        
+        // Una vez que tenemos el tema, obtener los datos del ranking
+        fetchData('getTopicData', (data) => {
+            currentRankingData = data;
+            initializeBoxes();
+        });
+    });
+
+    // Configurar el botón de selección
+    document.querySelector('.doss').addEventListener('click', () => {
+        // Obtener nuevo tema aleatorio
+        fetchData('getRandomTopic', (topic) => {
+            currentTopic = topic;
+            updateTopicDisplay(topic);
+            
+            fetchData('getTopicData', (data) => {
+                currentRankingData = data;
+                resetBoxes();
+            });
+        });
     });
 }
 
-document.getElementById("sel").addEventListener("click", validarPais);
+// Actualizar el título del tema
+function updateTopicDisplay(topic) {
+    const titleElement = document.querySelector('.title');
+    if (titleElement) {
+        titleElement.textContent = topic;
+    }
+}
 
-// Llama a obtenerTemaAleatorio al cargar la página
-window.onload = obtenerTemaAleatorio;
+// Inicializar las cajas con los números
+function initializeBoxes() {
+    const boxes1 = document.querySelector('.boxes1');
+    const boxes2 = document.querySelector('.boxes2');
+
+    if (boxes1 && boxes2) {
+        const rectangles = document.querySelectorAll('.rectan');
+        rectangles.forEach((rect, index) => {
+            rect.textContent = `${index + 1}. ${currentRankingData[index].name}`;
+            
+            // Añadir el valor específico según el tipo de dato
+            const data = currentRankingData[index];
+            let value = '';
+            
+            if (data.islands) {
+                value = `${data.islands.toLocaleString()} islands`;
+            } else if (data.gold) {
+                value = `${data.gold} gold medals`;
+            } else if (data.average_life_expectancy) {
+                value = data.average_life_expectancy;
+            } else if (data.gpi) {
+                value = `${data.gpi} GPI`;
+            } else if (data.tourists_in_millions) {
+                value = `${data.tourists_in_millions}M tourists`;
+            } else if (data.coastline) {
+                value = `${data.coastline.toLocaleString()} km`;
+            } else if (data.air_pollution) {
+                value = `${data.air_pollution} µg/m³`;
+            }
+            
+            rect.textContent = `${index + 1}. ${data.name} - ${value}`;
+        });
+    }
+}
+
+// Resetear las cajas para un nuevo juego
+function resetBoxes() {
+    const rectangles = document.querySelectorAll('.rectan');
+    rectangles.forEach((rect, index) => {
+        rect.textContent = `${index + 1}.`;
+    });
+    initializeBoxes();
+}
+
+// Inicializar la aplicación cuando el DOM esté cargado
+document.addEventListener('DOMContentLoaded', initializeApp);
