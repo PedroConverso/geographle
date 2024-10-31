@@ -32,7 +32,7 @@ export function verificarSeleccion(seleccion) {
 
 export function guardarEstadisticas(estadisticas) {
     console.log("Estadísticas recibidas:", estadisticas);
-    fs.appendFileSync('./data/estadisticas.json', JSON.stringify(estadisticas) + '\n', 'utf8');
+    fs.appendFileSync('backend/data/estadisticasConnections.json', JSON.stringify(estadisticas) + '\n', 'utf8');
     return { success: true };
 }
 

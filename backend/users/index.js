@@ -3,8 +3,8 @@ import fs from "fs";
 let users = [];
 
 function loadUsers() {
-  if (fs.existsSync('users.json')) {
-    let data = fs.readFileSync('users.json', 'utf8');
+  if (fs.existsSync('backend/data/users.json')) {
+    let data = fs.readFileSync('backend/data/users.json', 'utf8');
     users = JSON.parse(data);
   } else {
     console.log('users.json not found, starting with empty user list');
@@ -12,11 +12,11 @@ function loadUsers() {
 }
 
 function saveUsers() {
-  if (fs.existsSync('users.json')) {
-    fs.writeFileSync('users.json', JSON.stringify(users, null, 2));
+  if (fs.existsSync('backend/data/users.json')) {
+    fs.writeFileSync('backend/data/users.json', JSON.stringify(users, null, 2));
   } else {
     console.error('Error: users.json no existe. Creando el archivo...');
-    fs.writeFileSync('users.json', JSON.stringify(users, null, 2));
+    fs.writeFileSync('backend/data/users.json', JSON.stringify(users, null, 2));
   }
 }
 
@@ -25,10 +25,11 @@ function isValidUsername(username) {
 }
 
 function isValidPassword(password) {
-  return password.length >= 8 && /\d/.test(password);
+  return typeof password === 'string' && password.length >= 8 && /\d/.test(password);
 }
 
 export function registerUser(data) {
+  console.log(data)
   let { username, password } = data;
 
   if (!isValidUsername(username)) {
@@ -39,9 +40,9 @@ export function registerUser(data) {
     return { success: false, message: 'La contraseña debe tener al menos 8 caracteres y contener al menos un número' };
   }
 
-  if (users.some(user => user.username === username)) {
-    return { success: false, message: 'El nombre de usuario ya existe' };
-  }
+    if (users.some(user => user.username === username)) {
+      return { success: false, message: 'El nombre de usuario ya existe' };
+    }
 
   users.push({ username, password });
   saveUsers();
@@ -64,4 +65,5 @@ export function checkUserSession(data) {
     : { success: false, message: 'Sesión inválida' };
 }
 
-
+// Cargar usuarios al iniciar
+loadUsers();

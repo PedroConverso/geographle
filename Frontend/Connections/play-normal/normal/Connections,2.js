@@ -94,15 +94,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Función para enviar estadísticas al backend
 function enviarEstadisticas(gano) {
-    const estadisticas = {
-        juego: "Connections", // Nombre del juego
-        gano: gano,
-        vidasRestantes: vidas
-    };
-
-    postData("guardarEstadisticas", estadisticas, (response) => {
-        console.log("Estadísticas enviadas:", response);
-    });
+    const user = localStorage.getItem("username")
+    if(user != undefined){
+        const estadisticas = {
+            username: user,
+            juego: "Connections", 
+            gano: gano,
+            vidasRestantes: vidas
+        };
+    
+        postData("guardarEstadisticas", estadisticas, (response) => {
+            console.log("Estadísticas enviadas:", response);
+        });
+    }
+    
 }
 
 // Función para comprobar si todas las palabras están deshabilitadas
