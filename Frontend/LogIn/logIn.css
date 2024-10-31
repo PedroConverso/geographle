@@ -99,3 +99,19 @@ h4{
 .inputs .boton:hover {
     background-color: #0056b3;
 }
+
+.vuelta{
+    display: flex;
+    text-decoration: none;
+}
+
+.flecha{
+    height: 40px;
+    width: 40px;
+}
+
+.back{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
