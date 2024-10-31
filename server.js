@@ -25,6 +25,15 @@ import {
     handleVerificarSeleccion 
 } from './backend/connections/index.js'; 
 
+import { 
+    verifyAnswerTop10,
+    consignaAleatoria
+} from './top10/connections/index.js'; 
+
+// Eventos Top10
+onEvent("consignaAleatoria", consignaAleatoria);
+onEvent("verificarSeleccionTop10", verifyAnswerTop10);
+
 // Eventos Connections
 onEvent("caracteristicasAleatorias", obtenerCaracteristicasAleatorias);
 onEvent("verificarSeleccion", handleVerificarSeleccion);
