@@ -1,23 +1,47 @@
-export function consignaAleatoria() {
-  const randomTopicIndex = Math.floor(Math.random() * top10Data.top10.length);
-  const selectedTopic = top10Data.top10[randomTopicIndex].topic; // Solo seleccionar el tema
-  return selectedTopic;
-}
 
-export function verifyAnswerTop10(userAnswer) {
-  const selectedTopic = consignaAleatoria();
-  const topicData = top10Data.top10.find(item => item.topic === selectedTopic);
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import fs from 'fs/promises';
 
-  if (topicData) {
-    const correctAnswer = topicData.items.find(item => item.name === userAnswer);
-    if (correctAnswer) {
-      return true; // User's answer is correct
-    } else {
-      return false; // User's answer is incorrect
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+let top10Data = null;
+let currentTopic = null;
+
+async function loadData() {
+    if (!top10Data) {
+        const dataPath = join(__dirname, 'data.json');
+        const rawData = await fs.readFile(dataPath, 'utf-8');
+        top10Data = JSON.parse(rawData);
     }
-  } else {
-    return false; // No matching topic found
-  }
+    return top10Data;
 }
 
-export { verifyAnswer };
+export async function consignaAleatoria() {
+    const data = await loadData();
+    const randomTopicIndex = Math.floor(Math.random() * data.top10.length);
+    currentTopic = data.top10[randomTopicIndex].topic;
+    return currentTopic;
+}
+
+export async function verifyAnswerTop10(userAnswer) {
+    if (!currentTopic) {
+        throw new Error('No topic selected. Call consignaAleatoria first.');
+    }
+
+    const data = await loadData();
+    const topicData = data.top10.find(item => item.topic === currentTopic);
+
+    if (!topicData) {
+        return false;
+    }
+
+    // Normalizar la respuesta del usuario y las respuestas correctas
+    const normalizedUserAnswer = userAnswer.toLowerCase().trim();
+    const isCorrect = topicData.items.some(
+        item => item.name.toLowerCase() === normalizedUserAnswer
+    );
+
+    return isCorrect;
+}

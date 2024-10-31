@@ -25,14 +25,21 @@ import {
     handleVerificarSeleccion 
 } from './backend/connections/index.js'; 
 
+// Importaciones desde Top10/index.js
 import { 
     verifyAnswerTop10,
     consignaAleatoria
-} from './top10/connections/index.js'; 
+} from './backend/Top10/index.js'; 
 
 // Eventos Top10
-onEvent("consignaAleatoria", consignaAleatoria);
-onEvent("verificarSeleccionTop10", verifyAnswerTop10);
+// En server.js, actualiza los event handlers para Top10:
+onEvent("consignaAleatoria", async () => {
+    return await consignaAleatoria();
+});
+
+onEvent("verificarSeleccionTop10", async (userAnswer) => {
+    return await verifyAnswerTop10(userAnswer);
+});
 
 // Eventos Connections
 onEvent("caracteristicasAleatorias", obtenerCaracteristicasAleatorias);
