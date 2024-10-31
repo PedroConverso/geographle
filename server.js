@@ -29,10 +29,9 @@ import {
 import { 
     verifyAnswerTop10,
     consignaAleatoria
-} from './backend/Top10/index.js'; 
+} from './backend/top10/index.js'; 
 
 // Eventos Top10
-// En server.js, actualiza los event handlers para Top10:
 onEvent("consignaAleatoria", async () => {
     return await consignaAleatoria();
 });
@@ -57,5 +56,15 @@ onEvent("verificarPais", (data) => {
 onEvent("verificarRespuestaIdioma", verificarRespuestaIdioma);
 onEvent("verificarRespuestaCapital", verificarRespuestaCapital);
 onEvent("verificarRespuestaForma", verificarRespuestaForma);
+
+import { 
+    registerUser,
+    loginUser,
+    checkUserSession
+} from './backend/users/index.js'; 
+
+onEvent("register", registerUser);
+onEvent("login", loginUser);
+onEvent("checkSession", checkUserSession);
 
 startServer();
