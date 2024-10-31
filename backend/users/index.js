@@ -28,7 +28,7 @@ function isValidPassword(password) {
   return password.length >= 8 && /\d/.test(password);
 }
 
-function registerUser(data) {
+export function registerUser(data) {
   let { username, password } = data;
 
   if (!isValidUsername(username)) {
@@ -48,7 +48,7 @@ function registerUser(data) {
   return { success: true, message: 'Registro exitoso' };
 }
 
-function loginUser(data) {
+export function loginUser(data) {
   let { username, password } = data;
   let user = users.find(user => user.username === username && user.password === password);
   return user
@@ -56,7 +56,7 @@ function loginUser(data) {
     : { success: false, message: 'Usuario o contraseña inválidos' };
 }
 
-function checkUserSession(data) {
+export function checkUserSession(data) {
   let { username } = data;
   let user = users.find(user => user.username === username);
   return user
