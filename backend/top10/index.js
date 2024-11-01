@@ -11,7 +11,7 @@ let currentTopic = null;
 
 async function loadData() {
     if (!top10Data) {
-        const dataPath = join(__dirname, 'data.json');
+        const dataPath = join(__dirname, '../data/Top_10.json');
         const rawData = await fs.readFile(dataPath, 'utf-8');
         top10Data = JSON.parse(rawData);
     }
@@ -45,3 +45,4 @@ export async function verifyAnswerTop10(userAnswer) {
 
     return isCorrect;
 }
+console.log(currentTopic);
