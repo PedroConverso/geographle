@@ -52,6 +52,7 @@ a{
     font-size: 80px;
     font-weight: 650;
     color: #fff;
+    
 }
 
 h3{
@@ -79,7 +80,7 @@ h4{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 80px;
+    gap: 30px;
 }
 
 .inputs {
@@ -112,4 +113,45 @@ h4{
     color: blue;
     font-size: 25px;
     font-weight: 600;
+}
+
+.junto{
+    display: flex;
+    gap: 10px;
+}
+
+.dont{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.log{
+    font-size: 20px;
+    font-weight: 600;
+}  
+
+.log:hover{
+    text-decoration: underline;
+}
+
+.flecha{
+    height: 30px;
+    width: 30px;
+}
+
+.back{
+    color: #fff;
+    font-size: 20px;
+}
+
+.back:hover{
+    text-decoration: underline;
+}
+
+.vuelta{
+    display: flex;
+    position: absolute;
+    top: 40px;
+    right: 1132px;
+    gap: 5px;
 }
