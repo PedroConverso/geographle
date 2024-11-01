@@ -56,3 +56,4 @@ export function continuarJuego(countryActual, consigna) {
     return { nuevoPais, consigna };
 }
 
+console.log();

@@ -18,7 +18,7 @@ async function loadData() {
     return top10Data;
 }
 
-export async function consignaAleatoria() {
+export  function consignaAleatoriaTop10() {
     const data = await loadData();
     const randomTopicIndex = Math.floor(Math.random() * data.top10.length);
     currentTopic = data.top10[randomTopicIndex].topic;
@@ -26,8 +26,8 @@ export async function consignaAleatoria() {
 }
 
 export async function verifyAnswerTop10(userAnswer) {
-    if (!currentTopic) {
-        throw new Error('No topic selected. Call consignaAleatoria first.');
+    if (!currentTopic) {x
+        throw new Error('No topic selected. Call consignaAleatoriaTop10 first.');
     }
 
     const data = await loadData();
@@ -45,4 +45,4 @@ export async function verifyAnswerTop10(userAnswer) {
 
     return isCorrect;
 }
-console.log(currentTopic);
+console.log(consignaAleatoriaTop10());
