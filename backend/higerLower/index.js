@@ -8,44 +8,51 @@ function loadData() {
     countries = JSON.parse(data).countries;
 }
 
-// Función para obtener una consigna aleatoria
+// Seleccionar una consigna aleatoria
 function consignaAleatoria() {
     const consignas = ['gdp_millions', 'population_millions', 'Territory_km2'];
-    const randomIndex = Math.floor(Math.random() * consignas.length);
-    return consignas[randomIndex];
+    return consignas[Math.floor(Math.random() * consignas.length)];
 }
 
-// Función para seleccionar dos países aleatorios
-function obtenerPaisesAleatorios() {
-    const country1 = countries[Math.floor(Math.random() * countries.length)];
-    let country2 = countries[Math.floor(Math.random() * countries.length)];
-    while (country2 === country1) {
-        country2 = countries[Math.floor(Math.random() * countries.length)];
-    }
-    return { country1, country2 };
+// Seleccionar un país aleatorio
+function obtenerPaisAleatorio() {
+    return countries[Math.floor(Math.random() * countries.length)];
 }
 
-// Función para comparar dos países según la consigna
-function compararPaises(country1, country2, consigna) {
-    if (country1[consigna] > country2[consigna]) {
-        return { ganador: country1, atributo: consigna };
-    } else {
-        return { ganador: country2, atributo: consigna };
-    }
-}
-
-// Ejemplo de uso
-function jugarRonda() {
-    loadData(); // Cargar los datos una vez
+// Enviar dos países al frontend para la primera ronda
+export function iniciarRonda() {
+    loadData(); // Cargar los datos
     const consigna = consignaAleatoria();
-    const { country1, country2 } = obtenerPaisesAleatorios();
-    const resultado = compararPaises(country1, country2, consigna);
+    const country1 = obtenerPaisAleatorio();
+    let country2 = obtenerPaisAleatorio();
     
-    console.log(`Comparando ${consigna}:`);
-    console.log(`${country1.country}: ${country1[consigna]}`);
-    console.log(`${country2.country}: ${country2[consigna]}`);
-    console.log(`Ganador: ${resultado.ganador.country} con ${resultado.ganador[consigna]}`);
+    // Asegurarse de que los países sean diferentes
+    while (country2 === country1) {
+        country2 = obtenerPaisAleatorio();
+    }
+
+    // Enviar datos iniciales al frontend
+    return { country1, country2, consigna };
 }
 
-// Ejecutar una ronda de ejemplo
-jugarRonda();
+// Validar respuesta del usuario
+export function validarRespuesta(country1, country2, consigna, userGuess) {
+    const esCorrecto = (userGuess === 'higher' && country2[consigna] > country1[consigna]) || 
+                       (userGuess === 'lower' && country2[consigna] < country1[consigna]);
+
+    return esCorrecto;
+}
+
+// Continuar juego con un nuevo país
+export function continuarJuego(countryActual, consigna) {
+    let nuevoPais = obtenerPaisAleatorio();
+
+    // Asegurarse de que el nuevo país sea diferente al actual
+    while (nuevoPais === countryActual) {
+        nuevoPais = obtenerPaisAleatorio();
+    }
+
+    // Enviar el nuevo país para la siguiente comparación
+    return { nuevoPais, consigna };
+}
+
