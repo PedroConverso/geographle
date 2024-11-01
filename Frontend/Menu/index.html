@@ -48,34 +48,11 @@
           <img class="cruz" src="../Img/tabler_xbox-x-filled.png" onclick="openestadown()">
         </div>
         <div class="sepa">
-          <div class="separar">
-          <div class="sep1">
-            <div class="cuasta">
-              <p>99</p>
-              <p>PLAYED</p>
-            </div>
-            <div class="cuasta">
-              <P>99</P>
-              <P>WINS</P>
-            </div>
-            <div class="cuasta">
-              <P>100%</P>
-              <P>%WINS</P>
-            </div>
+          <div id="myChartContainer">
+            <canvas id="myChart"></canvas>
           </div>
-          <div class="sep2">
-            <div class="cuasta">
-              <P>99</P>
-              <P>STREAK</P>
-            </div>
-            <div class="cuasta">
-              <P>99</P>
-              <P>BEST STREAK</P>
-            </div>
-            <div class="cuasta">
-              <Img src="../Img/material-symbols_share.png"></Img>
-              <P>SHARE</P>
-            </div>
+          
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
           </div>
         </div>
         </div>
@@ -177,5 +154,56 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
     <script src="../socket.js"></script>
+    <script>
+      const ctx = document.getElementById('myChart');
+      const username = localStorage.getItem("username");
+    
+      // Default values for wins and loses
+      let wins = 0;
+      let loses = 0;
+    
+      // Function to initialize the chart
+      function createChart(wins, loses) {
+        new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            labels: ['Wins', 'Loses'],
+            datasets: [{
+              label: '# Games',
+              data: [wins, loses],
+              borderWidth: 1,
+              backgroundColor: [
+                'rgb(0, 255, 0)',
+                'rgb(255, 0, 0)'
+              ],
+              hoverOffset: 4
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            },
+            responsive: true,
+            maintainAspectRatio: false, // Allows chart to fit the container's aspect ratio
+          }
+        });
+      }
+    
+      if (username !== undefined) {
+        postData("cargarEstadisticas", username, (data) => {
+          ({wins, loses} = data);
+          console.log(data);
+          console.log(wins, loses);
+          
+          // Create chart with retrieved data
+          createChart(wins, loses);
+        });
+      } else {
+        // Create chart with default values if username is not found
+        createChart(wins, loses);
+      }
+    </script>
 </body>
 </html>

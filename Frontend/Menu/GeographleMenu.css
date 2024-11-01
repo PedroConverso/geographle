@@ -10,6 +10,10 @@ body {
     flex-direction: column;
 }
 
+#myChartContainer {
+    width: auto;
+    max-height: 350px;
+  }
 
 header{
     background-color: #D4D3D3;

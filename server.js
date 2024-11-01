@@ -23,7 +23,8 @@ import {
     obtenerCaracteristicasAleatorias, 
     verificarSeleccion, 
     guardarEstadisticas, 
-    handleVerificarSeleccion 
+    handleVerificarSeleccion,
+    cargarEstadisticas
 } from './backend/connections/index.js'; 
 
 // Importaciones desde Top10/index.js
@@ -45,6 +46,7 @@ onEvent("verificarSeleccionTop10", async (userAnswer) => {
 onEvent("caracteristicasAleatorias", obtenerCaracteristicasAleatorias);
 onEvent("verificarSeleccion", handleVerificarSeleccion);
 onEvent("guardarEstadisticas", guardarEstadisticas);
+onEvent("cargarEstadisticas", cargarEstadisticas)
 
 // Eventos Guess_about
 onEvent("obtenerFlag", obtenerFlag);
@@ -68,5 +70,7 @@ import {
 onEvent("register", registerUser);
 onEvent("login", loginUser);
 onEvent("checkSession", checkUserSession);
+
+
 
 startServer();
