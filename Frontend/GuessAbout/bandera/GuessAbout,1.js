@@ -78,7 +78,7 @@ function mostrarImagenes() {
                 });
 
                 div.appendChild(img);
-            }
+            }   
         });
     });
 }
@@ -244,7 +244,33 @@ function loadCapitalOptions() {
     });
 }
 
-// Implement the function for capital selection
+// Función para enviar las estadísticas al backend
+function enviarEstadisticas(gano) {
+    const user = localStorage.getItem("username");
+
+    if (user !== undefined) {
+        // Asegúrate de que la variable esté definida aquí
+        const estadisticas = {
+            username: user,
+            juego: "Guess_about",
+            gano: gano
+        };
+
+        // Aquí puedes usar 'estadisticas' sin problemas
+        console.log("Estadísticas a enviar:", estadisticas);
+        
+        postData("estadisticasGuessAbout", estadisticas, (response) => {
+            console.log("Respuesta del servidor:", response);
+            if (response.success) {
+                displayMessage("Estadísticas guardadas correctamente.", "green");
+            } else {
+                displayMessage("Hubo un error al guardar las estadísticas.", "red");
+            }
+        });
+    }
+}
+
+// Lógica de verificación si el usuario gana la última ronda de capital
 function handleCapitalSelection(selectedCapital) {
     cuales.forEach(cuale => {
         cuale.classList.remove('selected');
@@ -260,10 +286,14 @@ function handleCapitalSelection(selectedCapital) {
         if (response.esCorrecta) {
             displayMessage("¡Correcto! Has acertado la capital.", 'green');
             setTimeout(() => {
+                enviarEstadisticas(true); // Envía estadística con `gano` en true si acierta
                 window.location.href = '/Frontend/Menu/';
             }, 1500);
         } else {
             handleLives(response);
+            if (response.vidas === 0) {
+                enviarEstadisticas(false); // Envía estadística con `gano` en false si pierde todas las vidas
+            }
         }
     });
 }
@@ -273,3 +303,4 @@ document.addEventListener('DOMContentLoaded', () => {
     mostrarOpcionesIdioma();
     loadCapitalOptions();
 });
+console.log("Enviando estadísticas:", estadisticas);
