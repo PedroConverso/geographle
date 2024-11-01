@@ -16,6 +16,7 @@ function openestadown() {
     }
 }
 
+
 function optisdown() {
     let menu = document.getElementById("optidown")
     if (menu.classList.contains("edSet")) {
@@ -52,89 +53,79 @@ function infodown() {
     }
 }
 
-let currentTopic = null;
-let currentRankingData = null;
+// Variables globales
+let currentAnswers = new Set(); // Para rastrear las respuestas ya utilizadas
 
-// Inicialización del juego
-function initializeApp() {
-    // Obtener tema aleatorio al iniciar
-    fetchData('getRandomTopic', (topic) => {
-        currentTopic = topic;
-        updateTopicDisplay(topic);
-        
-        // Una vez que tenemos el tema, obtener los datos del ranking
-        fetchData('getTopicData', (data) => {
-            currentRankingData = data;
-            initializeBoxes();
-        });
-    });
-
-    // Configurar el botón de selección
-    document.querySelector('.doss').addEventListener('click', () => {
-        // Obtener nuevo tema aleatorio
-        fetchData('getRandomTopic', (topic) => {
-            currentTopic = topic;
-            updateTopicDisplay(topic);
-            
-            fetchData('getTopicData', (data) => {
-                currentRankingData = data;
-                resetBoxes();
-            });
-        });
+// Inicializar el juego
+async function initializeGame() {
+    const topicTitle = document.getElementById('topicTitle');
+    // Obtener una consigna aleatoria del backend
+    fetchData("consignaAleatoria", (topic) => {
+        topicTitle.textContent = topic;
     });
 }
 
-// Actualizar el título del tema
-function updateTopicDisplay(topic) {
-    const titleElement = document.querySelector('.title');
-    if (titleElement) {
-        titleElement.textContent = topic;
+// Manejar el envío de respuestas
+function handleAnswer() {
+    const input = document.getElementById('etbal');
+    const answer = input.value.trim();
+    
+    if (!answer) return; // No procesar si está vacío
+    
+    if (currentAnswers.has(answer.toLowerCase())) {
+        alert("Ya has usado esta respuesta!");
+        input.value = '';
+        return;
     }
-}
 
-// Inicializar las cajas con los números
-function initializeBoxes() {
-    const boxes1 = document.querySelector('.boxes1');
-    const boxes2 = document.querySelector('.boxes2');
-
-    if (boxes1 && boxes2) {
-        const rectangles = document.querySelectorAll('.rectan');
-        rectangles.forEach((rect, index) => {
-            rect.textContent = `${index + 1}. ${currentRankingData[index].name}`;
-            
-            // Añadir el valor específico según el tipo de dato
-            const data = currentRankingData[index];
-            let value = '';
-            
-            if (data.islands) {
-                value = `${data.islands.toLocaleString()} islands`;
-            } else if (data.gold) {
-                value = `${data.gold} gold medals`;
-            } else if (data.average_life_expectancy) {
-                value = data.average_life_expectancy;
-            } else if (data.gpi) {
-                value = `${data.gpi} GPI`;
-            } else if (data.tourists_in_millions) {
-                value = `${data.tourists_in_millions}M tourists`;
-            } else if (data.coastline) {
-                value = `${data.coastline.toLocaleString()} km`;
-            } else if (data.air_pollution) {
-                value = `${data.air_pollution} µg/m³`;
+    postData("verificarSeleccionTop10", answer, (result) => {
+        if (result) {
+            // Encontrar el primer div vacío
+            const boxes = document.querySelectorAll('.rectan');
+            for (let box of boxes) {
+                if (box.textContent.length <= 2) { // Solo contiene el número y el punto
+                    box.textContent = box.textContent + " " + answer;
+                    currentAnswers.add(answer.toLowerCase());
+                    break;
+                }
             }
             
-            rect.textContent = `${index + 1}. ${data.name} - ${value}`;
-        });
-    }
-}
-
-// Resetear las cajas para un nuevo juego
-function resetBoxes() {
-    const rectangles = document.querySelectorAll('.rectan');
-    rectangles.forEach((rect, index) => {
-        rect.textContent = `${index + 1}.`;
+            // Verificar si se completaron todas las respuestas
+            if (currentAnswers.size === 10) {
+                alert("¡Felicitaciones! ¡Has completado el Top 10!");
+                // Aquí puedes agregar lógica adicional para el final del juego
+            }
+        } else {
+            alert("Esa respuesta no es correcta. ¡Intenta otra vez!");
+        }
+        input.value = ''; // Limpiar el input después de cada intento
     });
-    initializeBoxes();
 }
 
-// Inicializar la aplicación cuando el DOM esté cargado
-document.addEventListener('DOMContentLoaded', initializeApp);
+// Event Listeners
+document.addEventListener('DOMContentLoaded', () => {
+    initializeGame();
+    
+    // Manejar el botón de selección
+    const selectButton = document.getElementById('sel');
+    selectButton.addEventListener('click', handleAnswer);
+    
+    // Manejar la tecla Enter en el input
+    const input = document.getElementById('etbal');
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            handleAnswer();
+        }
+    });
+});
+
+// Función para reiniciar el juego
+function resetGame() {
+    currentAnswers.clear();
+    const boxes = document.querySelectorAll('.rectan');
+    boxes.forEach(box => {
+        const number = box.textContent.split('.')[0];
+        box.textContent = number + '.';
+    });
+    initializeGame();
+}
