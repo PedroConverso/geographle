@@ -25,6 +25,21 @@ import {
     handleVerificarSeleccion 
 } from './backend/connections/index.js'; 
 
+// Importaciones desde Top10/index.js
+import { 
+    verifyAnswerTop10,
+    consignaAleatoria
+} from './backend/top10/index.js'; 
+
+// Eventos Top10
+onEvent("consignaAleatoria", async () => {
+    return await consignaAleatoria();
+});
+
+onEvent("verificarSeleccionTop10", async (userAnswer) => {
+    return await verifyAnswerTop10(userAnswer);
+});
+
 // Eventos Connections
 onEvent("caracteristicasAleatorias", obtenerCaracteristicasAleatorias);
 onEvent("verificarSeleccion", handleVerificarSeleccion);
@@ -36,10 +51,20 @@ onEvent("obtenerOpcionesIdioma", obtenerOpcionesIdioma);
 onEvent("obtenerOpcionesCapital", obtenerOpcionesCapital);
 onEvent("obtenerOpcionesForma", obtenerOpcionesForma);
 onEvent("verificarPais", (data) => {
-    return verificarRespuestaFlag(data.selectedCountry); // Asegúrate de que estás enviando solo el país seleccionado
+    return verificarRespuestaFlag(data.selectedCountry); 
 });
 onEvent("verificarRespuestaIdioma", verificarRespuestaIdioma);
 onEvent("verificarRespuestaCapital", verificarRespuestaCapital);
 onEvent("verificarRespuestaForma", verificarRespuestaForma);
+
+import { 
+    registerUser,
+    loginUser,
+    checkUserSession
+} from './backend/users/index.js'; 
+
+onEvent("register", registerUser);
+onEvent("login", loginUser);
+onEvent("checkSession", checkUserSession);
 
 startServer();

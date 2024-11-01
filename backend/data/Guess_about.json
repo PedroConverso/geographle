@@ -1151,7 +1151,7 @@
     "country_id": "ZAF",
     "name": "South Africa",
     "capital": "Pretoria",
-    "language": "Afrikaans, English, IsiZulu, IsiXhosa",
+    "language": "Zulu",
     "flag": "https://flagcdn.com/w320/za.png",
     "country_shape": "https://gadm.org/img/480/gadm/ZAF/ZAF.png"
   },
@@ -1174,7 +1174,7 @@
   {
     "country_id": "LKA",
     "name": "Sri Lanka",
-    "capital": "Sri Jayawardenepura Kotte",
+    "capital": "Colombo",
     "language": "Sinhalese",
     "flag": "https://flagcdn.com/w320/lk.png",
     "country_shape": "https://gadm.org/img/480/gadm/LKA/LKA.png"
@@ -1239,7 +1239,7 @@
     "country_id": "TZA",
     "name": "Tanzania",
     "capital": "Dodoma",
-    "language": "Swahili, English",
+    "language": "Swahili",
     "flag": "https://flagcdn.com/w320/tz.png",
     "country_shape": "https://gadm.org/img/480/gadm/TZA/TZA.png"
   },
@@ -1311,7 +1311,7 @@
     "country_id": "TZA",
     "name": "Tanzania",
     "capital": "Dodoma",
-    "language": "Swahili, English",
+    "language": "Swahili",
     "flag": "https://flagcdn.com/w320/tz.png",
     "country_shape": "https://gadm.org/img/480/gadm/TZA/TZA.png"
   },

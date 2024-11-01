@@ -1,0 +1,38 @@
+[
+  {
+    "username": "pepegon",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 5
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 5
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 2
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 4
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
+  }
+]
