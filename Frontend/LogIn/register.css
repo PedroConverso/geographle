@@ -1,10 +1,13 @@
+body{
+    font-family: "Inter" , sans-serif;
+}
+
 section{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 500px;
     width: 100%;
-    font-family: "Inter" , sans-serif;
 }
 
 .Todo{
@@ -16,7 +19,7 @@ section{
     border-radius: 50px;
 }
 
-.ca{
+a{
     text-decoration: none;
 }
 
@@ -98,4 +101,20 @@ h4{
 
 .inputs .boton:hover {
     background-color: #0056b3;
+}
+
+.vuelta{
+    display: flex;
+    text-decoration: none;
+}
+
+.flecha{
+    height: 40px;
+    width: 40px;
+}
+
+.back{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
