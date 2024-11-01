@@ -1,22 +1,31 @@
 body{
     font-family: "Inter" , sans-serif;
+    background-color: #F3EFEF;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 635px;
+    width: 50%;
+    background-color: #272DA3;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
 }
 
 section{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px;
-    width: 100%;
+    flex-direction: column;
+    height: 635px;
+    width: 50%;
+    gap: 40px;
 }
 
 .Todo{
     display: flex;
-    flex-direction: column;
-    height: 400px;
-    width: 450px;
-    border: 4px solid #000; 
-    border-radius: 50px;
 }
 
 a{
@@ -40,15 +49,29 @@ a{
 }
 
 .title{
-    font-size: 35px;
+    font-size: 80px;
     font-weight: 650;
-    text-decoration: underline;
+    color: #fff;
+}
+
+h3{
+    font-size: 30px;
+    margin: 50px;
+    font-weight: 500;
+    color: #fff;
 }
 
 h4{
-    font-size: 15px;
-    font-weight: 600;
-    text-decoration: underline;
+    font-size: 30px;
+    margin: 50px;
+    font-weight: 500;
+    color: #272DA3;
+}
+
+.create{
+    color: #272DA3;
+    font-size: 80px;
+    font-weight: 650;
 }
 
 .espacio{
@@ -56,67 +79,37 @@ h4{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 15px;
+    gap: 80px;
 }
 
 .inputs {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    gap: 40px;
     padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.inputs .correo, .inputs .contra {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+.sisi{
+    background-color: #C5C5C5;
+    font-family: "Montserrat", sans-serif;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 8px;
+    border: 1px solid #C5C5C5;
 }
 
-.inputs input {
-    width: 300px;
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.inputs input:focus {
-    border-color: #007BFF;
-    outline: none;
-}
-
-.inputs .boton {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.inputs .boton:hover {
-    background-color: #0056b3;
-}
-
-.vuelta{
-    display: flex;
-    text-decoration: none;
-}
-
-.flecha{
-    height: 40px;
-    width: 40px;
-}
-
-.back{
+.boton{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 150px;
+    height: 60px;
+    border: 2px solid #C5C5C5;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 10px;
+    color: blue;
+    font-size: 25px;
+    font-weight: 600;
 }
