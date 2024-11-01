@@ -46,5 +46,11 @@
     "juego": "Connections",
     "gano": false,
     "vidasRestantes": 0
+  },
+  {
+    "username": "fedevitacca",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
   }
 ]
