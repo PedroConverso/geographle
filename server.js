@@ -30,12 +30,12 @@ import {
 // Importaciones desde Top10/index.js
 import { 
     verifyAnswerTop10,
-    consignaAleatoria
+    consignaAleatoriaTop10
 } from './backend/top10/index.js'; 
 
 // Eventos Top10
 onEvent("consignaAleatoria", async () => {
-    return await consignaAleatoria();
+    return await consignaAleatoriaTop10();
 });
 
 onEvent("verificarSeleccionTop10", async (userAnswer) => {
