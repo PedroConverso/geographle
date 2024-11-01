@@ -1,7 +1,10 @@
-import fs from 'fs';
-import readline from 'readline';
-import { onEvent, startServer } from "soquetic"
+import {readFileSync, writeFileSync} from 'fs';
+import { startServer, onEvent } from 'soquetic';
+
+const paises = JSON.parse(readFileSync("../data/higher_or_lower.json"))
+
+onEvent()
 
 
-const data = JSON.parse(fs.readFileSync('higher_or_lower.json', 'utf8'));
-console.log(data);
+
+startServer()
