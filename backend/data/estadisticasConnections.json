@@ -22,5 +22,29 @@
     "juego": "Connections",
     "gano": true,
     "vidasRestantes": 5
+  },
+  {
+    "username": "fedevitacca",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
+  },
+  {
+    "username": "fedevitacca",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 5
+  },
+  {
+    "username": "fedevitacca",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 3
+  },
+  {
+    "username": "fedevitacca",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
   }
 ]

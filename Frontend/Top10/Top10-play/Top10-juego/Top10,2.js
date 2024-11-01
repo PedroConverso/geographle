@@ -52,7 +52,6 @@ function infodown() {
         menu.classList.add("edinf")
     }
 }
-
 // Variables globales
 let currentAnswers = new Set(); // Para rastrear las respuestas ya utilizadas
 
@@ -83,8 +82,9 @@ function handleAnswer() {
             // Encontrar el primer div vacío
             const boxes = document.querySelectorAll('.rectan');
             for (let box of boxes) {
-                if (box.textContent.length <= 2) { // Solo contiene el número y el punto
-                    box.textContent = box.textContent + " " + answer;
+                const boxNumber = box.textContent.split('.')[0]; // Obtener solo el número inicial
+                if (box.textContent === `${boxNumber}.`) { // Verificar si solo contiene el número y punto
+                    box.textContent = `${boxNumber}. ${answer}`;
                     currentAnswers.add(answer.toLowerCase());
                     break;
                 }
@@ -125,7 +125,7 @@ function resetGame() {
     const boxes = document.querySelectorAll('.rectan');
     boxes.forEach(box => {
         const number = box.textContent.split('.')[0];
-        box.textContent = number + '.';
+        box.textContent = `${number}.`;
     });
     initializeGame();
 }
