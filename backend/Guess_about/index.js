@@ -134,3 +134,21 @@ export function verificarRespuestaGeneral(prop, respuesta, tipoRonda) {
     vidas: tipoRonda === 'bandera' ? vidasBandera : vidasGenerales,
   };
 }
+
+export function guardarEstadisticasGuessAbout(estadisticas) {
+  const filePathEstadisticas = path.join(__dirname, '../data/estadisticasGuessAbout.json');
+
+  // Leer el contenido actual del archivo
+  let contenidoActual = [];
+  if (fs.existsSync(filePathEstadisticas)) {
+      const contenidoJSON = fs.readFileSync(filePathEstadisticas, 'utf8');
+      contenidoActual = JSON.parse(contenidoJSON);
+  }
+
+  // Agregar las nuevas estadísticas
+  contenidoActual.push(estadisticas);
+
+  // Guardar el contenido actualizado en el archivo
+  fs.writeFileSync(filePathEstadisticas, JSON.stringify(contenidoActual, null, 2), 'utf8');
+  console.log("Estadísticas guardadas correctamente:", estadisticas);
+}

@@ -14,7 +14,8 @@ import {
     verificarRespuestaFlag,
     verificarRespuestaIdioma,
     verificarRespuestaCapital,
-    verificarRespuestaForma
+    verificarRespuestaForma,
+    guardarEstadisticasGuessAbout
 } from './backend/Guess_about/index.js';  
 
 // Importaciones desde connections/index.js
@@ -56,6 +57,7 @@ onEvent("verificarPais", (data) => {
 onEvent("verificarRespuestaIdioma", verificarRespuestaIdioma);
 onEvent("verificarRespuestaCapital", verificarRespuestaCapital);
 onEvent("verificarRespuestaForma", verificarRespuestaForma);
+onEvent("estadisticasGuessAbout", guardarEstadisticasGuessAbout)
 
 import { 
     registerUser,
