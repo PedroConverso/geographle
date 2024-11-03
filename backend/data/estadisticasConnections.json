@@ -52,5 +52,23 @@
     "juego": "Connections",
     "gano": false,
     "vidasRestantes": 0
+  },
+  {
+    "username": "pedroconverso",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 4
+  },
+  {
+    "username": "pedroconverso",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 4
+  },
+  {
+    "username": "pedroconverso",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
   }
 ]

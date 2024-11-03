@@ -45,18 +45,18 @@ export function handleVerificarSeleccion(data) {
     return { esCorrecta, vidas };
 }
 
-export function cargarEstadisticas(user){
+export function cargarEstadisticas(user) {
     let data = fs.readFileSync('backend/data/estadisticasConnections.json', 'utf8');
     let stats = JSON.parse(data);
     let loses = 0;
     let wins = 0;
-    console.log(stats)
-    for(let i =0; i < stats.length; i++){
-        if(stats.username = user){
-            if(stats[i]["gano"] === true){
-                wins+=1
-            }else{
-                loses+=1
+
+    for (let i = 0; i < stats.length; i++) {
+        if (stats[i].username === user) {
+            if (stats[i].gano === true) {
+                wins += 1;
+            } else {
+                loses += 1;
             }
         }
     }
@@ -64,7 +64,7 @@ export function cargarEstadisticas(user){
     let res = {
         wins,
         loses
-    }
-    console.log(res)
+    };
+    console.log(res);
     return res;
 }
