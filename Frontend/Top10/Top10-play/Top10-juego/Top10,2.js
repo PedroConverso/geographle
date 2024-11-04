@@ -130,3 +130,10 @@ function resetGame() {
     });
     initializeGame();
 }
+
+function surrender() {
+    if (confirm("¿Estás seguro de que quieres rendirte?")) {
+        resetGame(); // Llama a la función para reiniciar el juego
+        alert("Te has rendido. ¡Inténtalo de nuevo!");
+    }
+}
