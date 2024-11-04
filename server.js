@@ -80,6 +80,7 @@ import {
     
 } from './backend/higerLower/index.js'; 
 
+//Eventos Higher or Lower
 onEvent("iniciarRonda", iniciarRonda);
 onEvent("validarRespuesta", validarRespuesta);
 onEvent("continuarJuego", continuarJuego);

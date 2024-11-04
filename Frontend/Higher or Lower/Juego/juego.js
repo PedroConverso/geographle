@@ -42,142 +42,85 @@ function thememode2() {
         menu.classList.add("themeMode-check-container-on2")
     }
 }
+let firstClick = true;
 
-// Variables globales
-let score = 0;
-let highScore = localStorage.getItem('highLowHighScore') || 0;
-let currentCountry1 = null;
-let currentCountry2 = null;
-let currentConsigna = null;
+let consigna
 
-// Elementos del DOM
-const scoreElement = document.querySelector('.score');
-const highScoreElement = document.querySelector('.hig');
-const izqDiv = document.querySelector('.izq');
-const derDiv = document.querySelector('.der');
-const orDiv = document.querySelector('.or');
+document.addEventListener("DOMContentLoaded", () => {
+    postData("iniciarRonda", null, (res) => {
+        let pais1 = res.country1;
+        let pais2 = res.country2;
+        consigna = res.consigna;
 
-// Formatear números grandes
-function formatNumber(num, consigna) {
-    if (consigna === 'Territory_km2') {
-        return num.toLocaleString() + ' km²';
-    } else if (consigna === 'population_millions') {
-        return (num).toLocaleString() + ' M';
-    } else if (consigna === 'gdp_millions') {
-        return '$' + (num).toLocaleString() + ' M';
-    }
-    return num.toLocaleString();
-}
+        document.getElementById("pais1").innerHTML = pais1.country;
+        document.getElementById("pais2").innerHTML = pais2.country;
+        document.getElementById("gameTheme").innerHTML = consigna;
+        document.getElementById("pais1data").innerHTML = pais1[consigna];
 
-// Traducir consigna a texto legible
-function getConsignaText(consigna) {
-    const translations = {
-        'gdp_millions': 'GDP',
-        'population_millions': 'Population',
-        'Territory_km2': 'Territory'
+        if (firstClick) {
+            document.getElementById("higherBtn").addEventListener("click", () => verifyAnswerHigherOrLower(pais1, pais2, consigna, "higher"));
+            document.getElementById("lowerBtn").addEventListener("click", () => verifyAnswerHigherOrLower(pais1, pais2, consigna, "lower"));
+            firstClick = false; // Set firstClick to false after adding event listeners
+        }
+    });
+});
+
+const verifyAnswerHigherOrLower = (country1, country2, consigna, userGuess) => {
+    const data = {
+        "country1": country1,
+        "country2": country2,
+        "consigna": consigna,
+        "userGuess": userGuess
     };
-    return translations[consigna] || consigna;
-}
 
-// Actualizar la visualización
-function updateDisplay() {
-    // Actualizar puntuaciones
-    scoreElement.textContent = `Score: ${score}`;
-    highScoreElement.textContent = `High Score: ${highScore}`;
-    
-    // Actualizar el tipo de comparación
-    orDiv.textContent = `Compare ${getConsignaText(currentConsigna)}`;
-    
-    // Actualizar información del país izquierdo
-    if (!izqDiv.querySelector('.country-info')) {
-        izqDiv.insertAdjacentHTML('afterbegin', `
-            <div class="country-info">
-                <h2 class="country-name"></h2>
-                <div class="country-value"></div>
-            </div>
-        `);
-    }
-    
-    // Actualizar información del país derecho
-    if (!derDiv.querySelector('.country-info')) {
-        derDiv.insertAdjacentHTML('afterbegin', `
-            <div class="country-info">
-                <h2 class="country-name"></h2>
-                <div class="country-value"></div>
-            </div>
-        `);
-    }
-    
-    // Actualizar datos del país izquierdo
-    izqDiv.querySelector('.country-name').textContent = currentCountry1.country;
-    izqDiv.querySelector('.country-value').textContent = 
-        formatNumber(currentCountry1[currentConsigna], currentConsigna);
-    
-    // Actualizar datos del país derecho
-    derDiv.querySelector('.country-name').textContent = currentCountry2.country;
-    // Solo mostrar el valor después de que el usuario haga su elección
-    derDiv.querySelector('.country-value').textContent = '???';
-}
-
-// Manejar la respuesta del usuario
-function handleGuess(guess) {
-    // Mostrar el valor del país derecho inmediatamente después de la elección
-    derDiv.querySelector('.country-value').textContent = 
-        formatNumber(currentCountry2[currentConsigna], currentConsigna);
-    
-    postData("validarRespuesta", {
-        country1: currentCountry1,
-        country2: currentCountry2,
-        consigna: currentConsigna,
-        userGuess: guess
-    }, (response) => {
-        setTimeout(() => {
-            if (response) {
-                // Respuesta correcta
-                score++;
-                if (score > highScore) {
-                    highScore = score;
-                    localStorage.setItem('highLowHighScore', highScore);
-                }
-                
-                // Continuar el juego
-                postData("continuarJuego", {
-                    countryActual: currentCountry2,
-                    consigna: currentConsigna
-                }, (data) => {
-                    currentCountry1 = currentCountry2;
-                    currentCountry2 = data.nuevoPais;
-                    currentConsigna = data.consigna;
-                    updateDisplay();
-                });
-            } else {
-                // Respuesta incorrecta
-                score = 0;
-                // Reiniciar juego
-                initGame();
-            }
-        }, 1500); // Esperar 1.5 segundos para mostrar el resultado
+    postData("validarRespuesta", data, (res) => {
+        if (res === true) {
+            handleCorrectAnswer(country2, data);
+        } else {
+            handleWrongAnswer(country2, data);
+        }
     });
-}
+};
 
-// Inicializar el juego
-function initGame() {
-    fetchData("iniciarRonda", (data) => {
-        currentCountry1 = data.country1;
-        currentCountry2 = data.country2;
-        currentConsigna = data.consigna;
-        updateDisplay();
-    });
-}
+const handleCorrectAnswer = (country2, data) => {
+    document.getElementById("orContent").innerHTML = "Correcto!";
+    document.getElementById("higherBtn").style.display = "none";
+    document.getElementById("lowerBtn").style.display = "none";
+    document.getElementById("pais2data").innerHTML = country2[data.consigna];
 
-// Event listeners para los botones
-document.querySelectorAll('.high').forEach(button => {
-    button.addEventListener('click', () => handleGuess('higher'));
-});
+    setTimeout(() => {
+        postData("continuarJuego", (country2), (res) => {
+            updateGameState(res);
+        });
 
-document.querySelectorAll('.low').forEach(button => {
-    button.addEventListener('click', () => handleGuess('lower'));
-});
+        document.getElementById("higherBtn").style.display = "flex";
+        document.getElementById("lowerBtn").style.display = "flex";
+        document.getElementById("pais2data").innerHTML = "";
+        document.getElementById("orContent").innerHTML = "OR";
+    }, 1500);
+};
 
-// Iniciar el juego cuando se carga la página
-document.addEventListener('DOMContentLoaded', initGame);
+const handleWrongAnswer = (country2) => {
+    document.getElementById("orContent").innerHTML = "Perdiste! Clickeame para reiniciar";
+    document.getElementById("orContent").addEventListener("click", () => {
+        window.location.reload();
+    })
+    document.getElementById("higherBtn").style.display = "none";
+    document.getElementById("lowerBtn").style.display = "none";
+    document.getElementById("pais2data").innerHTML = country2[consigna];
+};
+
+const updateGameState = (res) => {
+    console.log(res)
+    let pais1 = res.country1;
+    let pais2 = res.country2;
+
+    document.getElementById("pais1").innerHTML = pais1.country;
+    document.getElementById("pais2").innerHTML = pais2.country;
+    document.getElementById("pais1data").innerHTML = pais1[consigna];
+    document.getElementById("pais2data").innerHTML = "";
+    document.getElementById("orContent").innerHTML = "OR";
+
+    document.getElementById("higherBtn").addEventListener("click", () => verifyAnswerHigherOrLower(pais1, pais2, consigna, "higher"));
+    document.getElementById("lowerBtn").addEventListener("click", () => verifyAnswerHigherOrLower(pais1, pais2, consigna, "lower"));
+};
