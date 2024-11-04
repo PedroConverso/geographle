@@ -150,20 +150,22 @@ function loadFlag() {
     });
 }
 
-// Handle lives based on game state
 function handleLives(response) {
     displayMessage(`Incorrecto. Te quedan ${response.vidas} vidas.`, 'red');
     if (response.vidas > 0) {
-        // Continue the game
+        // Continúa el juego si tiene vidas restantes
     } else {
-
         displayMessage(`Game Over. ${response.mensaje}`, 'red');
+        
+        // Redirige al menú y luego envía las estadísticas al perder el juego
         setTimeout(() => {
             window.location.href = '/Frontend/Menu/';
-        }, 1500);
-        enviarEstadisticas(false);
+            enviarEstadisticas(false);
+        }, 2000); // Espera para mostrar el mensaje de "Game Over"
     }
 }
+
+
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', () => {
@@ -223,6 +225,29 @@ function handleLanguageSelection(selectedLanguage) {
         }
     });
 }
+function handleLanguageSelection(selectedLanguage) {
+    document.querySelectorAll('#cualid').forEach(div => {
+        div.classList.remove('selected');
+    });
+
+    const selectedDiv = Array.from(document.querySelectorAll('#cualid')).find(div => div.textContent === selectedLanguage);
+    if (selectedDiv) {
+        selectedDiv.classList.add('selected');
+    }
+
+    postData("verificarRespuestaIdioma", { selectedLanguage }, (response) => {
+        displayMessage('', '');
+        if (response.esCorrecta) {
+            displayMessage("¡Correcto! Has acertado el idioma.", 'green');
+            setTimeout(() => {
+                window.location.href = '/Frontend/GuessAbout/bandera/silueta/lengua/capital/index.html';
+            }, 1500);
+        } else {
+            handleLives(response);
+        }
+    });
+}
+
 
 // Load capital options function
 const cuales = document.querySelectorAll('.cuale');
@@ -250,28 +275,28 @@ function loadCapitalOptions() {
 function enviarEstadisticas(gano) {
     const user = localStorage.getItem("username");
 
-    if (user !== undefined) {
-        // Asegúrate de que la variable esté definida aquí
+    if (user) {  // Cambiado de !== undefined a simplemente if(user)
         const estadisticas = {
             username: user,
             juego: "Guess_about",
             gano: gano
         };
 
-        // Aquí puedes usar 'estadisticas' sin problemas
         console.log("Estadísticas a enviar:", estadisticas);
         
-        postData("estadisticasGuessAbout", estadisticas, (response) => {
-            console.log("Respuesta del servidor:", response);
-            if (response.success) {
-                displayMessage("Estadísticas guardadas correctamente.", "green");
-            } else {
-                displayMessage("Hubo un error al guardar las estadísticas.", "red");
-            }
+        return new Promise((resolve) => {
+            postData("estadisticasGuessAbout", estadisticas, (response) => {
+                console.log("Respuesta del servidor:", response);
+                if (response.success) {
+                    displayMessage("Estadísticas guardadas correctamente.", "green");
+                } else {
+                    displayMessage("Hubo un error al guardar las estadísticas.", "red");
+                }
+                resolve();
+            });
         });
     }
 }
-
 // Lógica de verificación si el usuario gana la última ronda de capital
 function handleCapitalSelection(selectedCapital) {
     cuales.forEach(cuale => {
@@ -288,16 +313,14 @@ function handleCapitalSelection(selectedCapital) {
         if (response.esCorrecta) {
             displayMessage("¡Correcto! Has acertado la capital.", 'green');
             setTimeout(() => {
-                enviarEstadisticas(true); // Envía estadística con `gano` en true si acierta
+                enviarEstadisticas(true); // Envía estadísticas si gana
                 window.location.href = '/Frontend/Menu/';
             }, 1500);
         } else {
-            window.location.href = '/Frontend/Menu/';
-            handleLives(response);
+            handleLives(response)
         }
     });
 }
-
 // Event listeners for loading options on DOM content loaded
 document.addEventListener('DOMContentLoaded', () => {
     mostrarOpcionesIdioma();
