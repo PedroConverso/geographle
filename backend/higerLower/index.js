@@ -38,7 +38,7 @@ export function iniciarRonda() {
 // Validar respuesta del usuario
 export function validarRespuesta(country1, country2, consigna, userGuess) {
     const esCorrecto = (userGuess === 'higher' && country2[consigna] > country1[consigna]) || 
-                       (userGuess === 'lower' && country2[consigna] < country1[consigna]);
+    (userGuess === 'lower' && country2[consigna] < country1[consigna]);
 
     return esCorrecto;
 }
