@@ -156,10 +156,12 @@ function handleLives(response) {
     if (response.vidas > 0) {
         // Continue the game
     } else {
+
         displayMessage(`Game Over. ${response.mensaje}`, 'red');
         setTimeout(() => {
             window.location.href = '/Frontend/Menu/';
         }, 1500);
+        enviarEstadisticas(false);
     }
 }
 
@@ -290,10 +292,8 @@ function handleCapitalSelection(selectedCapital) {
                 window.location.href = '/Frontend/Menu/';
             }, 1500);
         } else {
+            window.location.href = '/Frontend/Menu/';
             handleLives(response);
-            if (response.vidas === 0) {
-                enviarEstadisticas(false); // Envía estadística con `gano` en false si pierde todas las vidas
-            }
         }
     });
 }

@@ -1,8 +1,13 @@
 [
   {
-    "username": null,
+    "username": "kupicito123",
     "juego": "Guess_about",
-    "gano": true
+    "gano": false
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Guess_about",
+    "gano": false
   },
   {
     "username": "kupicito123",
@@ -10,43 +15,33 @@
     "gano": true
   },
   {
-    "username": "fedevitacca",
+    "username": "kupicito123",
+    "juego": "Guess_about",
+    "gano": false
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Guess_about",
+    "gano": false
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Guess_about",
+    "gano": false
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Guess_about",
+    "gano": false
+  },
+  {
+    "username": "kupicito123",
     "juego": "Guess_about",
     "gano": true
   },
   {
-    "username": "fedevitacca",
+    "username": "kupicito123",
     "juego": "Guess_about",
-    "gano": true
-  },
-  {
-    "username": "fedevitacca",
-    "juego": "Guess_about",
-    "gano": true
-  },
-  {
-    "username": "fedevitacca",
-    "juego": "Guess_about",
-    "gano": true
-  },
-  {
-    "username": "fedevitacca",
-    "juego": "Guess_about",
-    "gano": true
-  },
-  {
-    "username": "fedevitacca",
-    "juego": "Guess_about",
-    "gano": true
-  },
-  {
-    "username": "fedevitacca",
-    "juego": "Guess_about",
-    "gano": true
-  },
-  {
-    "username": "pedroconverso",
-    "juego": "Guess_about",
-    "gano": true
+    "gano": false
   }
 ]

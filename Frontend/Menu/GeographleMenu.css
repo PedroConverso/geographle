@@ -80,7 +80,7 @@ header{
 .estasdown {
     display: flex;
     width: 100vh;
-    height: 70%;
+    height: 80%;
     background-color: #F3EFEF;
     overflow: hidden;
     border-radius: 10%;
@@ -678,3 +678,57 @@ input:checked + .slider:before {
     content: "";
     border-radius: 50%;
 }
+.sepa {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 -1rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .sepa::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .chart-wrapper {
+    min-width: calc(100% - 2rem);
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    padding: 1rem;
+  }
+  
+  .game-title {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: inherit;
+    font-family: sans-serif;
+  }
+  
+  .chart-container {
+    height: 300px;
+    width: 100%;
+  }
+  
+  .nav-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(128, 128, 128, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .dot.active {
+    background: #fff;
+  }

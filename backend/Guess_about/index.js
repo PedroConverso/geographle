@@ -152,3 +152,26 @@ export function guardarEstadisticasGuessAbout(estadisticas) {
   fs.writeFileSync(filePathEstadisticas, JSON.stringify(contenidoActual, null, 2), 'utf8');
   console.log("Estadísticas guardadas correctamente:", estadisticas);
 }
+export function cargarEstadisticasGuessAbout(user) {
+  let data = fs.readFileSync('backend/data/estadisticasGuessAbout.json', 'utf8');
+  let stats = JSON.parse(data);
+  let loses = 0;
+  let wins = 0;
+
+  for (let i = 0; i < stats.length; i++) {
+      if (stats[i].username === user) {
+          if (stats[i].gano === true) {
+              wins += 1;
+          } else {
+              loses += 1;
+          }
+      }
+  }
+
+  let res = {
+      wins,
+      loses
+  };
+  console.log(res);
+  return res;
+}

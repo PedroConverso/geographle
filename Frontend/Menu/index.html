@@ -48,9 +48,40 @@
           <img class="cruz" src="../Img/tabler_xbox-x-filled.png" onclick="openestadown()">
         </div>
         <div class="sepa">
-          <div id="myChartContainer">
-            <canvas id="myChart"></canvas>
+          <div class="chart-wrapper">
+            <div class="game-title">Connections</div>
+            <div class="chart-container">
+              <canvas id="chart1"></canvas>
+            </div>
           </div>
+          
+          <div class="chart-wrapper">
+            <div class="game-title">Guess About</div>
+            <div class="chart-container">
+              <canvas id="chart2"></canvas>
+            </div>
+          </div>
+          
+          <div class="chart-wrapper">
+            <div class="game-title">Top 10</div>
+            <div class="chart-container">
+              <canvas id="chart3"></canvas>
+            </div>
+          </div>
+          
+          <div class="chart-wrapper">
+            <div class="game-title">Higher or Lower</div>
+            <div class="chart-container">
+              <canvas id="chart4"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="nav-dots">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
           
           <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
           </div>
@@ -155,55 +186,88 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
     <script src="../socket.js"></script>
     <script>
-      const ctx = document.getElementById('myChart');
-      const username = localStorage.getItem("username");
-    
-      // Default values for wins and loses
-      let wins = 0;
-      let loses = 0;
-    
-      // Function to initialize the chart
-      function createChart(wins, loses) {
-        new Chart(ctx, {
-          type: 'doughnut',
-          data: {
-            labels: ['Wins', 'Loses'],
-            datasets: [{
-              label: '# Games',
-              data: [wins, loses],
-              borderWidth: 1,
-              backgroundColor: [
-                'rgb(0, 255, 0)',
-                'rgb(255, 0, 0)'
-              ],
-              hoverOffset: 4
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            },
-            responsive: true,
-            maintainAspectRatio: false, // Allows chart to fit the container's aspect ratio
-          }
-        });
+ // Función para crear los gráficos
+function createGameChart(canvasId, wins = 0, loses = 0) {
+  const ctx = document.getElementById(canvasId);
+  return new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Wins', 'Loses'],
+      datasets: [{
+        data: [wins, loses],
+        backgroundColor: [
+          'rgb(0, 255, 0)',
+          'rgb(255, 0, 0)'
+        ],
+        borderWidth: 1,
+        hoverOffset: 4
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom'
+        }
       }
-    
-      if (username !== undefined) {
-        postData("cargarEstadisticas", username, (data) => {
-          ({wins, loses} = data);
-          console.log(data);
-          console.log(wins, loses);
-          
-          // Create chart with retrieved data
-          createChart(wins, loses);
-        });
-      } else {
-        // Create chart with default values if username is not found
-        createChart(wins, loses);
-      }
+    }
+  });
+}
+
+// Inicializar los gráficos
+const username = localStorage.getItem("username");
+
+// Crear gráficos vacíos para Top 10 y Higher or Lower
+createGameChart('chart3'); // Top 10
+createGameChart('chart4'); // Higher or Lower
+
+// Cargar datos para Connections y GuessAbout
+if (username !== undefined) {
+  // Cargar estadísticas de Connections
+  postData("cargarEstadisticas", username, (data) => {
+    const {wins = 0, loses = 0} = data;
+    createGameChart('chart1', wins, loses); // Connections
+  });
+
+  // Cargar estadísticas de GuessAbout
+  postData("cargarEstadisticasGuessAbout", username, (data) => {
+    const {wins = 0, loses = 0} = data;
+    createGameChart('chart2', wins, loses); // GuessAbout
+  });
+} else {
+  // Crear gráficos vacíos si no hay usuario
+  createGameChart('chart1'); // Connections vacío
+  createGameChart('chart2'); // GuessAbout vacío
+}
+
+// Navegación con dots
+const sepa = document.querySelector('.sepa');
+const dots = document.querySelectorAll('.dot');
+
+sepa.addEventListener('scroll', () => {
+  const index = Math.round(sepa.scrollLeft / sepa.clientWidth);
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+});
+
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    sepa.scrollTo({
+      left: index * sepa.clientWidth,
+      behavior: 'smooth'
+    });
+  });
+});
+
+// Opcional: Actualizar dots al cambiar el tamaño de la ventana
+window.addEventListener('resize', () => {
+  const index = Math.round(sepa.scrollLeft / sepa.clientWidth);
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+});
     </script>
 </body>
 </html>

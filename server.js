@@ -15,7 +15,8 @@ import {
     verificarRespuestaIdioma,
     verificarRespuestaCapital,
     verificarRespuestaForma,
-    guardarEstadisticasGuessAbout
+    guardarEstadisticasGuessAbout,
+    cargarEstadisticasGuessAbout
 } from './backend/Guess_about/index.js';  
 
 // Importaciones desde connections/index.js
@@ -59,7 +60,8 @@ onEvent("verificarPais", (data) => {
 onEvent("verificarRespuestaIdioma", verificarRespuestaIdioma);
 onEvent("verificarRespuestaCapital", verificarRespuestaCapital);
 onEvent("verificarRespuestaForma", verificarRespuestaForma);
-onEvent("estadisticasGuessAbout", guardarEstadisticasGuessAbout)
+onEvent("estadisticasGuessAbout", guardarEstadisticasGuessAbout);
+onEvent("cargarEstadisticasGuessAbout", cargarEstadisticasGuessAbout);
 
 import { 
     registerUser,
