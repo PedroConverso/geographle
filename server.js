@@ -71,6 +71,15 @@ onEvent("register", registerUser);
 onEvent("login", loginUser);
 onEvent("checkSession", checkUserSession);
 
+import { 
+    iniciarRonda,
+    validarRespuesta,
+    continuarJuego
+    
+} from './backend/higerLower/index.js'; 
 
+onEvent("iniciarRonda", iniciarRonda);
+onEvent("validarRespuesta", validarRespuesta);
+onEvent("continuarJuego", continuarJuego);
 
 startServer();
