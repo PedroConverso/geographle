@@ -52,6 +52,7 @@ function infodown() {
         menu.classList.add("edinf")
     }
 }
+
 // Variables globales
 let currentAnswers = new Set(); // Para rastrear las respuestas ya utilizadas
 
