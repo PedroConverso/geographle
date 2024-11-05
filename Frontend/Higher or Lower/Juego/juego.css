@@ -364,11 +364,13 @@ section{
 .izq{
     width: 50%;
     height: 450px;
+    background-color: #067E00;
 }
 
 .der{
     width: 50%;
     height: 450px;
+    background-color: #272DA3;
 }
 
 .or{
@@ -388,6 +390,7 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     position: absolute;
     top: 45%; right: 45.5%;
 }
@@ -414,7 +417,7 @@ section{
     align-items: center;
     font-size: 35px;   
     font-family: "Inter" , sans-serif;
-    gap: 35px;
+    gap: 5px;
 }
 
 .high{
@@ -438,3 +441,21 @@ section{
     color: #E5EC1E;
     align-items: center;
 }
+
+.gate{
+    position: absolute;
+    top: 15%; right: 40%;
+    font-family: "Inter" , sans-serif;
+    font-size: 45px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.conte{
+    position: absolute;
+    top: 75%; right: 45%;
+    font-family: "Inter" , sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    text-decoration: underline;
+}   
