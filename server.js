@@ -31,7 +31,9 @@ import {
 // Importaciones desde Top10/index.js
 import { 
     verifyAnswerTop10,
-    consignaAleatoriaTop10
+    consignaAleatoriaTop10,
+    guardarEstadisticasTop10,
+    cargarEstadisticasTop10
 } from './backend/top10/index.js'; 
 
 // Eventos Top10
@@ -42,6 +44,8 @@ onEvent("consignaAleatoria", async () => {
 onEvent("verificarSeleccionTop10", async (userAnswer) => {
     return await verifyAnswerTop10(userAnswer);
 });
+onEvent("guardarEstadisticasTop10", guardarEstadisticasTop10)
+onEvent("cargarEstadisticasTop10", cargarEstadisticasTop10)
 
 // Eventos Connections
 onEvent("caracteristicasAleatorias", obtenerCaracteristicasAleatorias);

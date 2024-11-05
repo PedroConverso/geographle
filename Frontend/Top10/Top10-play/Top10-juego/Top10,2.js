@@ -1,60 +1,53 @@
+// Funciones de UI para los menús
 function openmenudropdown() {
-    let menu = document.getElementById("menudropdown")
-    if (menu.classList.contains("open")) {
-        menu.classList.remove("open")
-    } else {
-        menu.classList.add("open")
-    }
+    const menu = document.getElementById("menudropdown");
+    menu.classList.toggle("open");
 }
 
 function openestadown() {
-    let menu = document.getElementById("estadown")
-    if (menu.classList.contains("edOpen")) {
-        menu.classList.remove("edOpen")
-    } else {
-        menu.classList.add("edOpen")
-    }
+    const menu = document.getElementById("estadown");
+    menu.classList.toggle("edOpen");
 }
 
-
 function optisdown() {
-    let menu = document.getElementById("optidown")
-    if (menu.classList.contains("edSet")) {
-        menu.classList.remove("edSet")
-    } else {
-        menu.classList.add("edSet")
-    }
+    const menu = document.getElementById("optidown");
+    menu.classList.toggle("edSet");
 }
 
 function thememode() {
-    let menu = document.getElementById("themeMode-check-container")
-    if (menu.classList.contains("themeMode-check-container-on")) {
-        menu.classList.remove("themeMode-check-container-on")
-    } else {
-        menu.classList.add("themeMode-check-container-on")
-    }
+    const menu = document.getElementById("themeMode-check-container");
+    menu.classList.toggle("themeMode-check-container-on");
 }
 
 function thememode2() {
-    let menu = document.getElementById("themeMode-check-container2")
-    if (menu.classList.contains("themeMode-check-container-on2")) {
-        menu.classList.remove("themeMode-check-container-on2")
-    } else {
-        menu.classList.add("themeMode-check-container-on2")
-    }
+    const menu = document.getElementById("themeMode-check-container2");
+    menu.classList.toggle("themeMode-check-container-on2");
 }
 
 function infodown() {
-    let menu = document.getElementById("infodown")
-    if (menu.classList.contains("edinf")) {
-        menu.classList.remove("edinf")
-    } else {
-        menu.classList.add("edinf")
-    }
+    const menu = document.getElementById("infodown");
+    menu.classList.toggle("edinf");
 }
 
-// Variables globales
+// Variables globales para el juego
 let currentAnswers = new Set(); // Para rastrear las respuestas ya utilizadas
+
+// Función para enviar estadísticas al finalizar el juego o rendirse
+function enviarEstadisticas(completado) {
+    const user = localStorage.getItem("username");
+    if (user) {
+        const estadisticas = {
+            username: user,
+            juego: "Top10", 
+            completado: completado,
+            paisesAcertados: currentAnswers.size
+        };
+    
+        postData("guardarEstadisticasTop10", estadisticas, (response) => {
+            console.log("Estadísticas enviadas:", response);
+        });
+    }
+}
 
 // Inicializar el juego
 async function initializeGame() {
@@ -70,40 +63,59 @@ function handleAnswer() {
     const input = document.getElementById('etbal');
     const answer = input.value.trim();
     
-    if (!answer) return; // No procesar si está vacío
+    if (!answer) return;
     
     if (currentAnswers.has(answer.toLowerCase())) {
-        alert("Ya has usado esta respuesta!");
+        alert("¡Ya has usado esta respuesta!");
         input.value = '';
         return;
     }
 
     postData("verificarSeleccionTop10", answer, (result) => {
         if (result) {
-            // Encontrar el primer div vacío
             const boxes = document.querySelectorAll('.rectan');
             for (let box of boxes) {
-                const boxNumber = box.textContent.split('.')[0]; // Obtener solo el número inicial
-                if (box.textContent === `${boxNumber}.`) { // Verificar si solo contiene el número y punto
+                const boxNumber = box.textContent.split('.')[0];
+                if (box.textContent === `${boxNumber}.`) {
                     box.textContent = `${boxNumber}. ${answer}`;
                     currentAnswers.add(answer.toLowerCase());
                     break;
                 }
             }
             
-            // Verificar si se completaron todas las respuestas
+            // Si completó los 10 países, enviar estadísticas de victoria
             if (currentAnswers.size === 10) {
+                enviarEstadisticas(true);
                 alert("¡Felicitaciones! ¡Has completado el Top 10!");
-                // Aquí puedes agregar lógica adicional para el final del juego
             }
         } else {
             alert("Esa respuesta no es correcta. ¡Intenta otra vez!");
         }
-        input.value = ''; // Limpiar el input después de cada intento
+        input.value = '';
     });
 }
 
-// Event Listeners
+// Función para reiniciar el juego
+function resetGame() {
+    currentAnswers.clear();
+    const boxes = document.querySelectorAll('.rectan');
+    boxes.forEach(box => {
+        const number = box.textContent.split('.')[0];
+        box.textContent = `${number}.`;
+    });
+    initializeGame();
+}
+
+// Función para rendirse
+function surrender() {
+    if (confirm("¿Estás seguro de que quieres rendirte?")) {
+        enviarEstadisticas(false);
+        resetGame();
+        alert("Te has rendido. ¡Inténtalo de nuevo!");
+    }
+}
+
+// Event Listeners cuando se carga la página
 document.addEventListener('DOMContentLoaded', () => {
     initializeGame();
     
@@ -119,21 +131,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-// Función para reiniciar el juego
-function resetGame() {
-    currentAnswers.clear();
-    const boxes = document.querySelectorAll('.rectan');
-    boxes.forEach(box => {
-        const number = box.textContent.split('.')[0];
-        box.textContent = `${number}.`;
-    });
-    initializeGame();
-}
-
-function surrender() {
-    if (confirm("¿Estás seguro de que quieres rendirte?")) {
-        resetGame(); // Llama a la función para reiniciar el juego
-        alert("Te has rendido. ¡Inténtalo de nuevo!");
-    }
-}
