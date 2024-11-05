@@ -196,8 +196,8 @@ function createGameChart(canvasId, wins = 0, loses = 0) {
       datasets: [{
         data: [wins, loses],
         backgroundColor: [
-          'rgb(0, 255, 0)',
-          'rgb(255, 0, 0)'
+          'rgb(74, 211, 58)',
+          'rgb(242, 54, 54)'
         ],
         borderWidth: 1,
         hoverOffset: 4
@@ -214,34 +214,69 @@ function createGameChart(canvasId, wins = 0, loses = 0) {
     }
   });
 }
+function createBarChart(canvasId, labels, data) {
+  const ctx = document.getElementById(canvasId);
+  return new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Paises Acertados', // Nombre de la serie de datos
+        data: data,
+        backgroundColor: [
+          'rgba(185, 220, 237, 0.5)',
+        ],
+        borderColor: [
+          'rgb(0, 123, 255)', // Color del borde
+        ],
+        borderWidth: 1.5, // Ancho del borde
+        hoverOffset: 4
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }
+  });
+}
 
-// Inicializar los gráficos
 const username = localStorage.getItem("username");
 
-// Crear gráficos vacíos para Top 10 y Higher or Lower
-createGameChart('chart3'); // Top 10
+
+
 createGameChart('chart4'); // Higher or Lower
 
-// Cargar datos para Connections y GuessAbout
+
+
+postData("cargarEstadisticasTop10", username, (response) => {
+  const { labels, paisesAcertados } = response;
+  createBarChart('chart3', labels, paisesAcertados); // Crear el gráfico con etiquetas y datos
+});
+
 if (username !== undefined) {
-  // Cargar estadísticas de Connections
+
   postData("cargarEstadisticas", username, (data) => {
     const {wins = 0, loses = 0} = data;
     createGameChart('chart1', wins, loses); // Connections
   });
 
-  // Cargar estadísticas de GuessAbout
+  
   postData("cargarEstadisticasGuessAbout", username, (data) => {
     const {wins = 0, loses = 0} = data;
     createGameChart('chart2', wins, loses); // GuessAbout
   });
 } else {
-  // Crear gráficos vacíos si no hay usuario
+
   createGameChart('chart1'); // Connections vacío
   createGameChart('chart2'); // GuessAbout vacío
 }
 
-// Navegación con dots
+
 const sepa = document.querySelector('.sepa');
 const dots = document.querySelectorAll('.dot');
 
@@ -261,7 +296,6 @@ dots.forEach((dot, index) => {
   });
 });
 
-// Opcional: Actualizar dots al cambiar el tamaño de la ventana
 window.addEventListener('resize', () => {
   const index = Math.round(sepa.scrollLeft / sepa.clientWidth);
   dots.forEach((dot, i) => {

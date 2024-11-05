@@ -205,8 +205,74 @@
     "gano": true
   },
   {
+<<<<<<< HEAD
     "username": "fedevitacca",
     "juego": "Guess_about",
     "gano": true
+=======
+    "username": "kupicito123",
+    "juego": "Guess_about",
+    "gano": true
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Guess_about",
+    "gano": true
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Guess_about",
+    "gano": true
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Guess_about",
+    "gano": true
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Guess_about",
+    "gano": true
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Guess_about",
+    "gano": true
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Guess_about",
+    "gano": true
+  },
+  {
+    "username": "totoEtbul",
+    "juego": "Guess_about",
+    "gano": true
+  },
+  {
+    "username": "totoEtbul",
+    "juego": "Guess_about",
+    "gano": true
+  },
+  {
+    "username": "totoEtbul",
+    "juego": "Guess_about",
+    "gano": true
+  },
+  {
+    "username": "totoEtbul",
+    "juego": "Guess_about",
+    "gano": true
+  },
+  {
+    "username": "brunitog39pancho",
+    "juego": "Guess_about",
+    "gano": true
+  },
+  {
+    "username": "brunitog39pancho",
+    "juego": "Guess_about",
+    "gano": false
+>>>>>>> e97bbc8f72cd5c93155afca94b76231270392859
   }
 ]
