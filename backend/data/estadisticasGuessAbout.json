@@ -263,5 +263,10 @@
     "username": "brunitog39pancho",
     "juego": "Guess_about",
     "gano": true
+  },
+  {
+    "username": "brunitog39pancho",
+    "juego": "Guess_about",
+    "gano": false
   }
 ]
