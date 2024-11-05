@@ -405,7 +405,6 @@ section{
     gap: 800px;
     font-weight: 600;
     font-size: 45px;
-    background-color: #EF233C;
 }
 
 .opt{
@@ -424,22 +423,13 @@ section{
     height: 60px;
     width: 200px;
     border-radius: 100px;
-    border: 3px solid #fff;
+    border: 6px solid #fff;
     display: flex;
     justify-content: center;
     color: #E5EC1E;
+    font-weight: 700;
     align-items: center;
-}
-
-.low{
-    height: 60px;
-    width: 200px;
-    border-radius: 100px;
-    border: 3px solid #fff;
-    display: flex;
-    justify-content: center;
-    color: #E5EC1E;
-    align-items: center;
+    background-color: #85858597;
 }
 
 .gate{
@@ -447,7 +437,7 @@ section{
     top: 15%; right: 40%;
     font-family: "Inter" , sans-serif;
     font-size: 45px;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: underline;
 }
 
@@ -459,3 +449,15 @@ section{
     font-weight: 600;
     text-decoration: underline;
 }   
+
+.pais{
+    font-family: "Inter" , sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.data{
+    font-family: "Inter" , sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+}
