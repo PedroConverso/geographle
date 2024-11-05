@@ -76,5 +76,11 @@
     "juego": "Connections",
     "gano": false,
     "vidasRestantes": 0
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 5
   }
 ]
