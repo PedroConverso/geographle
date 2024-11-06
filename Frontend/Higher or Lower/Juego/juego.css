@@ -430,6 +430,7 @@ section{
     font-weight: 700;
     align-items: center;
     background-color: #85858597;
+    cursor: pointer;
 }
 
 .gate{
