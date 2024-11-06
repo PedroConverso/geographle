@@ -227,9 +227,9 @@ function createBarChart(canvasId, labels, data) {
           'rgba(185, 220, 237, 0.5)',
         ],
         borderColor: [
-          'rgb(0, 123, 255)', // Color del borde
+          'rgb(0, 123, 255)',
         ],
-        borderWidth: 1.5, // Ancho del borde
+        borderWidth: 1.5,
         hoverOffset: 4
       }]
     },
@@ -255,7 +255,7 @@ createGameChart('chart4'); // Higher or Lower
 
 postData("cargarEstadisticasTop10", username, (response) => {
   const { labels, paisesAcertados } = response;
-  createBarChart('chart3', labels, paisesAcertados); // Crear el gráfico con etiquetas y datos
+  createBarChart('chart3', labels, paisesAcertados); 
 });
 
 if (username !== undefined) {
