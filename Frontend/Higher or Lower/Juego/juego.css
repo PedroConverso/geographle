@@ -373,7 +373,7 @@ section{
     background-color: #272DA3;
 }
 
-.or{
+.or {
     width: 120px;
     height: 120px;
     background-color: #fff;
@@ -383,17 +383,23 @@ section{
     display: flex;
     font-size: 40px;
     font-weight: 550;
-    font-family: "Inter" , sans-serif;
+    font-family: "Inter", sans-serif;
+    position: absolute; /* Para posicionarlo de forma libre */
+    z-index: 0; /* Lo coloca "más atrás" */
+    margin-right: 120px;
+    margin-top: 160px;
 }
-
-.ca{
-    display: flex;
+.ca {
+    display: flex;  
     justify-content: center;
     align-items: center;
     flex-direction: column;
     position: absolute;
-    top: 45%; right: 45.5%;
+    top: 45%;
+    right: 45.5%;
+    z-index: 10; /* Cambia a un valor más alto que los elementos sobrepuestos */
 }
+
 
 .aba{
     display: flex;
