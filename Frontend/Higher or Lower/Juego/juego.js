@@ -54,7 +54,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.getElementById("pais1").innerHTML = pais1.country;
         document.getElementById("pais2").innerHTML = pais2.country;
-        document.getElementById("gameTheme").innerHTML = consigna;
+        if (consigna === "gdp_millions") {
+            document.getElementById("gameTheme").innerHTML = "GDP Economy";
+        } else if (consigna === "population_millions") {
+            document.getElementById("gameTheme").innerHTML = "population in millions";
+        } else if (consigna === "Territory_km2") {
+            document.getElementById("gameTheme").innerHTML = "Territory km2";
+        } else {
+            document.getElementById("gameTheme").innerHTML = "error";
+        }
         document.getElementById("pais1data").innerHTML = pais1[consigna];
 
         if (firstClick) {

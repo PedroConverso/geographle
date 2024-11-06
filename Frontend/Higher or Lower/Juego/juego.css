@@ -435,11 +435,12 @@ section{
 
 .gate{
     position: absolute;
-    top: 15%; right: 40%;
+    top: 10%; left: 50%;
+    transform: translate(-50%, 50%);
     font-family: "Inter" , sans-serif;
     font-size: 45px;
     font-weight: 700;
-    text-decoration: underline;
+    text-align: center;
 }
 
 .conte{
