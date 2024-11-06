@@ -41,7 +41,7 @@ a{
 }
 
 .gameMenu {
-    width: 90%;
+    width: 75%;
     height: 20%;
     background-color: #D9D9D9;
     border-radius: 20px;
@@ -50,13 +50,12 @@ a{
     align-items: center;
     font-size: 35px;
     justify-content: space-around;
+    color: #000;
 }
 
 .Gamemc{
     height: 80%;
-    width: 30%;
-    background-color: #F3EDED;
-    border-radius: 20px;
+    width: 20%;
     display: flex;  
 }
 

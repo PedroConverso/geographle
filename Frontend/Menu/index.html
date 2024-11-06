@@ -12,31 +12,22 @@
     <title>Geographle</title>
 </head>
 <body class="light-mode" id="body">
-    <div 
-    class="menudropdown"
-    id="menudropdown"
-    >
+    <div class="menudropdown" id="menudropdown">
       <img src="../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
-
-      <div class="gamesMenuContainer">
-
-        <div class="gameMenu">JUEGO 1
-          <img src="../Img/Foto top 10.png" class="Gamemc"></img>
+        <div class="gamesMenuContainer">
+          <a href="/Frontend/Top10/index.html" class="gameMenu">JUEGO 1
+            <img src="../Img/Foto top 10.png" class="Gamemc"></img>
+          </a>
+          <a href="/Frontend/Connections/index.html" class="gameMenu">JUEGO 2
+            <img src="../Img/Foto connections.png" class="Gamemc"></img>
+          </a>
+          <a href="/Frontend/GuessAbout/index.html" class="gameMenu">JUEGO 3
+            <img src="../Img/Foto guess about.png" class="Gamemc"></img>
+          </a>
+          <a href="/Frontend/Higher or Lower/index.html" class="gameMenu">JUEGO 4
+            <img src="../Img/Foto horl.png" class="Gamemc"></img>
+          </a>
         </div>
-
-        <div class="gameMenu">JUEGO 2
-          <img src="../Img/Foto connections.png" class="Gamemc"></img>
-        </div>
-
-        <div class="gameMenu">JUEGO 3
-          <img src="../Img/Foto guess about.png" class="Gamemc"></img>
-        </div>
-
-        <div class="gameMenu">JUEGO 4
-          <img src="../Img/Foto horl.png" class="Gamemc"></img>
-        </div>
-        
-      </div>
     </div>
     <div class="estadown" id="estadown">
       <div class="estasdown">
@@ -227,9 +218,9 @@ function createBarChart(canvasId, labels, data) {
           'rgba(185, 220, 237, 0.5)',
         ],
         borderColor: [
-          'rgb(0, 123, 255)', // Color del borde
+          'rgb(0, 123, 255)',
         ],
-        borderWidth: 1.5, // Ancho del borde
+        borderWidth: 1.5,
         hoverOffset: 4
       }]
     },
@@ -255,7 +246,7 @@ createGameChart('chart4'); // Higher or Lower
 
 postData("cargarEstadisticasTop10", username, (response) => {
   const { labels, paisesAcertados } = response;
-  createBarChart('chart3', labels, paisesAcertados); // Crear el gráfico con etiquetas y datos
+  createBarChart('chart3', labels, paisesAcertados); 
 });
 
 if (username !== undefined) {

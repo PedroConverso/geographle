@@ -56,11 +56,12 @@ header{
     align-items: center;
     font-size: 35px;
     justify-content: space-around;
+    color: #000;
 }
 
 .Gamemc{
     height: 80%;
-    width: 30%;
+    width: 20%;
     display: flex;  
 }
 
