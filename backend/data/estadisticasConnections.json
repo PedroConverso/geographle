@@ -129,5 +129,11 @@
     "juego": "Connections",
     "gano": true,
     "vidasRestantes": 4
+  },
+  {
+    "username": "pepegon18",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
   }
 ]

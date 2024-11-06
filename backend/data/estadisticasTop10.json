@@ -76,5 +76,17 @@
     "juego": "Top10",
     "completado": true,
     "paisesAcertados": 10
+  },
+  {
+    "username": "pepegon18",
+    "juego": "Top10",
+    "completado": false,
+    "paisesAcertados": 9
+  },
+  {
+    "username": "pepegon18",
+    "juego": "Top10",
+    "completado": false,
+    "paisesAcertados": 2
   }
 ]
