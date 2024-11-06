@@ -270,7 +270,26 @@
     "gano": false
   },
   {
+<<<<<<< HEAD
     "username": "fedevitacca",
+=======
+    "username": "kupicito123",
+    "juego": "Guess_about",
+    "gano": true
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Guess_about",
+    "gano": true
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Guess_about",
+    "gano": true
+  },
+  {
+    "username": "kupicito123",
+>>>>>>> 6c0360d58d57cc229864b276174ae8669256e597
     "juego": "Guess_about",
     "gano": true
   }
