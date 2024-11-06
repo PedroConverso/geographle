@@ -1,154 +1,157 @@
-function openmenudropdown() {
-    let menu = document.getElementById("menudropdown")
-    if (menu.classList.contains("open")) {
-        menu.classList.remove("open")
-    } else {
-        menu.classList.add("open")
-    }
-}
-
-function openestadown() {
-    let menu = document.getElementById("estadown")
-    if (menu.classList.contains("edOpen")) {
-        menu.classList.remove("edOpen")
-    } else {
-        menu.classList.add("edOpen")
-    }
-}
-
-function optisdown() {
-    let menu = document.getElementById("optidown")
-    if (menu.classList.contains("edSet")) {
-        menu.classList.remove("edSet")
-    } else {
-        menu.classList.add("edSet")
-    }
-}
-
-function thememode() {
-    let menu = document.getElementById("themeMode-check-container")
-    if (menu.classList.contains("themeMode-check-container-on")) {
-        menu.classList.remove("themeMode-check-container-on")
-    } else {
-        menu.classList.add("themeMode-check-container-on")
-    }
-}
-
-function thememode2() {
-    let menu = document.getElementById("themeMode-check-container2")
-    if (menu.classList.contains("themeMode-check-container-on2")) {
-        menu.classList.remove("themeMode-check-container-on2")
-    } else {
-        menu.classList.add("themeMode-check-container-on2")
-    }
-}
-let firstClick = true;
-
-let consigna
-
-document.addEventListener("DOMContentLoaded", () => {
-    postData("iniciarRonda", null, (res) => {
-        let pais1 = res.country1;
-        let pais2 = res.country2;
-        consigna = res.consigna;
-
-        // Set country names
-        document.getElementById("pais1").innerHTML = pais1.country;
-        document.getElementById("pais2").innerHTML = pais2.country;
-
-        // Set flags as background images for the divs
-        let derDiv = document.getElementById("der");
-        let izqDiv = document.getElementById("izq");
-
-        // Set the flags as background images
-        derDiv.style.backgroundImage = `url(${pais2.flag_url})`;
-        izqDiv.style.backgroundImage = `url(${pais1.flag_url})`;
-
-        // Add inner shadow effect to the flags
-        derDiv.style.boxShadow = "inset 0px 4px 10px rgba(0, 0, 0, 0.3)";
-        izqDiv.style.boxShadow = "inset 0px 4px 10px rgba(0, 0, 0, 0.3)";
-
-        // Set game theme based on consigna
-        if (consigna === "gdp_millions") {
-            document.getElementById("gameTheme").innerHTML = "GDP Economy";
-        } else if (consigna === "population_millions") {
-            document.getElementById("gameTheme").innerHTML = "Population in Millions";
-        } else if (consigna === "Territory_km2") {
-            document.getElementById("gameTheme").innerHTML = "Territory km²";
+    function openmenudropdown() {
+        let menu = document.getElementById("menudropdown")
+        if (menu.classList.contains("open")) {
+            menu.classList.remove("open")
         } else {
-            document.getElementById("gameTheme").innerHTML = "Error";
+            menu.classList.add("open")
         }
+    }
 
-        document.getElementById("pais1data").innerHTML = pais1[consigna];
-
-        if (firstClick) {
-            document.getElementById("higherBtn").addEventListener("click", () => verifyAnswerHigherOrLower(pais1, pais2, consigna, "higher"));
-            document.getElementById("lowerBtn").addEventListener("click", () => verifyAnswerHigherOrLower(pais1, pais2, consigna, "lower"));
-            firstClick = false;
+    function openestadown() {
+        let menu = document.getElementById("estadown")
+        if (menu.classList.contains("edOpen")) {
+            menu.classList.remove("edOpen")
+        } else {
+            menu.classList.add("edOpen")
         }
-    });
-});
+    }
 
-const verifyAnswerHigherOrLower = (country1, country2, consigna, userGuess) => {
-    const data = {
-        "country1": country1,
-        "country2": country2,
-        "consigna": consigna,
-        "userGuess": userGuess
+    function optisdown() {
+        let menu = document.getElementById("optidown")
+        if (menu.classList.contains("edSet")) {
+            menu.classList.remove("edSet")
+        } else {
+            menu.classList.add("edSet")
+        }
+    }
+
+    function thememode() {
+        let menu = document.getElementById("themeMode-check-container")
+        if (menu.classList.contains("themeMode-check-container-on")) {
+            menu.classList.remove("themeMode-check-container-on")
+        } else {
+            menu.classList.add("themeMode-check-container-on")
+        }
+    }
+
+    function thememode2() {
+        let menu = document.getElementById("themeMode-check-container2")
+        if (menu.classList.contains("themeMode-check-container-on2")) {
+            menu.classList.remove("themeMode-check-container-on2")
+        } else {
+            menu.classList.add("themeMode-check-container-on2")
+        }
+    }
+    let firstClick = true;
+
+    let consigna
+
+    // Declaración de funciones fuera del addEventListener de DOMContentLoaded
+    const addClickListeners = (pais1, pais2, consigna) => {
+        document.getElementById("higherBtn").onclick = () => verifyAnswerHigherOrLower(pais1, pais2, consigna, "higher");
+        document.getElementById("lowerBtn").onclick = () => verifyAnswerHigherOrLower(pais1, pais2, consigna, "lower");
     };
 
-    postData("validarRespuesta", data, (res) => {
-        if (res === true) {
-            handleCorrectAnswer(country2, data);
-        } else {
-            handleWrongAnswer(country2, data);
-        }
-    });
-};
+    document.addEventListener("DOMContentLoaded", () => {
+        postData("iniciarRonda", null, (res) => {
+            let pais1 = res.country1;
+            let pais2 = res.country2;
+            consigna = res.consigna;
 
-const handleCorrectAnswer = (country2, data) => {
-    document.getElementById("orContent").innerHTML = "Correcto!";
-    document.getElementById("higherBtn").style.display = "none";
-    document.getElementById("lowerBtn").style.display = "none";
-    document.getElementById("pais2data").innerHTML = country2[data.consigna];
+            // Set country names and flags
+            document.getElementById("pais1").innerHTML = pais1.country;
+            document.getElementById("pais2").innerHTML = pais2.country;
 
-    setTimeout(() => {
-        postData("continuarJuego", (country2), (res) => {
-            updateGameState(res);
+            // Set flags as background images
+            document.getElementById("der").style.backgroundImage = `url(${pais2.flag_url})`;
+            document.getElementById("izq").style.backgroundImage = `url(${pais1.flag_url})`;
+
+            // Set game theme based on consigna
+            document.getElementById("gameTheme").innerHTML = {
+                gdp_millions: "GDP Economy",
+                population_millions: "Population in Millions",
+                Territory_km2: "Territory km²"
+            }[consigna] || "Error";
+
+            document.getElementById("pais1data").innerHTML = pais1[consigna];
+
+            // Agregar listeners la primera vez
+            if (firstClick) {
+                addClickListeners(pais1, pais2, consigna);
+                firstClick = false;
+            }
         });
+    });
 
-        document.getElementById("higherBtn").style.display = "flex";
-        document.getElementById("lowerBtn").style.display = "flex";
+    const verifyAnswerHigherOrLower = (country1, country2, consigna, userGuess) => {
+        const data = {
+            "country1": country1,
+            "country2": country2,
+            "consigna": consigna,
+            "userGuess": userGuess
+        };
+
+        postData("validarRespuesta", data, (res) => {
+            if (res === true) {
+                handleCorrectAnswer(country2, data);
+            } else {
+                handleWrongAnswer(country2);
+            }
+        });
+    };
+
+    const handleCorrectAnswer = (country2, data) => {
+        document.getElementById("higherBtn").style.display = "none";
+        document.getElementById("lowerBtn").style.display = "none";
+        document.getElementById("pais2data").innerHTML = country2[data.consigna];
+
+        setTimeout(() => {
+            postData("continuarJuego", country2, (res) => {
+                updateGameState(res);
+            });
+            document.getElementById("higherBtn").style.display = "flex";
+            document.getElementById("lowerBtn").style.display = "flex";
+            document.getElementById("pais2data").innerHTML = "";
+        }, 1500);
+    };
+
+    const handleWrongAnswer = (country2) => {
+        document.getElementById("higherBtn").style.display = "none";
+        document.getElementById("lowerBtn").style.display = "none";
+        document.getElementById("pais2data").innerHTML = country2[consigna];
+
+        const orElement = document.getElementById("or");
+        orElement.innerHTML = "";
+
+        const restartIcon = document.createElement("i");
+        restartIcon.classList.add("fas", "fa-sync-alt");
+        restartIcon.style.cursor = "pointer";
+        restartIcon.style.fontSize = "30px";
+        
+        orElement.appendChild(restartIcon);
+        restartIcon.style.display = "block";
+
+        restartIcon.addEventListener("click", function() {
+            location.reload();
+        });
+    };
+
+
+
+    const updateGameState = (res) => {
+        let pais1 = res.country1;
+        let pais2 = res.country2;
+
+        // Actualizar nombres de países y banderas
+        document.getElementById("pais1").innerHTML = `${pais1.country}`;
+        document.getElementById("pais2").innerHTML = `${pais2.country}`;
+        document.getElementById("izq").style.backgroundImage = `url(${pais1.flag_url})`;
+        document.getElementById("der").style.backgroundImage = `url(${pais2.flag_url})`;
+
+        document.getElementById("pais1data").innerHTML = pais1[consigna];
         document.getElementById("pais2data").innerHTML = "";
-        document.getElementById("orContent").innerHTML = "OR";
-    }, 1500);
-};
+        
 
-const handleWrongAnswer = (country2) => {
-    document.getElementById("orContent").innerHTML = "Perdiste! Clickeame para reiniciar";
-    document.getElementById("orContent").addEventListener("click", () => {
-        window.location.reload();
-    })
-    document.getElementById("higherBtn").style.display = "none";
-    document.getElementById("lowerBtn").style.display = "none";
-    document.getElementById("pais2data").innerHTML = country2[consigna];
-};
-
-const updateGameState = (res) => {
-    console.log(res);
-    let pais1 = res.country1;
-    let pais2 = res.country2;
-
-    // Update country names and flags in "der" and "izq"
-    document.getElementById("pais1").innerHTML = `${pais1.country} <img src="${pais1.flag_url}" alt="Flag of ${pais1.country}" width="500px">`;
-    document.getElementById("pais2").innerHTML = `${pais2.country} <img src="${pais2.flag_url}" alt="Flag of ${pais2.country}" width="1000px">`;
-
-    // Update the data based on consigna
-    document.getElementById("pais1data").innerHTML = pais1[consigna];
-    document.getElementById("pais2data").innerHTML = "";  // Clear previous data for country 2
-    document.getElementById("orContent").innerHTML = "OR";
-
-    // Re-add event listeners for the buttons
-    document.getElementById("higherBtn").addEventListener("click", () => verifyAnswerHigherOrLower(pais1, pais2, consigna, "higher"));
-    document.getElementById("lowerBtn").addEventListener("click", () => verifyAnswerHigherOrLower(pais1, pais2, consigna, "lower"));
-};
+        // Volver a asignar los listeners
+        addClickListeners(pais1, pais2, consigna);
+    };

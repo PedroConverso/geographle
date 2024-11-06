@@ -446,6 +446,8 @@ section{
     font-size: 45px;
     font-weight: 700;
     text-align: center;
+    background-color: white;
+    padding: 7px;
 }
 
 .conte{
@@ -475,6 +477,9 @@ section{
     font-family: "Inter" , sans-serif;
     font-size: 30px;
     font-weight: 600;
+    background-color: white;
+    color: #000;
+    padding: 7px;
 }
 #der, #izq {
     background-size: cover;
