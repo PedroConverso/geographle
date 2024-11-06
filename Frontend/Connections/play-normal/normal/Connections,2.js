@@ -141,11 +141,9 @@ function updateVidas(vidasCounter = vidas) {
 
     // Perder el juego cuando las vidas lleguen a 0
     if (vidas === 0) {
-        alert("Has perdido. No puedes jugar hasta mañana.");
         enviarEstadisticas(false); // Enviar que perdió
         vidas = 5; // Reinicia vidas para el siguiente día
         updateVidas(vidas);
-        bloquearJuego();
     }
 }
 
