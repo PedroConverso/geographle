@@ -284,6 +284,7 @@ header{
 .user{
     width: 90px;
     height: 90px;
+    padding-bottom: 10px;
 }
 
 .Geograph{
@@ -426,6 +427,8 @@ font-style: italic;
 
 .camera1{
     height: 70%;
+    object-fit: contain;
+    width: 100%;
 }
 
 .arriba1{
@@ -501,7 +504,11 @@ font-style: italic;
 
 .camera2 {
     height: 70%;
+    object-fit: contain;
+    width: 100%;
 }
+
+
 
 
 .box3{
@@ -533,6 +540,8 @@ font-style: italic;
 
 .camera3 {
     height: 70%;
+    object-fit: contain;
+    width: 100%;
 }
 
 .box4{
@@ -566,6 +575,8 @@ font-style: italic;
 .camera4 {
     display: flex;
     height: 70%;
+    object-fit: contain;
+    width: 100%;
 }
 
 a{
