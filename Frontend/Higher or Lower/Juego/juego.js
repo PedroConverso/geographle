@@ -52,23 +52,39 @@ document.addEventListener("DOMContentLoaded", () => {
         let pais2 = res.country2;
         consigna = res.consigna;
 
+        // Set country names
         document.getElementById("pais1").innerHTML = pais1.country;
         document.getElementById("pais2").innerHTML = pais2.country;
+
+        // Set flags as background images for the divs
+        let derDiv = document.getElementById("der");
+        let izqDiv = document.getElementById("izq");
+
+        // Set the flags as background images
+        derDiv.style.backgroundImage = `url(${pais2.flag_url})`;
+        izqDiv.style.backgroundImage = `url(${pais1.flag_url})`;
+
+        // Add inner shadow effect to the flags
+        derDiv.style.boxShadow = "inset 0px 4px 10px rgba(0, 0, 0, 0.3)";
+        izqDiv.style.boxShadow = "inset 0px 4px 10px rgba(0, 0, 0, 0.3)";
+
+        // Set game theme based on consigna
         if (consigna === "gdp_millions") {
             document.getElementById("gameTheme").innerHTML = "GDP Economy";
         } else if (consigna === "population_millions") {
-            document.getElementById("gameTheme").innerHTML = "population in millions";
+            document.getElementById("gameTheme").innerHTML = "Population in Millions";
         } else if (consigna === "Territory_km2") {
-            document.getElementById("gameTheme").innerHTML = "Territory km2";
+            document.getElementById("gameTheme").innerHTML = "Territory km²";
         } else {
-            document.getElementById("gameTheme").innerHTML = "error";
+            document.getElementById("gameTheme").innerHTML = "Error";
         }
+
         document.getElementById("pais1data").innerHTML = pais1[consigna];
 
         if (firstClick) {
             document.getElementById("higherBtn").addEventListener("click", () => verifyAnswerHigherOrLower(pais1, pais2, consigna, "higher"));
             document.getElementById("lowerBtn").addEventListener("click", () => verifyAnswerHigherOrLower(pais1, pais2, consigna, "lower"));
-            firstClick = false; // Set firstClick to false after adding event listeners
+            firstClick = false;
         }
     });
 });
@@ -119,16 +135,20 @@ const handleWrongAnswer = (country2) => {
 };
 
 const updateGameState = (res) => {
-    console.log(res)
+    console.log(res);
     let pais1 = res.country1;
     let pais2 = res.country2;
 
-    document.getElementById("pais1").innerHTML = pais1.country;
-    document.getElementById("pais2").innerHTML = pais2.country;
+    // Update country names and flags in "der" and "izq"
+    document.getElementById("pais1").innerHTML = `${pais1.country} <img src="${pais1.flag_url}" alt="Flag of ${pais1.country}" width="500px">`;
+    document.getElementById("pais2").innerHTML = `${pais2.country} <img src="${pais2.flag_url}" alt="Flag of ${pais2.country}" width="1000px">`;
+
+    // Update the data based on consigna
     document.getElementById("pais1data").innerHTML = pais1[consigna];
-    document.getElementById("pais2data").innerHTML = "";
+    document.getElementById("pais2data").innerHTML = "";  // Clear previous data for country 2
     document.getElementById("orContent").innerHTML = "OR";
 
+    // Re-add event listeners for the buttons
     document.getElementById("higherBtn").addEventListener("click", () => verifyAnswerHigherOrLower(pais1, pais2, consigna, "higher"));
     document.getElementById("lowerBtn").addEventListener("click", () => verifyAnswerHigherOrLower(pais1, pais2, consigna, "lower"));
 };

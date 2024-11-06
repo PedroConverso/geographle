@@ -457,14 +457,34 @@ section{
     text-decoration: underline;
 }   
 
-.pais{
-    font-family: "Inter" , sans-serif;
-    font-size: 30px;
-    font-weight: 600;
+.pais {
+    font-family: "Inter", sans-serif; /* Fuente moderna */
+    font-size: 30px; /* Tamaño de fuente grande */
+    font-weight: 600; /* Peso de la fuente semi-negrita */
+    background-color: white; /* Fondo blanco */
+    padding: 10px; /* Espaciado alrededor del contenido */
+    border-radius: 20px; /* Bordes redondeados */
+    border: 4px solid black; /* Borde sólido de 10px y color negro */
+    color: black; /* Color del texto negro */
+    text-align: center; /* Centrar el texto */
+    box-sizing: border-box; /* Incluye el borde en las dimensiones del div */
 }
+
 
 .data{
     font-family: "Inter" , sans-serif;
     font-size: 30px;
     font-weight: 600;
+}
+#der, #izq {
+    background-size: cover;
+    background-position: center;
+    width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+    height: 100%; /* Puedes ajustar la altura según prefieras */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Esto es opcional si quieres que el texto sea visible */
+    font-weight: bold;
+    font-size: 18px;
 }
