@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "username": "kuper",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
+  },
+  {
+    "username": "MateoDrault",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 5
+  },
+  {
+    "username": "MateoDrault",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 4
+  }
+]
