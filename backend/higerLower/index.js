@@ -1,10 +1,16 @@
 import fs from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
 // Cargar los datos del JSON
 let countries;
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 function loadData() {
-    const data = fs.readFileSync('../data/higher_or_lower.json');
+    const path = join(__dirname, '../data/higher_or_lower.json');
+    let data = fs.readFileSync(path)
     countries = JSON.parse(data).countries;
 }
 
@@ -36,23 +42,71 @@ export function iniciarRonda() {
 }
 
 // Validar respuesta del usuario
-export function validarRespuesta(country1, country2, consigna, userGuess) {
-    const esCorrecto = (userGuess === 'higher' && country2[consigna] > country1[consigna]) || 
-                       (userGuess === 'lower' && country2[consigna] < country1[consigna]);
+export function validarRespuesta(data) {
 
-    return esCorrecto;
+    // Comparamos los valores de la consigna en country1 y country2
+    let valorCountry1 = data.country1[data.consigna];
+    let valorCountry2 = data.country2[data.consigna];
+
+    // Determinamos si la respuesta del usuario es correcta
+    if (valorCountry1 < valorCountry2 && data.userGuess === "higher" || valorCountry1 > valorCountry2 && data.userGuess === "lower") {
+        return true
+    } else {
+        return false
+    }
 }
+
 
 // Continuar juego con un nuevo país
-export function continuarJuego(countryActual, consigna) {
-    let nuevoPais = obtenerPaisAleatorio();
+export function continuarJuego(countryActual) {
+    let country2 = obtenerPaisAleatorio();
+    let country1 = countryActual
 
     // Asegurarse de que el nuevo país sea diferente al actual
-    while (nuevoPais === countryActual) {
-        nuevoPais = obtenerPaisAleatorio();
+    while (country2 === country1) {
+        country2 = obtenerPaisAleatorio();
     }
 
+    console.log({ country1, country2 })
     // Enviar el nuevo país para la siguiente comparación
-    return { nuevoPais, consigna };
+    return { country1, country2};
 }
 
+// Definir la ruta para el archivo de estadísticas
+const statisticsFilePath = join(__dirname, '../data/estadisticasHyl.json');
+
+export function saveGameStats(data) {
+    const { username, consecutiveCorrect, juego } = data;
+
+    // Cargar estadísticas existentes
+    const existingStats = JSON.parse(fs.readFileSync(statisticsFilePath, 'utf8') || '[]');
+
+    // Agregar nueva estadística
+    existingStats.push({ username, consecutiveCorrect, juego });
+
+    // Guardar estadísticas actualizadas en el archivo
+    fs.writeFileSync(statisticsFilePath, JSON.stringify(existingStats, null, 2));
+
+    // Retornar respuesta de éxito
+    return { message: 'Estadísticas guardadas' };
+}
+
+export async function cargarEstadisticasHyl(user) {
+    const dataPath = join(__dirname, '../data/estadisticasHyl.json');
+    const data = await fs.readFileSync(dataPath, 'utf-8');
+    const stats = JSON.parse(data);
+    
+    let labels = [];
+    let consecutiveCorrectScores = [];
+    
+    // Agregar etiquetas y datos para el gráfico
+    for (const stat of stats) {
+        if (stat.username === user) {
+            labels.push(stat.juego); // Etiquetas para el gráfico (ejemplo: nombre del juego o fecha)
+            consecutiveCorrectScores.push(stat.consecutiveCorrect); // Puntaje acumulado
+        }
+    }
+
+    console.log("Cargar estadísticas Hyl:", { labels, consecutiveCorrectScores });
+    return { labels, consecutiveCorrectScores };
+}

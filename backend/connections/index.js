@@ -45,3 +45,26 @@ export function handleVerificarSeleccion(data) {
     return { esCorrecta, vidas };
 }
 
+export function cargarEstadisticas(user) {
+    let data = fs.readFileSync('backend/data/estadisticasConnections.json', 'utf8');
+    let stats = JSON.parse(data);
+    let loses = 0;
+    let wins = 0;
+
+    for (let i = 0; i < stats.length; i++) {
+        if (stats[i].username === user) {
+            if (stats[i].gano === true) {
+                wins += 1;
+            } else {
+                loses += 1;
+            }
+        }
+    }
+
+    let res = {
+        wins,
+        loses
+    };
+    console.log(res);
+    return res;
+}

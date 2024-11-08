@@ -18,31 +18,22 @@
     <title>Geographle</title>
 </head>
 <body class="light-mode" id="body">
-    <div 
-    class="menudropdown"
-    id="menudropdown"
-    >
+    <div class="menudropdown" id="menudropdown">
       <img src="../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
-
-      <div class="gamesMenuContainer">
-
-        <div class="gameMenu">JUEGO 1
-          <img src="../Img/Foto top 10.png" class="Gamemc"></img>
+        <div class="gamesMenuContainer">
+          <a href="/Frontend/Top10/index.html" class="gameMenu">JUEGO 1
+            <img src="../Img/Foto top 10.png" class="Gamemc"></img>
+          </a>
+          <a href="/Frontend/Connections/index.html" class="gameMenu">JUEGO 2
+            <img src="../Img/Foto connections.png" class="Gamemc"></img>
+          </a>
+          <a href="/Frontend/GuessAbout/index.html" class="gameMenu">JUEGO 3
+            <img src="../Img/Foto guess about.png" class="Gamemc"></img>
+          </a>
+          <a href="/Frontend/Higher or Lower/index.html" class="gameMenu">JUEGO 4
+            <img src="../Img/Foto horl.png" class="Gamemc"></img>
+          </a>
         </div>
-
-        <div class="gameMenu">JUEGO 2
-          <img src="../Img/Foto connections.png" class="Gamemc"></img>
-        </div>
-
-        <div class="gameMenu">JUEGO 3
-          <img src="../Img/Foto guess about.png" class="Gamemc"></img>
-        </div>
-
-        <div class="gameMenu">JUEGO 4
-          <img src="../Img/Foto horl.png" class="Gamemc"></img>
-        </div>
-        
-      </div>
     </div>
     <div class="estadown" id="estadown">
       <div class="estasdown">
@@ -54,34 +45,42 @@
           <img class="cruz" src="../Img/tabler_xbox-x-filled.png" onclick="openestadown()">
         </div>
         <div class="sepa">
-          <div class="separar">
-          <div class="sep1">
-            <div class="cuasta">
-              <p>99</p>
-              <p>PLAYED</p>
-            </div>
-            <div class="cuasta">
-              <P>99</P>
-              <P>WINS</P>
-            </div>
-            <div class="cuasta">
-              <P>100%</P>
-              <P>%WINS</P>
+          <div class="chart-wrapper">
+            <div class="game-title">Connections</div>
+            <div class="chart-container">
+              <canvas id="chart1"></canvas>
             </div>
           </div>
-          <div class="sep2">
-            <div class="cuasta">
-              <P>99</P>
-              <P>STREAK</P>
+          
+          <div class="chart-wrapper">
+            <div class="game-title">Guess About</div>
+            <div class="chart-container">
+              <canvas id="chart2"></canvas>
             </div>
-            <div class="cuasta">
-              <P>99</P>
-              <P>BEST STREAK</P>
+          </div>
+          
+          <div class="chart-wrapper">
+            <div class="game-title">Top 10</div>
+            <div class="chart-container">
+              <canvas id="chart3"></canvas>
             </div>
-            <div class="cuasta">
-              <Img src="../Img/material-symbols_share.png"></Img>
-              <P>SHARE</P>
+          </div>
+          
+          <div class="chart-wrapper">
+            <div class="game-title">Higher or Lower</div>
+            <div class="chart-container">
+              <canvas id="chart4"></canvas>
             </div>
+          </div>
+        </div>
+        <div class="nav-dots">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+          
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
           </div>
         </div>
         </div>
@@ -183,5 +182,130 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
     <script src="../socket.js"></script>
+    <script>
+ // Función para crear los gráficos
+function createGameChart(canvasId, wins = 0, loses = 0) {
+  const ctx = document.getElementById(canvasId);
+  return new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Wins', 'Loses'],
+      datasets: [{
+        data: [wins, loses],
+        backgroundColor: [
+          'rgb(74, 211, 58)',
+          'rgb(242, 54, 54)'
+        ],
+        borderWidth: 1,
+        hoverOffset: 4
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }
+  });
+}
+function createBarChart(canvasId, labels, data) {
+  const ctx = document.getElementById(canvasId);
+  return new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Paises Acertados', // Nombre de la serie de datos
+        data: data,
+        backgroundColor: [
+          'rgba(185, 220, 237, 0.5)',
+        ],
+        borderColor: [
+          'rgb(0, 123, 255)',
+        ],
+        borderWidth: 1.5,
+        hoverOffset: 4
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }
+  });
+}
+
+const username = localStorage.getItem("username");
+
+
+
+postData("cargarEstadisticasHyl", username, (response) => {
+  const { labels = [], consecutiveCorrectScores = [] } = response;
+  if (labels.length === 0 || consecutiveCorrectScores.length === 0) {
+    console.log("No hay datos disponibles para Hyl");
+    return;
+  }
+
+  createBarChart('chart4', labels, consecutiveCorrectScores);
+});
+
+
+postData("cargarEstadisticasTop10", username, (response) => {
+  const { labels, paisesAcertados } = response;
+  createBarChart('chart3', labels, paisesAcertados); 
+});
+
+if (username !== undefined) {
+
+  postData("cargarEstadisticas", username, (data) => {
+    const {wins = 0, loses = 0} = data;
+    createGameChart('chart1', wins, loses); // Connections
+  });
+
+  
+  postData("cargarEstadisticasGuessAbout", username, (data) => {
+    const {wins = 0, loses = 0} = data;
+    createGameChart('chart2', wins, loses); // GuessAbout
+  });
+} else {
+
+  createGameChart('chart1'); // Connections vacío
+  createGameChart('chart2'); // GuessAbout vacío
+}
+
+
+const sepa = document.querySelector('.sepa');
+const dots = document.querySelectorAll('.dot');
+
+sepa.addEventListener('scroll', () => {
+  const index = Math.round(sepa.scrollLeft / sepa.clientWidth);
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+});
+
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    sepa.scrollTo({
+      left: index * sepa.clientWidth,
+      behavior: 'smooth'
+    });
+  });
+});
+
+window.addEventListener('resize', () => {
+  const index = Math.round(sepa.scrollLeft / sepa.clientWidth);
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+});
+    </script>
 </body>
 </html>

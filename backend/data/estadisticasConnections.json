@@ -1,20 +1,175 @@
 [
   {
-    "username": "kuper",
+    "username": "kupicito123",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 3
+  },
+  {
+    "username": "kupicito123",
     "juego": "Connections",
     "gano": false,
     "vidasRestantes": 0
   },
   {
-    "username": "MateoDrault",
+    "username": "kupicito123",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 4
+  },
+  {
+    "username": "kupicito123",
     "juego": "Connections",
     "gano": true,
     "vidasRestantes": 5
   },
   {
-    "username": "MateoDrault",
+    "username": "fedevitacca",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
+  },
+  {
+    "username": "fedevitacca",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 5
+  },
+  {
+    "username": "fedevitacca",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 3
+  },
+  {
+    "username": "fedevitacca",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
+  },
+  {
+    "username": "fedevitacca",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
+  },
+  {
+    "username": "pedroconverso",
     "juego": "Connections",
     "gano": true,
     "vidasRestantes": 4
+  },
+  {
+    "username": "pedroconverso",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 4
+  },
+  {
+    "username": "pedroconverso",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 5
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Top10",
+    "completado": false,
+    "paisesAcertados": 1
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Top10",
+    "completado": false,
+    "paisesAcertados": 1
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Top10",
+    "completado": false,
+    "paisesAcertados": 1
+  },
+  {
+    "username": "totoEtbul",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 3
+  },
+  {
+    "username": "totoEtbul",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
+  },
+  {
+    "username": "totoEtbul",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
+  },
+  {
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 2
+  },
+  {
+    "username": "brunitog39pancho",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 4
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 5
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 3
+  },
+  {
+    "username": "seba123",
+    "juego": "Connections",
+    "gano": false,
+    "vidasRestantes": 0
+  },
+  {
+    "username": "seba123",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 1
   }
 ]

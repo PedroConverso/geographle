@@ -28,12 +28,18 @@ document.addEventListener("DOMContentLoaded", function() {
         // Asignar palabras a los elementos con ID 'sixt_0', 'sixt_1', etc.
         data.forEach((palabra, index) => {
             let box = document.getElementById("sixt_" + index);
-            box.innerHTML = palabra.word; // Asegúrate que 'word' es la propiedad correcta
-            palabrasCorrectas.push(palabra.word); // Agregar palabra a la lista de palabras correctas
+            box.innerHTML = palabra.word;
+            palabrasCorrectas.push(palabra.word); 
 
             // Añadir evento de clic a cada caja de palabras
             box.addEventListener("click", function() {
-                if (objeto4Palabras.length < 4) {
+                if (objeto4Palabras.includes(box.innerHTML)) {
+                    // Si la palabra ya está seleccionada, desseleccionarla
+                    box.style.backgroundColor = ''; // Volver al color original
+                    box.style.pointerEvents = 'auto'; // Habilitar el clic
+                    objeto4Palabras = objeto4Palabras.filter(palabra => palabra !== box.innerHTML); // Remover la palabra del array
+
+                } else if (objeto4Palabras.length < 4) {
                     // Cambiar color y deshabilitar antes de enviar
                     box.style.backgroundColor = 'darkgray'; // Cambiar a gris oscuro
                     box.style.pointerEvents = 'none'; // Deshabilitar el clic
@@ -52,9 +58,11 @@ document.addEventListener("DOMContentLoaded", function() {
                                 objeto4Palabras.forEach(palabra => {
                                     let box = Array.from(document.querySelectorAll(".sixt")).find(el => el.innerHTML === palabra);
                                     if (box) {
-                                        box.style.backgroundColor = 'green'; // Cambiar el color a verde
-                                        box.style.pointerEvents = 'none'; // Mantener deshabilitado
-                                        box.style.opacity = '0.5'; // Cambiar la apariencia visual
+                                        box.style.backgroundColor = 'rgba(96, 132, 243, 0.5)'; 
+                                        box.style.pointerEvents = 'none';
+                                        box.style.border = '2px solid blue';
+                                        box.style.Opacity = '0.5';
+                                        
                                     }
                                 });
 
@@ -91,6 +99,8 @@ document.addEventListener("DOMContentLoaded", function() {
         updateVidas();
     });
 });
+
+// Resto del código se mantiene igual
 
 // Función para enviar estadísticas al backend
 function enviarEstadisticas(gano) {
@@ -141,11 +151,9 @@ function updateVidas(vidasCounter = vidas) {
 
     // Perder el juego cuando las vidas lleguen a 0
     if (vidas === 0) {
-        alert("Has perdido. No puedes jugar hasta mañana.");
         enviarEstadisticas(false); // Enviar que perdió
         vidas = 5; // Reinicia vidas para el siguiente día
         updateVidas(vidas);
-        bloquearJuego();
     }
 }
 

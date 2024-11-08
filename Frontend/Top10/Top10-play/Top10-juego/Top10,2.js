@@ -1,140 +1,133 @@
+// Funciones de UI para los menús
 function openmenudropdown() {
-    let menu = document.getElementById("menudropdown")
-    if (menu.classList.contains("open")) {
-        menu.classList.remove("open")
-    } else {
-        menu.classList.add("open")
-    }
+    const menu = document.getElementById("menudropdown");
+    menu.classList.toggle("open");
 }
 
 function openestadown() {
-    let menu = document.getElementById("estadown")
-    if (menu.classList.contains("edOpen")) {
-        menu.classList.remove("edOpen")
-    } else {
-        menu.classList.add("edOpen")
-    }
+    const menu = document.getElementById("estadown");
+    menu.classList.toggle("edOpen");
 }
 
 function optisdown() {
-    let menu = document.getElementById("optidown")
-    if (menu.classList.contains("edSet")) {
-        menu.classList.remove("edSet")
-    } else {
-        menu.classList.add("edSet")
-    }
+    const menu = document.getElementById("optidown");
+    menu.classList.toggle("edSet");
 }
 
 function thememode() {
-    let menu = document.getElementById("themeMode-check-container")
-    if (menu.classList.contains("themeMode-check-container-on")) {
-        menu.classList.remove("themeMode-check-container-on")
-    } else {
-        menu.classList.add("themeMode-check-container-on")
-    }
+    const menu = document.getElementById("themeMode-check-container");
+    menu.classList.toggle("themeMode-check-container-on");
 }
 
 function thememode2() {
-    let menu = document.getElementById("themeMode-check-container2")
-    if (menu.classList.contains("themeMode-check-container-on2")) {
-        menu.classList.remove("themeMode-check-container-on2")
-    } else {
-        menu.classList.add("themeMode-check-container-on2")
-    }
+    const menu = document.getElementById("themeMode-check-container2");
+    menu.classList.toggle("themeMode-check-container-on2");
 }
 
 function infodown() {
-    let menu = document.getElementById("infodown")
-    if (menu.classList.contains("edinf")) {
-        menu.classList.remove("edinf")
-    } else {
-        menu.classList.add("edinf")
+    const menu = document.getElementById("infodown");
+    menu.classList.toggle("edinf");
+}
+
+// Variables globales para el juego
+let currentAnswers = new Set(); // Para rastrear las respuestas ya utilizadas
+
+// Función para enviar estadísticas al finalizar el juego o rendirse
+function enviarEstadisticas(completado) {
+    const user = localStorage.getItem("username");
+    if (user) {
+        const estadisticas = {
+            username: user,
+            juego: "Top10", 
+            completado: completado,
+            paisesAcertados: currentAnswers.size
+        };
+    
+        postData("guardarEstadisticasTop10", estadisticas, (response) => {
+            console.log("Estadísticas enviadas:", response);
+        });
     }
 }
 
-let currentTopic = null;
-let currentRankingData = null;
-
-// Inicialización del juego
-function initializeApp() {
-    // Obtener tema aleatorio al iniciar
-    fetchData('getRandomTopic', (topic) => {
-        currentTopic = topic;
-        updateTopicDisplay(topic);
-        
-        // Una vez que tenemos el tema, obtener los datos del ranking
-        fetchData('getTopicData', (data) => {
-            currentRankingData = data;
-            initializeBoxes();
-        });
-    });
-
-    // Configurar el botón de selección
-    document.querySelector('.doss').addEventListener('click', () => {
-        // Obtener nuevo tema aleatorio
-        fetchData('getRandomTopic', (topic) => {
-            currentTopic = topic;
-            updateTopicDisplay(topic);
-            
-            fetchData('getTopicData', (data) => {
-                currentRankingData = data;
-                resetBoxes();
-            });
-        });
+// Inicializar el juego
+async function initializeGame() {
+    const topicTitle = document.getElementById('topicTitle');
+    // Obtener una consigna aleatoria del backend
+    fetchData("consignaAleatoria", (topic) => {
+        topicTitle.textContent = topic;
     });
 }
 
-// Actualizar el título del tema
-function updateTopicDisplay(topic) {
-    const titleElement = document.querySelector('.title');
-    if (titleElement) {
-        titleElement.textContent = topic;
+// Manejar el envío de respuestas
+function handleAnswer() {
+    const input = document.getElementById('etbal');
+    const answer = input.value.trim();
+    
+    if (!answer) return;
+    
+    if (currentAnswers.has(answer.toLowerCase())) {
+        alert("¡Ya has usado esta respuesta!");
+        input.value = '';
+        return;
     }
-}
 
-// Inicializar las cajas con los números
-function initializeBoxes() {
-    const boxes1 = document.querySelector('.boxes1');
-    const boxes2 = document.querySelector('.boxes2');
-
-    if (boxes1 && boxes2) {
-        const rectangles = document.querySelectorAll('.rectan');
-        rectangles.forEach((rect, index) => {
-            rect.textContent = `${index + 1}. ${currentRankingData[index].name}`;
-            
-            // Añadir el valor específico según el tipo de dato
-            const data = currentRankingData[index];
-            let value = '';
-            
-            if (data.islands) {
-                value = `${data.islands.toLocaleString()} islands`;
-            } else if (data.gold) {
-                value = `${data.gold} gold medals`;
-            } else if (data.average_life_expectancy) {
-                value = data.average_life_expectancy;
-            } else if (data.gpi) {
-                value = `${data.gpi} GPI`;
-            } else if (data.tourists_in_millions) {
-                value = `${data.tourists_in_millions}M tourists`;
-            } else if (data.coastline) {
-                value = `${data.coastline.toLocaleString()} km`;
-            } else if (data.air_pollution) {
-                value = `${data.air_pollution} µg/m³`;
+    postData("verificarSeleccionTop10", answer, (result) => {
+        if (result) {
+            const boxes = document.querySelectorAll('.rectan');
+            for (let box of boxes) {
+                const boxNumber = box.textContent.split('.')[0];
+                if (box.textContent === `${boxNumber}.`) {
+                    box.textContent = `${boxNumber}. ${answer}`;
+                    currentAnswers.add(answer.toLowerCase());
+                    break;
+                }
             }
             
-            rect.textContent = `${index + 1}. ${data.name} - ${value}`;
-        });
+            // Si completó los 10 países, enviar estadísticas de victoria
+            if (currentAnswers.size === 10) {
+                enviarEstadisticas(true);
+                alert("¡Felicitaciones! ¡Has completado el Top 10!");
+            }
+        } else {
+            alert("Esa respuesta no es correcta. ¡Intenta otra vez!");
+        }
+        input.value = '';
+    });
+}
+
+// Función para reiniciar el juego
+function resetGame() {
+    currentAnswers.clear();
+    const boxes = document.querySelectorAll('.rectan');
+    boxes.forEach(box => {
+        const number = box.textContent.split('.')[0];
+        box.textContent = `${number}.`;
+    });
+    initializeGame();
+}
+
+// Función para rendirse
+function surrender() {
+    if (confirm("¿Estás seguro de que quieres rendirte?")) {
+        enviarEstadisticas(false);
+        resetGame();
+        alert("Te has rendido. ¡Inténtalo de nuevo!");
     }
 }
 
-// Resetear las cajas para un nuevo juego
-function resetBoxes() {
-    const rectangles = document.querySelectorAll('.rectan');
-    rectangles.forEach((rect, index) => {
-        rect.textContent = `${index + 1}.`;
+// Event Listeners cuando se carga la página
+document.addEventListener('DOMContentLoaded', () => {
+    initializeGame();
+    
+    // Manejar el botón de selección
+    const selectButton = document.getElementById('sel');
+    selectButton.addEventListener('click', handleAnswer);
+    
+    // Manejar la tecla Enter en el input
+    const input = document.getElementById('etbal');
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            handleAnswer();
+        }
     });
-    initializeBoxes();
-}
-
-// Inicializar la aplicación cuando el DOM esté cargado
-document.addEventListener('DOMContentLoaded', initializeApp);
+});

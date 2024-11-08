@@ -196,7 +196,7 @@
       ]
     },
     {
-      "topic": "Countries with the Lowest Global Peace Index (GPI) (2023)",
+      "topic": "Countries with the Lowest Global Peace Index (2023)",
       "items": [
         {
           "rank": 1,
@@ -225,7 +225,7 @@
         {
           "rank": 5,
           "country_id": "COD",
-          "name": "Congo (Democratic Republic)",
+          "name": "Congo",
           "gpi": 3.214
         },
         {
@@ -379,7 +379,7 @@
         {
           "rank": 9,
           "country_id": "USA",
-          "name": "United States of America",
+          "name": "United States",
           "coastline": 19924.0
         },
         {
@@ -391,7 +391,7 @@
       ]
     },
     {
-      "topic": "Countries with the Highest Levels of Air Pollution (2023)",
+      "topic": "Countries with the Highest Levels of Air Pollution",
       "items": [
         {
           "rank": 1,

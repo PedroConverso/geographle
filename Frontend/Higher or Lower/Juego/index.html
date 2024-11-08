@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     
@@ -14,32 +16,23 @@
     <title>Higher or Lower</title>
 </head>
 <body>
-    <div 
-    class="menudropdown"
-    id="menudropdown"
-    >
-      <img src="../../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
-
+  <div class="menudropdown" id="menudropdown">
+    <img src="../../Img/ic_outline-home.png" alt="home-Btn" class="casa" onclick="openmenudropdown()">
       <div class="gamesMenuContainer">
-
-        <div class="gameMenu">JUEGO 1
-          <div class="Gamemc"></div>
-        </div>
-
-        <div class="gameMenu">JUEGO 2
-          <div class="Gamemc"></div>
-        </div>
-
-        <div class="gameMenu">JUEGO 3
-          <div class="Gamemc"></div>
-        </div>
-
-        <div class="gameMenu">JUEGO 4
-          <div class="Gamemc"></div>
-        </div>
-        
+        <a href="/Frontend/Top10/index.html" class="gameMenu">JUEGO 1
+          <img src="../../Img/Foto top 10.png" class="Gamemc"></img>
+        </a>
+        <a href="/Frontend/Connections/index.html" class="gameMenu">JUEGO 2
+          <img src="../../Img/Foto connections.png" class="Gamemc"></img>
+        </a>
+        <a href="/Frontend/GuessAbout/index.html" class="gameMenu">JUEGO 3
+          <img src="../../Img/Foto guess about.png" class="Gamemc"></img>
+        </a>
+        <a href="/Frontend/Higher or Lower/index.html" class="gameMenu">JUEGO 4
+          <img src="../../Img/Foto horl.png" class="Gamemc"></img>
+        </a>
       </div>
-    </div>
+  </div>
     <div class="estadown" id="estadown">
       <div class="estasdown">
         <div class="pene">
@@ -122,38 +115,34 @@
           <h1 class="Geograph">GEOGRAPH</h1>
           <h1 class="le">LE</h1>
         </a>
-        <div class="iconos">
+        <div class="iconos" id="icons">
           <img class="stats" src="../../Img/gridicons_stats-up.png" onclick="openestadown()">
           <img class="options" src="../../Img/mdi_settings.png" onclick="optisdown()">
         </div>
     </header>
     <section>
         <div class="todo">
-            <div class="izq">
+            <div class="izq" id="izq">
                 <div class="opt">
-                    <div class="high">Higher
-                      <svg class="sss" xmlns="http://www.w3.org/2000/svg" width="26" height="20" viewBox="0 0 48 42" fill="none">
-                        <path d="M24 0.375L47.8157 41.625H0.184326L24 0.375Z" fill="white"/>
-                      </svg>
-                    </div>
-                    <div class="low">Lower
-                      <svg class="sss" xmlns="http://www.w3.org/2000/svg" width="26" height="20" viewBox="0 0 48 42" fill="none">
-                        <path d="M24 41.625L47.8157 0.375H0.184326L24 41.625Z" fill="white"/>
-                      </svg>
-                    </div>
+                    <p class="pais" id="pais1"></p>
+                    <p class="data" id="pais1data"></p>
                 </div>
             </div>
+            <p class="gate" id="gameTheme"></p>
             <div class="ca">
-                <div class="or">OR</div>
+                <div class="or" id="or">OR</div>
             </div>
-            <div class="der">
+            <div class="conte" id="orContent"></div>
+            <div class="der" id="der">
               <div class="opt">
-                <div class="high">Higher
+                <p class="pais" id="pais2"></p>
+                <div class="high" id="higherBtn">Higher
                   <svg class="sss" xmlns="http://www.w3.org/2000/svg" width="26" height="20" viewBox="0 0 48 42" fill="none">
                     <path d="M24 0.375L47.8157 41.625H0.184326L24 0.375Z" fill="white"/>
                   </svg>
                 </div>
-                <div class="low">Lower
+                <p id="pais2data" class="data"></p>
+                <div class="high" id="lowerBtn">Lower
                   <svg class="sss" xmlns="http://www.w3.org/2000/svg" width="26" height="20" viewBox="0 0 48 42" fill="none">
                     <path d="M24 41.625L47.8157 0.375H0.184326L24 41.625Z" fill="white"/>
                   </svg>
@@ -167,6 +156,8 @@
         </div>
     </section>
 
-    <script src="juego.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+    <script src="/Frontend/socket.js"></script>
+    <script src="/Frontend/Higher or Lower/Juego/juego.js"></script>
 </body>
 </html>
