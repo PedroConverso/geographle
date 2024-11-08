@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -183,6 +182,26 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
     <script src="../socket.js"></script>
     <script>
+
+// Asegúrate de que el nombre de usuario ya está disponible en el localStorage
+const user = localStorage.getItem("username");
+
+// Verifica si el nombre de usuario está presente
+if (user) {
+  // Buscar el contenedor de la imagen de usuario (Login)
+  const userImgContainer = document.querySelector('.Login');
+
+  // Crear un nuevo span para mostrar el nombre de usuario
+  const usernameSpan = document.createElement('span');
+  usernameSpan.textContent = user;  // Asignar el nombre de usuario al span
+  usernameSpan.classList.add('username');  // (Opcional) Agregar una clase CSS para estilo
+
+  // Insertar el nombre de usuario después de la imagen de usuario
+  userImgContainer.appendChild(usernameSpan);
+}
+
+
+
  // Función para crear los gráficos
 function createGameChart(canvasId, wins = 0, loses = 0) {
   const ctx = document.getElementById(canvasId);
