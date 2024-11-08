@@ -2,16 +2,18 @@ import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
-// Cargar los datos del JSON
+// Cargar los datos del JSON una sola vez
 let countries;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 function loadData() {
-    const path = join(__dirname, '../data/higher_or_lower.json');
-    let data = fs.readFileSync(path)
-    countries = JSON.parse(data).countries;
+    if (!countries) {
+        const path = join(__dirname, '../data/higher_or_lower.json');
+        let data = fs.readFileSync(path)
+        countries = JSON.parse(data).countries;
+    }
 }
 
 // Seleccionar una consigna aleatoria
@@ -27,7 +29,7 @@ function obtenerPaisAleatorio() {
 
 // Enviar dos países al frontend para la primera ronda
 export function iniciarRonda() {
-    loadData(); // Cargar los datos
+    loadData(); // Cargar los datos solo una vez
     const consigna = consignaAleatoria();
     const country1 = obtenerPaisAleatorio();
     let country2 = obtenerPaisAleatorio();

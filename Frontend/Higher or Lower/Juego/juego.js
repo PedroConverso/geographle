@@ -118,27 +118,23 @@
             document.getElementById("pais2data").innerHTML = "";
         }, 1500);
     };
-    
     const handleWrongAnswer = (country2) => {
         document.getElementById("higherBtn").style.display = "none";
         document.getElementById("lowerBtn").style.display = "none";
         document.getElementById("pais2data").innerHTML = country2[consigna];
-    
-        const orElement = document.getElementById("or");
-        orElement.innerHTML = "";
-    
-        const restartIcon = document.createElement("i");
-        restartIcon.classList.add("fas", "fa-sync-alt");
-        restartIcon.style.cursor = "pointer";
-        restartIcon.style.fontSize = "30px";
         
-        orElement.appendChild(restartIcon);
-        restartIcon.style.display = "block";
+        // Enviar las estadísticas solo en caso de respuesta incorrecta
+        sendGameStats();
+        consecutiveCorrect = 0; // Resetear el puntaje acumulado.
     
-        restartIcon.addEventListener("click", function() {
+        // Mostrar mensaje de incorrecto y recargar la página automáticamente después de un pequeño retraso
+        alert("Incorrect"); 
+        setTimeout(() => {
             location.reload();
-        });
+        }, 1000); // Espera 1 segundo antes de mostrar el mensaje y recargar la página
     };
+    
+    
     
     const updateGameState = (res) => {
         let pais1 = res.country1;

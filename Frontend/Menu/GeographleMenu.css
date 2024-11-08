@@ -744,3 +744,14 @@ input:checked + .slider:before {
   .dot.active {
     background: #fff;
   }
+  .username {
+    margin-left: 20px;  /* Espacio entre la imagen y el nombre */
+    font-size: 30px;    /* Tamaño de fuente del nombre de usuario */
+    font-weight: bold;  /* Puedes poner el nombre en negrita */
+    color: #333;        /* Color del texto */
+    position: absolute;
+    margin-top: 45px;
+    font-family: sans-serif;
+   
+}
+    
