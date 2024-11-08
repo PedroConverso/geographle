@@ -72,3 +72,41 @@ export function continuarJuego(countryActual) {
     return { country1, country2};
 }
 
+// Definir la ruta para el archivo de estadísticas
+const statisticsFilePath = join(__dirname, '../data/estadisticasHyl.json');
+
+export function saveGameStats(data) {
+    const { username, consecutiveCorrect, juego } = data;
+
+    // Cargar estadísticas existentes
+    const existingStats = JSON.parse(fs.readFileSync(statisticsFilePath, 'utf8') || '[]');
+
+    // Agregar nueva estadística
+    existingStats.push({ username, consecutiveCorrect, juego });
+
+    // Guardar estadísticas actualizadas en el archivo
+    fs.writeFileSync(statisticsFilePath, JSON.stringify(existingStats, null, 2));
+
+    // Retornar respuesta de éxito
+    return { message: 'Estadísticas guardadas' };
+}
+
+export async function cargarEstadisticasHyl(user) {
+    const dataPath = join(__dirname, '../data/estadisticasHyl.json');
+    const data = await fs.readFileSync(dataPath, 'utf-8');
+    const stats = JSON.parse(data);
+    
+    let labels = [];
+    let consecutiveCorrectScores = [];
+    
+    // Agregar etiquetas y datos para el gráfico
+    for (const stat of stats) {
+        if (stat.username === user) {
+            labels.push(stat.juego); // Etiquetas para el gráfico (ejemplo: nombre del juego o fecha)
+            consecutiveCorrectScores.push(stat.consecutiveCorrect); // Puntaje acumulado
+        }
+    }
+
+    console.log("Cargar estadísticas Hyl:", { labels, consecutiveCorrectScores });
+    return { labels, consecutiveCorrectScores };
+}

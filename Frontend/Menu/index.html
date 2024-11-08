@@ -240,8 +240,15 @@ const username = localStorage.getItem("username");
 
 
 
-createGameChart('chart4'); // Higher or Lower
+postData("cargarEstadisticasHyl", username, (response) => {
+  const { labels = [], consecutiveCorrectScores = [] } = response;
+  if (labels.length === 0 || consecutiveCorrectScores.length === 0) {
+    console.log("No hay datos disponibles para Hyl");
+    return;
+  }
 
+  createBarChart('chart4', labels, consecutiveCorrectScores);
+});
 
 
 postData("cargarEstadisticasTop10", username, (response) => {

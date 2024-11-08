@@ -165,5 +165,11 @@
     "juego": "Connections",
     "gano": false,
     "vidasRestantes": 0
+  },
+  {
+    "username": "seba123",
+    "juego": "Connections",
+    "gano": true,
+    "vidasRestantes": 1
   }
 ]

@@ -79,5 +79,4 @@ export async function cargarEstadisticasTop10(user) {
 }
 
 
-// Llama a consignaAleatoriaTop10 como función asincrónica
-consignaAleatoriaTop10().then(console.log);
+    

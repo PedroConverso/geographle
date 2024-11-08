@@ -43,38 +43,38 @@
         }
     }
     let firstClick = true;
-
-    let consigna
-
+    let consigna;
+    let consecutiveCorrect = 0;
+    
     // Declaración de funciones fuera del addEventListener de DOMContentLoaded
     const addClickListeners = (pais1, pais2, consigna) => {
         document.getElementById("higherBtn").onclick = () => verifyAnswerHigherOrLower(pais1, pais2, consigna, "higher");
         document.getElementById("lowerBtn").onclick = () => verifyAnswerHigherOrLower(pais1, pais2, consigna, "lower");
     };
-
+    
     document.addEventListener("DOMContentLoaded", () => {
         postData("iniciarRonda", null, (res) => {
             let pais1 = res.country1;
             let pais2 = res.country2;
             consigna = res.consigna;
-
+    
             // Set country names and flags
             document.getElementById("pais1").innerHTML = pais1.country;
             document.getElementById("pais2").innerHTML = pais2.country;
-
+    
             // Set flags as background images
             document.getElementById("der").style.backgroundImage = `url(${pais2.flag_url})`;
             document.getElementById("izq").style.backgroundImage = `url(${pais1.flag_url})`;
-
+    
             // Set game theme based on consigna
             document.getElementById("gameTheme").innerHTML = {
                 gdp_millions: "GDP Economy",
                 population_millions: "Population in Millions",
                 Territory_km2: "Territory km²"
             }[consigna] || "Error";
-
+    
             document.getElementById("pais1data").innerHTML = pais1[consigna];
-
+    
             // Agregar listeners la primera vez
             if (firstClick) {
                 addClickListeners(pais1, pais2, consigna);
@@ -82,7 +82,7 @@
             }
         });
     });
-
+    
     const verifyAnswerHigherOrLower = (country1, country2, consigna, userGuess) => {
         const data = {
             "country1": country1,
@@ -90,21 +90,25 @@
             "consigna": consigna,
             "userGuess": userGuess
         };
-
+    
         postData("validarRespuesta", data, (res) => {
             if (res === true) {
                 handleCorrectAnswer(country2, data);
+                consecutiveCorrect++; // Incrementar solo si la respuesta es correcta.
             } else {
                 handleWrongAnswer(country2);
+                sendGameStats(); // Enviar solo si la respuesta es incorrecta.
+                consecutiveCorrect = 0; // Resetear el puntaje acumulado.
             }
         });
     };
-
+    
+    
     const handleCorrectAnswer = (country2, data) => {
         document.getElementById("higherBtn").style.display = "none";
         document.getElementById("lowerBtn").style.display = "none";
         document.getElementById("pais2data").innerHTML = country2[data.consigna];
-
+    
         setTimeout(() => {
             postData("continuarJuego", country2, (res) => {
                 updateGameState(res);
@@ -114,15 +118,15 @@
             document.getElementById("pais2data").innerHTML = "";
         }, 1500);
     };
-
+    
     const handleWrongAnswer = (country2) => {
         document.getElementById("higherBtn").style.display = "none";
         document.getElementById("lowerBtn").style.display = "none";
         document.getElementById("pais2data").innerHTML = country2[consigna];
-
+    
         const orElement = document.getElementById("or");
         orElement.innerHTML = "";
-
+    
         const restartIcon = document.createElement("i");
         restartIcon.classList.add("fas", "fa-sync-alt");
         restartIcon.style.cursor = "pointer";
@@ -130,28 +134,37 @@
         
         orElement.appendChild(restartIcon);
         restartIcon.style.display = "block";
-
+    
         restartIcon.addEventListener("click", function() {
             location.reload();
         });
     };
-
-
-
+    
     const updateGameState = (res) => {
         let pais1 = res.country1;
         let pais2 = res.country2;
-
+    
         // Actualizar nombres de países y banderas
         document.getElementById("pais1").innerHTML = `${pais1.country}`;
         document.getElementById("pais2").innerHTML = `${pais2.country}`;
         document.getElementById("izq").style.backgroundImage = `url(${pais1.flag_url})`;
         document.getElementById("der").style.backgroundImage = `url(${pais2.flag_url})`;
-
+    
         document.getElementById("pais1data").innerHTML = pais1[consigna];
         document.getElementById("pais2data").innerHTML = "";
-        
-
+    
         // Volver a asignar los listeners
         addClickListeners(pais1, pais2, consigna);
     };
+    
+    const sendGameStats = () => {
+        // Obtener el usuario del localStorage
+        let username = localStorage.getItem("username");
+        let juego = "Hyl";
+    
+        // Enviar estadísticas al servidor
+        postData("enviarEstadisticasHyl", { username, consecutiveCorrect, juego }, (response) => {
+            console.log("Estadísticas enviadas al servidor:", response);
+        });
+    };
+    

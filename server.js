@@ -80,13 +80,16 @@ onEvent("checkSession", checkUserSession);
 import { 
     iniciarRonda,
     validarRespuesta,
-    continuarJuego
-    
+    continuarJuego,
+    saveGameStats,
+    cargarEstadisticasHyl
 } from './backend/higerLower/index.js'; 
 
 //Eventos Higher or Lower
 onEvent("iniciarRonda", iniciarRonda);
 onEvent("validarRespuesta", validarRespuesta);
 onEvent("continuarJuego", continuarJuego);
+onEvent("enviarEstadisticasHyl", saveGameStats)
+onEvent("cargarEstadisticasHyl", cargarEstadisticasHyl)
 
 startServer();
