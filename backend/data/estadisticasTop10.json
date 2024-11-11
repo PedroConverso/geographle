@@ -100,5 +100,11 @@
     "juego": "Top10",
     "completado": false,
     "paisesAcertados": 8
+  },
+  {
+    "username": "kupicito123",
+    "juego": "Top10",
+    "completado": false,
+    "paisesAcertados": 7
   }
 ]
