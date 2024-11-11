@@ -95,7 +95,7 @@ function handleShapeSelection(selectedShape) {
 
     postData("verificarRespuestaForma", selectedShape, function(response) {
         if (response.esCorrecta) {
-            displayMessage("¡Correcto! Has acertado la forma.", 'green');
+            displayMessage("¡Your guess for the shape is correct!", 'green');
             showResult(true);
             setTimeout(() => {
                 window.location.href = '/Frontend/GuessAbout/bandera/silueta/lengua/index.html';
@@ -113,7 +113,7 @@ function verifySelection() {
     postData("verificarPais", { selectedCountry: selectedCountry }, (response) => {
         displayMessage('', '');
         if (response.esCorrecta) {
-            displayMessage("¡Correcto! Has acertado el país.", 'green');
+            displayMessage("¡Your guess for flag is correct!", 'green');
             setTimeout(() => {
                 window.location.href = '/Frontend/GuessAbout/bandera/silueta/index.html';
             }, 1500);
@@ -216,7 +216,7 @@ function handleLanguageSelection(selectedLanguage) {
     postData("verificarRespuestaIdioma", { selectedLanguage }, (response) => {
         displayMessage('', '');
         if (response.esCorrecta) {
-            displayMessage("¡Correcto! Has acertado el idioma.", 'green');
+            displayMessage("¡Your guess for language is correct!", 'green');
             setTimeout(() => {
                 window.location.href = '/Frontend/GuessAbout/bandera/silueta/lengua/capital/index.html';
             }, 1500);
@@ -238,7 +238,7 @@ function handleLanguageSelection(selectedLanguage) {
     postData("verificarRespuestaIdioma", { selectedLanguage }, (response) => {
         displayMessage('', '');
         if (response.esCorrecta) {
-            displayMessage("¡Correcto! Has acertado el idioma.", 'green');
+            displayMessage("¡Your guess for language is correct!", 'green');
             setTimeout(() => {
                 window.location.href = '/Frontend/GuessAbout/bandera/silueta/lengua/capital/index.html';
             }, 1500);
@@ -311,7 +311,7 @@ function handleCapitalSelection(selectedCapital) {
     postData("verificarRespuestaCapital", { selectedCapital: selectedCapital }, (response) => {
         displayMessage('', '');
         if (response.esCorrecta) {
-            displayMessage("¡Correcto! Has acertado la capital.", 'green');
+            displayMessage("¡Your guess for capital is correct!", 'green');
             setTimeout(() => {
                 enviarEstadisticas(true); // Envía estadísticas si gana
                 window.location.href = '/Frontend/Menu/';
