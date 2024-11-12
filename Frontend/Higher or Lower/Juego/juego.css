@@ -399,19 +399,6 @@ section{
     z-index: 10; /* Cambia a un valor más alto que los elementos sobrepuestos */
 }
 
-
-.aba{
-    display: flex;
-    font-family: "Inter" , sans-serif;
-    height: 82px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    gap: 800px;
-    font-weight: 600;
-    font-size: 45px;
-}
-
 .opt{
     display: flex;
     flex-direction: column;
@@ -422,20 +409,6 @@ section{
     font-size: 35px;   
     font-family: "Inter" , sans-serif;
     gap: 5px;
-}
-
-.high{
-    height: 60px;
-    width: 200px;
-    border-radius: 100px;
-    border: 6px solid #fff;
-    display: flex;
-    justify-content: center;
-    color: #E5EC1E;
-    font-weight: 700;
-    align-items: center;
-    background-color: #85858597;
-    cursor: pointer;
 }
 
 .gate{
