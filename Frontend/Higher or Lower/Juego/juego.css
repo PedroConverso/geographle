@@ -423,6 +423,20 @@ section{
     padding: 7px;
 }
 
+.high{
+    height: 60px;
+    width: 200px;
+    border-radius: 100px;
+    border: 6px solid #fff;
+    display: flex;
+    justify-content: center;
+    color: #E5EC1E;
+    font-weight: 700;
+    align-items: center;
+    background-color: #85858597;
+    cursor: pointer;
+}
+
 .conte{
     position: absolute;
     top: 75%; right: 45%;
