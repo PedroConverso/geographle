@@ -355,7 +355,7 @@ section{
 
 .todo{
     width: 100%;
-    height: 450px;
+    height: 100%;
     display: flex;
     border-bottom: 1px solid #000;  
 }
@@ -399,19 +399,6 @@ section{
     z-index: 10; /* Cambia a un valor más alto que los elementos sobrepuestos */
 }
 
-
-.aba{
-    display: flex;
-    font-family: "Inter" , sans-serif;
-    height: 82px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    gap: 800px;
-    font-weight: 600;
-    font-size: 45px;
-}
-
 .opt{
     display: flex;
     flex-direction: column;
@@ -422,6 +409,18 @@ section{
     font-size: 35px;   
     font-family: "Inter" , sans-serif;
     gap: 5px;
+}
+
+.gate{
+    position: absolute;
+    top: 10%; left: 50%;
+    transform: translate(-50%, 50%);
+    font-family: "Inter" , sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center;
+    background-color: white;
+    padding: 7px;
 }
 
 .high{
@@ -436,18 +435,6 @@ section{
     align-items: center;
     background-color: #85858597;
     cursor: pointer;
-}
-
-.gate{
-    position: absolute;
-    top: 10%; left: 50%;
-    transform: translate(-50%, 50%);
-    font-family: "Inter" , sans-serif;
-    font-size: 45px;
-    font-weight: 700;
-    text-align: center;
-    background-color: white;
-    padding: 7px;
 }
 
 .conte{
