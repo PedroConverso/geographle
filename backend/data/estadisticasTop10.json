@@ -106,5 +106,11 @@
     "juego": "Top10",
     "completado": false,
     "paisesAcertados": 7
+  },
+  {
+    "username": "pepegon",
+    "juego": "Top10",
+    "completado": false,
+    "paisesAcertados": 3
   }
 ]

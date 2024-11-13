@@ -97,7 +97,7 @@
                 consecutiveCorrect++; // Incrementar solo si la respuesta es correcta.
             } else {
                 handleWrongAnswer(country2);
-                sendGameStats(); // Enviar solo si la respuesta es incorrecta.
+                 // Enviar solo si la respuesta es incorrecta.
                 consecutiveCorrect = 0; // Resetear el puntaje acumulado.
             }
         });
@@ -124,6 +124,7 @@
         document.getElementById("pais2data").innerHTML = country2[consigna];
         
         // Enviar las estadísticas solo en caso de respuesta incorrecta
+    
         sendGameStats();
         consecutiveCorrect = 0; // Resetear el puntaje acumulado.
     
@@ -131,7 +132,7 @@
         alert("Incorrect"); 
         setTimeout(() => {
             location.reload();
-        }, 1000); // Espera 1 segundo antes de mostrar el mensaje y recargar la página
+        }, 1000); 
     };
     
     
