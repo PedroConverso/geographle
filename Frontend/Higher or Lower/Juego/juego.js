@@ -158,9 +158,12 @@
         // Obtener el usuario del localStorage
         let username = localStorage.getItem("username");
         let juego = "Hyl";
+        let d = new Date()
+        let date = d.getDate
+
     
         // Enviar estadísticas al servidor
-        postData("enviarEstadisticasHyl", { username, consecutiveCorrect, juego }, (response) => {
+        postData("enviarEstadisticasHyl", { username, consecutiveCorrect, juego, date }, (response) => {
             console.log("Estadísticas enviadas al servidor:", response);
         });
     };

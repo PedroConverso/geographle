@@ -81,10 +81,15 @@ export function saveGameStats(data) {
     const { username, consecutiveCorrect, juego } = data;
 
     // Cargar estadísticas existentes
+    const d = new Date()
+    let dd = String(d.getDate()).padStart(2,'0')
+    let mm = String(d.getMonth() +1).padStart(2,'0')
+
+    let date = dd+'/' +mm
     const existingStats = JSON.parse(fs.readFileSync(statisticsFilePath, 'utf8') || '[]');
 
     // Agregar nueva estadística
-    existingStats.push({ username, consecutiveCorrect, juego });
+    existingStats.push({ username, consecutiveCorrect, juego, date });
 
     // Guardar estadísticas actualizadas en el archivo
     fs.writeFileSync(statisticsFilePath, JSON.stringify(existingStats, null, 2));
@@ -104,7 +109,7 @@ export async function cargarEstadisticasHyl(user) {
     // Agregar etiquetas y datos para el gráfico
     for (const stat of stats) {
         if (stat.username === user) {
-            labels.push(stat.juego); // Etiquetas para el gráfico (ejemplo: nombre del juego o fecha)
+            labels.push(stat.date); // Etiquetas para el gráfico (ejemplo: nombre del juego o fecha)
             consecutiveCorrectScores.push(stat.consecutiveCorrect); // Puntaje acumulado
         }
     }
