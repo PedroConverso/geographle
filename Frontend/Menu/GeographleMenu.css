@@ -23,6 +23,7 @@ header{
     width: 100%;
     align-items: center;
     border-bottom: 4px solid #000;
+    height: 10vh;
 }
 
 .menudropdown {
@@ -276,19 +277,26 @@ header{
 }
 
 
-.login{
+.Login{
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    width: 17vw;
+    height: 100%;
 }
 
 .user{
-    width: 90px;
-    height: 90px;
-    padding-bottom: 10px;
+    width: 2.5vw;
+    height: 5vh;
+}
+
+.Imgmenu {
+    width: 2.5vw;
+    height: 5vh;
+    cursor: pointer;
 }
 
 .Geograph{
-font-size: 10vh;
 margin: 0%;
 color: #067E00;
 font-family: "Inter" , sans-serif;
@@ -296,7 +304,6 @@ font-style: italic;
 }
 
 .le{
-    font-size: 10vh;
     margin: 0%;
     color: #272DA3;
     font-family: "Inter" , sans-serif;
@@ -306,11 +313,16 @@ font-style: italic;
 .juntitos{
     display: flex;
     text-decoration: none;
+    font-size: 1.7rem;
 }
 
 .iconos{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 12vw;
+    height: 100%;
+    padding-right: 1vw;
 }
 
 .juegos{
@@ -323,6 +335,24 @@ font-style: italic;
 
 .edinf{
     display: flex !important;
+}
+
+.info {
+    width: 3vw;
+    height: 6.5vh;
+    cursor: pointer;
+}
+
+.stats {
+    width: 3.5vw;
+    height: 7.2vh;
+    cursor: pointer;
+}
+
+.options {
+    width: 3.5vw;
+    height: 7.2vh;
+    cursor: pointer;
 }
 
 .infodown{
@@ -745,13 +775,9 @@ input:checked + .slider:before {
     background: #fff;
   }
   .username {
-    margin-left: 20px; 
-    font-size: 30px;  
+    font-size: 26px;  
     font-weight: bold; 
-    color: #333;        
-    position: absolute;
-    margin-top: 45px;
+    color: #333;
     font-family: sans-serif;
-    z-index: 1;
 }
     
