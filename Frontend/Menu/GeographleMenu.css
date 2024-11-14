@@ -513,13 +513,13 @@ font-style: italic;
 
 /* Box4 - Rojo (mantiene el original) */
 .box4:hover {
-    background-color: rgb(238, 107, 107);
-    border-color: rgb(238, 107, 107);
+    background-color: rgb(208, 50, 50);
+    border-color: rgb(208, 50, 50);
 }
 
 .box4:hover .RecAb4,
 .box4:hover .arriba4 {
-    background-color: rgb(231, 67, 67);
+    background-color: rgb(208, 50, 50);
 } 
 a{
     text-decoration: none;

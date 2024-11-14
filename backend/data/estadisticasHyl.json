@@ -1,17 +1,7 @@
 [
   {
     "username": "kupicito123",
-    "consecutiveCorrect": 13,
-    "juego": "Hyl"
-  },
-  {
-    "username": "kupicito123",
     "consecutiveCorrect": 4,
-    "juego": "Hyl"
-  },
-  {
-    "username": "kupicito123",
-    "consecutiveCorrect": 3,
     "juego": "Hyl"
   },
   {
@@ -27,21 +17,6 @@
   {
     "username": "kupicito123",
     "consecutiveCorrect": 2,
-    "juego": "Hyl"
-  },
-  {
-    "username": "kupicito123",
-    "consecutiveCorrect": 4,
-    "juego": "Hyl"
-  },
-  {
-    "username": "kupicito123",
-    "consecutiveCorrect": 1,
-    "juego": "Hyl"
-  },
-  {
-    "username": "kupicito123",
-    "consecutiveCorrect": 0,
     "juego": "Hyl"
   },
   {
@@ -104,5 +79,53 @@
     "consecutiveCorrect": 19,
     "juego": "Hyl",
     "date": "13/11"
+  },
+  {
+    "username": "kupicito123",
+    "consecutiveCorrect": 5,
+    "juego": "Hyl",
+    "date": "14/11"
+  },
+  {
+    "username": "kupicito123",
+    "consecutiveCorrect": 0,
+    "juego": "Hyl",
+    "date": "14/11"
+  },
+  {
+    "username": "kupicito123",
+    "consecutiveCorrect": 2,
+    "juego": "Hyl",
+    "date": "14/11"
+  },
+  {
+    "username": "kupicito123",
+    "consecutiveCorrect": 3,
+    "juego": "Hyl",
+    "date": "14/11"
+  },
+  {
+    "username": "cuenta1",
+    "consecutiveCorrect": 7,
+    "juego": "Hyl",
+    "date": "14/11"
+  },
+  {
+    "username": "cuenta1",
+    "consecutiveCorrect": 1,
+    "juego": "Hyl",
+    "date": "14/11"
+  },
+  {
+    "username": "cuenta1",
+    "consecutiveCorrect": 8,
+    "juego": "Hyl",
+    "date": "14/11"
+  },
+  {
+    "username": "cuenta1",
+    "consecutiveCorrect": 2,
+    "juego": "Hyl",
+    "date": "14/11"
   }
 ]

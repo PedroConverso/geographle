@@ -83,6 +83,14 @@ function handleAnswer() {
                 }
             }
             
+            // Cambia el fondo a verde claro si la respuesta es correcta
+            input.style.backgroundColor = '#ccffcc';
+            
+            // Vuelve a su color original después de 1 segundo
+            setTimeout(() => {
+                input.style.backgroundColor = '';
+            }, 1000);
+            
             // Si completó los 10 países, enviar estadísticas de victoria
             if (currentAnswers.size === 10) {
                 enviarEstadisticas(true);
