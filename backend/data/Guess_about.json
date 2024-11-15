@@ -443,14 +443,6 @@
     "country_shape": "https://gadm.org/img/480/gadm/ERI/ERI.png"
   },
   {
-    "country_id": "EST",
-    "name": "Estonia",
-    "capital": "Tallinn",
-    "language": "Estonian",
-    "flag": "https://flagcdn.com/w320/ee.png",
-    "country_shape": "https://gadm.org/img/480/gadm/EST/EST.png"
-  },
-  {
     "country_id": "SWZ",
     "name": "Eswatini",
     "capital": "Mbabane",
@@ -954,14 +946,6 @@
     "language": "Spanish",
     "flag": "https://flagcdn.com/w320/ni.png",
     "country_shape": "https://gadm.org/img/480/gadm/NIC/NIC.png"
-  },
-  {
-    "country_id": "NER",
-    "name": "Niger",
-    "capital": "Niamey",
-    "language": "French",
-    "flag": "https://flagcdn.com/w320/ne.png",
-    "country_shape": "https://gadm.org/img/480/gadm/NER/NER.png"
   },
   {
     "country_id": "NGA",
