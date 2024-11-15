@@ -385,6 +385,7 @@ main{
 .pres{
     width: 450px;
     height: 250px;
+    object-fit: contain;
 }
 
 .desc{

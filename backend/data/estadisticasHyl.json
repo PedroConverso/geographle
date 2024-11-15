@@ -127,5 +127,29 @@
     "consecutiveCorrect": 2,
     "juego": "Hyl",
     "date": "14/11"
+  },
+  {
+    "username": "cuenta1",
+    "consecutiveCorrect": 1,
+    "juego": "Hyl",
+    "date": "15/11"
+  },
+  {
+    "username": "cuenta1",
+    "consecutiveCorrect": 1,
+    "juego": "Hyl",
+    "date": "15/11"
+  },
+  {
+    "username": "cuenta1",
+    "consecutiveCorrect": 1,
+    "juego": "Hyl",
+    "date": "15/11"
+  },
+  {
+    "username": "cuenta1",
+    "consecutiveCorrect": 0,
+    "juego": "Hyl",
+    "date": "15/11"
   }
 ]
