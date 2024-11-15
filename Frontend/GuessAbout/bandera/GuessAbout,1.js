@@ -151,7 +151,7 @@ function loadFlag() {
 }
 
 function handleLives(response) {
-    displayMessage(`Incorrecto. Te quedan ${response.vidas} vidas.`, 'red');
+    displayMessage(`Incorrect. you have ${response.vidas} lives left.`, 'red');
     if (response.vidas > 0) {
         // Continúa el juego si tiene vidas restantes
     } else {
